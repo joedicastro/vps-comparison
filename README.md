@@ -23,15 +23,9 @@ Company
 Notes:
 
 -   The companies are sorted by the year of foundation.
--   Scaleway is a cloud division of Online.net (1999), itself subsidiary of the
-
-Iliad group (1990) owner also of the famous French ISP Free.
-
+-   Scaleway is a cloud division of Online.net (1999), itself subsidiary of the Iliad group (1990) owner also of the famous French ISP Free.
 -   Vultr Holdings LLC is owned by Choopa LLC founded in 2010.
--   Amazon LightSail is a service of Amazon Web Services (2006) a subsidiary
-
-of Amazon.com (1994).
-
+-   Amazon LightSail is a service of Amazon Web Services (2006) a subsidiary of Amazon.com (1994).
 -   The Market numbers are extracted from the Wikipedia an other sources
 
 Billing
@@ -66,16 +60,11 @@ General Features
 
 Note:
 
--   Scaleway has four grades of SLA, the first basic is for free if you want
-
-something better, you have to pay a monthly fee.
+-   Scaleway has four grades of SLA, the first basic is for free if you want something better, you have to pay a monthly fee.
 
 ### European data centers
 
--   **OVH**: Gravelines (FR), Roubaix (FR), Strasboug (DE). It has also a data center in Paris (FR), but is not available for
-
-these plans.
-
+-   **OVH**: Gravelines (FR), Roubaix (FR), Strasboug (DE). It has also a data center in Paris (FR), but is not available for these plans.
 -   **Linode**: Frankfurt (DE), London (GB)
 -   **DigitalOcean**: Amsterdam (NL), Frankfurt (DE), London (GB)
 -   **Scaleway**: Amsterdam (NL), Paris (FR)
@@ -108,18 +97,10 @@ Features
 
 Notes:
 
--   To reset the root password from the control panel is not a good security
-
-measure IMHO, it's useful, but you already have the KVM console for that.
-
--   In Vultr you can copy/see the masked default root password, but not reset it. This
-
-is necessary because the password is never sent by email.
-
+-   To reset the root password from the control panel is not a good security measure IMHO, it's useful, but you already have the KVM console for that.
+-   In Vultr you can copy/see the masked default root password, but not reset it. This is necessary because the password is never sent by email.
 -   You can resintall the instances using the same SO/App or choosing another one.
--   In Vultr can use a custom ISO or choose one from the library like
-
-SystemRescueCD or Trinity Rescue Kit to boot your instance and perform recovery tasks.
+-   In Vultr can use a custom ISO or choose one from the library like SystemRescueCD or Trinity Rescue Kit to boot your instance and perform recovery tasks.
 
 Instance creation
 -----------------
@@ -156,17 +137,12 @@ Note:
 Notes:
 
 -   Some providers offer more one-click Apps that I do not include here to save space.
--   Some of this apps in some providers require a bigger and more expensive
-
-plan that the entry ones below 5$ that I analyze here.
-
+-   Some of this apps in some providers require a bigger and more expensive plan that the entry ones below 5$ that I analyze here.
 -   OVH uses Ubuntu, Debian or CentOS as SO for its apps.
 -   Digital Ocean uses Ubuntu as SO for all of its apps.
 -   Vultr uses CentOS as SO for all of its apps.
 -   OVH Also offers Dokku on Ubuntu.
--   Do you really need a Panel (like cPanel)? They usually are a considerable security risk with
-
-several vulnerabilities.
+-   Do you really need a Panel (like cPanel)? They usually are a considerable security risk with several vulnerabilities.
 
 ### Other features
 
@@ -180,14 +156,9 @@ several vulnerabilities.
 
 Notes:
 
--   The Vults's ISO image library include several ISOs like Alpine, Arch, Finnix, FreePBX, pfSense, Rancher Os,
-
-SystemRescueCD, and Trinity Rescue Kit.
-
--   The Vultl's "Custom ISO image" feature allows you to install virtually any SO supported by KVM and the server architecture.
--   To test the "Distro install in instance" I use a installation script to install Arch Linux from an official Debian instance. The purpose is to test if you are restricted in any
-
-way to use a different SO than the ones officially supported.
+-   The Vultr's ISO image library include several ISOs like Alpine, Arch, Finnix, FreePBX, pfSense, Rancher Os, SystemRescueCD, and Trinity Rescue Kit.
+-   The Vultr's "Custom ISO image" feature allows you to install virtually any SO supported by KVM and the server architecture.
+-   To test the "Distro install in instance" I use a installation script to install Arch Linux from an official Debian instance. The purpose is to test if you are restricted in any way to use a different SO than the ones officially supported.
 
 Security
 --------
@@ -240,9 +211,7 @@ Features
 Note:
 
 -   The prices for DigitalOcean and Vultr not include taxes (VAT) for European countries.
--   I have serious doubts about the OVH's unlimited traffic, seems more marketing than real to me
-
-(joe di castro).
+-   I have serious doubts about the OVH's unlimited traffic, seems more marketing than real to me (joe di castro).
 
 System Performance
 ------------------
@@ -264,17 +233,12 @@ System Performance
 
 Notes:
 
--   Clearly the OVH's disk performance is limited by software, there is no other
-
-way to get so round results. Seems that older instances or other plans are not affected by this problem.
-
+-   Clearly the OVH's disk performance is limited by software, there is no other way to get so round results. Seems that older instances or other plans are not affected by this problem.
 -   The small bandwidth available in this OVH plan clearly affects the network performance.
 
-    **Warning**: Performance tests can be affected by locations, data centers and VPS
+    **Warning**: Performance tests can be affected by locations, data centers and VPS host neighbors.
 
-host neighbors.
-
-**Warning**: These numbers are provisional ones, I'm automating this process, so I going to repeat all of this tests for the already tested and extend them to the other VPS providers. I also have the intention of provide in this repository both the means to reproduce these tests and the tests results itself. Lastly I also have the intention to add another tests.
+    **Warning**: These numbers are provisional ones, I'm automating this process, so I going to repeat all of this tests for the already tested and extend them to the other VPS providers. I also have the intention of provide in this repository both the means to reproduce these tests and the tests results itself. Lastly I also have the intention to add another tests.
 
 Web Performance
 ---------------
@@ -309,16 +273,11 @@ Default Security
 
 Notes:
 
--   The DigitalOcean Wordpress app comes with ufw and fail2ban
+-   The DigitalOcean Wordpress app comes with ufw and fail2ban pre-installed. Also comes prepared to use Let's Encrypt SSL certificates. These are good security measures for less security versed people.
+-   It's a good security practice to not have installed builder tools and compilers in your server.
 
-pre-installed. Also comes prepared to use Let's Encrypt SSL certificates. These are good security measures for less security versed people.
+    **Warning**: Security in a VPS is your responsibility, nobody else. But taking a look to the default security applied in the default instances of a provider could give you a reference of the care that they take in this matter. And maybe it could give you also a good reference of how they care about their own systems security.
 
--   It's a good security practice to not have installed builder tools and
+    **Warning**: Lynis index should be take with caution, it's not an absolute value, only a reference. It not covers yet all the security measures of a machine and could be not well balanced to do a effective comparison.
 
-compilers in your server.
-
-**Warning**: Security in a VPS is your responsibility, nobody else. But taking a look to the default security applied in the default instances of a provider could give you a reference of the care that they take in this matter. And maybe it could give you also a good reference of how they care about their own systems security.
-
-**Warning**: Lynis index should be take with caution, it's not an absolute value, only a reference. It not covers yet all the security measures of a machine and could be not well balanced to do a effective comparison.
-
-**Warning**: These numbers are provisional ones, I'm automating this process, so I going to repeat all of this tests for the already tested and extend them to the other VPS providers. I also have the intention of provide in this repository both the means to reproduce these tests and the tests results itself. Lastly I also have the intention to add another tests.
+    **Warning**: These numbers are provisional ones, I'm automating this process, so I going to repeat all of this tests for the already tested and extend them to the other VPS providers. I also have the intention of provide in this repository both the means to reproduce these tests and the tests results itself. Lastly I also have the intention to add another tests.
