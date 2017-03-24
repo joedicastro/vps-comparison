@@ -205,7 +205,7 @@ Features
 |----------------------|----------------|--------------------|----------------------------------------|----------|----------------------------------------|----------------------------------------|-----------|
 | Name                 | VPS SSD 1      | Linode 1024        | 5bucks                                 |          | 20GB SSD                               | 25GB SSD                               |           |
 | Monthly Price        | 3,62€          | 5$                 | 5$                                     |          | 2,5$                                   | 5$                                     |           |
-| CPU / Threads        | 1/1            | 1/                 | 1/1                                    |          | 1/1                                    | 1/1                                    |           |
+| CPU / Threads        | 1/1            | 1/1                | 1/1                                    |          | 1/1                                    | 1/1                                    |           |
 | RAM                  | 2 GB           | 1 GB               | 512 MB                                 |          | 512 MB                                 | 1 GB                                   |           |
 | SSD Storage          | 10 GB          | 20 GB              | 20 GB                                  |          | 20 GB                                  | 25 GB                                  |           |
 | Traffic              | ∞              | 1 TB               | 1 TB                                   |          | 500 GB                                 | 1 TB                                   |           |
@@ -216,7 +216,7 @@ Features
 | Snapshots            | 2,99$          | Free (up to 3)     | 0,05$ per GB                           |          | Free (Beta)                            | Free (Beta)                            |           |
 | IPv6                 | Yes            | Yes                | Optional                               |          | Optional                               | Optional                               |           |
 | Additional public IP | 2$ (up to 16)  | Yes                | Floating IPs (0,006$ hour if inactive) |          | 2$ (up to 2) / 3$ floating IPs         | 2$ (up to 2) / 3$ floating IPs         |           |
-| Private Network      | No             | Yes                | Optional                               |          | Optional                               | Optional                               |           |
+| Private Network      | No             | Optional           | Optional                               |          | Optional                               | Optional                               |           |
 | Group firewall       | No             | No                 | No                                     |          | Yes                                    | Yes                                    |           |
 | Block Storage        | From 5€ - 50GB | No                 | From 10$ - 100GB                       |          | From 1$ - 10GB                         | From 1$ - 10GB                         |           |
 | Monitoring           | Yes (SLA)      | Yes (metrics, SLA) | Beta (metrics, performance, SLA)       |          | No                                     | No                                     |           |
