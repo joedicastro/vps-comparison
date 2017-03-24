@@ -7,7 +7,7 @@ A comparison between some VPS providers that have data centers located in **Euro
 
 Initially I'm comparing only entry plans, below **5$** monthly.
 
-What I trying to show here it's basically a lot of things that I would want to know before sign up with any of them. If I save you a few hours researching, like I spend, I'll be glad!
+What I trying to show you here it's basically a lot of things that I would want to know before sign up with any of them. If I save you a few hours researching them, like I spent, I'll be glad!
 
 VPS Providers
 =============
