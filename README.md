@@ -96,8 +96,8 @@ Features
 | Change Linux Kernel                | No                | Yes                   | CentOS                                       |          | No                                   | No        |
 | Recovery mode                      | No                | Yes                   | Yes                                          |          | Boot with custom ISO                 |           |
 | Tag instances                      | No                | Yes                   | Yes                                          |          | Yes                                  |           |
-| Android App                        | No                | Yes                   | No                                           | No       | Yes                                  | No        |
-| iOS App                            |                   |                       |                                              |          |                                      |           |
+| Android App                        | Only in France    | Yes                   | Unofficial                                   | No       | Yes                                  | For AWS   |
+| iOS App                            | Yes               | Yes                   | Unofficial                                   | No       | Unofficial                           | For AWS   |
 
 Notes:
 
@@ -166,7 +166,7 @@ Notes:
 
 Notes:
 
--   Linode lets you install virtually any SO in your instance in the old-school way, almost as if you deal with the bare metal. Even the instance does not boot itself at the end, you have to boot it yourself from the control panel.
+-   Linode lets you install virtually any SO in your instance in the old-school way, almost as if you'd have to deal with the bare metal. Even the instance does not boot itself at the end, you have to boot it yourself from the control panel.
 -   The Vultr's ISO image library include several ISOs like Alpine, Arch, Finnix, FreePBX, pfSense, Rancher Os, SystemRescueCD, and Trinity Rescue Kit.
 -   The Vultr's "Custom ISO image" feature allows you to install virtually any SO supported by KVM and the server architecture.
 -   Linode does not preload your ssh keys into the instance automatically, but it's trivial to do it manually anyway (ssh-copy-id).
