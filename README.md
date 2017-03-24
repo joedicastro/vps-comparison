@@ -7,6 +7,8 @@ A comparison between some VPS providers that have data centers located in **Euro
 
 Initially I'm comparing only entry plans, below **5$** monthly.
 
+What I trying to show here it's basically a lot of things that I would want to know before sign up with any of them. If I save you a few hours researching, like I spend, I'll be glad!
+
 VPS Providers
 =============
 
@@ -163,14 +165,14 @@ Notes:
 Security
 --------
 
-|                             | OVH | Linode | DigitalOcean | Scaleway | Vultr | Lightsail |
-|-----------------------------|-----|--------|--------------|----------|-------|-----------|
-| 2FA                         | Yes |        | Yes          |          | Yes   |           |
-| Restrict access IPs         | Yes |        | No           |          | No    |           |
-| Account Login Logs          | No  |        | Yes          |          | No    |           |
-| SSL Quality                 |     |        |              |          |       |           |
-| Send root password by email | Yes |        | No           |          | No    |           |
-| Account password recovery   |     |        |              | Link     |       |           |
+|                             | OVH                                                              | Linode                                                                                          | DigitalOcean                                                                                             | Scaleway                                                               | Vultr                                                                                   | Lightsail                                                                            |
+|-----------------------------|------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+| 2FA                         | Yes                                                              |                                                                                                 | Yes                                                                                                      |                                                                        | Yes                                                                                     |                                                                                      |
+| Restrict access IPs         | Yes                                                              |                                                                                                 | No                                                                                                       |                                                                        | No                                                                                      |                                                                                      |
+| Account Login Logs          | No                                                               |                                                                                                 | Yes                                                                                                      |                                                                        | No                                                                                      |                                                                                      |
+| SSL Quality                 | [A-](https://www.ssllabs.com/ssltest/analyze.html?d=www.ovh.com) | [A+](https://www.ssllabs.com/ssltest/analyze.html?d=manager.linode.com&s=69.164.200.204&latest) | [A+](https://www.ssllabs.com/ssltest/analyze.html?d=cloud.digitalocean.com&s=104.16.25.4&hideResults=on) | [A](https://www.ssllabs.com/ssltest/analyze.html?d=cloud.scaleway.com) | [A](https://www.ssllabs.com/ssltest/analyze.html?d=my.vultr.com&s=104.20.22.240&latest) | [A+](https://www.ssllabs.com/ssltest/analyze.html?d=us-east-1.signin.aws.amazon.com) |
+| Send root password by email | Yes                                                              |                                                                                                 | No                                                                                                       |                                                                        | No                                                                                      |                                                                                      |
+| Account password recovery   |                                                                  |                                                                                                 |                                                                                                          | Link                                                                   |                                                                                         |                                                                                      |
 
 Notes:
 
