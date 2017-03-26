@@ -3,7 +3,7 @@
 VPS Comparison
 ==============
 
-A comparison between some VPS providers that have data centers located in **Europe**. Amazon LightSail is kept only as a reference, because right now is not available in Europe, but it would probably be in a near future.
+A comparison between some VPS providers that have data centers located in **Europe**.
 
 Initially I'm comparing only entry plans, below **5$** monthly.
 
@@ -15,31 +15,30 @@ VPS Providers
 Company
 -------
 
-|              | OVH                           | Linode                            | DigitalOcean                                 | Scaleway                              | Vultr                           | Amazon Lightsail                                 |
-|--------------|-------------------------------|-----------------------------------|----------------------------------------------|---------------------------------------|---------------------------------|--------------------------------------------------|
-| Foundation   | 1999                          | 2003                              | 2011                                         | 2013                                  | 2014                            | 2016                                             |
-| Headquarters | Roubaix (FR)                  | Galloway, NJ (US)                 | New York (US)                                | Paris (FR)                            | Matawan, NJ (US)                | Seattle, WA (US)                                 |
-| Market       | 3° largest                    |                                   | 2° largest                                   |                                       |                                 | 1° largest                                       |
-| Website      | [OVH](https://www.ovh.com/us) | [Linode](https://www.linode.com/) | [DigitalOcean](https://www.digitalocean.com) | [Scaleway](https://www.scaleway.com/) | [Vultr](https://www.vultr.com/) | [Amazon Lightsail](https://amazonlightsail.com/) |
+|              | OVH                           | Linode                            | DigitalOcean                                 | Scaleway                              | Vultr                           |
+|--------------|-------------------------------|-----------------------------------|----------------------------------------------|---------------------------------------|---------------------------------|
+| Foundation   | 1999                          | 2003                              | 2011                                         | 2013                                  | 2014                            |
+| Headquarters | Roubaix (FR)                  | Galloway, NJ (US)                 | New York (US)                                | Paris (FR)                            | Matawan, NJ (US)                |
+| Market       | 3° largest                    |                                   | 2° largest                                   |                                       |                                 |
+| Website      | [OVH](https://www.ovh.com/us) | [Linode](https://www.linode.com/) | [DigitalOcean](https://www.digitalocean.com) | [Scaleway](https://www.scaleway.com/) | [Vultr](https://www.vultr.com/) |
 
 Notes:
 
 -   The companies are sorted by the year of foundation.
 -   Scaleway is a cloud division of Online.net (1999), itself subsidiary of the Iliad group (1990) owner also of the famous French ISP Free.
 -   Vultr Holdings LLC is owned by Choopa LLC founded in 2010.
--   Amazon LightSail is a service of Amazon Web Services (2006) a subsidiary of Amazon.com (1994).
 -   The Market numbers are extracted from the Wikipedia an other sources
 
 Billing
 -------
 
-|                    | OVH | Linode | DigitalOcean | Scaleway | Vultr | Lightsail |
-|--------------------|-----|--------|--------------|----------|-------|-----------|
-| Credit Card        | Yes | Yes    | Yes          | Yes      | Yes   | Yes       |
-| PayPal             | Yes | Yes    | Yes          | No       | Yes   | No        |
-| Bitcoin            | No  | No     | No           | No       | Yes   | No        |
-| Affiliate/Referral | No  | Yes    | Yes          | No       | Yes   | No        |
-| Coupon Codes       | No  | Yes    | Yes          | Yes      | Yes   | Yes       |
+|                    | OVH | Linode | DigitalOcean | Scaleway | Vultr |
+|--------------------|-----|--------|--------------|----------|-------|
+| Credit Card        | Yes | Yes    | Yes          | Yes      | Yes   |
+| PayPal             | Yes | Yes    | Yes          | No       | Yes   |
+| Bitcoin            | No  | No     | No           | No       | Yes   |
+| Affiliate/Referral | No  | Yes    | Yes          | No       | Yes   |
+| Coupon Codes       | No  | Yes    | Yes          | Yes      | Yes   |
 
 Note:
 
@@ -48,17 +47,17 @@ Note:
 General Features
 ----------------
 
-|                            | OVH                                                | Linode                                 | DigitalOcean                                                   | Scaleway                                                                                       | Vultr                                   | Lightsail                                                                               |
-|----------------------------|----------------------------------------------------|----------------------------------------|----------------------------------------------------------------|------------------------------------------------------------------------------------------------|-----------------------------------------|-----------------------------------------------------------------------------------------|
-| European data centers      | 3                                                  | 2                                      | 3                                                              | 2                                                                                              | 4                                       | 0                                                                                       |
-| Documentation              | [Docs](https://www.ovh.co.uk/community/knowledge/) | [Docs](https://www.linode.com/docs/)   | [Docs](https://www.digitalocean.com/community)                 | [Docs](https://www.scaleway.com/docs/)                                                         | [Docs](https://www.vultr.com/docs/)     | [Docs](https://amazonlightsail.com/docs/)                                               |
-| Doc. subjetive valuation   | 6/10                                               | 9/10                                   | 9/10                                                           | 6/10                                                                                           | 8/10                                    | 8/10                                                                                    |
-| Uptime guaranteed (SLA)    | 99,95%                                             | 99,9%                                  | 99,99%                                                         | 99,9%                                                                                          | 100%                                    | 99,95%                                                                                  |
-| Outage refund/credit (SLA) | Yes                                                | Yes                                    | Yes                                                            | No                                                                                             | Yes                                     | Yes                                                                                     |
-| API                        | Yes                                                | Yes                                    | Yes                                                            | Yes                                                                                            | Yes                                     | Yes                                                                                     |
-| API Docs                   | [API Docs](https://api.ovh.com/)                   | [API Docs](https://www.linode.com/api) | [API Docs](https://developers.digitalocean.com/documentation/) | [API Docs](https://developer.scaleway.com/)                                                    | [API Docs](https://www.vultr.com/api/)  | [API Docs](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/Welcome.html) |
-| Services status page       | [Status](http://status.ovh.com/)                   | [Status](https://status.linode.com/)   | [Status](https://status.digitalocean.com/)                     | [Status](https://status.online.net/tasklist/?project=11&status=&perpage=50&order=id&sort=desc) | [Status](https://www.vultr.com/status/) | [AWS Status](https://status.aws.amazon.com/)                                            |
-| Support Quality            |                                                    |                                        |                                                                |                                                                                                |                                         |                                                                                         |
+|                            | OVH                                                | Linode                                 | DigitalOcean                                                   | Scaleway                                                                                       | Vultr                                   |
+|----------------------------|----------------------------------------------------|----------------------------------------|----------------------------------------------------------------|------------------------------------------------------------------------------------------------|-----------------------------------------|
+| European data centers      | 3                                                  | 2                                      | 3                                                              | 2                                                                                              | 4                                       |
+| Documentation              | [Docs](https://www.ovh.co.uk/community/knowledge/) | [Docs](https://www.linode.com/docs/)   | [Docs](https://www.digitalocean.com/community)                 | [Docs](https://www.scaleway.com/docs/)                                                         | [Docs](https://www.vultr.com/docs/)     |
+| Doc. subjetive valuation   | 6/10                                               | 9/10                                   | 9/10                                                           | 6/10                                                                                           | 8/10                                    |
+| Uptime guaranteed (SLA)    | 99,95%                                             | 99,9%                                  | 99,99%                                                         | 99,9%                                                                                          | 100%                                    |
+| Outage refund/credit (SLA) | Yes                                                | Yes                                    | Yes                                                            | No                                                                                             | Yes                                     |
+| API                        | Yes                                                | Yes                                    | Yes                                                            | Yes                                                                                            | Yes                                     |
+| API Docs                   | [API Docs](https://api.ovh.com/)                   | [API Docs](https://www.linode.com/api) | [API Docs](https://developers.digitalocean.com/documentation/) | [API Docs](https://developer.scaleway.com/)                                                    | [API Docs](https://www.vultr.com/api/)  |
+| Services status page       | [Status](http://status.ovh.com/)                   | [Status](https://status.linode.com/)   | [Status](https://status.digitalocean.com/)                     | [Status](https://status.online.net/tasklist/?project=11&status=&perpage=50&order=id&sort=desc) | [Status](https://www.vultr.com/status/) |
+| Support Quality            |                                                    |                                        |                                                                |                                                                                                |                                         |
 
 Note:
 
@@ -73,7 +72,6 @@ Note:
 -   **DigitalOcean**: Amsterdam (NL), Frankfurt (DE), London (GB)
 -   **Scaleway**: Amsterdam (NL), Paris (FR)
 -   **Vultr**: Amsterdam (NL), Frankfurt (DE), London (GB), Paris (FR)
--   **Lightsail**: AWS has data centers in Dublin (IE), Frankfurt (DE), London (GB) and soon Paris (FR), but LightSail is only available in Virgina (US) for now.
 
 Control Panel
 =============
@@ -81,23 +79,23 @@ Control Panel
 Features
 --------
 
-|                                    | OVH               | Linode                | DigitalOcean                                 | Scaleway | Vultr                                | Lightsail            |
-|------------------------------------|-------------------|-----------------------|----------------------------------------------|----------|--------------------------------------|----------------------|
-| Subjective control panel valuation | 5/10              | 6/10                  | 8/10                                         | 5/10     | 9/10                                 | 6/10                 |
-| Graphs                             | Traffic, CPU, RAM | CPU, Traffic, Disk IO | CPU, RAM, Disk IO, Disk usage, Bandwith, Top | No       | Monthly Bandwith, CPU, Disk, Network | CPU, Network, Status |
-| Subjective graphs valuation        | 5/10              | 8/10                  | 9/10                                         | 0/10     | 8/10                                 | 7/10                 |
-| Monthly usage per instance         | No                | Yes                   | No                                           | No       | Bandwith, Credits                    | Cost (in AWS)        |
-| KVM Console                        | Yes               | Yes (Glish)           | Yes (VNC)                                    | Yes      | Yes                                  | Yes                  |
-| Power management                   | Yes               | Yes                   | Yes                                          | Yes      | Yes                                  | Yes                  |
-| Reset root password                | Yes               | Yes                   | Yes                                          | No       | No                                   | No                   |
-| Reinstall instance                 | Yes               | Yes                   | Yes                                          | No       | Yes                                  | No                   |
-| Median reinstall time              | ~12,5 min         | ~50 s                 | ~35 s                                        | N/A      | ~2,1 min                             | N/A                  |
-| Upgrade instance                   | Yes               | Yes                   | Yes                                          | No       | Yes                                  | No                   |
-| Change Linux Kernel                | No                | Yes                   | CentOS                                       | Yes      | No                                   | No                   |
-| Recovery mode                      | No                | Yes                   | Yes                                          | Yes      | Boot with custom ISO                 | No                   |
-| Tag instances                      | No                | Yes                   | Yes                                          | Yes      | Yes                                  | No                   |
-| Android App                        | Only in France    | Yes                   | Unofficial                                   | No       | Yes                                  | For AWS              |
-| iOS App                            | Yes               | Yes                   | Unofficial                                   | No       | Unofficial                           | For AWS              |
+|                                    | OVH               | Linode                | DigitalOcean                                 | Scaleway | Vultr                                |
+|------------------------------------|-------------------|-----------------------|----------------------------------------------|----------|--------------------------------------|
+| Subjective control panel valuation | 5/10              | 6/10                  | 8/10                                         | 5/10     | 9/10                                 |
+| Graphs                             | Traffic, CPU, RAM | CPU, Traffic, Disk IO | CPU, RAM, Disk IO, Disk usage, Bandwith, Top | No       | Monthly Bandwith, CPU, Disk, Network |
+| Subjective graphs valuation        | 5/10              | 8/10                  | 9/10                                         | 0/10     | 8/10                                 |
+| Monthly usage per instance         | No                | Yes                   | No                                           | No       | Bandwith, Credits                    |
+| KVM Console                        | Yes               | Yes (Glish)           | Yes (VNC)                                    | Yes      | Yes                                  |
+| Power management                   | Yes               | Yes                   | Yes                                          | Yes      | Yes                                  |
+| Reset root password                | Yes               | Yes                   | Yes                                          | No       | No                                   |
+| Reinstall instance                 | Yes               | Yes                   | Yes                                          | No       | Yes                                  |
+| Median reinstall time              | ~12,5 min         | ~50 s                 | ~35 s                                        | N/A      | ~2,1 min                             |
+| Upgrade instance                   | Yes               | Yes                   | Yes                                          | No       | Yes                                  |
+| Change Linux Kernel                | No                | Yes                   | CentOS                                       | Yes      | No                                   |
+| Recovery mode                      | No                | Yes                   | Yes                                          | Yes      | Boot with custom ISO                 |
+| Tag instances                      | No                | Yes                   | Yes                                          | Yes      | Yes                                  |
+| Android App                        | Only in France    | Yes                   | Unofficial                                   | No       | Yes                                  |
+| iOS App                            | Yes               | Yes                   | Unofficial                                   | No       | Unofficial                           |
 
 Notes:
 
@@ -112,42 +110,39 @@ Notes:
 -   Linode has an additional console (Lish) that allows you to control your instance even when is inaccessible by ssh and perform rescue or management tasks.
 -   In Scaleway you have to set a root password first to get access to the KVM console.
 -   The Scaleway's control panel in the basic account/SLA level is very limited and counter-intuitive, I don't know if this improves with superior levels.
--   In Lightsail you do not use the root user, use sudo instead.
--   The Lightsail's control panel is very simple and for some things you have to use the AWS one instead. They try to do it very simple and friendly, but as with the documentation, the features and the costs is very hard sometimes to find what you want.
 
 Instance creation
 -----------------
 
 ### Operating Systems
 
-|          | OVH                                | Linode                                                            | DigitalOcean                   | Scaleway                               | Vultr                          | Lightsail            |
-|----------|------------------------------------|-------------------------------------------------------------------|--------------------------------|----------------------------------------|--------------------------------|----------------------|
-| Linux    | Arch Linux, CentOS, Debian, Ubuntu | Arch, CentOS, Debian, Fedora, Gentoo, OpenSUSE, Slackware, Ubuntu | CentOS, Debian, Fedora, Ubuntu | Alpine, CentOS, Debian, Gentoo, Ubuntu | CentOS, Debian, Fedora, Ubuntu | Amazon Linux, Ubuntu |
-| BSD      | No                                 | No                                                                | FreeBSD                        | No                                     | FreeBSD, OpenBSD               | No                   |
-| Windows  | No                                 | No                                                                | No                             | No                                     | Windows 2012 R2 (16$)          | No                   |
-| Other SO | No                                 | No                                                                | CoreOS                         | No                                     | CoreOS                         | No                   |
+|          | OVH                                | Linode                                                            | DigitalOcean                   | Scaleway                               | Vultr                          |
+|----------|------------------------------------|-------------------------------------------------------------------|--------------------------------|----------------------------------------|--------------------------------|
+| Linux    | Arch Linux, CentOS, Debian, Ubuntu | Arch, CentOS, Debian, Fedora, Gentoo, OpenSUSE, Slackware, Ubuntu | CentOS, Debian, Fedora, Ubuntu | Alpine, CentOS, Debian, Gentoo, Ubuntu | CentOS, Debian, Fedora, Ubuntu |
+| BSD      | No                                 | No                                                                | FreeBSD                        | No                                     | FreeBSD, OpenBSD               |
+| Windows  | No                                 | No                                                                | No                             | No                                     | Windows 2012 R2 (16$)          |
+| Other SO | No                                 | No                                                                | CoreOS                         | No                                     | CoreOS                         |
 
 Note:
 
 -   OVH also offers Linux desktop distributions like Kubuntu and OVH Release 3.
--   Amazon Linux is a distribution based on Red Hat.
 
 ### One-click Apps
 
-|                | OVH           | Linode | DigitalOcean          | Scaleway       | Vultr                | Lightsail  |
-|----------------|---------------|--------|-----------------------|----------------|----------------------|------------|
-| Docker         | Yes           | No     | Yes                   | Yes            | Yes                  | No         |
-| Stacks         | LAMP          | No     | LAMP, LEMP, ELK, MEAN | LEMP, ELK      | LAMP, LEMP           | LAMP, MEAN |
-| Drupal         | Yes           | No     | Yes                   | Yes            | Yes                  | Yes        |
-| WordPress      | Yes           | No     | Yes                   | No             | Yes                  | Yes        |
-| Joomla         | Yes           | No     | No                    | No             | Yes                  | Yes        |
-| Django         | No            | No     | Yes                   | No             | No                   | No         |
-| RoR            | No            | No     | Yes                   | No             | No                   | No         |
-| GitLab         | No            | No     | Yes                   | Yes            | Yes                  | Yes        |
-| Node.js        | No            | No     | Yes                   | Yes            | No                   | Yes        |
-| E-Commerce     | PrestaShop    | No     | Magento               | PrestaShop     | Magento, PrestaShop  | Magento    |
-| Personal cloud | Coyz          | No     | NextCloud, ownCloud   | OwnCloud, Cozy | NextCloud, ownCloud  | No         |
-| Panels         | Plesk, cPanel | No     | No                    | Webmin         | cPanel (15$), Webmin | No         |
+|                | OVH           | Linode | DigitalOcean          | Scaleway       | Vultr                |
+|----------------|---------------|--------|-----------------------|----------------|----------------------|
+| Docker         | Yes           | No     | Yes                   | Yes            | Yes                  |
+| Stacks         | LAMP          | No     | LAMP, LEMP, ELK, MEAN | LEMP, ELK      | LAMP, LEMP           |
+| Drupal         | Yes           | No     | Yes                   | Yes            | Yes                  |
+| WordPress      | Yes           | No     | Yes                   | No             | Yes                  |
+| Joomla         | Yes           | No     | No                    | No             | Yes                  |
+| Django         | No            | No     | Yes                   | No             | No                   |
+| RoR            | No            | No     | Yes                   | No             | No                   |
+| GitLab         | No            | No     | Yes                   | Yes            | Yes                  |
+| Node.js        | No            | No     | Yes                   | Yes            | No                   |
+| E-Commerce     | PrestaShop    | No     | Magento               | PrestaShop     | Magento, PrestaShop  |
+| Personal cloud | Coyz          | No     | NextCloud, ownCloud   | OwnCloud, Cozy | NextCloud, ownCloud  |
+| Panels         | Plesk, cPanel | No     | No                    | Webmin         | cPanel (15$), Webmin |
 
 Notes:
 
@@ -162,13 +157,13 @@ Notes:
 
 ### Other features
 
-|                            | OVH     | Linode       | DigitalOcean | Scaleway | Vultr | Lightsail |
-|----------------------------|---------|--------------|--------------|----------|-------|-----------|
-| ISO images library         | No      | No           | No           | No       | Yes   | No        |
-| Custom ISO image           | No      | Yes          | No           | Yes      | Yes   | No        |
-| Install scripts            | No      | StackScripts | Cloud-init   | No       | iPXE  | Yes       |
-| Preloaded SSH keys         | Yes     | No           | Yes          | Yes      | Yes   | Yes       |
-| Distro install in instance | Partial | Partial      | Yes          | Yes      | Yes   | No        |
+|                            | OVH     | Linode       | DigitalOcean | Scaleway | Vultr |
+|----------------------------|---------|--------------|--------------|----------|-------|
+| ISO images library         | No      | No           | No           | No       | Yes   |
+| Custom ISO image           | No      | Yes          | No           | Yes      | Yes   |
+| Install scripts            | No      | StackScripts | Cloud-init   | No       | iPXE  |
+| Preloaded SSH keys         | Yes     | No           | Yes          | Yes      | Yes   |
+| Distro install in instance | Partial | Partial      | Yes          | Yes      | Yes   |
 
 Notes:
 
@@ -183,14 +178,14 @@ Notes:
 Security
 --------
 
-|                             | OVH                                                              | Linode                                                                                          | DigitalOcean                                                                                             | Scaleway                                                               | Vultr                                                                                   | Lightsail                                                                            |
-|-----------------------------|------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
-| 2FA                         | Yes                                                              | Yes                                                                                             | Yes                                                                                                      | No                                                                     | Yes                                                                                     | Yes                                                                                  |
-| Restrict access IPs         | Yes                                                              | Yes                                                                                             | No                                                                                                       | No                                                                     | No                                                                                      | No                                                                                   |
-| Account Login Logs          | No                                                               | Partial                                                                                         | Yes                                                                                                      | No                                                                     | No                                                                                      | No                                                                                   |
-| SSL Quality                 | [A-](https://www.ssllabs.com/ssltest/analyze.html?d=www.ovh.com) | [A+](https://www.ssllabs.com/ssltest/analyze.html?d=manager.linode.com&s=69.164.200.204&latest) | [A+](https://www.ssllabs.com/ssltest/analyze.html?d=cloud.digitalocean.com&s=104.16.25.4&hideResults=on) | [A](https://www.ssllabs.com/ssltest/analyze.html?d=cloud.scaleway.com) | [A](https://www.ssllabs.com/ssltest/analyze.html?d=my.vultr.com&s=104.20.22.240&latest) | [A+](https://www.ssllabs.com/ssltest/analyze.html?d=us-east-1.signin.aws.amazon.com) |
-| Send root password by email | Yes                                                              | No                                                                                              | No                                                                                                       | No                                                                     | No                                                                                      | No                                                                                   |
-| Account password recovery   | Link                                                             | Link                                                                                            | Link                                                                                                     | Link                                                                   | Link                                                                                    | Link                                                                                 |
+|                             | OVH                                                              | Linode                                                                                          | DigitalOcean                                                                                             | Scaleway                                                               | Vultr                                                                                   |
+|-----------------------------|------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
+| 2FA                         | Yes                                                              | Yes                                                                                             | Yes                                                                                                      | No                                                                     | Yes                                                                                     |
+| Restrict access IPs         | Yes                                                              | Yes                                                                                             | No                                                                                                       | No                                                                     | No                                                                                      |
+| Account Login Logs          | No                                                               | Partial                                                                                         | Yes                                                                                                      | No                                                                     | No                                                                                      |
+| SSL Quality                 | [A-](https://www.ssllabs.com/ssltest/analyze.html?d=www.ovh.com) | [A+](https://www.ssllabs.com/ssltest/analyze.html?d=manager.linode.com&s=69.164.200.204&latest) | [A+](https://www.ssllabs.com/ssltest/analyze.html?d=cloud.digitalocean.com&s=104.16.25.4&hideResults=on) | [A](https://www.ssllabs.com/ssltest/analyze.html?d=cloud.scaleway.com) | [A](https://www.ssllabs.com/ssltest/analyze.html?d=my.vultr.com&s=104.20.22.240&latest) |
+| Send root password by email | Yes                                                              | No                                                                                              | No                                                                                                       | No                                                                     | No                                                                                      |
+| Account password recovery   | Link                                                             | Link                                                                                            | Link                                                                                                     | Link                                                                   | Link                                                                                    |
 
 Notes:
 
@@ -208,29 +203,29 @@ Plans (≤5$)
 Features
 --------
 
-|                      | OVH            | Linode             | DigitalOcean                           | Scaleway         | Vultr                                  | Vultr                                  | Lightsail                         |
-|----------------------|----------------|--------------------|----------------------------------------|------------------|----------------------------------------|----------------------------------------|-----------------------------------|
-| Name                 | VPS SSD 1      | Linode 1024        | 5bucks                                 | VC1S             | 20GB SSD                               | 25GB SSD                               |                                   |
-| Monthly Price        | 3,62€          | 5$                 | 5$                                     | 2,99€            | 2,5$                                   | 5$                                     | 5$                                |
-| CPU / Threads        | 1/1            | 1/1                | 1/1                                    | 1/2              | 1/1                                    | 1/1                                    | 1/1                               |
-| RAM                  | 2 GB           | 1 GB               | 512 MB                                 | 2 GB             | 512 MB                                 | 1 GB                                   | 512 MB                            |
-| SSD Storage          | 10 GB          | 20 GB              | 20 GB                                  | 50 GB            | 20 GB                                  | 25 GB                                  | 20 GB                             |
-| Traffic              | ∞              | 1 TB               | 1 TB                                   | ∞                | 500 GB                                 | 1 TB                                   | 1 TB                              |
-| Bandwidth (In / Out) | 100/100 Mbps   | 40/1 Gbps          | 1/10 Gbps                              | 200/200 Mbps     | 1/10 Gbps                              | 1/10 Gbps                              |                                   |
-| Virtualization       | KVM            | KVM                | KVM                                    | KVM              | KVM                                    | KVM                                    | Xen                               |
-| Anti-DDoS Protection | Yes            | No                 | No                                     | No               | 10$                                    | 10$                                    | No                                |
-| Backups              | No             | 2$                 | 1$                                     | No               | 0,5 $                                  | 1$                                     | No                                |
-| Snapshots            | 2,99$          | Free (up to 3)     | 0,05$ per GB                           | 0,02 € per GB    | Free (Beta)                            | Free (Beta)                            | 0,05 $ per GB                     |
-| IPv6                 | Yes            | Yes                | Optional                               | Optional         | Optional                               | Optional                               | No                                |
-| Additional public IP | 2$ (up to 16)  | Yes                | Floating IPs (0,006$ hour if inactive) | 0,9€ (up to 10)  | 2$ (up to 2) / 3$ floating IPs         | 2$ (up to 2) / 3$ floating IPs         | 5 floating ips (free if attached) |
-| Private Network      | No             | Optional           | Optional                               | No (dynamic IPs) | Optional                               | Optional                               | Yes                               |
-| Group firewall       | No             | No                 | No                                     | Yes              | Yes                                    | Yes                                    | Per instance                      |
-| Block Storage        | From 5€ - 50GB | No                 | From 10$ - 100GB                       | From 1€ - 50GB   | From 1$ - 10GB                         | From 1$ - 10GB                         | No                                |
-| Object Storage       |                |                    |                                        |                  |                                        |                                        | S3                                |
-| Monitoring           | Yes (SLA)      | Yes (metrics, SLA) | Beta (metrics, performance, SLA)       | No               | No                                     | No                                     | YES (SLA)                         |
-| Load Balancer        | 13$            | 20$                | 20$                                    | No               | High availability (floating IPs & BGP) | High availability (floating IPs & BGP) | No                                |
-| DNS Zone             | Yes            | Yes                | Yes                                    | No               | Yes                                    | Yes                                    | Yes                               |
-| Reverse DNS          | Yes            | Yes                | Yes                                    | Yes              | Yes                                    | Yes                                    | No                                |
+|                      | OVH            | Linode             | DigitalOcean                           | Scaleway         | Vultr                                  | Vultr                                  |
+|----------------------|----------------|--------------------|----------------------------------------|------------------|----------------------------------------|----------------------------------------|
+| Name                 | VPS SSD 1      | Linode 1024        | 5bucks                                 | VC1S             | 20GB SSD                               | 25GB SSD                               |
+| Monthly Price        | 3,62€          | 5$                 | 5$                                     | 2,99€            | 2,5$                                   | 5$                                     |
+| CPU / Threads        | 1/1            | 1/1                | 1/1                                    | 1/2              | 1/1                                    | 1/1                                    |
+| RAM                  | 2 GB           | 1 GB               | 512 MB                                 | 2 GB             | 512 MB                                 | 1 GB                                   |
+| SSD Storage          | 10 GB          | 20 GB              | 20 GB                                  | 50 GB            | 20 GB                                  | 25 GB                                  |
+| Traffic              | ∞              | 1 TB               | 1 TB                                   | ∞                | 500 GB                                 | 1 TB                                   |
+| Bandwidth (In / Out) | 100/100 Mbps   | 40/1 Gbps          | 1/10 Gbps                              | 200/200 Mbps     | 1/10 Gbps                              | 1/10 Gbps                              |
+| Virtualization       | KVM            | KVM                | KVM                                    | KVM              | KVM                                    | KVM                                    |
+| Anti-DDoS Protection | Yes            | No                 | No                                     | No               | 10$                                    | 10$                                    |
+| Backups              | No             | 2$                 | 1$                                     | No               | 0,5 $                                  | 1$                                     |
+| Snapshots            | 2,99$          | Free (up to 3)     | 0,05$ per GB                           | 0,02 € per GB    | Free (Beta)                            | Free (Beta)                            |
+| IPv6                 | Yes            | Yes                | Optional                               | Optional         | Optional                               | Optional                               |
+| Additional public IP | 2$ (up to 16)  | Yes                | Floating IPs (0,006$ hour if inactive) | 0,9€ (up to 10)  | 2$ (up to 2) / 3$ floating IPs         | 2$ (up to 2) / 3$ floating IPs         |
+| Private Network      | No             | Optional           | Optional                               | No (dynamic IPs) | Optional                               | Optional                               |
+| Group firewall       | No             | No                 | No                                     | Yes              | Yes                                    | Yes                                    |
+| Block Storage        | From 5€ - 50GB | No                 | From 10$ - 100GB                       | From 1€ - 50GB   | From 1$ - 10GB                         | From 1$ - 10GB                         |
+| Object Storage       |                |                    |                                        |                  |                                        |                                        |
+| Monitoring           | Yes (SLA)      | Yes (metrics, SLA) | Beta (metrics, performance, SLA)       | No               | No                                     | No                                     |
+| Load Balancer        | 13$            | 20$                | 20$                                    | No               | High availability (floating IPs & BGP) | High availability (floating IPs & BGP) |
+| DNS Zone             | Yes            | Yes                | Yes                                    | No               | Yes                                    | Yes                                    |
+| Reverse DNS          | Yes            | Yes                | Yes                                    | Yes              | Yes                                    | Yes                                    |
 
 Note:
 
@@ -247,20 +242,20 @@ Note:
 System Performance
 ------------------
 
-|                     | OVH             | Linode      | DigitalOcean | Scaleway      | Vultr       | Vultr       | Lightsail  |
-|---------------------|-----------------|-------------|--------------|---------------|-------------|-------------|------------|
-| Name                | VPS SSD 1       | Linode 1024 | 5bucks       | VC1S          | 20GB SSD    | 25GB SSD    |            |
-| Location            | Gravelines (FR) | London (GB) | London (GB)  | Paris (FR)    | London (GB) | London (GB) |            |
-| Instance            | Debian 8        | Debian 8    | Debian 8     | Debian 8      | Debian 8    | Debian 8    |            |
-| UnixBench           | 1749,1          | 1358,6      | 1450,6       | 692,6/1199,9  | 1613        | 1731,2      | 1955,3     |
-| Sysbench            | 27,727 s        | 34,707 s    | 36,886 s     | 46,05/23,03 s | 66,436 s    | 29,775 s    | 29,83 s    |
-| Video Transcode     | 7 FPS           | 4 FPS       | 4 FPS        | 4 FPS         | 2 FPS       | 5 / 6 FPS   | Fail       |
-| Write IO            | 4 MB/s          | 29,70 MB/s  | 42,91 MB/s   | 54,97 MB/s    | 83,62 MB/s  | 175,93 MB/s | 12,16 MB/s |
-| Read IO             | 4 MB/s          | 112,69 MB/s | 306,71 MB/s  | 198,02 MB/s   | 162,55 MB/s | 252,32 MB/s | 12,29 MB/s |
-| Write IOPS          | 1000            | 7426        | 10728        | 13743         | 20904       | 43982       | 3039       |
-| Read IOPS           | 1000            | 28172       | 76768        | 49505         | 40538       | 63079       | 3072       |
-| Download 100MB file | 12 MB/s         | 199 MB/s    | 103 MB/s     | 75,9 MB/s     | 177 MB/s    | 375 MB/s    | 58 MB/s    |
-| Download 10GB file  | 12 MB/s         | 98,1 MB/s   | 83,6 MB/s    | 63,6 MB/s     | 108 MB/s    | 203 MB/s    | 10,6 MB/s  |
+|                     | OVH             | Linode      | DigitalOcean | Scaleway      | Vultr       | Vultr       |
+|---------------------|-----------------|-------------|--------------|---------------|-------------|-------------|
+| Name                | VPS SSD 1       | Linode 1024 | 5bucks       | VC1S          | 20GB SSD    | 25GB SSD    |
+| Location            | Gravelines (FR) | London (GB) | London (GB)  | Paris (FR)    | London (GB) | London (GB) |
+| Instance            | Debian 8        | Debian 8    | Debian 8     | Debian 8      | Debian 8    | Debian 8    |
+| UnixBench           | 1749,1          | 1358,6      | 1450,6       | 692,6/1199,9  | 1613        | 1731,2      |
+| Sysbench            | 27,727 s        | 34,707 s    | 36,886 s     | 46,05/23,03 s | 66,436 s    | 29,775 s    |
+| Video Transcode     | 7 FPS           | 4 FPS       | 4 FPS        | 4 FPS         | 2 FPS       | 5 / 6 FPS   |
+| Write IO            | 4 MB/s          | 29,70 MB/s  | 42,91 MB/s   | 54,97 MB/s    | 83,62 MB/s  | 175,93 MB/s |
+| Read IO             | 4 MB/s          | 112,69 MB/s | 306,71 MB/s  | 198,02 MB/s   | 162,55 MB/s | 252,32 MB/s |
+| Write IOPS          | 1000            | 7426        | 10728        | 13743         | 20904       | 43982       |
+| Read IOPS           | 1000            | 28172       | 76768        | 49505         | 40538       | 63079       |
+| Download 100MB file | 12 MB/s         | 199 MB/s    | 103 MB/s     | 75,9 MB/s     | 177 MB/s    | 375 MB/s    |
+| Download 10GB file  | 12 MB/s         | 98,1 MB/s   | 83,6 MB/s    | 63,6 MB/s     | 108 MB/s    | 203 MB/s    |
 
 Notes:
 
@@ -274,16 +269,16 @@ Notes:
 Web Performance
 ---------------
 
-|                     | OVH             | Linode      | DigitalOcean | Scaleway   | Vultr       | Vultr       | Lightsail |
-|---------------------|-----------------|-------------|--------------|------------|-------------|-------------|-----------|
-| Name                | VPS SSD 1       | Linode 1024 | 5bucks       | VC1S       | 20GB SSD    | 25GB SSD    |           |
-| Location            | Gravelines (FR) | London (GB) | London (GB)  | Paris (FR) | London (GB) | London (GB) |           |
-| Instance            | Debian 8        | Debian 8    | Debian 8     | Debian 8   | Debian 8    | Debian 8    |           |
-| Ping                | ~48,5 ms        | ~46 ms      | ~47,5 ms     | ~40,9 ms   | ~39,3 ms    | ~39,3 ms    | Blocked   |
-| Apache benchmark A  | Fail            |             | Fail         |            |             | 14,68 RPS   |           |
-| Apache benchmark B  | 24,61 RPS       |             | Fail         |            |             | 14,21 RPS   |           |
-| Apache benchmark C  | 21,53 RPS       |             | 31,65 RPS    |            |             | 12,19 RPS   |           |
-| Wordpress page load | 0,93 s          |             | 0,86 s       |            |             | 0,98 s      |           |
+|                     | OVH             | Linode      | DigitalOcean | Scaleway   | Vultr       | Vultr       |
+|---------------------|-----------------|-------------|--------------|------------|-------------|-------------|
+| Name                | VPS SSD 1       | Linode 1024 | 5bucks       | VC1S       | 20GB SSD    | 25GB SSD    |
+| Location            | Gravelines (FR) | London (GB) | London (GB)  | Paris (FR) | London (GB) | London (GB) |
+| Instance            | Debian 8        | Debian 8    | Debian 8     | Debian 8   | Debian 8    | Debian 8    |
+| Ping                | ~48,5 ms        | ~46 ms      | ~47,5 ms     | ~40,9 ms   | ~39,3 ms    | ~39,3 ms    |
+| Apache benchmark A  | Fail            |             | Fail         |            |             | 14,68 RPS   |
+| Apache benchmark B  | 24,61 RPS       |             | Fail         |            |             | 14,21 RPS   |
+| Apache benchmark C  | 21,53 RPS       |             | 31,65 RPS    |            |             | 12,19 RPS   |
+| Wordpress page load | 0,93 s          |             | 0,86 s       |            |             | 0,98 s      |
 
 Note:
 
@@ -294,13 +289,13 @@ Note:
 Default Security
 ----------------
 
-|                             | OVH       | Linode      | DigitalOcean | Scaleway | Vultr    | Vultr    | Lightsail       |
-|-----------------------------|-----------|-------------|--------------|----------|----------|----------|-----------------|
-| Name                        | VPS SSD 1 | Linode 1024 | 5bucks       | VC1S     | 20GB SSD | 25GB SSD |                 |
-| Lynis Debian 8              | 58 / 217  | 65/221      | 59 / 217     | 63/222   | 61 / 220 | 61 / 220 | 62/220 (Ubuntu) |
-| Lynis CentOS 7              | 66 / 217  | 68/215      | 67 / 217     | 65/220   | 66 / 211 | 66 / 211 |                 |
-| Lynis Wordpress             | 61 / 231  | -/-         | 64 / 234     | -/-      | -/-      | 67 / 218 |                 |
-| gcc & build tools installed | Yes       | No          | No           | No       | No       | No       | No              |
+|                             | OVH       | Linode      | DigitalOcean | Scaleway | Vultr    | Vultr    |
+|-----------------------------|-----------|-------------|--------------|----------|----------|----------|
+| Name                        | VPS SSD 1 | Linode 1024 | 5bucks       | VC1S     | 20GB SSD | 25GB SSD |
+| Lynis Debian 8              | 58 / 217  | 65/221      | 59 / 217     | 63/222   | 61 / 220 | 61 / 220 |
+| Lynis CentOS 7              | 66 / 217  | 68/215      | 67 / 217     | 65/220   | 66 / 211 | 66 / 211 |
+| Lynis Wordpress             | 61 / 231  | -/-         | 64 / 234     | -/-      | -/-      | 67 / 218 |
+| gcc & build tools installed | Yes       | No          | No           | No       | No       | No       |
 
 Notes:
 
