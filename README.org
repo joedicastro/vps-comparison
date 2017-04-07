@@ -527,6 +527,32 @@ Notes:
  
 [[./img/sysbench_oltp.png]]
 
+*** Compiler
+
+    This test measures the times that takes the server to compile the MariaDB server.
+
+  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]" 
+  #+PLOT: set:"style histogram cluster gap 1"
+  #+PLOT: set:"style fill solid"
+  #+PLOT: set:"boxwidth bw"
+  #+PLOT: set:"grid"
+  #+PLOT: set:"xrange writeback extend"
+  #+PLOT: set:"xtics scale 0"
+  #+PLOT: set:"key outside horizontal"
+  #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+  #+PLOT: file:"./img/compile_mariadb.png"
+    |---------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+    | Plan                      | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+    |---------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+    | Compile MariaDB (seconds) | 1904,7        | 3070,2      |           |        5692.7 |                | 2069,3         |
+    |---------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+
+[[./img/compile_mariadb.png]] 
+
+  Notes:
+
+  - The compilation in DO fails at 65% after about 35min (I'll fix that)
+
 
 ** Web Performance
 

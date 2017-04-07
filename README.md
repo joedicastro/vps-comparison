@@ -401,6 +401,20 @@ Notes:
 
     ![](./img/sysbench_oltp.png)
 
+### Compiler
+
+This test measures the times that takes the server to compile the MariaDB server.
+
+| Plan                      | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+|---------------------------|---------------|-------------|-----------|---------------|----------------|----------------|
+| Compile MariaDB (seconds) | 1904,7        | 3070,2      |           | 5692.7        |                | 2069,3         |
+
+![](./img/compile_mariadb.png)
+
+Notes:
+
+-   The compilation in DO fails at 65% after about 35min (I'll fix that)
+
 Web Performance
 ---------------
 

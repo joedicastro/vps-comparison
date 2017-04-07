@@ -17,5 +17,5 @@
     - { role: fio,        tags: ['fio', 'disk', 'benchmark']}
     - { role: speedtest,  tags: ['speedtest', 'network', 'benchmark']}
     - { role: downloads,  tags: ['downloads', 'network', 'benchmark']}
-    - { role: compiler,   tags: ['compiler', 'benchmark']} # fails! check!
+    - { role: compiler,   tags: ['compiler', 'benchmark']} # fails in do! check!
     - { role: transcode,  tags: ['transcode', 'multimedia', 'benchmark']} # fails! check!
