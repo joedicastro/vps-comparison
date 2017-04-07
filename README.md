@@ -401,6 +401,22 @@ Notes:
 
     ![](./img/sysbench_oltp.png)
 
+### fio
+
+| Plan            | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+|-----------------|---------------|-------------|-----------|---------------|----------------|----------------|
+| Read IO (MB/s)  | 3,999         | 111,622     | 581,851   | 266,779       | 249,672        | 244,385        |
+| Write IO (MB/s) | 3,991         | 93,6        | 35,317    | 84,684        | 192,748        | 194,879        |
+
+![](./img/fio_io.png)
+
+| Plan       | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+|------------|---------------|-------------|-----------|---------------|----------------|----------------|
+| Read IOPS  | 999           | 27905       | 145487    | 66694         | 62417          | 60913          |
+| Write IOPS | 997           | 23399       | 8828      | 21170         | 48186          | 48719          |
+
+![](./img/fio_iops.png)
+
 ### dd
 
 A pair of well-known fast tests to measure the CPU and disk performance. Not very reliable, but they are good enough to get an idea.

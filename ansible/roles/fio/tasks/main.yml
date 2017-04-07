@@ -1,0 +1,68 @@
+---
+
+- name: install fio
+  apt:
+    name: fio
+    state: latest
+    update_cache: yes
+    install_recommends: no
+
+- name: run fio randread
+  shell: fio --name=randread --ioengine=libaio --iodepth=16 --rw=randread --bs=4k --direct=1 --size=512M --numjobs=8 --runtime=240 --group_reporting >> /tmp/fio_randread.log
+  args:
+    chdir: /tmp
+  with_sequence: count=5
+
+- name: retrieve log
+  fetch:
+    src: /tmp/fio_randread.log
+    dest: ../logs/{{inventory_hostname}}/fio_randread.log
+    flat: yes
+
+- name: remove auxiliary files
+  file: 
+    path: "{{item}}"
+    state: absent
+  with_items:
+    - /tmp/randread.0.0
+    - /tmp/randread.1.0
+    - /tmp/randread.2.0
+    - /tmp/randread.3.0
+    - /tmp/randread.4.0
+    - /tmp/randread.5.0
+    - /tmp/randread.6.0
+    - /tmp/randread.7.0
+
+- name: run fio randwrite
+  shell: fio --name=randwrite --ioengine=libaio --iodepth=16 --rw=randwrite --bs=4k --direct=1 --size=512M --numjobs=8 --runtime=240 --group_reporting >> /tmp/fio_randwrite.log
+  args:
+    chdir: /tmp
+  with_sequence: count=5
+
+- name: retrieve log
+  fetch:
+    src: /tmp/fio_randwrite.log
+    dest: ../logs/{{inventory_hostname}}/fio_randwrite.log
+    flat: yes
+
+- name: remove auxiliary files
+  file: 
+    path: "{{item}}"
+    state: absent
+  with_items:
+    - /tmp/randwrite.0.0
+    - /tmp/randwrite.1.0
+    - /tmp/randwrite.2.0
+    - /tmp/randwrite.3.0
+    - /tmp/randwrite.4.0
+    - /tmp/randwrite.5.0
+    - /tmp/randwrite.6.0
+    - /tmp/randwrite.7.0
+
+- name: remove fio
+  apt:
+    name: fio
+    autoremove: yes
+    purge: yes
+    state: absent
+
