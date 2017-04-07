@@ -1,0 +1,31 @@
+---
+
+- name: run dd CPU test
+  shell: dd if=/dev/zero bs=1M count=1024 2>> dd_cpu.log | md5sum
+  args:
+    chdir: /tmp
+  with_sequence: count=5
+
+- name: retrieve log
+  fetch:
+    src: /tmp/dd_cpu.log
+    dest: ../logs/{{inventory_hostname}}/dd_cpu.log
+    flat: yes
+
+- name: run dd IO test
+  shell: dd if=/dev/zero of=test bs=64k count=16k conv=fdatasync 2>> dd_io.log
+  args:
+    chdir: /tmp
+  with_sequence: count=5
+
+- name: retrieve log
+  fetch:
+    src: /tmp/dd_io.log
+    dest: ../logs/{{inventory_hostname}}/dd_io.log
+    flat: yes
+
+- name: remove auxiliary file
+  file: 
+    path: /tmp/test
+    state: absent
+
