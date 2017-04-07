@@ -401,6 +401,22 @@ Notes:
 
     ![](./img/sysbench_oltp.png)
 
+### dd
+
+A pair of well-known fast tests to measure the CPU and disk performance. Not very reliable, but they are good enough to get an idea.
+
+| Plan             | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+|------------------|---------------|-------------|-----------|---------------|----------------|----------------|
+| dd CPU (seconds) | 2,684         | 2,935       | 3,292     | 4,199         | 2,667          | 2,715          |
+
+![](./img/dd_cpu.png)
+
+| Plan         | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+|--------------|---------------|-------------|-----------|---------------|----------------|----------------|
+| dd IO (MB/s) | 550           | 467,4       | 702,6     | 163,6         | 477            | 458,2          |
+
+![](./img/dd_io.png)
+
 ### Compiler
 
 This test measures the times that takes the server to compile the MariaDB server.
