@@ -1,0 +1,32 @@
+[ovh]
+ovh-vpsssd1-ubuntu        ansible_host=X.X.X.X  ansible_python_interpreter=/usr/bin/python3
+
+[linode]
+linode-linode1024-ubuntu  ansible_host=X.X.X.X  ansible_python_interpreter=/usr/bin/python3
+
+[digitalocean]
+do-5bucks-ubuntu          ansible_host=X.X.X.X  ansible_python_interpreter=/usr/bin/python3
+
+[scaleway]
+scaleway-vc1s-ubuntu      ansible_host=X.X.X.X  ansible_python_interpreter=/usr/bin/python3
+
+[vultr]
+vultr-20gbssd-ubuntu      ansible_host=X.X.X.X  ansible_python_interpreter=/usr/bin/python3
+vultr-25gbssd-ubuntu      ansible_host=X.X.X.X  ansible_python_interpreter=/usr/bin/python3
+
+
+# vars by provider
+[ovh:vars]
+ansible_user=root
+
+[linode:vars]
+ansible_user=root
+
+[digitalocean:vars]
+ansible_user=root
+
+[scaleway:vars]
+ansible_user=root
+
+[vultr:vars]
+ansible_user=root

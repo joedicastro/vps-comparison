@@ -1,0 +1,5732 @@
+============ start debug info ============
+libhd version 21.23 (x86-64) [7688]
+using /var/lib/hardware
+kernel version is 4.4
+----- /proc/cmdline -----
+  BOOT_IMAGE=/boot/vmlinuz-4.4.0-62-generic root=UUID=60afd8f9-49f6-4152-8b41-22e2640778d2 ro console=tty1 console=ttyS0
+----- /proc/cmdline end -----
+debug = 0xff7ffff7
+probe = 0x15938fcdaa17fcf9fffe (+memory +pci +isapnp +net +floppy +misc +misc.serial +misc.par +misc.floppy +serial +cpu +bios +monitor +mouse +scsi +usb -usb.mods +modem +modem.usb +parallel +parallel.lp +parallel.zip -isa -isa.isdn +isdn +kbd +prom +sbus +int +braille +braille.alva +braille.fhp +braille.ht -ignx11 +sys -bios.vbe -isapnp.old -isapnp.new -isapnp.mod +braille.baum -manual +fb +pppoe -scan +pcmcia +fork -parallel.imm +s390 +cpuemu -sysfs -s390disks +udev +block +block.cdrom +block.part +edd +edd.mod -bios.ddc -bios.fb -bios.mode +input +block.mods +bios.vesa -cpuemu.debug -scsi.noserial +wlan -bios.crc -hal +bios.vram +bios.acpi -bios.ddc.ports=0 +modules.pata -net.eeprom +x86emu=dump -max -lxrc)
+shm: attached segment 98307 at 0x7fa47a960000
+>> hal.1: read hal data
+>> floppy.1: get nvram
+>> floppy.2: klog info
+>> bios.1: cmdline
+>> bios.1.1: apm
+>> bios.2: ram
+/dev/mem[0x400, 256]: mmap(, 4096,,,, 0x0) ok
+/dev/mem[0xc0000, 262144]: mmap(, 262144,,,, 0xc0000) ok
+  bios: 1 disks
+  bios: 639k low mem
+/dev/mem[0x9fc00, 1]: mmap(, 4096,,,, 0x9f000) ok
+/dev/mem[0x9fc00, 1024]: mmap(, 4096,,,, 0x9f000) ok
+  bios: EBDA 0x00400 bytes at 0x9fc00
+>> bios.2: rom
+----- SMBIOS Entry Point 0xf62b0 - 0xf62ce -----
+  f62b0  5f 53 4d 5f 0b 1f 02 08 6e 00 00 00 00 00 00 00  "_SM_....n......."
+  f62c0  5f 44 4d 49 5f 46 af 01 d0 62 0f 00 09 00 28  "_DMI_F...b....("
+----- SMBIOS Entry Point end -----
+/dev/mem[0xf62d0, 431]: mmap(, 4096,,,, 0xf6000) ok
+----- SMBIOS Structure Table 0xf62d0 - 0xf647e -----
+  f62d0  00 18 00 00 01 02 00 e8 03 00 08 00 00 00 00 00  "................"
+  f62e0  00 00 00 04 00 00 ff ff 53 65 61 42 49 4f 53 00  "........SeaBIOS."
+  f62f0  55 62 75 6e 74 75 2d 31 2e 38 2e 32 2d 31 75 62  "Ubuntu-1.8.2-1ub"
+  f6300  75 6e 74 75 31 7e 63 6c 6f 75 64 30 2b 6f 76 68  "untu1~cloud0+ovh"
+  f6310  31 00 30 34 2f 30 31 2f 32 30 31 34 00 00 01 1b  "1.04/01/2014...."
+  f6320  00 01 01 02 03 04 e0 2a 9d 9b c3 d8 86 48 83 f2  ".......*.....H.."
+  f6330  05 0a 5c e9 f7 1f 06 00 00 4f 70 65 6e 53 74 61  "..\......OpenSta"
+  f6340  63 6b 20 46 6f 75 6e 64 61 74 69 6f 6e 00 4f 70  "ck Foundation.Op"
+  f6350  65 6e 53 74 61 63 6b 20 4e 6f 76 61 00 32 30 31  "enStack Nova.201"
+  f6360  34 2e 32 2e 34 00 30 30 30 30 30 30 30 30 2d 30  "4.2.4.00000000-0"
+  f6370  30 30 30 2d 30 30 30 30 2d 30 30 30 30 2d 30 63  "000-0000-0000-0c"
+  f6380  63 34 37 61 64 66 31 66 31 63 00 00 03 15 00 03  "c47adf1f1c......"
+  f6390  01 01 02 00 00 03 03 03 02 00 00 00 00 00 00 00  "................"
+  f63a0  00 51 45 4d 55 00 70 63 2d 69 34 34 30 66 78 2d  ".QEMU.pc-i440fx-"
+  f63b0  76 69 76 69 64 00 00 04 2a 00 04 01 03 01 02 c1  "vivid...*......."
+  f63c0  06 03 00 ff fb 8b 0f 03 00 00 00 d0 07 d0 07 41  "...............A"
+  f63d0  01 ff ff ff ff ff ff 00 00 00 01 01 01 02 00 01  "................"
+  f63e0  00 43 50 55 20 30 00 51 45 4d 55 00 70 63 2d 69  ".CPU 0.QEMU.pc-i"
+  f63f0  34 34 30 66 78 2d 76 69 76 69 64 00 00 10 17 00  "440fx-vivid....."
+  f6400  10 01 03 06 00 40 1f 00 fe ff 01 00 00 00 00 00  ".....@.........."
+  f6410  00 00 00 00 00 00 11 28 00 11 00 10 fe ff ff ff  ".......(........"
+  f6420  ff ff d0 07 09 00 01 00 07 02 00 00 00 02 00 00  "................"
+  f6430  00 00 00 00 00 00 00 00 00 00 00 00 00 00 44 49  "..............DI"
+  f6440  4d 4d 20 30 00 51 45 4d 55 00 00 13 1f 00 13 00  "MM 0.QEMU......."
+  f6450  00 00 00 ff 3f 1f 00 00 10 01 00 00 00 00 00 00  "....?..........."
+  f6460  00 00 00 00 00 00 00 00 00 00 00 00 20 0b 00 20  "............ .. "
+  f6470  00 00 00 00 00 00 00 00 00 7f 04 00 7f 00 00  "..............."
+----- SMBIOS Structure Table end -----
+  type 0x00 [0x0000]: 00 18 00 00 01 02 00 e8 03 00 08 00 00 00 00 00 00 00 00 04 00 00 ff ff
+       str1: "SeaBIOS"
+       str2: "Ubuntu-1.8.2-1ubuntu1~cloud0+ovh1"
+       str3: "04/01/2014"
+  type 0x01 [0x0100]: 01 1b 00 01 01 02 03 04 e0 2a 9d 9b c3 d8 86 48 83 f2 05 0a 5c e9 f7 1f 06 00 00
+       str1: "OpenStack Foundation"
+       str2: "OpenStack Nova"
+       str3: "2014.2.4"
+       str4: "00000000-0000-0000-0000-0cc47adf1f1c"
+  type 0x03 [0x0300]: 03 15 00 03 01 01 02 00 00 03 03 03 02 00 00 00 00 00 00 00 00
+       str1: "QEMU"
+       str2: "pc-i440fx-vivid"
+  type 0x04 [0x0400]: 04 2a 00 04 01 03 01 02 c1 06 03 00 ff fb 8b 0f 03 00 00 00 d0 07 d0 07 41 01 ff ff ff ff ff ff 00 00 00 01 01 01 02 00 01 00
+       str1: "CPU 0"
+       str2: "QEMU"
+       str3: "pc-i440fx-vivid"
+  type 0x10 [0x1000]: 10 17 00 10 01 03 06 00 40 1f 00 fe ff 01 00 00 00 00 00 00 00 00 00
+  type 0x11 [0x1100]: 11 28 00 11 00 10 fe ff ff ff ff ff d0 07 09 00 01 00 07 02 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+       str1: "DIMM 0"
+       str2: "QEMU"
+  type 0x13 [0x1300]: 13 1f 00 13 00 00 00 00 ff 3f 1f 00 00 10 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  type 0x20 [0x2000]: 20 0b 00 20 00 00 00 00 00 00 00
+  type 0x7f [0x7f00]: 7f 04 00 7f
+  smbios: stopped at end tag
+>> bios.3: smp
+  smp: valid MP FP at 0xf6480 (size 0x10, rev 4), MP config at 0xf6490
+/dev/mem[0xf6490, 64]: mmap(, 4096,,,, 0xf6000) ok
+  MP config table size: 232
+/dev/mem[0xf6490, 232]: mmap(, 4096,,,, 0xf6000) ok
+  base MP config table (22 entries):
+  type 0, len 20
+    00 00 14 03 c1 06 03 00 ff fb 8b 0f 00 00 00 00 00 00 00 00  "...................."
+  type 1, len 8
+    01 00 50 43 49 20 20 20  "..PCI   "
+  type 1, len 8
+    01 01 49 53 41 20 20 20  "..ISA   "
+  type 2, len 8
+    02 00 11 01 00 00 c0 fe  "........"
+  type 3, len 8
+    03 00 01 00 00 07 00 0b  "........"
+  type 3, len 8
+    03 00 01 00 00 04 00 09  "........"
+  type 3, len 8
+    03 00 01 00 00 0c 00 0b  "........"
+  type 3, len 8
+    03 00 01 00 00 10 00 0b  "........"
+  type 3, len 8
+    03 00 01 00 00 14 00 0a  "........"
+  type 3, len 8
+    03 00 00 00 01 00 00 02  "........"
+  type 3, len 8
+    03 00 00 00 01 01 00 01  "........"
+  type 3, len 8
+    03 00 00 00 01 03 00 03  "........"
+  type 3, len 8
+    03 00 00 00 01 04 00 04  "........"
+  type 3, len 8
+    03 00 00 00 01 06 00 06  "........"
+  type 3, len 8
+    03 00 00 00 01 07 00 07  "........"
+  type 3, len 8
+    03 00 00 00 01 08 00 08  "........"
+  type 3, len 8
+    03 00 00 00 01 0c 00 0c  "........"
+  type 3, len 8
+    03 00 00 00 01 0d 00 0d  "........"
+  type 3, len 8
+    03 00 00 00 01 0e 00 0e  "........"
+  type 3, len 8
+    03 00 00 00 01 0f 00 0f  "........"
+  type 4, len 8
+    04 03 00 00 01 00 00 00  "........"
+  type 4, len 8
+    04 01 00 00 01 00 ff 01  "........"
+----- BIOS data 0x00400 - 0x004ff -----
+  400  f8 03 f8 02 00 00 00 00 00 00 00 00 00 00 c0 9f  "................"
+  410  26 04 00 7f 02 00 00 00 00 00 1e 00 1e 00 00 00  "&..............."
+  420  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  430  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  440  00 00 00 00 00 00 00 00 00 03 50 00 00 10 00 00  "..........P....."
+  450  00 09 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  460  00 20 00 d4 03 00 00 00 00 00 00 00 b3 71 0f 00  ". ...........q.."
+  470  00 00 00 00 00 01 c0 00 00 00 00 00 0a 0a 00 00  "................"
+  480  1e 00 3e 00 18 10 00 60 f9 51 08 00 00 00 00 00  "..>....`.Q......"
+  490  00 00 00 00 00 00 10 00 00 00 00 00 00 00 00 00  "................"
+  4a0  00 00 00 00 00 00 00 00 68 92 00 c0 00 00 00 00  "........h......."
+  4b0  00 00 00 00 00 00 00 00 00 00 03 00 1e 5b 00 00  ".............[.."
+  4c0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  4d0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  4e0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  4f0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+----- BIOS data end -----
+----- EBDA 0x9fc00 - 0x9ffff -----
+  9fc00  01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fc10  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fc20  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fc30  00 00 00 00 00 00 00 00 00 00 00 00 00 00 04 ff  "................"
+  9fc40  a0 3f ff ff 00 c8 ff 3f 10 ff 3f 3f 8d 00 00 00  ".?.....?..??...."
+  9fc50  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fc60  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fc70  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fc80  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fc90  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fca0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fcb0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fcc0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fcd0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fce0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fcf0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fd00  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fd10  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fd20  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fd30  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fd40  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fd50  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fd60  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fd70  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fd80  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fd90  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fda0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fdb0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fdc0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fdd0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fde0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fdf0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fe00  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fe10  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fe20  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fe30  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fe40  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fe50  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fe60  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fe70  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fe80  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fe90  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fea0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9feb0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fec0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fed0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fee0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fef0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9ff00  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9ff10  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9ff20  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9ff30  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9ff40  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9ff50  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9ff60  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9ff70  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9ff80  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9ff90  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9ffa0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9ffb0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9ffc0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9ffd0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9ffe0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  9fff0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+----- EBDA end -----
+/dev/mem[0xf6480, 16]: mmap(, 4096,,,, 0xf6000) ok
+----- MP FP 0xf6480 - 0xf648f -----
+  f6480  5f 4d 50 5f 90 64 0f 00 01 04 9d 00 00 00 00 00  "_MP_.d.........."
+----- MP FP end -----
+/dev/mem[0xf6490, 232]: mmap(, 4096,,,, 0xf6000) ok
+----- MP config table 0xf6490 - 0xf6577 -----
+  f6490  50 43 4d 50 e8 00 04 c2 42 4f 43 48 53 43 50 55  "PCMP....BOCHSCPU"
+  f64a0  30 2e 31 20 20 20 20 20 20 20 20 20 00 00 00 00  "0.1         ...."
+  f64b0  00 00 16 00 00 00 e0 fe 00 00 00 00 00 00 14 03  "................"
+  f64c0  c1 06 03 00 ff fb 8b 0f 00 00 00 00 00 00 00 00  "................"
+  f64d0  01 00 50 43 49 20 20 20 01 01 49 53 41 20 20 20  "..PCI   ..ISA   "
+  f64e0  02 00 11 01 00 00 c0 fe 03 00 01 00 00 07 00 0b  "................"
+  f64f0  03 00 01 00 00 04 00 09 03 00 01 00 00 0c 00 0b  "................"
+  f6500  03 00 01 00 00 10 00 0b 03 00 01 00 00 14 00 0a  "................"
+  f6510  03 00 00 00 01 00 00 02 03 00 00 00 01 01 00 01  "................"
+  f6520  03 00 00 00 01 03 00 03 03 00 00 00 01 04 00 04  "................"
+  f6530  03 00 00 00 01 06 00 06 03 00 00 00 01 07 00 07  "................"
+  f6540  03 00 00 00 01 08 00 08 03 00 00 00 01 0c 00 0c  "................"
+  f6550  03 00 00 00 01 0d 00 0d 03 00 00 00 01 0e 00 0e  "................"
+  f6560  03 00 00 00 01 0f 00 0f 04 03 00 00 01 00 00 00  "................"
+  f6570  04 01 00 00 01 00 ff 01  "........"
+----- MP config table end -----
+>> bios.4: vbe
+>> bios.4.1: vbe info
+=== bios setup ===
+[0x0, 4096]: mmap ok
+[0xc0000, 65536]: mmap ok
+video bios: size 0x9400
+video bios: entry 0xc000:0x50a3
+[0xa0000, 65536]: mmap ok
+>> bios.5: 32
+  bios32: valid SD header at 0xf6930 (size 0x10, rev 0), SD at 0xfd4ae
+>> bios.6: acpi
+>> sys.1: cpu
+  vm check: vm_1 = 0, vm_2 = 1
+  is_vmware = 0, has_vmware_mouse = 1
+>> misc.9: kernel log
+>> misc.1: misc data
+>> misc.1.1: open serial
+>> misc.1.2: open parallel
+----- exec: "/sbin/rmmod parport_pc" -----
+----- return code: ? -----
+----- exec: "/sbin/rmmod parport" -----
+  rmmod: ERROR: Module parport is in use by: ppdev
+----- return code: ? -----
+----- exec: "/sbin/modprobe parport_pc " -----
+----- return code: ? -----
+>> misc.2.1: io
+>> misc.2.2: dma
+>> misc.2.3: irq
+----- /proc/ioports -----
+  0000-0cf7 : PCI Bus 0000:00
+    0000-001f : dma1
+    0020-0021 : pic1
+    0040-0043 : timer0
+    0050-0053 : timer1
+    0060-0060 : keyboard
+    0064-0064 : keyboard
+    0070-0071 : rtc0
+    0080-008f : dma page reg
+    00a0-00a1 : pic2
+    00c0-00df : dma2
+    00f0-00ff : fpu
+    0170-0177 : 0000:00:01.1
+      0170-0177 : ata_piix
+    01f0-01f7 : 0000:00:01.1
+      01f0-01f7 : ata_piix
+    02f8-02ff : serial
+    0376-0376 : 0000:00:01.1
+      0376-0376 : ata_piix
+    03c0-03df : vga+
+    03f2-03f2 : floppy
+    03f4-03f5 : floppy
+    03f6-03f6 : 0000:00:01.1
+      03f6-03f6 : ata_piix
+    03f7-03f7 : floppy
+    03f8-03ff : serial
+    0600-063f : 0000:00:01.3
+      0600-0603 : ACPI PM1a_EVT_BLK
+      0604-0605 : ACPI PM1a_CNT_BLK
+      0608-060b : ACPI PM_TMR
+    0700-070f : 0000:00:01.3
+  0cf8-0cff : PCI conf1
+  0d00-ffff : PCI Bus 0000:00
+    afe0-afe3 : ACPI GPE0_BLK
+    c000-c03f : 0000:00:04.0
+      c000-c03f : virtio-pci-legacy
+    c040-c05f : 0000:00:01.2
+      c040-c05f : uhci_hcd
+    c060-c07f : 0000:00:03.0
+      c060-c07f : virtio-pci-legacy
+    c080-c09f : 0000:00:05.0
+      c080-c09f : virtio-pci-legacy
+    c0a0-c0af : 0000:00:01.1
+      c0a0-c0af : ata_piix
+----- /proc/ioports end -----
+----- /proc/interrupts -----
+    0:         22   IO-APIC   2-edge      timer
+    1:          9   IO-APIC   1-edge      i8042
+    3:          1   IO-APIC   3-edge      serial
+    4:       3567   IO-APIC   4-edge      serial
+    6:          3   IO-APIC   6-edge      floppy
+    8:          0   IO-APIC   8-edge      rtc0
+    9:          0   IO-APIC   9-fasteoi   acpi
+   10:      10082   IO-APIC  10-fasteoi   virtio2
+   11:         26   IO-APIC  11-fasteoi   uhci_hcd:usb1
+   12:         15   IO-APIC  12-edge      i8042
+   14:          0   IO-APIC  14-edge      ata_piix
+   15:          0   IO-APIC  15-edge      ata_piix
+   24:          0   PCI-MSI 65536-edge      virtio1-config
+   25:      98800   PCI-MSI 65537-edge      virtio1-req.0
+   26:          0   PCI-MSI 49152-edge      virtio0-config
+   27:     120460   PCI-MSI 49153-edge      virtio0-input.0
+   28:          2   PCI-MSI 49154-edge      virtio0-output.0
+  NMI:          0   Non-maskable interrupts
+  LOC:    1628303   Local timer interrupts
+  SPU:          0   Spurious interrupts
+  PMI:          0   Performance monitoring interrupts
+  IWI:          1   IRQ work interrupts
+  RTR:          0   APIC ICR read retries
+  RES:          0   Rescheduling interrupts
+  CAL:          0   Function call interrupts
+  TLB:          0   TLB shootdowns
+  TRM:          0   Thermal event interrupts
+  THR:          0   Threshold APIC interrupts
+  DFR:          0   Deferred Error APIC interrupts
+  MCE:          0   Machine check exceptions
+  MCP:        337   Machine check polls
+  ERR:          0
+  MIS:          0
+  PIN:          0   Posted-interrupt notification event
+  PIW:          0   Posted-interrupt wakeup event
+----- /proc/interrupts end -----
+----- /proc/dma -----
+   2: floppy
+   4: cascade
+----- /proc/dma end -----
+>> misc.3: FPU
+>> misc.3.1: DMA
+>> misc.3.2: PIC
+>> misc.3.3: timer
+>> misc.3.4: RTC
+>> cpu.1: cpuinfo
+----- /proc/cpuinfo -----
+  processor	: 0
+  vendor_id	: GenuineIntel
+  cpu family	: 6
+  model		: 60
+  model name	: Intel Core Processor (Haswell, no TSX)
+  stepping	: 1
+  microcode	: 0x1
+  cpu MHz		: 2399.996
+  cache size	: 4096 KB
+  physical id	: 0
+  siblings	: 1
+  core id		: 0
+  cpu cores	: 1
+  apicid		: 0
+  initial apicid	: 0
+  fpu		: yes
+  fpu_exception	: yes
+  cpuid level	: 13
+  wp		: yes
+  flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl eagerfpu pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm tpr_shadow vnmi flexpriority ept vpid fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveopt
+  bugs		:
+  bogomips	: 4799.99
+  clflush size	: 64
+  cache_alignment	: 64
+  address sizes	: 40 bits physical, 48 bits virtual
+  power management:
+  
+----- /proc/cpuinfo end -----
+>> memory.1: main memory size
+  kcore mem:  0x7fffff602000
+  klog mem 0: 0x0
+  klog mem 1: 0x0
+  klog mem:   0x0
+  bios mem:   0x0
+  meminfo:    0x7a049000
+  xen balloon:    0x0
+>> pci.1: sysfs drivers
+----- sysfs driver list (id 0xb01518532f5d9012) -----
+       processor: /devices/system/cpu/cpu0
+        uhci_hcd: /devices/pci0000:00/0000:00:01.2
+        uhci_hcd: module = uhci_hcd
+      virtio-pci: /devices/pci0000:00/0000:00:03.0
+      virtio-pci: /devices/pci0000:00/0000:00:04.0
+      virtio-pci: /devices/pci0000:00/0000:00:05.0
+      virtio-pci: module = virtio_pci
+        pata_sis: module = pata_sis
+     ata_generic: module = ata_generic
+      parport_pc: module = parport_pc
+        ata_piix: /devices/pci0000:00/0000:00:01.1
+        ata_piix: module = ata_piix
+        rtc_cmos: /devices/pnp0/00:00
+          serial: /devices/pnp0/00:04
+          serial: /devices/pnp0/00:05
+       i8042 aux: /devices/pnp0/00:02
+       i8042 kbd: /devices/pnp0/00:01
+             hub: module = usbcore
+             hub: /devices/pci0000:00/0000:00:01.2/usb1/1-0:1.0
+             usb: /devices/pci0000:00/0000:00:01.2/usb1/1-1
+             usb: /devices/pci0000:00/0000:00:01.2/usb1
+           usbfs: module = usbcore
+          button: /devices/LNXSYSTM:00/LNXPWRBN:00
+       serio_raw: module = serio_raw
+           atkbd: /devices/platform/i8042/serio0
+         psmouse: module = psmouse
+         psmouse: /devices/platform/i8042/serio1
+      virtio_blk: /devices/pci0000:00/0000:00:04.0/virtio1
+      virtio_net: /devices/pci0000:00/0000:00:03.0/virtio0
+  virtio_balloon: /devices/pci0000:00/0000:00:05.0/virtio2
+       reg-dummy: /devices/platform/reg-dummy
+           i8042: /devices/platform/i8042
+      alarmtimer: /devices/platform/alarmtimer
+          floppy: module = floppy
+      serial8250: /devices/platform/serial8250
+      parport_pc: module = parport_pc
+----- sysfs driver list end -----
+>> pci.2: get sysfs pci data
+  pci device: name = 0000:00:00.0
+    path = /devices/pci0000:00/0000:00:00.0
+    modalias = "pci:v00008086d00001237sv00001AF4sd00001100bc06sc00i00"
+    class = 0x60000
+    vendor = 0x8086
+    device = 0x1237
+    subvendor = 0x1af4
+    subdevice = 0x1100
+    irq = 0
+    config[64]
+  pci device: name = 0000:00:01.0
+    path = /devices/pci0000:00/0000:00:01.0
+    modalias = "pci:v00008086d00007000sv00001AF4sd00001100bc06sc01i00"
+    class = 0x60100
+    vendor = 0x8086
+    device = 0x7000
+    subvendor = 0x1af4
+    subdevice = 0x1100
+    irq = 0
+    config[64]
+  pci device: name = 0000:00:01.1
+    path = /devices/pci0000:00/0000:00:01.1
+    modalias = "pci:v00008086d00007010sv00001AF4sd00001100bc01sc01i80"
+    class = 0x10180
+    vendor = 0x8086
+    device = 0x7010
+    subvendor = 0x1af4
+    subdevice = 0x1100
+    irq = 0
+    res[0] = 0x1f0 0x1f7 0x110
+    res[1] = 0x3f6 0x3f6 0x110
+    res[2] = 0x170 0x177 0x110
+    res[3] = 0x376 0x376 0x110
+    res[4] = 0xc0a0 0xc0af 0x40101
+    config[64]
+  pci device: name = 0000:00:01.2
+    path = /devices/pci0000:00/0000:00:01.2
+    modalias = "pci:v00008086d00007020sv00001AF4sd00001100bc0Csc03i00"
+    class = 0xc0300
+    vendor = 0x8086
+    device = 0x7020
+    subvendor = 0x1af4
+    subdevice = 0x1100
+    irq = 11
+    res[4] = 0xc040 0xc05f 0x40101
+    config[64]
+  pci device: name = 0000:00:01.3
+    path = /devices/pci0000:00/0000:00:01.3
+    modalias = "pci:v00008086d00007113sv00001AF4sd00001100bc06sc80i00"
+    class = 0x68000
+    vendor = 0x8086
+    device = 0x7113
+    subvendor = 0x1af4
+    subdevice = 0x1100
+    irq = 9
+    config[64]
+  pci device: name = 0000:00:02.0
+    path = /devices/pci0000:00/0000:00:02.0
+    modalias = "pci:v00001013d000000B8sv00001AF4sd00001100bc03sc00i00"
+    class = 0x30000
+    vendor = 0x1013
+    device = 0xb8
+    subvendor = 0x1af4
+    subdevice = 0x1100
+    irq = 0
+    res[0] = 0xfc000000 0xfdffffff 0x42208
+    res[1] = 0xfebd0000 0xfebd0fff 0x40200
+    res[6] = 0xfebc0000 0xfebcffff 0x46202
+    config[64]
+  pci device: name = 0000:00:03.0
+    path = /devices/pci0000:00/0000:00:03.0
+    modalias = "pci:v00001AF4d00001000sv00001AF4sd00000001bc02sc00i00"
+    class = 0x20000
+    vendor = 0x1af4
+    device = 0x1000
+    subvendor = 0x1af4
+    subdevice = 0x1
+    irq = 10
+    res[0] = 0xc060 0xc07f 0x40101
+    res[1] = 0xfebd1000 0xfebd1fff 0x40200
+    res[6] = 0xfeb80000 0xfebbffff 0x46200
+    config[64]
+  pci device: name = 0000:00:04.0
+    path = /devices/pci0000:00/0000:00:04.0
+    modalias = "pci:v00001AF4d00001001sv00001AF4sd00000002bc01sc00i00"
+    class = 0x10000
+    vendor = 0x1af4
+    device = 0x1001
+    subvendor = 0x1af4
+    subdevice = 0x2
+    irq = 11
+    res[0] = 0xc000 0xc03f 0x40101
+    res[1] = 0xfebd2000 0xfebd2fff 0x40200
+    config[64]
+  pci device: name = 0000:00:05.0
+    path = /devices/pci0000:00/0000:00:05.0
+    modalias = "pci:v00001AF4d00001002sv00001AF4sd00000005bc00scFFi00"
+    class = 0xff00
+    vendor = 0x1af4
+    device = 0x1002
+    subvendor = 0x1af4
+    subdevice = 0x5
+    irq = 10
+    res[0] = 0xc080 0xc09f 0x40101
+    config[64]
+---------- PCI raw data ----------
+bus 00, slot 00, func 0, vend:dev:s_vend:s_dev:rev 8086:1237:1af4:1100:02
+class 06, sub_class 00 prog_if 00, hdr 0, flags <>, irq 0
+  00: 86 80 37 12 03 01 00 00 02 00 00 06 00 00 00 00  "..7............."
+  10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  20: 00 00 00 00 00 00 00 00 00 00 00 00 f4 1a 00 11  "................"
+  30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+
+bus 00, slot 01, func 0, vend:dev:s_vend:s_dev:rev 8086:7000:1af4:1100:00
+class 06, sub_class 01 prog_if 00, hdr 0, flags <>, irq 0
+  00: 86 80 00 70 03 01 00 02 00 00 01 06 00 00 80 00  "...p............"
+  10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  20: 00 00 00 00 00 00 00 00 00 00 00 00 f4 1a 00 11  "................"
+  30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+
+bus 00, slot 01, func 1, vend:dev:s_vend:s_dev:rev 8086:7010:1af4:1100:00
+class 01, sub_class 01 prog_if 80, hdr 0, flags <>, irq 0
+  addr0 000001f0, size 00000008
+  addr1 000003f6, size 00000001
+  addr2 00000170, size 00000008
+  addr3 00000376, size 00000001
+  addr4 0000c0a0, size 00000010
+  00: 86 80 10 70 07 01 80 02 00 80 01 01 00 00 00 00  "...p............"
+  10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  20: a1 c0 00 00 00 00 00 00 00 00 00 00 f4 1a 00 11  "................"
+  30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+
+bus 00, slot 01, func 2, vend:dev:s_vend:s_dev:rev 8086:7020:1af4:1100:01
+class 0c, sub_class 03 prog_if 00, hdr 0, flags <>, irq 11
+  addr4 0000c040, size 00000020
+  00: 86 80 20 70 07 01 00 00 01 00 03 0c 00 00 00 00  ".. p............"
+  10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  20: 41 c0 00 00 00 00 00 00 00 00 00 00 f4 1a 00 11  "A..............."
+  30: 00 00 00 00 00 00 00 00 00 00 00 00 0b 04 00 00  "................"
+
+bus 00, slot 01, func 3, vend:dev:s_vend:s_dev:rev 8086:7113:1af4:1100:03
+class 06, sub_class 80 prog_if 00, hdr 0, flags <>, irq 9
+  00: 86 80 13 71 03 01 80 02 03 00 80 06 00 00 00 00  "...q............"
+  10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  20: 00 00 00 00 00 00 00 00 00 00 00 00 f4 1a 00 11  "................"
+  30: 00 00 00 00 00 00 00 00 00 00 00 00 09 01 00 00  "................"
+
+bus 00, slot 02, func 0, vend:dev:s_vend:s_dev:rev 1013:00b8:1af4:1100:00
+class 03, sub_class 00 prog_if 00, hdr 0, flags <>, irq 0
+  addr0 fc000000, size 02000000
+  addr1 febd0000, size 00001000
+  00: 13 10 b8 00 03 01 00 00 00 00 00 03 00 00 00 00  "................"
+  10: 08 00 00 fc 00 00 bd fe 00 00 00 00 00 00 00 00  "................"
+  20: 00 00 00 00 00 00 00 00 00 00 00 00 f4 1a 00 11  "................"
+  30: 00 00 bc fe 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+
+bus 00, slot 03, func 0, vend:dev:s_vend:s_dev:rev 1af4:1000:1af4:0001:00
+class 02, sub_class 00 prog_if 00, hdr 0, flags <>, irq 10
+  addr0 0000c060, size 00000020
+  addr1 febd1000, size 00001000
+  00: f4 1a 00 10 07 05 10 00 00 00 00 02 00 00 00 00  "................"
+  10: 61 c0 00 00 00 10 bd fe 00 00 00 00 00 00 00 00  "a..............."
+  20: 00 00 00 00 00 00 00 00 00 00 00 00 f4 1a 01 00  "................"
+  30: 00 00 b8 fe 40 00 00 00 00 00 00 00 0b 01 00 00  "....@..........."
+  40: 11 00  ".."
+
+bus 00, slot 04, func 0, vend:dev:s_vend:s_dev:rev 1af4:1001:1af4:0002:00
+class 01, sub_class 00 prog_if 00, hdr 0, flags <>, irq 11
+  addr0 0000c000, size 00000040
+  addr1 febd2000, size 00001000
+  00: f4 1a 01 10 07 05 10 00 00 00 00 01 00 00 00 00  "................"
+  10: 01 c0 00 00 00 20 bd fe 00 00 00 00 00 00 00 00  "..... .........."
+  20: 00 00 00 00 00 00 00 00 00 00 00 00 f4 1a 02 00  "................"
+  30: 00 00 00 00 40 00 00 00 00 00 00 00 0b 01 00 00  "....@..........."
+  40: 11 00  ".."
+
+bus 00, slot 05, func 0, vend:dev:s_vend:s_dev:rev 1af4:1002:1af4:0005:00
+class 00, sub_class ff prog_if 00, hdr 0, flags <>, irq 10
+  addr0 0000c080, size 00000020
+  00: f4 1a 02 10 07 01 00 00 00 00 ff 00 00 00 00 00  "................"
+  10: 81 c0 00 00 00 00 00 00 00 00 00 00 00 00 00 00  "................"
+  20: 00 00 00 00 00 00 00 00 00 00 00 00 f4 1a 05 00  "................"
+  30: 00 00 00 00 00 00 00 00 00 00 00 00 0a 01 00 00  "................"
+---------- PCI raw data end ----------
+>> pci.4: build list
+>> pci.3: macio
+sysfs: no such bus: macio
+>> pci.4: vio
+sysfs: no such bus: vio
+>> pci.5: xen
+sysfs: no such bus: xen
+>> pci.6: ps3
+sysfs: no such bus: ps3_system_bus
+>> pci.7: platform
+  platform device: name = reg-dummy
+    path = /devices/platform/reg-dummy
+    type = "(null)", modalias = "platform:reg-dummy"
+  platform device: name = i8042
+    path = /devices/platform/i8042
+    type = "(null)", modalias = "platform:i8042"
+  platform device: name = alarmtimer
+    path = /devices/platform/alarmtimer
+    type = "(null)", modalias = "platform:alarmtimer"
+  platform device: name = pcspkr
+    path = /devices/platform/pcspkr
+    type = "(null)", modalias = "platform:pcspkr"
+  platform device: name = serial8250
+    path = /devices/platform/serial8250
+    type = "(null)", modalias = "platform:serial8250"
+  platform device: name = Fixed MDIO bus.0
+    path = /devices/platform/Fixed MDIO bus.0
+    type = "(null)", modalias = "platform:Fixed MDIO bus"
+  platform device: name = platform-framebuffer.0
+    path = /devices/platform/platform-framebuffer.0
+    type = "(null)", modalias = "platform:platform-framebuffer"
+  platform device: name = microcode
+    path = /devices/platform/microcode
+    type = "(null)", modalias = "platform:microcode"
+>> pci.8: of_platform
+sysfs: no such bus: of_platform
+>> pci.9: vm
+sysfs: no such bus: vm
+>> pci.10: virtio
+  virtio device: name = virtio0
+    path = /devices/pci0000:00/0000:00:03.0/virtio0
+    driver = "virtio_net"
+    modalias = "virtio:d00000001v00001AF4"
+    device = 1
+  virtio device: name = virtio1
+    path = /devices/pci0000:00/0000:00:04.0/virtio1
+    driver = "virtio_blk"
+    modalias = "virtio:d00000002v00001AF4"
+    device = 2
+  virtio device: name = virtio2
+    path = /devices/pci0000:00/0000:00:05.0/virtio2
+    driver = "virtio_balloon"
+    modalias = "virtio:d00000005v00001AF4"
+    device = 5
+>> pci.11: ibmebus
+sysfs: no such bus: ibmebus
+>> pci.12: uisvirtpci
+sysfs: no such bus: uisvirtpci
+>> monitor.1: ddc
+>> monitor.2: bios
+>> monitor.3: pci
+>> monitor.4: internal db
+>> monitor.5: prom
+>> pcmcia.1: sysfs drivers
+>> pcmcia.2: pcmcia
+sysfs: no such bus: pcmcia
+>> pcmcia.3: pcmcia ctrl
+sysfs: no such class: pcmcia_socket
+>> serial.1: read info
+----- /proc/tty/driver/serial -----
+  0: uart:16550A port:000003F8 irq:4 tx:16534 rx:0 RTS|CTS|DTR|DSR|CD
+  1: uart:16550A port:000002F8 irq:3 tx:0 rx:0 CTS|DSR|CD
+  2: uart:unknown port:000003E8 irq:4
+  3: uart:unknown port:000002E8 irq:3
+  4: uart:unknown port:00000000 irq:0
+  5: uart:unknown port:00000000 irq:0
+  6: uart:unknown port:00000000 irq:0
+  7: uart:unknown port:00000000 irq:0
+  8: uart:unknown port:00000000 irq:0
+  9: uart:unknown port:00000000 irq:0
+  10: uart:unknown port:00000000 irq:0
+  11: uart:unknown port:00000000 irq:0
+  12: uart:unknown port:00000000 irq:0
+  13: uart:unknown port:00000000 irq:0
+  14: uart:unknown port:00000000 irq:0
+  15: uart:unknown port:00000000 irq:0
+----- /proc/tty/driver/serial end -----
+----- serial info -----
+  uart 16550A, line 0, port 0x3f8, irq 4, baud 0
+  uart 16550A, line 1, port 0x2f8, irq 3, baud 0
+----- serial info end -----
+>> serial.2: build list
+>> misc.5: misc data
+----- misc resources -----
+i/o:0 0x0000 - 0x0cf7 (0xcf8) "PCI Bus 0000:00"
+i/o:1 0x0000 - 0x001f (0x20) "dma1"
+i/o:1 0x0020 - 0x0021 (0x02) "pic1"
+i/o:0 0x0040 - 0x0043 (0x04) "timer0"
+i/o:0 0x0050 - 0x0053 (0x04) "timer1"
+i/o:1 0x0060 - 0x0060 (0x01) "keyboard"
+i/o:1 0x0064 - 0x0064 (0x01) "keyboard"
+i/o:0 0x0070 - 0x0071 (0x02) "rtc0"
+i/o:1 0x0080 - 0x008f (0x10) "dma page reg"
+i/o:1 0x00a0 - 0x00a1 (0x02) "pic2"
+i/o:1 0x00c0 - 0x00df (0x20) "dma2"
+i/o:1 0x00f0 - 0x00ff (0x10) "fpu"
+i/o:0 0x0170 - 0x0177 (0x08) "0000:00:01.1"
+i/o:0 0x0170 - 0x0177 (0x08) "ata_piix"
+i/o:0 0x01f0 - 0x01f7 (0x08) "0000:00:01.1"
+i/o:0 0x01f0 - 0x01f7 (0x08) "ata_piix"
+i/o:1 0x02f8 - 0x02ff (0x08) "serial"
+i/o:0 0x0376 - 0x0376 (0x01) "0000:00:01.1"
+i/o:0 0x0376 - 0x0376 (0x01) "ata_piix"
+i/o:1 0x03c0 - 0x03df (0x20) "vga+"
+i/o:1 0x03f2 - 0x03f2 (0x01) "floppy"
+i/o:1 0x03f4 - 0x03f5 (0x02) "floppy"
+i/o:0 0x03f6 - 0x03f6 (0x01) "0000:00:01.1"
+i/o:0 0x03f6 - 0x03f6 (0x01) "ata_piix"
+i/o:1 0x03f7 - 0x03f7 (0x01) "floppy"
+i/o:1 0x03f8 - 0x03ff (0x08) "serial"
+i/o:0 0x0600 - 0x063f (0x40) "0000:00:01.3"
+i/o:0 0x0600 - 0x0603 (0x04) "ACPI PM1a_EVT_BLK"
+i/o:0 0x0604 - 0x0605 (0x02) "ACPI PM1a_CNT_BLK"
+i/o:0 0x0608 - 0x060b (0x04) "ACPI PM_TMR"
+i/o:0 0x0700 - 0x070f (0x10) "0000:00:01.3"
+i/o:0 0x0cf8 - 0x0cff (0x08) "PCI conf1"
+i/o:0 0x0d00 - 0xffff (0xf300) "PCI Bus 0000:00"
+i/o:0 0xafe0 - 0xafe3 (0x04) "ACPI GPE0_BLK"
+i/o:0 0xc000 - 0xc03f (0x40) "0000:00:04.0"
+i/o:0 0xc000 - 0xc03f (0x40) "virtio-pci-legacy"
+i/o:0 0xc040 - 0xc05f (0x20) "0000:00:01.2"
+i/o:0 0xc040 - 0xc05f (0x20) "uhci_hcd"
+i/o:0 0xc060 - 0xc07f (0x20) "0000:00:03.0"
+i/o:0 0xc060 - 0xc07f (0x20) "virtio-pci-legacy"
+i/o:0 0xc080 - 0xc09f (0x20) "0000:00:05.0"
+i/o:0 0xc080 - 0xc09f (0x20) "virtio-pci-legacy"
+i/o:0 0xc0a0 - 0xc0af (0x10) "0000:00:01.1"
+i/o:0 0xc0a0 - 0xc0af (0x10) "ata_piix"
+irq:0  0 (       22) "2-edge      timer"
+irq:0  1 (        9) "1-edge      i8042"
+irq:0  3 (        1) "3-edge      serial"
+irq:0  4 (     3567) "4-edge      serial"
+irq:0  6 (        3) "6-edge      floppy"
+irq:0  8 (        0) "8-edge      rtc0"
+irq:0  9 (        0) "9-fasteoi   acpi"
+irq:0 10 (    10082) "10-fasteoi   virtio2"
+irq:0 11 (       26) "11-fasteoi   uhci_hcd:usb1"
+irq:0 12 (       15) "12-edge      i8042"
+irq:0 14 (        0) "14-edge      ata_piix"
+irq:0 15 (        0) "15-edge      ata_piix"
+irq:0 24 (        0) "65536-edge      virtio1-config"
+irq:0 25 (    98800) "65537-edge      virtio1-req.0"
+irq:0 26 (        0) "49152-edge      virtio0-config"
+irq:0 27 (   120460) "49153-edge      virtio0-input.0"
+irq:0 28 (        2) "49154-edge      virtio0-output.0"
+dma:1 2 "floppy"
+dma:1 4 "cascade"
+----- misc resources end -----
+>> parallel.1: pp mod
+----- exec: "/sbin/rmmod parport_pc" -----
+----- return code: ? -----
+----- exec: "/sbin/modprobe parport_pc" -----
+----- return code: ? -----
+----- exec: "/sbin/modprobe lp" -----
+----- return code: ? -----
+>> parallel.2.1: lp read info
+>> parallel.2.2: lp read info
+>> parallel.2.3: lp read info
+----- parallel info -----
+----- parallel info end -----
+>> block.1: block modules
+----- exec: "/sbin/modprobe ide-cd_mod " -----
+  modprobe: FATAL: Module ide-cd_mod not found in directory /lib/modules/4.4.0-62-generic
+----- return code: ? -----
+----- exec: "/sbin/modprobe ide-disk " -----
+  modprobe: FATAL: Module ide-disk not found in directory /lib/modules/4.4.0-62-generic
+----- return code: ? -----
+----- exec: "/sbin/modprobe sr_mod " -----
+----- return code: ? -----
+----- exec: "/sbin/modprobe sd_mod " -----
+----- return code: ? -----
+----- exec: "/sbin/modprobe st " -----
+  modprobe: FATAL: Module st not found in directory /lib/modules/4.4.0-62-generic
+----- return code: ? -----
+>> block.2: sysfs drivers
+----- sysfs driver list (id 0x0efcee77d6bee683) -----
+       processor: /devices/system/cpu/cpu0
+        uhci_hcd: /devices/pci0000:00/0000:00:01.2
+        uhci_hcd: module = uhci_hcd
+      virtio-pci: /devices/pci0000:00/0000:00:03.0
+      virtio-pci: /devices/pci0000:00/0000:00:04.0
+      virtio-pci: /devices/pci0000:00/0000:00:05.0
+      virtio-pci: module = virtio_pci
+        pata_sis: module = pata_sis
+     ata_generic: module = ata_generic
+      parport_pc: module = parport_pc
+        ata_piix: /devices/pci0000:00/0000:00:01.1
+        ata_piix: module = ata_piix
+        rtc_cmos: /devices/pnp0/00:00
+          serial: /devices/pnp0/00:04
+          serial: /devices/pnp0/00:05
+       i8042 aux: /devices/pnp0/00:02
+       i8042 kbd: /devices/pnp0/00:01
+             hub: module = usbcore
+             hub: /devices/pci0000:00/0000:00:01.2/usb1/1-0:1.0
+             usb: /devices/pci0000:00/0000:00:01.2/usb1/1-1
+             usb: /devices/pci0000:00/0000:00:01.2/usb1
+           usbfs: module = usbcore
+          button: /devices/LNXSYSTM:00/LNXPWRBN:00
+       serio_raw: module = serio_raw
+           atkbd: /devices/platform/i8042/serio0
+         psmouse: module = psmouse
+         psmouse: /devices/platform/i8042/serio1
+      virtio_blk: /devices/pci0000:00/0000:00:04.0/virtio1
+      virtio_net: /devices/pci0000:00/0000:00:03.0/virtio0
+  virtio_balloon: /devices/pci0000:00/0000:00:05.0/virtio2
+       reg-dummy: /devices/platform/reg-dummy
+           i8042: /devices/platform/i8042
+      alarmtimer: /devices/platform/alarmtimer
+          floppy: module = floppy
+      serial8250: /devices/platform/serial8250
+      parport_pc: module = parport_pc
+----- sysfs driver list end -----
+>> block.3: cdrom
+----- /proc/sys/dev/cdrom/info -----
+drive name:	
+drive speed:	
+drive # of slots:
+Can close tray:	
+Can open tray:	
+Can lock tray:	
+Can change speed:
+Can select disk:
+Can read multisession:
+Can read MCN:	
+Reports media changed:
+Can play audio:	
+Can write CD-R:	
+Can write CD-RW:
+Can read DVD:	
+Can write DVD-R:
+Can write DVD-RAM:
+Can read MRW:	
+Can write MRW:	
+Can write RAM:	
+----- /proc/sys/dev/cdrom/info end -----
+>> block.4: partition
+----- /proc/partitions -----
+     1        0      65536 ram0
+     1        1      65536 ram1
+     1        2      65536 ram2
+     1        3      65536 ram3
+     1        4      65536 ram4
+     1        5      65536 ram5
+     1        6      65536 ram6
+     1        7      65536 ram7
+     1        8      65536 ram8
+     1        9      65536 ram9
+     1       10      65536 ram10
+     1       11      65536 ram11
+     1       12      65536 ram12
+     1       13      65536 ram13
+     1       14      65536 ram14
+     1       15      65536 ram15
+   253        0   10485760 vda
+   253        1   10484719 vda1
+----- /proc/partitions end -----
+disks:
+  ram0
+  ram1
+  ram2
+  ram3
+  ram4
+  ram5
+  ram6
+  ram7
+  ram8
+  ram9
+  ram10
+  ram11
+  ram12
+  ram13
+  ram14
+  ram15
+  vda
+partitions:
+  vda1
+>> block.5: get sysfs block dev data
+-----  lsscsi -----
+-----  lsscsi end -----
+  block: name = vda, path = /class/block/vda
+    dev = 253:0
+    range = 16
+    block device: bus = virtio, bus_id = virtio1 driver = virtio_blk
+      path = /devices/pci0000:00/0000:00:04.0/virtio1
+>> block.5: /dev/vda
+>> block.5.1: /dev/vda geo
+  dev = /dev/vda, fd = 3
+  open ok, fd = 3
+/dev/vda: ioctl(geo) ok
+/dev/vda: ioctl(block size) ok
+/dev/vda: ioctl(disk size) ok
+  block: name = ram0, path = /class/block/ram0
+    dev = 1:0
+    range = 1
+>> block.5: /dev/ram0
+>> block.5.1: /dev/ram0 geo
+  dev = /dev/ram0, fd = 3
+  open ok, fd = 3
+  geo failed: Inappropriate ioctl for device
+/dev/ram0: ioctl(block size) ok
+/dev/ram0: ioctl(disk size) ok
+  block: name = ram1, path = /class/block/ram1
+    dev = 1:1
+    range = 1
+>> block.5: /dev/ram1
+>> block.5.1: /dev/ram1 geo
+  dev = /dev/ram1, fd = 3
+  open ok, fd = 3
+  geo failed: Inappropriate ioctl for device
+/dev/ram1: ioctl(block size) ok
+/dev/ram1: ioctl(disk size) ok
+  block: name = ram2, path = /class/block/ram2
+    dev = 1:2
+    range = 1
+>> block.5: /dev/ram2
+>> block.5.1: /dev/ram2 geo
+  dev = /dev/ram2, fd = 3
+  open ok, fd = 3
+  geo failed: Inappropriate ioctl for device
+/dev/ram2: ioctl(block size) ok
+/dev/ram2: ioctl(disk size) ok
+  block: name = ram3, path = /class/block/ram3
+    dev = 1:3
+    range = 1
+>> block.5: /dev/ram3
+>> block.5.1: /dev/ram3 geo
+  dev = /dev/ram3, fd = 3
+  open ok, fd = 3
+  geo failed: Inappropriate ioctl for device
+/dev/ram3: ioctl(block size) ok
+/dev/ram3: ioctl(disk size) ok
+  block: name = ram4, path = /class/block/ram4
+    dev = 1:4
+    range = 1
+>> block.5: /dev/ram4
+>> block.5.1: /dev/ram4 geo
+  dev = /dev/ram4, fd = 3
+  open ok, fd = 3
+  geo failed: Inappropriate ioctl for device
+/dev/ram4: ioctl(block size) ok
+/dev/ram4: ioctl(disk size) ok
+  block: name = ram5, path = /class/block/ram5
+    dev = 1:5
+    range = 1
+>> block.5: /dev/ram5
+>> block.5.1: /dev/ram5 geo
+  dev = /dev/ram5, fd = 3
+  open ok, fd = 3
+  geo failed: Inappropriate ioctl for device
+/dev/ram5: ioctl(block size) ok
+/dev/ram5: ioctl(disk size) ok
+  block: name = ram6, path = /class/block/ram6
+    dev = 1:6
+    range = 1
+>> block.5: /dev/ram6
+>> block.5.1: /dev/ram6 geo
+  dev = /dev/ram6, fd = 3
+  open ok, fd = 3
+  geo failed: Inappropriate ioctl for device
+/dev/ram6: ioctl(block size) ok
+/dev/ram6: ioctl(disk size) ok
+  block: name = ram7, path = /class/block/ram7
+    dev = 1:7
+    range = 1
+>> block.5: /dev/ram7
+>> block.5.1: /dev/ram7 geo
+  dev = /dev/ram7, fd = 3
+  open ok, fd = 3
+  geo failed: Inappropriate ioctl for device
+/dev/ram7: ioctl(block size) ok
+/dev/ram7: ioctl(disk size) ok
+  block: name = ram8, path = /class/block/ram8
+    dev = 1:8
+    range = 1
+>> block.5: /dev/ram8
+>> block.5.1: /dev/ram8 geo
+  dev = /dev/ram8, fd = 3
+  open ok, fd = 3
+  geo failed: Inappropriate ioctl for device
+/dev/ram8: ioctl(block size) ok
+/dev/ram8: ioctl(disk size) ok
+  block: name = ram9, path = /class/block/ram9
+    dev = 1:9
+    range = 1
+>> block.5: /dev/ram9
+>> block.5.1: /dev/ram9 geo
+  dev = /dev/ram9, fd = 3
+  open ok, fd = 3
+  geo failed: Inappropriate ioctl for device
+/dev/ram9: ioctl(block size) ok
+/dev/ram9: ioctl(disk size) ok
+  block: name = vda1, path = /class/block/vda1
+    dev = 253:1
+  block: name = loop0, path = /class/block/loop0
+    dev = 7:0
+    range = 1
+  block: name = loop1, path = /class/block/loop1
+    dev = 7:1
+    range = 1
+  block: name = loop2, path = /class/block/loop2
+    dev = 7:2
+    range = 1
+  block: name = loop3, path = /class/block/loop3
+    dev = 7:3
+    range = 1
+  block: name = loop4, path = /class/block/loop4
+    dev = 7:4
+    range = 1
+  block: name = loop5, path = /class/block/loop5
+    dev = 7:5
+    range = 1
+  block: name = loop6, path = /class/block/loop6
+    dev = 7:6
+    range = 1
+  block: name = loop7, path = /class/block/loop7
+    dev = 7:7
+    range = 1
+  block: name = ram10, path = /class/block/ram10
+    dev = 1:10
+    range = 1
+>> block.5: /dev/ram10
+>> block.5.1: /dev/ram10 geo
+  dev = /dev/ram10, fd = 3
+  open ok, fd = 3
+  geo failed: Inappropriate ioctl for device
+/dev/ram10: ioctl(block size) ok
+/dev/ram10: ioctl(disk size) ok
+  block: name = ram11, path = /class/block/ram11
+    dev = 1:11
+    range = 1
+>> block.5: /dev/ram11
+>> block.5.1: /dev/ram11 geo
+  dev = /dev/ram11, fd = 3
+  open ok, fd = 3
+  geo failed: Inappropriate ioctl for device
+/dev/ram11: ioctl(block size) ok
+/dev/ram11: ioctl(disk size) ok
+  block: name = ram12, path = /class/block/ram12
+    dev = 1:12
+    range = 1
+>> block.5: /dev/ram12
+>> block.5.1: /dev/ram12 geo
+  dev = /dev/ram12, fd = 3
+  open ok, fd = 3
+  geo failed: Inappropriate ioctl for device
+/dev/ram12: ioctl(block size) ok
+/dev/ram12: ioctl(disk size) ok
+  block: name = ram13, path = /class/block/ram13
+    dev = 1:13
+    range = 1
+>> block.5: /dev/ram13
+>> block.5.1: /dev/ram13 geo
+  dev = /dev/ram13, fd = 3
+  open ok, fd = 3
+  geo failed: Inappropriate ioctl for device
+/dev/ram13: ioctl(block size) ok
+/dev/ram13: ioctl(disk size) ok
+  block: name = ram14, path = /class/block/ram14
+    dev = 1:14
+    range = 1
+>> block.5: /dev/ram14
+>> block.5.1: /dev/ram14 geo
+  dev = /dev/ram14, fd = 3
+  open ok, fd = 3
+  geo failed: Inappropriate ioctl for device
+/dev/ram14: ioctl(block size) ok
+/dev/ram14: ioctl(disk size) ok
+  block: name = ram15, path = /class/block/ram15
+    dev = 1:15
+    range = 1
+>> block.5: /dev/ram15
+>> block.5.1: /dev/ram15 geo
+  dev = /dev/ram15, fd = 3
+  open ok, fd = 3
+  geo failed: Inappropriate ioctl for device
+/dev/ram15: ioctl(block size) ok
+/dev/ram15: ioctl(disk size) ok
+>> scsi.1: scsi modules
+----- exec: "/sbin/modprobe sg " -----
+----- return code: ? -----
+>> scsi.2: scsi tape
+sysfs: no such class: scsi_tape
+>> scsi.3: scsi generic
+sysfs: no such class: scsi_generic
+>> usb.1: sysfs drivers
+>> usb.2: usb
+  usb dev: /devices/pci0000:00/0000:00:01.2/usb1/1-1
+  usb dev: /devices/pci0000:00/0000:00:01.2/usb1
+  usb device: name = 1-1
+    path = /devices/pci0000:00/0000:00:01.2/usb1/1-1
+  usb device: name = usb1
+    path = /devices/pci0000:00/0000:00:01.2/usb1
+  usb device: name = 1-0:1.0
+    path = /devices/pci0000:00/0000:00:01.2/usb1/1-0:1.0
+    modalias = "usb:v1D6Bp0001d0404dc09dsc00dp00ic09isc00ip00in00"
+    bInterfaceNumber = 0
+    bInterfaceClass = 9
+    bInterfaceSubClass = 0
+    bInterfaceProtocol = 0
+    if: 1-0:1.0 @ /devices/pci0000:00/0000:00:01.2/usb1
+    bDeviceClass = 9
+    bDeviceSubClass = 0
+    bDeviceProtocol = 0
+    idVendor = 0x1d6b
+    idProduct = 0x0001
+    manufacturer = "Linux 4.4.0-62-generic uhci_hcd"
+    product = "UHCI Host Controller"
+    serial = "0000:00:01.2"
+    bcdDevice = 0404
+    speed = "12"
+  usb device: name = 1-1:1.0
+    path = /devices/pci0000:00/0000:00:01.2/usb1/1-1/1-1:1.0
+    modalias = "usb:v0627p0001d0000dc00dsc00dp00ic03isc00ip02in00"
+    bInterfaceNumber = 0
+    bInterfaceClass = 3
+    bInterfaceSubClass = 0
+    bInterfaceProtocol = 2
+    if: 1-1:1.0 @ /devices/pci0000:00/0000:00:01.2/usb1/1-1
+    bDeviceClass = 0
+    bDeviceSubClass = 0
+    bDeviceProtocol = 0
+    idVendor = 0x0627
+    idProduct = 0x0001
+    manufacturer = "QEMU"
+    product = "QEMU USB Tablet"
+    serial = "42"
+    bcdDevice = 0000
+    speed = "12"
+>> usb.3.1: joydev mod
+>> usb.3.2: evdev mod
+----- exec: "/sbin/modprobe evdev " -----
+----- return code: ? -----
+>> usb.3.3: input
+  input: name = mice, path = /devices/virtual/input/mice
+    dev = 13:63
+  input: name = event0, path = /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0/event0
+    dev = 13:64
+    input device: bus = acpi, bus_id = LNXPWRBN:00 driver = button
+      path = /devices/LNXSYSTM:00/LNXPWRBN:00
+  input: name = event1, path = /devices/platform/i8042/serio0/input/input1/event1
+    dev = 13:65
+    input device: bus = serio, bus_id = serio0 driver = atkbd
+      path = /devices/platform/i8042/serio0
+  input: name = event2, path = /devices/platform/i8042/serio1/input/input4/event2
+    dev = 13:66
+    input device: bus = serio, bus_id = serio1 driver = psmouse
+      path = /devices/platform/i8042/serio1
+  input: name = event3, path = /devices/platform/i8042/serio1/input/input3/event3
+    dev = 13:67
+    input device: bus = serio, bus_id = serio1 driver = psmouse
+      path = /devices/platform/i8042/serio1
+  input: name = input0, path = /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+    no dev - ignored
+  input: name = input1, path = /devices/platform/i8042/serio0/input/input1
+    no dev - ignored
+  input: name = input3, path = /devices/platform/i8042/serio1/input/input3
+    no dev - ignored
+  input: name = input4, path = /devices/platform/i8042/serio1/input/input4
+    no dev - ignored
+  input: name = mouse0, path = /devices/platform/i8042/serio1/input/input4/mouse0
+    dev = 13:32
+    input device: bus = serio, bus_id = serio1 driver = psmouse
+      path = /devices/platform/i8042/serio1
+  input: name = mouse1, path = /devices/platform/i8042/serio1/input/input3/mouse1
+    dev = 13:33
+    input device: bus = serio, bus_id = serio1 driver = psmouse
+      path = /devices/platform/i8042/serio1
+>> usb.3.4: lp
+sysfs: no such class: usb
+>> usb.3.5: serial
+>> edd.1: edd mod
+----- exec: "/sbin/modprobe edd " -----
+----- return code: ? -----
+>> edd.2: edd info
+******  started child process 6884 (10s/10s)  ******
+>> braille.1.1: alva
+>> braille.2.1: alva open
+>> braille.3.1: alva init ok
+>> braille.4.1: alva read data
+alva.100@/dev/ttyS1[0]: 
+>> braille.5.1: alva read done
+>> braille.1.1: fhp_old
+>> braille.2.1: fhp open
+>> braille.3.1: fhp init ok
+>> braille.4.1: fhp write ok
+>> braille.5.1: fhp read done
+fhp@/dev/ttyS1[0]: 
+no fhp display: 0x00
+>> braille.1.1: fhp_el
+>> braille.2.1: fhp open
+>> braille.3.1: fhp init ok
+>> braille.4.1: fhp write ok
+>> braille.5.1: fhp read done
+fhp@/dev/ttyS1[0]: 
+no fhp display: 0x00
+>> braille.1.1: ht
+>> braille.2.1: ht open
+>> braille.3.1: ht init ok
+>> braille.4.1: ht write ok
+>> braille.5.1: ht read done
+ht@/dev/ttyS1[1]: 00  "."
+no ht display: 0x00
+>> braille.1.1: baum
+>> braille.2.1: baum open
+>> braille.3.1: baum write ok
+>> braille.4.1: baum read done
+baum@/dev/ttyS1[0]: 
+>> braille.1.1: fhp new
+>> braille.2.1: fhp2 open
+>> braille.3.1: fhp2 write ok
+>> braille.4.1: fhp2 read done
+fhp2@/dev/ttyS1[0]: 
+******  stopped child process 6884 (7s)  ******
+>> modem.1: serial
+******  started child process 6885 (15s/120s)  ******
+>> modem.2: init
+>> modem.3.1: at test
+>> modem.9.1: write at cmd
+>> modem.9.1: read at resp
+>> modem.9.1: read ok
+/dev/ttyS1@115200: AT
+    ""
+>> modem.3.2: at test
+>> modem.9.2: write at cmd
+>> modem.9.2: read at resp
+>> modem.9.2: read ok
+/dev/ttyS1@38400: AT
+    ""
+>> modem.3.3: at test
+>> modem.9.3: write at cmd
+>> modem.9.3: read at resp
+>> modem.9.3: read ok
+/dev/ttyS1@9600: AT
+    ""
+>> modem.3.4: at test
+>> modem.9.4: write at cmd
+>> modem.9.4: read at resp
+>> modem.9.4: read ok
+/dev/ttyS1@1200: AT
+    ""
+>> modem.4: init string
+>> modem.5: speed
+>> modem.5: pnp id
+----- serial modems -----
+/dev/ttyS1
+  not a modem
+----- serial modems end -----
+******  stopped child process 6885 (116s)  ******
+----- serial modems -----
+/dev/ttyS1
+  not a modem
+----- serial modems end -----
+>> mouse.2: serial
+******  started child process 6886 (20s/20s)  ******
+----- serial mice -----
+/dev/ttyS1
+----- serial mice end -----
+******  stopped child process 6886 (19s)  ******
+----- serial mice -----
+/dev/ttyS1
+----- serial mice end -----
+>> input.1: joydev mod
+>> input.1.1: evdev mod
+----- exec: "/sbin/modprobe evdev " -----
+----- return code: ? -----
+>> input.2: input
+----- /proc/bus/input/devices -----
+  I: Bus=0019 Vendor=0000 Product=0001 Version=0000
+  N: Name="Power Button"
+  P: Phys=LNXPWRBN/button/input0
+  S: Sysfs=/devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+  U: Uniq=
+  H: Handlers=kbd event0 
+  B: PROP=0
+  B: EV=3
+  B: KEY=10000000000000 0
+  
+  I: Bus=0011 Vendor=0001 Product=0001 Version=ab41
+  N: Name="AT Translated Set 2 keyboard"
+  P: Phys=isa0060/serio0/input0
+  S: Sysfs=/devices/platform/i8042/serio0/input/input1
+  U: Uniq=
+  H: Handlers=sysrq kbd event1 
+  B: PROP=0
+  B: EV=120013
+  B: KEY=402000000 3803078f800d001 feffffdfffefffff fffffffffffffffe
+  B: MSC=10
+  B: LED=7
+  
+  I: Bus=0011 Vendor=0002 Product=0013 Version=5868
+  N: Name="VirtualPS/2 VMware VMMouse"
+  P: Phys=isa0060/serio1/input1
+  S: Sysfs=/devices/platform/i8042/serio1/input/input4
+  U: Uniq=
+  H: Handlers=mouse0 event2 
+  B: PROP=0
+  B: EV=b
+  B: KEY=70000 0 0 0 0
+  B: ABS=3
+  
+  I: Bus=0011 Vendor=0002 Product=0013 Version=5868
+  N: Name="VirtualPS/2 VMware VMMouse"
+  P: Phys=isa0060/serio1/input0
+  S: Sysfs=/devices/platform/i8042/serio1/input/input3
+  U: Uniq=
+  H: Handlers=mouse1 event3 
+  B: PROP=1
+  B: EV=7
+  B: KEY=30000 0 0 0 0
+  B: REL=103
+  
+----- /proc/bus/input/devices end -----
+bus = 25, name = Power Button
+  handlers = kbd event0
+  key = 00100000000000000000000000000000
+  mouse buttons = 0
+  mouse wheels = 0
+  is_mouse = 0
+  is_joystick = 0
+unknown non-USB input device
+bus = 17, name = AT Translated Set 2 keyboard
+  handlers = sysrq kbd event1
+  key = 000000040200000003803078f800d001feffffdfffeffffffffffffffffffffe
+  mouse buttons = 0
+  mouse wheels = 0
+  is_mouse = 0
+  is_joystick = 0
+bus = 17, name = VirtualPS/2 VMware VMMouse
+  handlers = mouse0 event2
+  key = 00000000000700000000000000000000000000000000000000000000000000000000000000000000
+  abs = 0000000000000003
+  mouse buttons = 3
+  mouse wheels = 0
+  is_mouse = 1
+  is_joystick = 0
+bus = 17, name = VirtualPS/2 VMware VMMouse
+  handlers = mouse1 event3
+  key = 00000000000300000000000000000000000000000000000000000000000000000000000000000000
+  rel = 0000000000000103
+  mouse buttons = 2
+  mouse wheels = 1
+  is_mouse = 1
+  is_joystick = 0
+>> kbd.2: uml
+>> cpu.1: cpuinfo
+----- /proc/cpuinfo -----
+  processor	: 0
+  vendor_id	: GenuineIntel
+  cpu family	: 6
+  model		: 60
+  model name	: Intel Core Processor (Haswell, no TSX)
+  stepping	: 1
+  microcode	: 0x1
+  cpu MHz		: 2399.996
+  cache size	: 4096 KB
+  physical id	: 0
+  siblings	: 1
+  core id		: 0
+  cpu cores	: 1
+  apicid		: 0
+  initial apicid	: 0
+  fpu		: yes
+  fpu_exception	: yes
+  cpuid level	: 13
+  wp		: yes
+  flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl eagerfpu pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm tpr_shadow vnmi flexpriority ept vpid fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveopt
+  bugs		:
+  bogomips	: 4799.99
+  clflush size	: 64
+  cache_alignment	: 64
+  address sizes	: 40 bits physical, 48 bits virtual
+  power management:
+  
+----- /proc/cpuinfo end -----
+>> kbd.3: serial console
+>> fb.1: read info
+>> net.1: get network data
+  net interface: name = lo, path = /class/net/lo
+    type = 772
+    carrier = 1
+    hw_addr = 00:00:00:00:00:00
+    GDRVINFO ethtool error: Operation not supported
+    ethtool private flags: 0
+  net interface: name = ens3, path = /class/net/ens3
+    type = 1
+    carrier = 1
+    hw_addr = fa:16:3e:05:38:92
+    net device: path = /devices/pci0000:00/0000:00:03.0/virtio0
+    net driver: name = virtio_net, path = /bus/virtio/drivers/virtio_net
+    ethtool private flags: 0
+>> pppoe.1: looking for pppoe
+>> pppoe.2: discovery
+Attempt number 1
+ens3: Sending PADI packet
+Timeout waiting for PADO packets
+Attempt number 2
+ens3: Sending PADI packet
+Timeout waiting for PADO packets
+>> wlan.1: detecting wlan features
+>> isdn.1: list
+>> dsl.1: list
+>> int.2: cdrom
+>> int.3: media
+>> int.4.1: /dev/vda
+  read_block0: 512 bytes (4s, 999998us)
+  mbr sig: 0xffcebafc
+>> int.4.2: /dev/ram0
+  read_block0: 512 bytes (4s, 999999us)
+  mbr sig: 0x00000000
+>> int.4.3: /dev/ram1
+  read_block0: 512 bytes (4s, 999999us)
+  mbr sig: 0x00000000
+>> int.4.4: /dev/ram2
+  read_block0: 512 bytes (4s, 999999us)
+  mbr sig: 0x00000000
+>> int.4.5: /dev/ram3
+  read_block0: 512 bytes (4s, 999999us)
+  mbr sig: 0x00000000
+>> int.4.6: /dev/ram4
+  read_block0: 512 bytes (4s, 999999us)
+  mbr sig: 0x00000000
+>> int.4.7: /dev/ram5
+  read_block0: 512 bytes (4s, 999998us)
+  mbr sig: 0x00000000
+>> int.4.8: /dev/ram6
+  read_block0: 512 bytes (4s, 999998us)
+  mbr sig: 0x00000000
+>> int.4.9: /dev/ram7
+  read_block0: 512 bytes (4s, 999999us)
+  mbr sig: 0x00000000
+>> int.4.10: /dev/ram8
+  read_block0: 512 bytes (4s, 999999us)
+  mbr sig: 0x00000000
+>> int.4.11: /dev/ram9
+  read_block0: 512 bytes (4s, 999999us)
+  mbr sig: 0x00000000
+>> int.4.12: /dev/ram10
+  read_block0: 512 bytes (4s, 999998us)
+  mbr sig: 0x00000000
+>> int.4.13: /dev/ram11
+  read_block0: 512 bytes (4s, 999998us)
+  mbr sig: 0x00000000
+>> int.4.14: /dev/ram12
+  read_block0: 512 bytes (4s, 999999us)
+  mbr sig: 0x00000000
+>> int.4.15: /dev/ram13
+  read_block0: 512 bytes (4s, 999995us)
+  mbr sig: 0x00000000
+>> int.4.16: /dev/ram14
+  read_block0: 512 bytes (4s, 999998us)
+  mbr sig: 0x00000000
+>> int.4.17: /dev/ram15
+  read_block0: 512 bytes (4s, 999997us)
+  mbr sig: 0x00000000
+>> int.4: floppy
+>> int.5: edd
+>> int.5.1: bios
+  bios ctrl 0: 21
+  bios ctrl 1: 0
+>> int.6: mouse
+>> int.15: system info
+  system type:
+  acpi: 1
+>> int.7: hdb
+>> int.7.1: modules
+>> int.8: usbscsi
+>> int.9: hotplug
+>> int.10: modem
+>> int.11: wlan
+>> int.12: udev
+-----  udevinfo -----
+  P: /devices/LNXSYSTM:00
+  E: DEVPATH=/devices/LNXSYSTM:00
+  E: MODALIAS=acpi:LNXSYSTM:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXPWRBN:00
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXPWRBN:00
+  E: DRIVER=button
+  E: MODALIAS=acpi:LNXPWRBN:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+  E: EV=3
+  E: ID_FOR_SEAT=input-acpi-LNXPWRBN_00
+  E: ID_INPUT=1
+  E: ID_INPUT_KEY=1
+  E: ID_PATH=acpi-LNXPWRBN:00
+  E: ID_PATH_TAG=acpi-LNXPWRBN_00
+  E: KEY=10000000000000 0
+  E: MODALIAS=input:b0019v0000p0001e0000-e0,1,k74,ramlsfw
+  E: NAME="Power Button"
+  E: PHYS="LNXPWRBN/button/input0"
+  E: PRODUCT=19/0/1/0
+  E: PROP=0
+  E: SUBSYSTEM=input
+  E: TAGS=:seat:
+  E: USEC_INITIALIZED=970340
+  
+  P: /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0/event0
+  N: input/event0
+  E: DEVNAME=/dev/input/event0
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXPWRBN:00/input/input0/event0
+  E: ID_INPUT=1
+  E: ID_INPUT_KEY=1
+  E: ID_PATH=acpi-LNXPWRBN:00
+  E: ID_PATH_TAG=acpi-LNXPWRBN_00
+  E: MAJOR=13
+  E: MINOR=64
+  E: SUBSYSTEM=input
+  E: TAGS=:power-switch:
+  E: USEC_INITIALIZED=982408
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00
+  E: MODALIAS=acpi:LNXSYBUS:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/LNXCPU:00
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/LNXCPU:00
+  E: MODALIAS=acpi:LNXCPU:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0103:00
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0103:00
+  E: MODALIAS=acpi:PNP0103:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00
+  E: MODALIAS=acpi:PNP0A03:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/PNP0A06:00
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/PNP0A06:00
+  E: MODALIAS=acpi:PNP0A06:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/PNP0A06:01
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/PNP0A06:01
+  E: MODALIAS=acpi:PNP0A06:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/PNP0A06:02
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/PNP0A06:02
+  E: MODALIAS=acpi:PNP0A06:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/PNP0A06:03
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/PNP0A06:03
+  E: MODALIAS=acpi:PNP0A06:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0303:00
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0303:00
+  E: MODALIAS=acpi:PNP0303:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0400:00
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0400:00
+  E: MODALIAS=acpi:PNP0400:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0501:00
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0501:00
+  E: MODALIAS=acpi:PNP0501:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0501:01
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0501:01
+  E: MODALIAS=acpi:PNP0501:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0700:00
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0700:00
+  E: MODALIAS=acpi:PNP0700:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0B00:00
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0B00:00
+  E: MODALIAS=acpi:PNP0B00:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0F13:00
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0F13:00
+  E: MODALIAS=acpi:PNP0F13:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:02
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:02
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:03
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:03
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:04
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:04
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:05
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:05
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:06
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:06
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:07
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:07
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:08
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:08
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:09
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:09
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:0a
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:0a
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:0b
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:0b
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:0c
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:0c
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:0d
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:0d
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:0e
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:0e
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:0f
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:0f
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:10
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:10
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:11
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:11
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:12
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:12
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:13
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:13
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:14
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:14
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:15
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:15
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:16
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:16
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:17
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:17
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:18
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:18
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:19
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:19
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:1a
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:1a
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:1b
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:1b
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:1c
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:1c
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:1d
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:1d
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:1e
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:1e
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:1f
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:1f
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:20
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:20
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0F:00
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0F:00
+  E: MODALIAS=acpi:PNP0C0F:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0F:01
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0F:01
+  E: MODALIAS=acpi:PNP0C0F:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0F:02
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0F:02
+  E: MODALIAS=acpi:PNP0C0F:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0F:03
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0F:03
+  E: MODALIAS=acpi:PNP0C0F:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0F:04
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0F:04
+  E: MODALIAS=acpi:PNP0C0F:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/LNXSYSTM:00/LNXSYBUS:01
+  E: DEVPATH=/devices/LNXSYSTM:00/LNXSYBUS:01
+  E: MODALIAS=acpi:LNXSYBUS:
+  E: SUBSYSTEM=acpi
+  
+  P: /devices/breakpoint
+  E: DEVPATH=/devices/breakpoint
+  E: SUBSYSTEM=event_source
+  
+  P: /devices/msr
+  E: DEVPATH=/devices/msr
+  E: SUBSYSTEM=event_source
+  
+  P: /devices/pci0000:00/0000:00:00.0
+  E: DEVPATH=/devices/pci0000:00/0000:00:00.0
+  E: ID_MODEL_FROM_DATABASE=440FX - 82441FX PMC [Natoma] (Qemu virtual machine)
+  E: ID_PCI_CLASS_FROM_DATABASE=Bridge
+  E: ID_PCI_SUBCLASS_FROM_DATABASE=Host bridge
+  E: ID_VENDOR_FROM_DATABASE=Intel Corporation
+  E: MODALIAS=pci:v00008086d00001237sv00001AF4sd00001100bc06sc00i00
+  E: PCI_CLASS=60000
+  E: PCI_ID=8086:1237
+  E: PCI_SLOT_NAME=0000:00:00.0
+  E: PCI_SUBSYS_ID=1AF4:1100
+  E: SUBSYSTEM=pci
+  E: USEC_INITIALIZED=4507184
+  
+  P: /devices/pci0000:00/0000:00:01.0
+  E: DEVPATH=/devices/pci0000:00/0000:00:01.0
+  E: ID_MODEL_FROM_DATABASE=82371SB PIIX3 ISA [Natoma/Triton II] (Qemu virtual machine)
+  E: ID_PCI_CLASS_FROM_DATABASE=Bridge
+  E: ID_PCI_SUBCLASS_FROM_DATABASE=ISA bridge
+  E: ID_VENDOR_FROM_DATABASE=Intel Corporation
+  E: MODALIAS=pci:v00008086d00007000sv00001AF4sd00001100bc06sc01i00
+  E: PCI_CLASS=60100
+  E: PCI_ID=8086:7000
+  E: PCI_SLOT_NAME=0000:00:01.0
+  E: PCI_SUBSYS_ID=1AF4:1100
+  E: SUBSYSTEM=pci
+  E: USEC_INITIALIZED=4508761
+  
+  P: /devices/pci0000:00/0000:00:01.1
+  E: DEVPATH=/devices/pci0000:00/0000:00:01.1
+  E: DRIVER=ata_piix
+  E: ID_MODEL_FROM_DATABASE=82371SB PIIX3 IDE [Natoma/Triton II] (Qemu virtual machine)
+  E: ID_PCI_CLASS_FROM_DATABASE=Mass storage controller
+  E: ID_PCI_SUBCLASS_FROM_DATABASE=IDE interface
+  E: ID_VENDOR_FROM_DATABASE=Intel Corporation
+  E: MODALIAS=pci:v00008086d00007010sv00001AF4sd00001100bc01sc01i80
+  E: PCI_CLASS=10180
+  E: PCI_ID=8086:7010
+  E: PCI_SLOT_NAME=0000:00:01.1
+  E: PCI_SUBSYS_ID=1AF4:1100
+  E: SUBSYSTEM=pci
+  E: USEC_INITIALIZED=4508611
+  
+  P: /devices/pci0000:00/0000:00:01.1/ata1/ata_port/ata1
+  E: DEVPATH=/devices/pci0000:00/0000:00:01.1/ata1/ata_port/ata1
+  E: SUBSYSTEM=ata_port
+  
+  P: /devices/pci0000:00/0000:00:01.1/ata1/host0
+  E: DEVPATH=/devices/pci0000:00/0000:00:01.1/ata1/host0
+  E: DEVTYPE=scsi_host
+  E: SUBSYSTEM=scsi
+  
+  P: /devices/pci0000:00/0000:00:01.1/ata1/host0/scsi_host/host0
+  E: DEVPATH=/devices/pci0000:00/0000:00:01.1/ata1/host0/scsi_host/host0
+  E: SUBSYSTEM=scsi_host
+  
+  P: /devices/pci0000:00/0000:00:01.1/ata1/link1/ata_link/link1
+  E: DEVPATH=/devices/pci0000:00/0000:00:01.1/ata1/link1/ata_link/link1
+  E: SUBSYSTEM=ata_link
+  
+  P: /devices/pci0000:00/0000:00:01.1/ata1/link1/dev1.0/ata_device/dev1.0
+  E: DEVPATH=/devices/pci0000:00/0000:00:01.1/ata1/link1/dev1.0/ata_device/dev1.0
+  E: SUBSYSTEM=ata_device
+  
+  P: /devices/pci0000:00/0000:00:01.1/ata1/link1/dev1.1/ata_device/dev1.1
+  E: DEVPATH=/devices/pci0000:00/0000:00:01.1/ata1/link1/dev1.1/ata_device/dev1.1
+  E: SUBSYSTEM=ata_device
+  
+  P: /devices/pci0000:00/0000:00:01.1/ata2/ata_port/ata2
+  E: DEVPATH=/devices/pci0000:00/0000:00:01.1/ata2/ata_port/ata2
+  E: SUBSYSTEM=ata_port
+  
+  P: /devices/pci0000:00/0000:00:01.1/ata2/host1
+  E: DEVPATH=/devices/pci0000:00/0000:00:01.1/ata2/host1
+  E: DEVTYPE=scsi_host
+  E: SUBSYSTEM=scsi
+  
+  P: /devices/pci0000:00/0000:00:01.1/ata2/host1/scsi_host/host1
+  E: DEVPATH=/devices/pci0000:00/0000:00:01.1/ata2/host1/scsi_host/host1
+  E: SUBSYSTEM=scsi_host
+  
+  P: /devices/pci0000:00/0000:00:01.1/ata2/link2/ata_link/link2
+  E: DEVPATH=/devices/pci0000:00/0000:00:01.1/ata2/link2/ata_link/link2
+  E: SUBSYSTEM=ata_link
+  
+  P: /devices/pci0000:00/0000:00:01.1/ata2/link2/dev2.0/ata_device/dev2.0
+  E: DEVPATH=/devices/pci0000:00/0000:00:01.1/ata2/link2/dev2.0/ata_device/dev2.0
+  E: SUBSYSTEM=ata_device
+  
+  P: /devices/pci0000:00/0000:00:01.1/ata2/link2/dev2.1/ata_device/dev2.1
+  E: DEVPATH=/devices/pci0000:00/0000:00:01.1/ata2/link2/dev2.1/ata_device/dev2.1
+  E: SUBSYSTEM=ata_device
+  
+  P: /devices/pci0000:00/0000:00:01.2
+  E: DEVPATH=/devices/pci0000:00/0000:00:01.2
+  E: DRIVER=uhci_hcd
+  E: ID_MODEL_FROM_DATABASE=82371SB PIIX3 USB [Natoma/Triton II] (QEMU Virtual Machine)
+  E: ID_PCI_CLASS_FROM_DATABASE=Serial bus controller
+  E: ID_PCI_INTERFACE_FROM_DATABASE=UHCI
+  E: ID_PCI_SUBCLASS_FROM_DATABASE=USB controller
+  E: ID_VENDOR_FROM_DATABASE=Intel Corporation
+  E: MODALIAS=pci:v00008086d00007020sv00001AF4sd00001100bc0Csc03i00
+  E: PCI_CLASS=C0300
+  E: PCI_ID=8086:7020
+  E: PCI_SLOT_NAME=0000:00:01.2
+  E: PCI_SUBSYS_ID=1AF4:1100
+  E: SUBSYSTEM=pci
+  E: USEC_INITIALIZED=4508459
+  
+  P: /devices/pci0000:00/0000:00:01.2/usb1
+  N: bus/usb/001/001
+  E: BUSNUM=001
+  E: DEVNAME=/dev/bus/usb/001/001
+  E: DEVNUM=001
+  E: DEVPATH=/devices/pci0000:00/0000:00:01.2/usb1
+  E: DEVTYPE=usb_device
+  E: DRIVER=usb
+  E: ID_BUS=usb
+  E: ID_FOR_SEAT=usb-pci-0000_00_01_2
+  E: ID_MODEL=UHCI_Host_Controller
+  E: ID_MODEL_ENC=UHCI\x20Host\x20Controller
+  E: ID_MODEL_FROM_DATABASE=1.1 root hub
+  E: ID_MODEL_ID=0001
+  E: ID_PATH=pci-0000:00:01.2
+  E: ID_PATH_TAG=pci-0000_00_01_2
+  E: ID_REVISION=0404
+  E: ID_SERIAL=Linux_4.4.0-62-generic_uhci_hcd_UHCI_Host_Controller_0000:00:01.2
+  E: ID_SERIAL_SHORT=0000:00:01.2
+  E: ID_USB_INTERFACES=:090000:
+  E: ID_VENDOR=Linux_4.4.0-62-generic_uhci_hcd
+  E: ID_VENDOR_ENC=Linux\x204.4.0-62-generic\x20uhci_hcd
+  E: ID_VENDOR_FROM_DATABASE=Linux Foundation
+  E: ID_VENDOR_ID=1d6b
+  E: MAJOR=189
+  E: MINOR=0
+  E: PRODUCT=1d6b/1/404
+  E: SUBSYSTEM=usb
+  E: TAGS=:seat:
+  E: TYPE=9/0/0
+  E: USEC_INITIALIZED=1248919
+  
+  P: /devices/pci0000:00/0000:00:01.2/usb1/1-0:1.0
+  E: DEVPATH=/devices/pci0000:00/0000:00:01.2/usb1/1-0:1.0
+  E: DEVTYPE=usb_interface
+  E: DRIVER=hub
+  E: ID_MODEL_FROM_DATABASE=1.1 root hub
+  E: ID_USB_CLASS_FROM_DATABASE=Hub
+  E: ID_USB_PROTOCOL_FROM_DATABASE=Full speed (or root) hub
+  E: ID_VENDOR_FROM_DATABASE=Linux Foundation
+  E: INTERFACE=9/0/0
+  E: MODALIAS=usb:v1D6Bp0001d0404dc09dsc00dp00ic09isc00ip00in00
+  E: PRODUCT=1d6b/1/404
+  E: SUBSYSTEM=usb
+  E: TYPE=9/0/0
+  E: USEC_INITIALIZED=4544789
+  
+  P: /devices/pci0000:00/0000:00:01.2/usb1/1-1
+  N: bus/usb/001/002
+  E: BUSNUM=001
+  E: DEVNAME=/dev/bus/usb/001/002
+  E: DEVNUM=002
+  E: DEVPATH=/devices/pci0000:00/0000:00:01.2/usb1/1-1
+  E: DEVTYPE=usb_device
+  E: DRIVER=usb
+  E: ID_BUS=usb
+  E: ID_MODEL=QEMU_USB_Tablet
+  E: ID_MODEL_ENC=QEMU\x20USB\x20Tablet
+  E: ID_MODEL_ID=0001
+  E: ID_REVISION=0000
+  E: ID_SERIAL=QEMU_QEMU_USB_Tablet_42
+  E: ID_SERIAL_SHORT=42
+  E: ID_USB_INTERFACES=:030002:
+  E: ID_VENDOR=QEMU
+  E: ID_VENDOR_ENC=QEMU
+  E: ID_VENDOR_FROM_DATABASE=Adomax Technology Co., Ltd
+  E: ID_VENDOR_ID=0627
+  E: MAJOR=189
+  E: MINOR=1
+  E: PRODUCT=627/1/0
+  E: SUBSYSTEM=usb
+  E: TYPE=0/0/0
+  E: USEC_INITIALIZED=1249642
+  
+  P: /devices/pci0000:00/0000:00:01.2/usb1/1-1/1-1:1.0
+  E: DEVPATH=/devices/pci0000:00/0000:00:01.2/usb1/1-1/1-1:1.0
+  E: DEVTYPE=usb_interface
+  E: ID_VENDOR_FROM_DATABASE=Adomax Technology Co., Ltd
+  E: INTERFACE=3/0/2
+  E: MODALIAS=usb:v0627p0001d0000dc00dsc00dp00ic03isc00ip02in00
+  E: PRODUCT=627/1/0
+  E: SUBSYSTEM=usb
+  E: TYPE=0/0/0
+  E: USEC_INITIALIZED=4567524
+  
+  P: /devices/pci0000:00/0000:00:01.3
+  E: DEVPATH=/devices/pci0000:00/0000:00:01.3
+  E: ID_MODEL_FROM_DATABASE=82371AB/EB/MB PIIX4 ACPI (Qemu virtual machine)
+  E: ID_PCI_CLASS_FROM_DATABASE=Bridge
+  E: ID_PCI_SUBCLASS_FROM_DATABASE=Bridge
+  E: ID_VENDOR_FROM_DATABASE=Intel Corporation
+  E: MODALIAS=pci:v00008086d00007113sv00001AF4sd00001100bc06sc80i00
+  E: PCI_CLASS=68000
+  E: PCI_ID=8086:7113
+  E: PCI_SLOT_NAME=0000:00:01.3
+  E: PCI_SUBSYS_ID=1AF4:1100
+  E: SUBSYSTEM=pci
+  E: USEC_INITIALIZED=4508289
+  
+  P: /devices/pci0000:00/0000:00:02.0
+  E: DEVPATH=/devices/pci0000:00/0000:00:02.0
+  E: ID_MODEL_FROM_DATABASE=GD 5446 (QEMU Virtual Machine)
+  E: ID_PCI_CLASS_FROM_DATABASE=Display controller
+  E: ID_PCI_INTERFACE_FROM_DATABASE=VGA controller
+  E: ID_PCI_SUBCLASS_FROM_DATABASE=VGA compatible controller
+  E: ID_VENDOR_FROM_DATABASE=Cirrus Logic
+  E: MODALIAS=pci:v00001013d000000B8sv00001AF4sd00001100bc03sc00i00
+  E: PCI_CLASS=30000
+  E: PCI_ID=1013:00B8
+  E: PCI_SLOT_NAME=0000:00:02.0
+  E: PCI_SUBSYS_ID=1AF4:1100
+  E: SUBSYSTEM=pci
+  E: USEC_INITIALIZED=4505784
+  
+  P: /devices/pci0000:00/0000:00:03.0
+  E: DEVPATH=/devices/pci0000:00/0000:00:03.0
+  E: DRIVER=virtio-pci
+  E: ID_MODEL_FROM_DATABASE=Virtio network device
+  E: ID_PCI_CLASS_FROM_DATABASE=Network controller
+  E: ID_PCI_SUBCLASS_FROM_DATABASE=Ethernet controller
+  E: ID_VENDOR_FROM_DATABASE=Red Hat, Inc
+  E: MODALIAS=pci:v00001AF4d00001000sv00001AF4sd00000001bc02sc00i00
+  E: PCI_CLASS=20000
+  E: PCI_ID=1AF4:1000
+  E: PCI_SLOT_NAME=0000:00:03.0
+  E: PCI_SUBSYS_ID=1AF4:0001
+  E: SUBSYSTEM=pci
+  E: USEC_INITIALIZED=4499040
+  
+  P: /devices/pci0000:00/0000:00:03.0/virtio0
+  E: DEVPATH=/devices/pci0000:00/0000:00:03.0/virtio0
+  E: DRIVER=virtio_net
+  E: MODALIAS=virtio:d00000001v00001AF4
+  E: SUBSYSTEM=virtio
+  
+  P: /devices/pci0000:00/0000:00:03.0/virtio0/net/ens3
+  E: DEVPATH=/devices/pci0000:00/0000:00:03.0/virtio0/net/ens3
+  E: ID_BUS=pci
+  E: ID_MODEL_FROM_DATABASE=Virtio network device
+  E: ID_MODEL_ID=0x1000
+  E: ID_NET_DRIVER=virtio_net
+  E: ID_NET_LINK_FILE=/lib/systemd/network/99-default.link
+  E: ID_NET_NAME_MAC=enxfa163e053892
+  E: ID_NET_NAME_PATH=enp0s3
+  E: ID_NET_NAME_SLOT=ens3
+  E: ID_PATH=virtio-pci-0000:00:03.0
+  E: ID_PATH_TAG=virtio-pci-0000_00_03_0
+  E: ID_PCI_CLASS_FROM_DATABASE=Network controller
+  E: ID_PCI_SUBCLASS_FROM_DATABASE=Ethernet controller
+  E: ID_VENDOR_FROM_DATABASE=Red Hat, Inc
+  E: ID_VENDOR_ID=0x1af4
+  E: IFINDEX=2
+  E: INTERFACE=ens3
+  E: SUBSYSTEM=net
+  E: SYSTEMD_ALIAS=/sys/subsystem/net/devices/ens3
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=999008
+  
+  P: /devices/pci0000:00/0000:00:04.0
+  E: DEVPATH=/devices/pci0000:00/0000:00:04.0
+  E: DRIVER=virtio-pci
+  E: ID_MODEL_FROM_DATABASE=Virtio block device
+  E: ID_PCI_CLASS_FROM_DATABASE=Mass storage controller
+  E: ID_PCI_SUBCLASS_FROM_DATABASE=SCSI storage controller
+  E: ID_VENDOR_FROM_DATABASE=Red Hat, Inc
+  E: MODALIAS=pci:v00001AF4d00001001sv00001AF4sd00000002bc01sc00i00
+  E: PCI_CLASS=10000
+  E: PCI_ID=1AF4:1001
+  E: PCI_SLOT_NAME=0000:00:04.0
+  E: PCI_SUBSYS_ID=1AF4:0002
+  E: SUBSYSTEM=pci
+  E: USEC_INITIALIZED=4499214
+  
+  P: /devices/pci0000:00/0000:00:04.0/virtio1
+  E: DEVPATH=/devices/pci0000:00/0000:00:04.0/virtio1
+  E: DRIVER=virtio_blk
+  E: MODALIAS=virtio:d00000002v00001AF4
+  E: SUBSYSTEM=virtio
+  
+  P: /devices/pci0000:00/0000:00:04.0/virtio1/block/vda
+  N: vda
+  S: disk/by-path/virtio-pci-0000:00:04.0
+  E: DEVLINKS=/dev/disk/by-path/virtio-pci-0000:00:04.0
+  E: DEVNAME=/dev/vda
+  E: DEVPATH=/devices/pci0000:00/0000:00:04.0/virtio1/block/vda
+  E: DEVTYPE=disk
+  E: ID_PART_TABLE_TYPE=dos
+  E: ID_PART_TABLE_UUID=ffcebafc
+  E: ID_PATH=virtio-pci-0000:00:04.0
+  E: ID_PATH_TAG=virtio-pci-0000_00_04_0
+  E: MAJOR=253
+  E: MINOR=0
+  E: SUBSYSTEM=block
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1021634
+  
+  P: /devices/pci0000:00/0000:00:04.0/virtio1/block/vda/vda1
+  N: vda1
+  S: disk/by-label/cloudimg-rootfs
+  S: disk/by-path/virtio-pci-0000:00:04.0-part1
+  S: disk/by-uuid/60afd8f9-49f6-4152-8b41-22e2640778d2
+  E: DEVLINKS=/dev/disk/by-label/cloudimg-rootfs /dev/disk/by-path/virtio-pci-0000:00:04.0-part1 /dev/disk/by-uuid/60afd8f9-49f6-4152-8b41-22e2640778d2
+  E: DEVNAME=/dev/vda1
+  E: DEVPATH=/devices/pci0000:00/0000:00:04.0/virtio1/block/vda/vda1
+  E: DEVTYPE=partition
+  E: ID_FS_LABEL=cloudimg-rootfs
+  E: ID_FS_LABEL_ENC=cloudimg-rootfs
+  E: ID_FS_TYPE=ext4
+  E: ID_FS_USAGE=filesystem
+  E: ID_FS_UUID=60afd8f9-49f6-4152-8b41-22e2640778d2
+  E: ID_FS_UUID_ENC=60afd8f9-49f6-4152-8b41-22e2640778d2
+  E: ID_FS_VERSION=1.0
+  E: ID_PART_ENTRY_DISK=253:0
+  E: ID_PART_ENTRY_FLAGS=0x80
+  E: ID_PART_ENTRY_NUMBER=1
+  E: ID_PART_ENTRY_OFFSET=2048
+  E: ID_PART_ENTRY_SCHEME=dos
+  E: ID_PART_ENTRY_SIZE=20969439
+  E: ID_PART_ENTRY_TYPE=0x83
+  E: ID_PART_ENTRY_UUID=ffcebafc-01
+  E: ID_PART_TABLE_TYPE=dos
+  E: ID_PART_TABLE_UUID=ffcebafc
+  E: ID_PATH=virtio-pci-0000:00:04.0
+  E: ID_PATH_TAG=virtio-pci-0000_00_04_0
+  E: MAJOR=253
+  E: MINOR=1
+  E: SUBSYSTEM=block
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1034452
+  
+  P: /devices/pci0000:00/0000:00:05.0
+  E: DEVPATH=/devices/pci0000:00/0000:00:05.0
+  E: DRIVER=virtio-pci
+  E: ID_MODEL_FROM_DATABASE=Virtio memory balloon
+  E: ID_PCI_CLASS_FROM_DATABASE=Unclassified device
+  E: ID_VENDOR_FROM_DATABASE=Red Hat, Inc
+  E: MODALIAS=pci:v00001AF4d00001002sv00001AF4sd00000005bc00scFFi00
+  E: PCI_CLASS=FF00
+  E: PCI_ID=1AF4:1002
+  E: PCI_SLOT_NAME=0000:00:05.0
+  E: PCI_SUBSYS_ID=1AF4:0005
+  E: SUBSYSTEM=pci
+  E: USEC_INITIALIZED=4499375
+  
+  P: /devices/pci0000:00/0000:00:05.0/virtio2
+  E: DEVPATH=/devices/pci0000:00/0000:00:05.0/virtio2
+  E: DRIVER=virtio_balloon
+  E: MODALIAS=virtio:d00000005v00001AF4
+  E: SUBSYSTEM=virtio
+  
+  P: /devices/pci0000:00/pci_bus/0000:00
+  E: DEVPATH=/devices/pci0000:00/pci_bus/0000:00
+  E: SUBSYSTEM=pci_bus
+  
+  P: /devices/platform/Fixed MDIO bus.0
+  E: DEVPATH=/devices/platform/Fixed MDIO bus.0
+  E: MODALIAS=platform:Fixed MDIO bus
+  E: SUBSYSTEM=platform
+  
+  P: /devices/platform/Fixed MDIO bus.0/mdio_bus/fixed-0
+  E: DEVPATH=/devices/platform/Fixed MDIO bus.0/mdio_bus/fixed-0
+  E: SUBSYSTEM=mdio_bus
+  
+  P: /devices/platform/alarmtimer
+  E: DEVPATH=/devices/platform/alarmtimer
+  E: DRIVER=alarmtimer
+  E: MODALIAS=platform:alarmtimer
+  E: SUBSYSTEM=platform
+  
+  P: /devices/platform/i8042
+  E: DEVPATH=/devices/platform/i8042
+  E: DRIVER=i8042
+  E: MODALIAS=platform:i8042
+  E: SUBSYSTEM=platform
+  
+  P: /devices/platform/i8042/serio0
+  E: DEVPATH=/devices/platform/i8042/serio0
+  E: DRIVER=atkbd
+  E: MODALIAS=serio:ty06pr00id00ex00
+  E: SERIO_EXTRA=00
+  E: SERIO_FIRMWARE_ID=PNP: PNP0303
+  E: SERIO_ID=00
+  E: SERIO_PROTO=00
+  E: SERIO_TYPE=06
+  E: SUBSYSTEM=serio
+  
+  P: /devices/platform/i8042/serio0/input/input1
+  E: DEVPATH=/devices/platform/i8042/serio0/input/input1
+  E: EV=120013
+  E: ID_FOR_SEAT=input-platform-i8042-serio-0
+  E: ID_INPUT=1
+  E: ID_INPUT_KEY=1
+  E: ID_INPUT_KEYBOARD=1
+  E: ID_PATH=platform-i8042-serio-0
+  E: ID_PATH_TAG=platform-i8042-serio-0
+  E: ID_SERIAL=noserial
+  E: KEY=402000000 3803078f800d001 feffffdfffefffff fffffffffffffffe
+  E: LED=7
+  E: MODALIAS=input:b0011v0001p0001eAB41-e0,1,4,11,14,k71,72,73,74,75,76,77,79,7A,7B,7C,7D,7E,7F,80,8C,8E,8F,9B,9C,9D,9E,9F,A3,A4,A5,A6,AC,AD,B7,B8,B9,D9,E2,ram4,l0,1,2,sfw
+  E: MSC=10
+  E: NAME="AT Translated Set 2 keyboard"
+  E: PHYS="isa0060/serio0/input0"
+  E: PRODUCT=11/1/1/ab41
+  E: PROP=0
+  E: SUBSYSTEM=input
+  E: TAGS=:seat:
+  E: USEC_INITIALIZED=1001740
+  
+  P: /devices/platform/i8042/serio0/input/input1/event1
+  N: input/event1
+  S: input/by-path/platform-i8042-serio-0-event-kbd
+  E: DEVLINKS=/dev/input/by-path/platform-i8042-serio-0-event-kbd
+  E: DEVNAME=/dev/input/event1
+  E: DEVPATH=/devices/platform/i8042/serio0/input/input1/event1
+  E: ID_INPUT=1
+  E: ID_INPUT_KEY=1
+  E: ID_INPUT_KEYBOARD=1
+  E: ID_PATH=platform-i8042-serio-0
+  E: ID_PATH_TAG=platform-i8042-serio-0
+  E: ID_SERIAL=noserial
+  E: MAJOR=13
+  E: MINOR=65
+  E: SUBSYSTEM=input
+  E: USEC_INITIALIZED=1005842
+  
+  P: /devices/platform/i8042/serio1
+  E: DEVPATH=/devices/platform/i8042/serio1
+  E: DRIVER=psmouse
+  E: MODALIAS=serio:ty01pr00id00ex00
+  E: SERIO_EXTRA=00
+  E: SERIO_FIRMWARE_ID=PNP: PNP0f13
+  E: SERIO_ID=00
+  E: SERIO_PROTO=00
+  E: SERIO_TYPE=01
+  E: SUBSYSTEM=serio
+  
+  P: /devices/platform/i8042/serio1/input/input3
+  E: DEVPATH=/devices/platform/i8042/serio1/input/input3
+  E: EV=7
+  E: ID_FOR_SEAT=input-platform-i8042-serio-1
+  E: ID_INPUT=1
+  E: ID_INPUT_MOUSE=1
+  E: ID_PATH=platform-i8042-serio-1
+  E: ID_PATH_TAG=platform-i8042-serio-1
+  E: ID_SERIAL=noserial
+  E: KEY=30000 0 0 0 0
+  E: MODALIAS=input:b0011v0002p0013e5868-e0,1,2,k110,111,r0,1,8,amlsfw
+  E: NAME="VirtualPS/2 VMware VMMouse"
+  E: PHYS="isa0060/serio1/input0"
+  E: PRODUCT=11/2/13/5868
+  E: PROP=1
+  E: REL=103
+  E: SUBSYSTEM=input
+  E: TAGS=:seat:
+  E: USEC_INITIALIZED=1107753
+  
+  P: /devices/platform/i8042/serio1/input/input3/event3
+  N: input/event3
+  S: input/by-path/platform-i8042-serio-1-event-mouse
+  E: DEVLINKS=/dev/input/by-path/platform-i8042-serio-1-event-mouse
+  E: DEVNAME=/dev/input/event3
+  E: DEVPATH=/devices/platform/i8042/serio1/input/input3/event3
+  E: ID_INPUT=1
+  E: ID_INPUT_MOUSE=1
+  E: ID_PATH=platform-i8042-serio-1
+  E: ID_PATH_TAG=platform-i8042-serio-1
+  E: ID_SERIAL=noserial
+  E: MAJOR=13
+  E: MINOR=67
+  E: SUBSYSTEM=input
+  E: USEC_INITIALIZED=1108902
+  
+  P: /devices/platform/i8042/serio1/input/input3/mouse1
+  N: input/mouse1
+  S: input/by-path/platform-i8042-serio-1-mouse
+  E: DEVLINKS=/dev/input/by-path/platform-i8042-serio-1-mouse
+  E: DEVNAME=/dev/input/mouse1
+  E: DEVPATH=/devices/platform/i8042/serio1/input/input3/mouse1
+  E: ID_INPUT=1
+  E: ID_INPUT_MOUSE=1
+  E: ID_PATH=platform-i8042-serio-1
+  E: ID_PATH_TAG=platform-i8042-serio-1
+  E: ID_SERIAL=noserial
+  E: MAJOR=13
+  E: MINOR=33
+  E: SUBSYSTEM=input
+  E: USEC_INITIALIZED=1108706
+  
+  P: /devices/platform/i8042/serio1/input/input4
+  E: ABS=3
+  E: DEVPATH=/devices/platform/i8042/serio1/input/input4
+  E: EV=b
+  E: ID_FOR_SEAT=input-platform-i8042-serio-1
+  E: ID_INPUT=1
+  E: ID_INPUT_MOUSE=1
+  E: ID_PATH=platform-i8042-serio-1
+  E: ID_PATH_TAG=platform-i8042-serio-1
+  E: ID_SERIAL=noserial
+  E: KEY=70000 0 0 0 0
+  E: MODALIAS=input:b0011v0002p0013e5868-e0,1,3,k110,111,112,ra0,1,mlsfw
+  E: NAME="VirtualPS/2 VMware VMMouse"
+  E: PHYS="isa0060/serio1/input1"
+  E: PRODUCT=11/2/13/5868
+  E: PROP=0
+  E: SUBSYSTEM=input
+  E: TAGS=:seat:
+  E: USEC_INITIALIZED=1107531
+  
+  P: /devices/platform/i8042/serio1/input/input4/event2
+  N: input/event2
+  S: input/by-path/platform-i8042-serio-1-event-mouse
+  E: DEVLINKS=/dev/input/by-path/platform-i8042-serio-1-event-mouse
+  E: DEVNAME=/dev/input/event2
+  E: DEVPATH=/devices/platform/i8042/serio1/input/input4/event2
+  E: ID_INPUT=1
+  E: ID_INPUT_MOUSE=1
+  E: ID_PATH=platform-i8042-serio-1
+  E: ID_PATH_TAG=platform-i8042-serio-1
+  E: ID_SERIAL=noserial
+  E: MAJOR=13
+  E: MINOR=66
+  E: SUBSYSTEM=input
+  E: USEC_INITIALIZED=1108506
+  
+  P: /devices/platform/i8042/serio1/input/input4/mouse0
+  N: input/mouse0
+  S: input/by-path/platform-i8042-serio-1-mouse
+  E: DEVLINKS=/dev/input/by-path/platform-i8042-serio-1-mouse
+  E: DEVNAME=/dev/input/mouse0
+  E: DEVPATH=/devices/platform/i8042/serio1/input/input4/mouse0
+  E: ID_INPUT=1
+  E: ID_INPUT_MOUSE=1
+  E: ID_PATH=platform-i8042-serio-1
+  E: ID_PATH_TAG=platform-i8042-serio-1
+  E: ID_SERIAL=noserial
+  E: MAJOR=13
+  E: MINOR=32
+  E: SUBSYSTEM=input
+  E: USEC_INITIALIZED=1108285
+  
+  P: /devices/platform/microcode
+  E: DEVPATH=/devices/platform/microcode
+  E: MODALIAS=platform:microcode
+  E: SUBSYSTEM=platform
+  
+  P: /devices/platform/pcspkr
+  E: DEVPATH=/devices/platform/pcspkr
+  E: MODALIAS=platform:pcspkr
+  E: SUBSYSTEM=platform
+  
+  P: /devices/platform/platform-framebuffer.0
+  E: DEVPATH=/devices/platform/platform-framebuffer.0
+  E: MODALIAS=platform:platform-framebuffer
+  E: SUBSYSTEM=platform
+  
+  P: /devices/platform/reg-dummy
+  E: DEVPATH=/devices/platform/reg-dummy
+  E: DRIVER=reg-dummy
+  E: MODALIAS=platform:reg-dummy
+  E: SUBSYSTEM=platform
+  
+  P: /devices/platform/reg-dummy/regulator/regulator.0
+  E: DEVPATH=/devices/platform/reg-dummy/regulator/regulator.0
+  E: SUBSYSTEM=regulator
+  
+  P: /devices/platform/serial8250
+  E: DEVPATH=/devices/platform/serial8250
+  E: DRIVER=serial8250
+  E: MODALIAS=platform:serial8250
+  E: SUBSYSTEM=platform
+  
+  P: /devices/platform/serial8250/tty/ttyS10
+  N: ttyS10
+  E: DEVNAME=/dev/ttyS10
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS10
+  E: MAJOR=4
+  E: MINOR=74
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4547775
+  
+  P: /devices/platform/serial8250/tty/ttyS11
+  N: ttyS11
+  E: DEVNAME=/dev/ttyS11
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS11
+  E: MAJOR=4
+  E: MINOR=75
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4548452
+  
+  P: /devices/platform/serial8250/tty/ttyS12
+  N: ttyS12
+  E: DEVNAME=/dev/ttyS12
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS12
+  E: MAJOR=4
+  E: MINOR=76
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4548954
+  
+  P: /devices/platform/serial8250/tty/ttyS13
+  N: ttyS13
+  E: DEVNAME=/dev/ttyS13
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS13
+  E: MAJOR=4
+  E: MINOR=77
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4549444
+  
+  P: /devices/platform/serial8250/tty/ttyS14
+  N: ttyS14
+  E: DEVNAME=/dev/ttyS14
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS14
+  E: MAJOR=4
+  E: MINOR=78
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4557032
+  
+  P: /devices/platform/serial8250/tty/ttyS15
+  N: ttyS15
+  E: DEVNAME=/dev/ttyS15
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS15
+  E: MAJOR=4
+  E: MINOR=79
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4570399
+  
+  P: /devices/platform/serial8250/tty/ttyS16
+  N: ttyS16
+  E: DEVNAME=/dev/ttyS16
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS16
+  E: MAJOR=4
+  E: MINOR=80
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4584563
+  
+  P: /devices/platform/serial8250/tty/ttyS17
+  N: ttyS17
+  E: DEVNAME=/dev/ttyS17
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS17
+  E: MAJOR=4
+  E: MINOR=81
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4585067
+  
+  P: /devices/platform/serial8250/tty/ttyS18
+  N: ttyS18
+  E: DEVNAME=/dev/ttyS18
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS18
+  E: MAJOR=4
+  E: MINOR=82
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4586695
+  
+  P: /devices/platform/serial8250/tty/ttyS19
+  N: ttyS19
+  E: DEVNAME=/dev/ttyS19
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS19
+  E: MAJOR=4
+  E: MINOR=83
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4601446
+  
+  P: /devices/platform/serial8250/tty/ttyS2
+  N: ttyS2
+  E: DEVNAME=/dev/ttyS2
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS2
+  E: MAJOR=4
+  E: MINOR=66
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4602368
+  
+  P: /devices/platform/serial8250/tty/ttyS20
+  N: ttyS20
+  E: DEVNAME=/dev/ttyS20
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS20
+  E: MAJOR=4
+  E: MINOR=84
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4603141
+  
+  P: /devices/platform/serial8250/tty/ttyS21
+  N: ttyS21
+  E: DEVNAME=/dev/ttyS21
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS21
+  E: MAJOR=4
+  E: MINOR=85
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4604543
+  
+  P: /devices/platform/serial8250/tty/ttyS22
+  N: ttyS22
+  E: DEVNAME=/dev/ttyS22
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS22
+  E: MAJOR=4
+  E: MINOR=86
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4606920
+  
+  P: /devices/platform/serial8250/tty/ttyS23
+  N: ttyS23
+  E: DEVNAME=/dev/ttyS23
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS23
+  E: MAJOR=4
+  E: MINOR=87
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4613309
+  
+  P: /devices/platform/serial8250/tty/ttyS24
+  N: ttyS24
+  E: DEVNAME=/dev/ttyS24
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS24
+  E: MAJOR=4
+  E: MINOR=88
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4613805
+  
+  P: /devices/platform/serial8250/tty/ttyS25
+  N: ttyS25
+  E: DEVNAME=/dev/ttyS25
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS25
+  E: MAJOR=4
+  E: MINOR=89
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4614309
+  
+  P: /devices/platform/serial8250/tty/ttyS26
+  N: ttyS26
+  E: DEVNAME=/dev/ttyS26
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS26
+  E: MAJOR=4
+  E: MINOR=90
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4615460
+  
+  P: /devices/platform/serial8250/tty/ttyS27
+  N: ttyS27
+  E: DEVNAME=/dev/ttyS27
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS27
+  E: MAJOR=4
+  E: MINOR=91
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4615966
+  
+  P: /devices/platform/serial8250/tty/ttyS28
+  N: ttyS28
+  E: DEVNAME=/dev/ttyS28
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS28
+  E: MAJOR=4
+  E: MINOR=92
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4617965
+  
+  P: /devices/platform/serial8250/tty/ttyS29
+  N: ttyS29
+  E: DEVNAME=/dev/ttyS29
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS29
+  E: MAJOR=4
+  E: MINOR=93
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4618725
+  
+  P: /devices/platform/serial8250/tty/ttyS3
+  N: ttyS3
+  E: DEVNAME=/dev/ttyS3
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS3
+  E: MAJOR=4
+  E: MINOR=67
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4619739
+  
+  P: /devices/platform/serial8250/tty/ttyS30
+  N: ttyS30
+  E: DEVNAME=/dev/ttyS30
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS30
+  E: MAJOR=4
+  E: MINOR=94
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4620417
+  
+  P: /devices/platform/serial8250/tty/ttyS31
+  N: ttyS31
+  E: DEVNAME=/dev/ttyS31
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS31
+  E: MAJOR=4
+  E: MINOR=95
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4621033
+  
+  P: /devices/platform/serial8250/tty/ttyS4
+  N: ttyS4
+  E: DEVNAME=/dev/ttyS4
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS4
+  E: MAJOR=4
+  E: MINOR=68
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4621838
+  
+  P: /devices/platform/serial8250/tty/ttyS5
+  N: ttyS5
+  E: DEVNAME=/dev/ttyS5
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS5
+  E: MAJOR=4
+  E: MINOR=69
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4624378
+  
+  P: /devices/platform/serial8250/tty/ttyS6
+  N: ttyS6
+  E: DEVNAME=/dev/ttyS6
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS6
+  E: MAJOR=4
+  E: MINOR=70
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4625112
+  
+  P: /devices/platform/serial8250/tty/ttyS7
+  N: ttyS7
+  E: DEVNAME=/dev/ttyS7
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS7
+  E: MAJOR=4
+  E: MINOR=71
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4628199
+  
+  P: /devices/platform/serial8250/tty/ttyS8
+  N: ttyS8
+  E: DEVNAME=/dev/ttyS8
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS8
+  E: MAJOR=4
+  E: MINOR=72
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4628919
+  
+  P: /devices/platform/serial8250/tty/ttyS9
+  N: ttyS9
+  E: DEVNAME=/dev/ttyS9
+  E: DEVPATH=/devices/platform/serial8250/tty/ttyS9
+  E: MAJOR=4
+  E: MINOR=73
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4629403
+  
+  P: /devices/pnp0/00:00
+  E: DEVPATH=/devices/pnp0/00:00
+  E: DRIVER=rtc_cmos
+  E: SUBSYSTEM=pnp
+  
+  P: /devices/pnp0/00:00/rtc/rtc0
+  N: rtc0
+  L: -100
+  S: rtc
+  E: DEVLINKS=/dev/rtc
+  E: DEVNAME=/dev/rtc0
+  E: DEVPATH=/devices/pnp0/00:00/rtc/rtc0
+  E: MAJOR=251
+  E: MINOR=0
+  E: SUBSYSTEM=rtc
+  E: USEC_INITIALIZED=1020576
+  
+  P: /devices/pnp0/00:01
+  E: DEVPATH=/devices/pnp0/00:01
+  E: DRIVER=i8042 kbd
+  E: SUBSYSTEM=pnp
+  
+  P: /devices/pnp0/00:02
+  E: DEVPATH=/devices/pnp0/00:02
+  E: DRIVER=i8042 aux
+  E: SUBSYSTEM=pnp
+  
+  P: /devices/pnp0/00:03
+  E: DEVPATH=/devices/pnp0/00:03
+  E: SUBSYSTEM=pnp
+  
+  P: /devices/pnp0/00:04
+  E: DEVPATH=/devices/pnp0/00:04
+  E: DRIVER=serial
+  E: SUBSYSTEM=pnp
+  
+  P: /devices/pnp0/00:04/tty/ttyS0
+  N: ttyS0
+  E: DEVNAME=/dev/ttyS0
+  E: DEVPATH=/devices/pnp0/00:04/tty/ttyS0
+  E: MAJOR=4
+  E: MINOR=64
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4632243
+  
+  P: /devices/pnp0/00:05
+  E: DEVPATH=/devices/pnp0/00:05
+  E: DRIVER=serial
+  E: SUBSYSTEM=pnp
+  
+  P: /devices/pnp0/00:05/tty/ttyS1
+  N: ttyS1
+  E: DEVNAME=/dev/ttyS1
+  E: DEVPATH=/devices/pnp0/00:05/tty/ttyS1
+  E: MAJOR=4
+  E: MINOR=65
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=4636582
+  
+  P: /devices/software
+  E: DEVPATH=/devices/software
+  E: SUBSYSTEM=event_source
+  
+  P: /devices/system/clockevents/broadcast
+  E: DEVPATH=/devices/system/clockevents/broadcast
+  E: SUBSYSTEM=clockevents
+  
+  P: /devices/system/clockevents/clockevent0
+  E: DEVPATH=/devices/system/clockevents/clockevent0
+  E: SUBSYSTEM=clockevents
+  
+  P: /devices/system/clocksource/clocksource0
+  E: DEVPATH=/devices/system/clocksource/clocksource0
+  E: SUBSYSTEM=clocksource
+  
+  P: /devices/system/container/PNP0A06:01
+  E: DEVPATH=/devices/system/container/PNP0A06:01
+  E: SUBSYSTEM=container
+  
+  P: /devices/system/container/PNP0A06:02
+  E: DEVPATH=/devices/system/container/PNP0A06:02
+  E: SUBSYSTEM=container
+  
+  P: /devices/system/container/PNP0A06:03
+  E: DEVPATH=/devices/system/container/PNP0A06:03
+  E: SUBSYSTEM=container
+  
+  P: /devices/system/cpu/cpu0
+  E: DEVPATH=/devices/system/cpu/cpu0
+  E: DRIVER=processor
+  E: MODALIAS=cpu:type:x86,ven0000fam0006mod003C:feature:,0000,0001,0002,0003,0004,0005,0006,0007,0008,0009,000B,000C,000D,000E,000F,0010,0011,0013,0017,0018,0019,001A,001B,002B,0034,003A,003B,003D,0068,006F,0070,0072,0074,0075,007D,0080,0081,0085,0089,008C,008D,0091,0093,0094,0095,0096,0097,0098,0099,009A,009B,009C,009D,009E,009F,00C0,00C5,0100,0101,0102,0103,0104,0120,0123,0125,0127,0128,0129,012A,0140
+  E: SUBSYSTEM=cpu
+  
+  P: /devices/system/machinecheck/machinecheck0
+  E: DEVPATH=/devices/system/machinecheck/machinecheck0
+  E: SUBSYSTEM=machinecheck
+  
+  P: /devices/system/memory/memory0
+  E: DEVPATH=/devices/system/memory/memory0
+  E: SUBSYSTEM=memory
+  
+  P: /devices/system/memory/memory1
+  E: DEVPATH=/devices/system/memory/memory1
+  E: SUBSYSTEM=memory
+  
+  P: /devices/system/memory/memory10
+  E: DEVPATH=/devices/system/memory/memory10
+  E: SUBSYSTEM=memory
+  
+  P: /devices/system/memory/memory11
+  E: DEVPATH=/devices/system/memory/memory11
+  E: SUBSYSTEM=memory
+  
+  P: /devices/system/memory/memory12
+  E: DEVPATH=/devices/system/memory/memory12
+  E: SUBSYSTEM=memory
+  
+  P: /devices/system/memory/memory13
+  E: DEVPATH=/devices/system/memory/memory13
+  E: SUBSYSTEM=memory
+  
+  P: /devices/system/memory/memory14
+  E: DEVPATH=/devices/system/memory/memory14
+  E: SUBSYSTEM=memory
+  
+  P: /devices/system/memory/memory15
+  E: DEVPATH=/devices/system/memory/memory15
+  E: SUBSYSTEM=memory
+  
+  P: /devices/system/memory/memory2
+  E: DEVPATH=/devices/system/memory/memory2
+  E: SUBSYSTEM=memory
+  
+  P: /devices/system/memory/memory3
+  E: DEVPATH=/devices/system/memory/memory3
+  E: SUBSYSTEM=memory
+  
+  P: /devices/system/memory/memory4
+  E: DEVPATH=/devices/system/memory/memory4
+  E: SUBSYSTEM=memory
+  
+  P: /devices/system/memory/memory5
+  E: DEVPATH=/devices/system/memory/memory5
+  E: SUBSYSTEM=memory
+  
+  P: /devices/system/memory/memory6
+  E: DEVPATH=/devices/system/memory/memory6
+  E: SUBSYSTEM=memory
+  
+  P: /devices/system/memory/memory7
+  E: DEVPATH=/devices/system/memory/memory7
+  E: SUBSYSTEM=memory
+  
+  P: /devices/system/memory/memory8
+  E: DEVPATH=/devices/system/memory/memory8
+  E: SUBSYSTEM=memory
+  
+  P: /devices/system/memory/memory9
+  E: DEVPATH=/devices/system/memory/memory9
+  E: SUBSYSTEM=memory
+  
+  P: /devices/system/node/node0
+  E: DEVPATH=/devices/system/node/node0
+  E: SUBSYSTEM=node
+  
+  P: /devices/tracepoint
+  E: DEVPATH=/devices/tracepoint
+  E: SUBSYSTEM=event_source
+  
+  P: /devices/virtual/bdi/0:39
+  E: DEVPATH=/devices/virtual/bdi/0:39
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/1:0
+  E: DEVPATH=/devices/virtual/bdi/1:0
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/1:1
+  E: DEVPATH=/devices/virtual/bdi/1:1
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/1:10
+  E: DEVPATH=/devices/virtual/bdi/1:10
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/1:11
+  E: DEVPATH=/devices/virtual/bdi/1:11
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/1:12
+  E: DEVPATH=/devices/virtual/bdi/1:12
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/1:13
+  E: DEVPATH=/devices/virtual/bdi/1:13
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/1:14
+  E: DEVPATH=/devices/virtual/bdi/1:14
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/1:15
+  E: DEVPATH=/devices/virtual/bdi/1:15
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/1:2
+  E: DEVPATH=/devices/virtual/bdi/1:2
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/1:3
+  E: DEVPATH=/devices/virtual/bdi/1:3
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/1:4
+  E: DEVPATH=/devices/virtual/bdi/1:4
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/1:5
+  E: DEVPATH=/devices/virtual/bdi/1:5
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/1:6
+  E: DEVPATH=/devices/virtual/bdi/1:6
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/1:7
+  E: DEVPATH=/devices/virtual/bdi/1:7
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/1:8
+  E: DEVPATH=/devices/virtual/bdi/1:8
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/1:9
+  E: DEVPATH=/devices/virtual/bdi/1:9
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/253:0
+  E: DEVPATH=/devices/virtual/bdi/253:0
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/7:0
+  E: DEVPATH=/devices/virtual/bdi/7:0
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/7:1
+  E: DEVPATH=/devices/virtual/bdi/7:1
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/7:2
+  E: DEVPATH=/devices/virtual/bdi/7:2
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/7:3
+  E: DEVPATH=/devices/virtual/bdi/7:3
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/7:4
+  E: DEVPATH=/devices/virtual/bdi/7:4
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/7:5
+  E: DEVPATH=/devices/virtual/bdi/7:5
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/7:6
+  E: DEVPATH=/devices/virtual/bdi/7:6
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/bdi/7:7
+  E: DEVPATH=/devices/virtual/bdi/7:7
+  E: SUBSYSTEM=bdi
+  
+  P: /devices/virtual/block/loop0
+  N: loop0
+  E: DEVNAME=/dev/loop0
+  E: DEVPATH=/devices/virtual/block/loop0
+  E: DEVTYPE=disk
+  E: MAJOR=7
+  E: MINOR=0
+  E: SUBSYSTEM=block
+  E: SYSTEMD_READY=0
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1054099
+  
+  P: /devices/virtual/block/loop1
+  N: loop1
+  E: DEVNAME=/dev/loop1
+  E: DEVPATH=/devices/virtual/block/loop1
+  E: DEVTYPE=disk
+  E: MAJOR=7
+  E: MINOR=1
+  E: SUBSYSTEM=block
+  E: SYSTEMD_READY=0
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1053481
+  
+  P: /devices/virtual/block/loop2
+  N: loop2
+  E: DEVNAME=/dev/loop2
+  E: DEVPATH=/devices/virtual/block/loop2
+  E: DEVTYPE=disk
+  E: MAJOR=7
+  E: MINOR=2
+  E: SUBSYSTEM=block
+  E: SYSTEMD_READY=0
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1054208
+  
+  P: /devices/virtual/block/loop3
+  N: loop3
+  E: DEVNAME=/dev/loop3
+  E: DEVPATH=/devices/virtual/block/loop3
+  E: DEVTYPE=disk
+  E: MAJOR=7
+  E: MINOR=3
+  E: SUBSYSTEM=block
+  E: SYSTEMD_READY=0
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1046787
+  
+  P: /devices/virtual/block/loop4
+  N: loop4
+  E: DEVNAME=/dev/loop4
+  E: DEVPATH=/devices/virtual/block/loop4
+  E: DEVTYPE=disk
+  E: MAJOR=7
+  E: MINOR=4
+  E: SUBSYSTEM=block
+  E: SYSTEMD_READY=0
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1046127
+  
+  P: /devices/virtual/block/loop5
+  N: loop5
+  E: DEVNAME=/dev/loop5
+  E: DEVPATH=/devices/virtual/block/loop5
+  E: DEVTYPE=disk
+  E: MAJOR=7
+  E: MINOR=5
+  E: SUBSYSTEM=block
+  E: SYSTEMD_READY=0
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1053959
+  
+  P: /devices/virtual/block/loop6
+  N: loop6
+  E: DEVNAME=/dev/loop6
+  E: DEVPATH=/devices/virtual/block/loop6
+  E: DEVTYPE=disk
+  E: MAJOR=7
+  E: MINOR=6
+  E: SUBSYSTEM=block
+  E: SYSTEMD_READY=0
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1054320
+  
+  P: /devices/virtual/block/loop7
+  N: loop7
+  E: DEVNAME=/dev/loop7
+  E: DEVPATH=/devices/virtual/block/loop7
+  E: DEVTYPE=disk
+  E: MAJOR=7
+  E: MINOR=7
+  E: SUBSYSTEM=block
+  E: SYSTEMD_READY=0
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1063726
+  
+  P: /devices/virtual/block/ram0
+  N: ram0
+  E: DEVNAME=/dev/ram0
+  E: DEVPATH=/devices/virtual/block/ram0
+  E: DEVTYPE=disk
+  E: MAJOR=1
+  E: MINOR=0
+  E: SUBSYSTEM=block
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1064197
+  
+  P: /devices/virtual/block/ram1
+  N: ram1
+  E: DEVNAME=/dev/ram1
+  E: DEVPATH=/devices/virtual/block/ram1
+  E: DEVTYPE=disk
+  E: MAJOR=1
+  E: MINOR=1
+  E: SUBSYSTEM=block
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1063891
+  
+  P: /devices/virtual/block/ram10
+  N: ram10
+  E: DEVNAME=/dev/ram10
+  E: DEVPATH=/devices/virtual/block/ram10
+  E: DEVTYPE=disk
+  E: MAJOR=1
+  E: MINOR=10
+  E: SUBSYSTEM=block
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1078531
+  
+  P: /devices/virtual/block/ram11
+  N: ram11
+  E: DEVNAME=/dev/ram11
+  E: DEVPATH=/devices/virtual/block/ram11
+  E: DEVTYPE=disk
+  E: MAJOR=1
+  E: MINOR=11
+  E: SUBSYSTEM=block
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1077208
+  
+  P: /devices/virtual/block/ram12
+  N: ram12
+  E: DEVNAME=/dev/ram12
+  E: DEVPATH=/devices/virtual/block/ram12
+  E: DEVTYPE=disk
+  E: MAJOR=1
+  E: MINOR=12
+  E: SUBSYSTEM=block
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1079897
+  
+  P: /devices/virtual/block/ram13
+  N: ram13
+  E: DEVNAME=/dev/ram13
+  E: DEVPATH=/devices/virtual/block/ram13
+  E: DEVTYPE=disk
+  E: MAJOR=1
+  E: MINOR=13
+  E: SUBSYSTEM=block
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1078984
+  
+  P: /devices/virtual/block/ram14
+  N: ram14
+  E: DEVNAME=/dev/ram14
+  E: DEVPATH=/devices/virtual/block/ram14
+  E: DEVTYPE=disk
+  E: MAJOR=1
+  E: MINOR=14
+  E: SUBSYSTEM=block
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1080474
+  
+  P: /devices/virtual/block/ram15
+  N: ram15
+  E: DEVNAME=/dev/ram15
+  E: DEVPATH=/devices/virtual/block/ram15
+  E: DEVTYPE=disk
+  E: MAJOR=1
+  E: MINOR=15
+  E: SUBSYSTEM=block
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1078766
+  
+  P: /devices/virtual/block/ram2
+  N: ram2
+  E: DEVNAME=/dev/ram2
+  E: DEVPATH=/devices/virtual/block/ram2
+  E: DEVTYPE=disk
+  E: MAJOR=1
+  E: MINOR=2
+  E: SUBSYSTEM=block
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1079198
+  
+  P: /devices/virtual/block/ram3
+  N: ram3
+  E: DEVNAME=/dev/ram3
+  E: DEVPATH=/devices/virtual/block/ram3
+  E: DEVTYPE=disk
+  E: MAJOR=1
+  E: MINOR=3
+  E: SUBSYSTEM=block
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1093686
+  
+  P: /devices/virtual/block/ram4
+  N: ram4
+  E: DEVNAME=/dev/ram4
+  E: DEVPATH=/devices/virtual/block/ram4
+  E: DEVTYPE=disk
+  E: MAJOR=1
+  E: MINOR=4
+  E: SUBSYSTEM=block
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1091668
+  
+  P: /devices/virtual/block/ram5
+  N: ram5
+  E: DEVNAME=/dev/ram5
+  E: DEVPATH=/devices/virtual/block/ram5
+  E: DEVTYPE=disk
+  E: MAJOR=1
+  E: MINOR=5
+  E: SUBSYSTEM=block
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1093469
+  
+  P: /devices/virtual/block/ram6
+  N: ram6
+  E: DEVNAME=/dev/ram6
+  E: DEVPATH=/devices/virtual/block/ram6
+  E: DEVTYPE=disk
+  E: MAJOR=1
+  E: MINOR=6
+  E: SUBSYSTEM=block
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1092854
+  
+  P: /devices/virtual/block/ram7
+  N: ram7
+  E: DEVNAME=/dev/ram7
+  E: DEVPATH=/devices/virtual/block/ram7
+  E: DEVTYPE=disk
+  E: MAJOR=1
+  E: MINOR=7
+  E: SUBSYSTEM=block
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1088151
+  
+  P: /devices/virtual/block/ram8
+  N: ram8
+  E: DEVNAME=/dev/ram8
+  E: DEVPATH=/devices/virtual/block/ram8
+  E: DEVTYPE=disk
+  E: MAJOR=1
+  E: MINOR=8
+  E: SUBSYSTEM=block
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1092688
+  
+  P: /devices/virtual/block/ram9
+  N: ram9
+  E: DEVNAME=/dev/ram9
+  E: DEVPATH=/devices/virtual/block/ram9
+  E: DEVTYPE=disk
+  E: MAJOR=1
+  E: MINOR=9
+  E: SUBSYSTEM=block
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=1092475
+  
+  P: /devices/virtual/dmi/id
+  E: DEVPATH=/devices/virtual/dmi/id
+  E: MODALIAS=dmi:bvnSeaBIOS:bvrUbuntu-1.8.2-1ubuntu1~cloud0+ovh1:bd04/01/2014:svnOpenStackFoundation:pnOpenStackNova:pvr2014.2.4:cvnQEMU:ct1:cvrpc-i440fx-vivid:
+  E: SUBSYSTEM=dmi
+  
+  P: /devices/virtual/graphics/fbcon
+  E: DEVPATH=/devices/virtual/graphics/fbcon
+  E: SUBSYSTEM=graphics
+  
+  P: /devices/virtual/input/mice
+  N: input/mice
+  E: DEVNAME=/dev/input/mice
+  E: DEVPATH=/devices/virtual/input/mice
+  E: MAJOR=13
+  E: MINOR=63
+  E: SUBSYSTEM=input
+  
+  P: /devices/virtual/iscsi_transport/iser
+  E: DEVPATH=/devices/virtual/iscsi_transport/iser
+  E: SUBSYSTEM=iscsi_transport
+  
+  P: /devices/virtual/iscsi_transport/tcp
+  E: DEVPATH=/devices/virtual/iscsi_transport/tcp
+  E: SUBSYSTEM=iscsi_transport
+  
+  P: /devices/virtual/mem/full
+  N: full
+  E: DEVMODE=0666
+  E: DEVNAME=/dev/full
+  E: DEVPATH=/devices/virtual/mem/full
+  E: MAJOR=1
+  E: MINOR=7
+  E: SUBSYSTEM=mem
+  
+  P: /devices/virtual/mem/kmsg
+  N: kmsg
+  E: DEVMODE=0644
+  E: DEVNAME=/dev/kmsg
+  E: DEVPATH=/devices/virtual/mem/kmsg
+  E: MAJOR=1
+  E: MINOR=11
+  E: SUBSYSTEM=mem
+  
+  P: /devices/virtual/mem/mem
+  N: mem
+  E: DEVNAME=/dev/mem
+  E: DEVPATH=/devices/virtual/mem/mem
+  E: MAJOR=1
+  E: MINOR=1
+  E: SUBSYSTEM=mem
+  
+  P: /devices/virtual/mem/null
+  N: null
+  E: DEVMODE=0666
+  E: DEVNAME=/dev/null
+  E: DEVPATH=/devices/virtual/mem/null
+  E: MAJOR=1
+  E: MINOR=3
+  E: SUBSYSTEM=mem
+  
+  P: /devices/virtual/mem/port
+  N: port
+  E: DEVNAME=/dev/port
+  E: DEVPATH=/devices/virtual/mem/port
+  E: MAJOR=1
+  E: MINOR=4
+  E: SUBSYSTEM=mem
+  
+  P: /devices/virtual/mem/random
+  N: random
+  E: DEVMODE=0666
+  E: DEVNAME=/dev/random
+  E: DEVPATH=/devices/virtual/mem/random
+  E: MAJOR=1
+  E: MINOR=8
+  E: SUBSYSTEM=mem
+  
+  P: /devices/virtual/mem/urandom
+  N: urandom
+  E: DEVMODE=0666
+  E: DEVNAME=/dev/urandom
+  E: DEVPATH=/devices/virtual/mem/urandom
+  E: MAJOR=1
+  E: MINOR=9
+  E: SUBSYSTEM=mem
+  
+  P: /devices/virtual/mem/zero
+  N: zero
+  E: DEVMODE=0666
+  E: DEVNAME=/dev/zero
+  E: DEVPATH=/devices/virtual/mem/zero
+  E: MAJOR=1
+  E: MINOR=5
+  E: SUBSYSTEM=mem
+  
+  P: /devices/virtual/misc/autofs
+  N: autofs
+  E: DEVNAME=/dev/autofs
+  E: DEVPATH=/devices/virtual/misc/autofs
+  E: MAJOR=10
+  E: MINOR=235
+  E: SUBSYSTEM=misc
+  
+  P: /devices/virtual/misc/btrfs-control
+  N: btrfs-control
+  E: DEVNAME=/dev/btrfs-control
+  E: DEVPATH=/devices/virtual/misc/btrfs-control
+  E: MAJOR=10
+  E: MINOR=234
+  E: SUBSYSTEM=misc
+  
+  P: /devices/virtual/misc/cpu_dma_latency
+  N: cpu_dma_latency
+  E: DEVNAME=/dev/cpu_dma_latency
+  E: DEVPATH=/devices/virtual/misc/cpu_dma_latency
+  E: MAJOR=10
+  E: MINOR=59
+  E: SUBSYSTEM=misc
+  
+  P: /devices/virtual/misc/device-mapper
+  N: mapper/control
+  E: DEVNAME=/dev/mapper/control
+  E: DEVPATH=/devices/virtual/misc/device-mapper
+  E: MAJOR=10
+  E: MINOR=236
+  E: SUBSYSTEM=misc
+  
+  P: /devices/virtual/misc/ecryptfs
+  N: ecryptfs
+  E: DEVNAME=/dev/ecryptfs
+  E: DEVPATH=/devices/virtual/misc/ecryptfs
+  E: MAJOR=10
+  E: MINOR=61
+  E: SUBSYSTEM=misc
+  
+  P: /devices/virtual/misc/fuse
+  N: fuse
+  E: DEVNAME=/dev/fuse
+  E: DEVPATH=/devices/virtual/misc/fuse
+  E: MAJOR=10
+  E: MINOR=229
+  E: SUBSYSTEM=misc
+  
+  P: /devices/virtual/misc/hpet
+  N: hpet
+  E: DEVNAME=/dev/hpet
+  E: DEVPATH=/devices/virtual/misc/hpet
+  E: MAJOR=10
+  E: MINOR=228
+  E: SUBSYSTEM=misc
+  
+  P: /devices/virtual/misc/hw_random
+  N: hwrng
+  E: DEVNAME=/dev/hwrng
+  E: DEVPATH=/devices/virtual/misc/hw_random
+  E: MAJOR=10
+  E: MINOR=183
+  E: SUBSYSTEM=misc
+  
+  P: /devices/virtual/misc/kvm
+  N: kvm
+  E: DEVNAME=/dev/kvm
+  E: DEVPATH=/devices/virtual/misc/kvm
+  E: MAJOR=10
+  E: MINOR=232
+  E: SUBSYSTEM=misc
+  E: TAGS=:uaccess:seat:
+  E: USEC_INITIALIZED=5644444
+  
+  P: /devices/virtual/misc/lightnvm
+  N: lightnvm/control
+  E: DEVNAME=/dev/lightnvm/control
+  E: DEVPATH=/devices/virtual/misc/lightnvm
+  E: MAJOR=10
+  E: MINOR=60
+  E: SUBSYSTEM=misc
+  
+  P: /devices/virtual/misc/loop-control
+  N: loop-control
+  E: DEVNAME=/dev/loop-control
+  E: DEVPATH=/devices/virtual/misc/loop-control
+  E: MAJOR=10
+  E: MINOR=237
+  E: SUBSYSTEM=misc
+  
+  P: /devices/virtual/misc/mcelog
+  N: mcelog
+  E: DEVNAME=/dev/mcelog
+  E: DEVPATH=/devices/virtual/misc/mcelog
+  E: MAJOR=10
+  E: MINOR=227
+  E: SUBSYSTEM=misc
+  
+  P: /devices/virtual/misc/memory_bandwidth
+  N: memory_bandwidth
+  E: DEVNAME=/dev/memory_bandwidth
+  E: DEVPATH=/devices/virtual/misc/memory_bandwidth
+  E: MAJOR=10
+  E: MINOR=56
+  E: SUBSYSTEM=misc
+  
+  P: /devices/virtual/misc/microcode
+  N: cpu/microcode
+  E: DEVNAME=/dev/cpu/microcode
+  E: DEVPATH=/devices/virtual/misc/microcode
+  E: MAJOR=10
+  E: MINOR=184
+  E: SUBSYSTEM=misc
+  
+  P: /devices/virtual/misc/network_latency
+  N: network_latency
+  E: DEVNAME=/dev/network_latency
+  E: DEVPATH=/devices/virtual/misc/network_latency
+  E: MAJOR=10
+  E: MINOR=58
+  E: SUBSYSTEM=misc
+  
+  P: /devices/virtual/misc/network_throughput
+  N: network_throughput
+  E: DEVNAME=/dev/network_throughput
+  E: DEVPATH=/devices/virtual/misc/network_throughput
+  E: MAJOR=10
+  E: MINOR=57
+  E: SUBSYSTEM=misc
+  
+  P: /devices/virtual/misc/psaux
+  N: psaux
+  E: DEVNAME=/dev/psaux
+  E: DEVPATH=/devices/virtual/misc/psaux
+  E: MAJOR=10
+  E: MINOR=1
+  E: SUBSYSTEM=misc
+  
+  P: /devices/virtual/misc/rfkill
+  N: rfkill
+  E: DEVNAME=/dev/rfkill
+  E: DEVPATH=/devices/virtual/misc/rfkill
+  E: MAJOR=10
+  E: MINOR=62
+  E: SUBSYSTEM=misc
+  E: SYSTEMD_WANTS=systemd-rfkill.socket
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=5549789
+  
+  P: /devices/virtual/misc/snapshot
+  N: snapshot
+  E: DEVNAME=/dev/snapshot
+  E: DEVPATH=/devices/virtual/misc/snapshot
+  E: MAJOR=10
+  E: MINOR=231
+  E: SUBSYSTEM=misc
+  
+  P: /devices/virtual/misc/tun
+  N: net/tun
+  E: DEVNAME=/dev/net/tun
+  E: DEVPATH=/devices/virtual/misc/tun
+  E: MAJOR=10
+  E: MINOR=200
+  E: SUBSYSTEM=misc
+  
+  P: /devices/virtual/misc/uinput
+  N: uinput
+  E: DEVNAME=/dev/uinput
+  E: DEVPATH=/devices/virtual/misc/uinput
+  E: MAJOR=10
+  E: MINOR=223
+  E: SUBSYSTEM=misc
+  
+  P: /devices/virtual/misc/vga_arbiter
+  N: vga_arbiter
+  E: DEVNAME=/dev/vga_arbiter
+  E: DEVPATH=/devices/virtual/misc/vga_arbiter
+  E: MAJOR=10
+  E: MINOR=63
+  E: SUBSYSTEM=misc
+  
+  P: /devices/virtual/net/lo
+  E: DEVPATH=/devices/virtual/net/lo
+  E: ID_NET_LINK_FILE=/lib/systemd/network/99-default.link
+  E: IFINDEX=1
+  E: INTERFACE=lo
+  E: SUBSYSTEM=net
+  E: USEC_INITIALIZED=1097284
+  
+  P: /devices/virtual/ppp/ppp
+  N: ppp
+  E: DEVNAME=/dev/ppp
+  E: DEVPATH=/devices/virtual/ppp/ppp
+  E: MAJOR=108
+  E: MINOR=0
+  E: SUBSYSTEM=ppp
+  
+  P: /devices/virtual/thermal/cooling_device0
+  E: DEVPATH=/devices/virtual/thermal/cooling_device0
+  E: SUBSYSTEM=thermal
+  
+  P: /devices/virtual/tty/console
+  N: console
+  E: DEVNAME=/dev/console
+  E: DEVPATH=/devices/virtual/tty/console
+  E: MAJOR=5
+  E: MINOR=1
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/ptmx
+  N: ptmx
+  E: DEVMODE=0666
+  E: DEVNAME=/dev/ptmx
+  E: DEVPATH=/devices/virtual/tty/ptmx
+  E: MAJOR=5
+  E: MINOR=2
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty
+  N: tty
+  E: DEVMODE=0666
+  E: DEVNAME=/dev/tty
+  E: DEVPATH=/devices/virtual/tty/tty
+  E: MAJOR=5
+  E: MINOR=0
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty0
+  N: tty0
+  E: DEVNAME=/dev/tty0
+  E: DEVPATH=/devices/virtual/tty/tty0
+  E: MAJOR=4
+  E: MINOR=0
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty1
+  N: tty1
+  E: DEVNAME=/dev/tty1
+  E: DEVPATH=/devices/virtual/tty/tty1
+  E: MAJOR=4
+  E: MINOR=1
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty10
+  N: tty10
+  E: DEVNAME=/dev/tty10
+  E: DEVPATH=/devices/virtual/tty/tty10
+  E: MAJOR=4
+  E: MINOR=10
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty11
+  N: tty11
+  E: DEVNAME=/dev/tty11
+  E: DEVPATH=/devices/virtual/tty/tty11
+  E: MAJOR=4
+  E: MINOR=11
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty12
+  N: tty12
+  E: DEVNAME=/dev/tty12
+  E: DEVPATH=/devices/virtual/tty/tty12
+  E: MAJOR=4
+  E: MINOR=12
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty13
+  N: tty13
+  E: DEVNAME=/dev/tty13
+  E: DEVPATH=/devices/virtual/tty/tty13
+  E: MAJOR=4
+  E: MINOR=13
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty14
+  N: tty14
+  E: DEVNAME=/dev/tty14
+  E: DEVPATH=/devices/virtual/tty/tty14
+  E: MAJOR=4
+  E: MINOR=14
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty15
+  N: tty15
+  E: DEVNAME=/dev/tty15
+  E: DEVPATH=/devices/virtual/tty/tty15
+  E: MAJOR=4
+  E: MINOR=15
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty16
+  N: tty16
+  E: DEVNAME=/dev/tty16
+  E: DEVPATH=/devices/virtual/tty/tty16
+  E: MAJOR=4
+  E: MINOR=16
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty17
+  N: tty17
+  E: DEVNAME=/dev/tty17
+  E: DEVPATH=/devices/virtual/tty/tty17
+  E: MAJOR=4
+  E: MINOR=17
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty18
+  N: tty18
+  E: DEVNAME=/dev/tty18
+  E: DEVPATH=/devices/virtual/tty/tty18
+  E: MAJOR=4
+  E: MINOR=18
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty19
+  N: tty19
+  E: DEVNAME=/dev/tty19
+  E: DEVPATH=/devices/virtual/tty/tty19
+  E: MAJOR=4
+  E: MINOR=19
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty2
+  N: tty2
+  E: DEVNAME=/dev/tty2
+  E: DEVPATH=/devices/virtual/tty/tty2
+  E: MAJOR=4
+  E: MINOR=2
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty20
+  N: tty20
+  E: DEVNAME=/dev/tty20
+  E: DEVPATH=/devices/virtual/tty/tty20
+  E: MAJOR=4
+  E: MINOR=20
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty21
+  N: tty21
+  E: DEVNAME=/dev/tty21
+  E: DEVPATH=/devices/virtual/tty/tty21
+  E: MAJOR=4
+  E: MINOR=21
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty22
+  N: tty22
+  E: DEVNAME=/dev/tty22
+  E: DEVPATH=/devices/virtual/tty/tty22
+  E: MAJOR=4
+  E: MINOR=22
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty23
+  N: tty23
+  E: DEVNAME=/dev/tty23
+  E: DEVPATH=/devices/virtual/tty/tty23
+  E: MAJOR=4
+  E: MINOR=23
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty24
+  N: tty24
+  E: DEVNAME=/dev/tty24
+  E: DEVPATH=/devices/virtual/tty/tty24
+  E: MAJOR=4
+  E: MINOR=24
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty25
+  N: tty25
+  E: DEVNAME=/dev/tty25
+  E: DEVPATH=/devices/virtual/tty/tty25
+  E: MAJOR=4
+  E: MINOR=25
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty26
+  N: tty26
+  E: DEVNAME=/dev/tty26
+  E: DEVPATH=/devices/virtual/tty/tty26
+  E: MAJOR=4
+  E: MINOR=26
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty27
+  N: tty27
+  E: DEVNAME=/dev/tty27
+  E: DEVPATH=/devices/virtual/tty/tty27
+  E: MAJOR=4
+  E: MINOR=27
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty28
+  N: tty28
+  E: DEVNAME=/dev/tty28
+  E: DEVPATH=/devices/virtual/tty/tty28
+  E: MAJOR=4
+  E: MINOR=28
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty29
+  N: tty29
+  E: DEVNAME=/dev/tty29
+  E: DEVPATH=/devices/virtual/tty/tty29
+  E: MAJOR=4
+  E: MINOR=29
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty3
+  N: tty3
+  E: DEVNAME=/dev/tty3
+  E: DEVPATH=/devices/virtual/tty/tty3
+  E: MAJOR=4
+  E: MINOR=3
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty30
+  N: tty30
+  E: DEVNAME=/dev/tty30
+  E: DEVPATH=/devices/virtual/tty/tty30
+  E: MAJOR=4
+  E: MINOR=30
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty31
+  N: tty31
+  E: DEVNAME=/dev/tty31
+  E: DEVPATH=/devices/virtual/tty/tty31
+  E: MAJOR=4
+  E: MINOR=31
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty32
+  N: tty32
+  E: DEVNAME=/dev/tty32
+  E: DEVPATH=/devices/virtual/tty/tty32
+  E: MAJOR=4
+  E: MINOR=32
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty33
+  N: tty33
+  E: DEVNAME=/dev/tty33
+  E: DEVPATH=/devices/virtual/tty/tty33
+  E: MAJOR=4
+  E: MINOR=33
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty34
+  N: tty34
+  E: DEVNAME=/dev/tty34
+  E: DEVPATH=/devices/virtual/tty/tty34
+  E: MAJOR=4
+  E: MINOR=34
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty35
+  N: tty35
+  E: DEVNAME=/dev/tty35
+  E: DEVPATH=/devices/virtual/tty/tty35
+  E: MAJOR=4
+  E: MINOR=35
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty36
+  N: tty36
+  E: DEVNAME=/dev/tty36
+  E: DEVPATH=/devices/virtual/tty/tty36
+  E: MAJOR=4
+  E: MINOR=36
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty37
+  N: tty37
+  E: DEVNAME=/dev/tty37
+  E: DEVPATH=/devices/virtual/tty/tty37
+  E: MAJOR=4
+  E: MINOR=37
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty38
+  N: tty38
+  E: DEVNAME=/dev/tty38
+  E: DEVPATH=/devices/virtual/tty/tty38
+  E: MAJOR=4
+  E: MINOR=38
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty39
+  N: tty39
+  E: DEVNAME=/dev/tty39
+  E: DEVPATH=/devices/virtual/tty/tty39
+  E: MAJOR=4
+  E: MINOR=39
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty4
+  N: tty4
+  E: DEVNAME=/dev/tty4
+  E: DEVPATH=/devices/virtual/tty/tty4
+  E: MAJOR=4
+  E: MINOR=4
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty40
+  N: tty40
+  E: DEVNAME=/dev/tty40
+  E: DEVPATH=/devices/virtual/tty/tty40
+  E: MAJOR=4
+  E: MINOR=40
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty41
+  N: tty41
+  E: DEVNAME=/dev/tty41
+  E: DEVPATH=/devices/virtual/tty/tty41
+  E: MAJOR=4
+  E: MINOR=41
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty42
+  N: tty42
+  E: DEVNAME=/dev/tty42
+  E: DEVPATH=/devices/virtual/tty/tty42
+  E: MAJOR=4
+  E: MINOR=42
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty43
+  N: tty43
+  E: DEVNAME=/dev/tty43
+  E: DEVPATH=/devices/virtual/tty/tty43
+  E: MAJOR=4
+  E: MINOR=43
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty44
+  N: tty44
+  E: DEVNAME=/dev/tty44
+  E: DEVPATH=/devices/virtual/tty/tty44
+  E: MAJOR=4
+  E: MINOR=44
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty45
+  N: tty45
+  E: DEVNAME=/dev/tty45
+  E: DEVPATH=/devices/virtual/tty/tty45
+  E: MAJOR=4
+  E: MINOR=45
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty46
+  N: tty46
+  E: DEVNAME=/dev/tty46
+  E: DEVPATH=/devices/virtual/tty/tty46
+  E: MAJOR=4
+  E: MINOR=46
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty47
+  N: tty47
+  E: DEVNAME=/dev/tty47
+  E: DEVPATH=/devices/virtual/tty/tty47
+  E: MAJOR=4
+  E: MINOR=47
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty48
+  N: tty48
+  E: DEVNAME=/dev/tty48
+  E: DEVPATH=/devices/virtual/tty/tty48
+  E: MAJOR=4
+  E: MINOR=48
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty49
+  N: tty49
+  E: DEVNAME=/dev/tty49
+  E: DEVPATH=/devices/virtual/tty/tty49
+  E: MAJOR=4
+  E: MINOR=49
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty5
+  N: tty5
+  E: DEVNAME=/dev/tty5
+  E: DEVPATH=/devices/virtual/tty/tty5
+  E: MAJOR=4
+  E: MINOR=5
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty50
+  N: tty50
+  E: DEVNAME=/dev/tty50
+  E: DEVPATH=/devices/virtual/tty/tty50
+  E: MAJOR=4
+  E: MINOR=50
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty51
+  N: tty51
+  E: DEVNAME=/dev/tty51
+  E: DEVPATH=/devices/virtual/tty/tty51
+  E: MAJOR=4
+  E: MINOR=51
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty52
+  N: tty52
+  E: DEVNAME=/dev/tty52
+  E: DEVPATH=/devices/virtual/tty/tty52
+  E: MAJOR=4
+  E: MINOR=52
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty53
+  N: tty53
+  E: DEVNAME=/dev/tty53
+  E: DEVPATH=/devices/virtual/tty/tty53
+  E: MAJOR=4
+  E: MINOR=53
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty54
+  N: tty54
+  E: DEVNAME=/dev/tty54
+  E: DEVPATH=/devices/virtual/tty/tty54
+  E: MAJOR=4
+  E: MINOR=54
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty55
+  N: tty55
+  E: DEVNAME=/dev/tty55
+  E: DEVPATH=/devices/virtual/tty/tty55
+  E: MAJOR=4
+  E: MINOR=55
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty56
+  N: tty56
+  E: DEVNAME=/dev/tty56
+  E: DEVPATH=/devices/virtual/tty/tty56
+  E: MAJOR=4
+  E: MINOR=56
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty57
+  N: tty57
+  E: DEVNAME=/dev/tty57
+  E: DEVPATH=/devices/virtual/tty/tty57
+  E: MAJOR=4
+  E: MINOR=57
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty58
+  N: tty58
+  E: DEVNAME=/dev/tty58
+  E: DEVPATH=/devices/virtual/tty/tty58
+  E: MAJOR=4
+  E: MINOR=58
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty59
+  N: tty59
+  E: DEVNAME=/dev/tty59
+  E: DEVPATH=/devices/virtual/tty/tty59
+  E: MAJOR=4
+  E: MINOR=59
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty6
+  N: tty6
+  E: DEVNAME=/dev/tty6
+  E: DEVPATH=/devices/virtual/tty/tty6
+  E: MAJOR=4
+  E: MINOR=6
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty60
+  N: tty60
+  E: DEVNAME=/dev/tty60
+  E: DEVPATH=/devices/virtual/tty/tty60
+  E: MAJOR=4
+  E: MINOR=60
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty61
+  N: tty61
+  E: DEVNAME=/dev/tty61
+  E: DEVPATH=/devices/virtual/tty/tty61
+  E: MAJOR=4
+  E: MINOR=61
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty62
+  N: tty62
+  E: DEVNAME=/dev/tty62
+  E: DEVPATH=/devices/virtual/tty/tty62
+  E: MAJOR=4
+  E: MINOR=62
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty63
+  N: tty63
+  E: DEVNAME=/dev/tty63
+  E: DEVPATH=/devices/virtual/tty/tty63
+  E: MAJOR=4
+  E: MINOR=63
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty7
+  N: tty7
+  E: DEVNAME=/dev/tty7
+  E: DEVPATH=/devices/virtual/tty/tty7
+  E: MAJOR=4
+  E: MINOR=7
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty8
+  N: tty8
+  E: DEVNAME=/dev/tty8
+  E: DEVPATH=/devices/virtual/tty/tty8
+  E: MAJOR=4
+  E: MINOR=8
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/tty9
+  N: tty9
+  E: DEVNAME=/dev/tty9
+  E: DEVPATH=/devices/virtual/tty/tty9
+  E: MAJOR=4
+  E: MINOR=9
+  E: SUBSYSTEM=tty
+  
+  P: /devices/virtual/tty/ttyprintk
+  N: ttyprintk
+  E: DEVNAME=/dev/ttyprintk
+  E: DEVPATH=/devices/virtual/tty/ttyprintk
+  E: MAJOR=5
+  E: MINOR=3
+  E: SUBSYSTEM=tty
+  E: TAGS=:systemd:
+  E: USEC_INITIALIZED=5612650
+  
+  P: /devices/virtual/vc/vcs
+  N: vcs
+  E: DEVNAME=/dev/vcs
+  E: DEVPATH=/devices/virtual/vc/vcs
+  E: MAJOR=7
+  E: MINOR=0
+  E: SUBSYSTEM=vc
+  
+  P: /devices/virtual/vc/vcs1
+  N: vcs1
+  E: DEVNAME=/dev/vcs1
+  E: DEVPATH=/devices/virtual/vc/vcs1
+  E: MAJOR=7
+  E: MINOR=1
+  E: SUBSYSTEM=vc
+  
+  P: /devices/virtual/vc/vcs2
+  N: vcs2
+  E: DEVNAME=/dev/vcs2
+  E: DEVPATH=/devices/virtual/vc/vcs2
+  E: MAJOR=7
+  E: MINOR=2
+  E: SUBSYSTEM=vc
+  
+  P: /devices/virtual/vc/vcs3
+  N: vcs3
+  E: DEVNAME=/dev/vcs3
+  E: DEVPATH=/devices/virtual/vc/vcs3
+  E: MAJOR=7
+  E: MINOR=3
+  E: SUBSYSTEM=vc
+  
+  P: /devices/virtual/vc/vcs4
+  N: vcs4
+  E: DEVNAME=/dev/vcs4
+  E: DEVPATH=/devices/virtual/vc/vcs4
+  E: MAJOR=7
+  E: MINOR=4
+  E: SUBSYSTEM=vc
+  
+  P: /devices/virtual/vc/vcs5
+  N: vcs5
+  E: DEVNAME=/dev/vcs5
+  E: DEVPATH=/devices/virtual/vc/vcs5
+  E: MAJOR=7
+  E: MINOR=5
+  E: SUBSYSTEM=vc
+  
+  P: /devices/virtual/vc/vcs6
+  N: vcs6
+  E: DEVNAME=/dev/vcs6
+  E: DEVPATH=/devices/virtual/vc/vcs6
+  E: MAJOR=7
+  E: MINOR=6
+  E: SUBSYSTEM=vc
+  
+  P: /devices/virtual/vc/vcsa
+  N: vcsa
+  E: DEVNAME=/dev/vcsa
+  E: DEVPATH=/devices/virtual/vc/vcsa
+  E: MAJOR=7
+  E: MINOR=128
+  E: SUBSYSTEM=vc
+  
+  P: /devices/virtual/vc/vcsa1
+  N: vcsa1
+  E: DEVNAME=/dev/vcsa1
+  E: DEVPATH=/devices/virtual/vc/vcsa1
+  E: MAJOR=7
+  E: MINOR=129
+  E: SUBSYSTEM=vc
+  
+  P: /devices/virtual/vc/vcsa2
+  N: vcsa2
+  E: DEVNAME=/dev/vcsa2
+  E: DEVPATH=/devices/virtual/vc/vcsa2
+  E: MAJOR=7
+  E: MINOR=130
+  E: SUBSYSTEM=vc
+  
+  P: /devices/virtual/vc/vcsa3
+  N: vcsa3
+  E: DEVNAME=/dev/vcsa3
+  E: DEVPATH=/devices/virtual/vc/vcsa3
+  E: MAJOR=7
+  E: MINOR=131
+  E: SUBSYSTEM=vc
+  
+  P: /devices/virtual/vc/vcsa4
+  N: vcsa4
+  E: DEVNAME=/dev/vcsa4
+  E: DEVPATH=/devices/virtual/vc/vcsa4
+  E: MAJOR=7
+  E: MINOR=132
+  E: SUBSYSTEM=vc
+  
+  P: /devices/virtual/vc/vcsa5
+  N: vcsa5
+  E: DEVNAME=/dev/vcsa5
+  E: DEVPATH=/devices/virtual/vc/vcsa5
+  E: MAJOR=7
+  E: MINOR=133
+  E: SUBSYSTEM=vc
+  
+  P: /devices/virtual/vc/vcsa6
+  N: vcsa6
+  E: DEVNAME=/dev/vcsa6
+  E: DEVPATH=/devices/virtual/vc/vcsa6
+  E: MAJOR=7
+  E: MINOR=134
+  E: SUBSYSTEM=vc
+  
+  P: /devices/virtual/vtconsole/vtcon0
+  E: DEVPATH=/devices/virtual/vtconsole/vtcon0
+  E: SUBSYSTEM=vtconsole
+  
+  P: /devices/virtual/workqueue/raid5wq
+  E: DEVPATH=/devices/virtual/workqueue/raid5wq
+  E: SUBSYSTEM=workqueue
+  
+  P: /devices/virtual/workqueue/writeback
+  E: DEVPATH=/devices/virtual/workqueue/writeback
+  E: SUBSYSTEM=workqueue
+  
+-----  udevinfo end -----
+/devices/LNXSYSTM:00
+/devices/LNXSYSTM:00/LNXPWRBN:00
+/devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+/devices/LNXSYSTM:00/LNXPWRBN:00/input/input0/event0
+  name: /dev/input/event0
+/devices/LNXSYSTM:00/LNXSYBUS:00
+/devices/LNXSYSTM:00/LNXSYBUS:00/LNXCPU:00
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0103:00
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/PNP0A06:00
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/PNP0A06:01
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/PNP0A06:02
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/PNP0A06:03
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:00
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0303:00
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0400:00
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0501:00
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0501:01
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0700:00
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0B00:00
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:01/PNP0F13:00
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:02
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:03
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:04
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:05
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:06
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:07
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:08
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:09
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:0a
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:0b
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:0c
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:0d
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:0e
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:0f
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:10
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:11
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:12
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:13
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:14
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:15
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:16
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:17
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:18
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:19
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:1a
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:1b
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:1c
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:1d
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:1e
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:1f
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/device:20
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0F:00
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0F:01
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0F:02
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0F:03
+/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0F:04
+/devices/LNXSYSTM:00/LNXSYBUS:01
+/devices/breakpoint
+/devices/msr
+/devices/pci0000:00/0000:00:00.0
+/devices/pci0000:00/0000:00:01.0
+/devices/pci0000:00/0000:00:01.1
+/devices/pci0000:00/0000:00:01.1/ata1/ata_port/ata1
+/devices/pci0000:00/0000:00:01.1/ata1/host0
+/devices/pci0000:00/0000:00:01.1/ata1/host0/scsi_host/host0
+/devices/pci0000:00/0000:00:01.1/ata1/link1/ata_link/link1
+/devices/pci0000:00/0000:00:01.1/ata1/link1/dev1.0/ata_device/dev1.0
+/devices/pci0000:00/0000:00:01.1/ata1/link1/dev1.1/ata_device/dev1.1
+/devices/pci0000:00/0000:00:01.1/ata2/ata_port/ata2
+/devices/pci0000:00/0000:00:01.1/ata2/host1
+/devices/pci0000:00/0000:00:01.1/ata2/host1/scsi_host/host1
+/devices/pci0000:00/0000:00:01.1/ata2/link2/ata_link/link2
+/devices/pci0000:00/0000:00:01.1/ata2/link2/dev2.0/ata_device/dev2.0
+/devices/pci0000:00/0000:00:01.1/ata2/link2/dev2.1/ata_device/dev2.1
+/devices/pci0000:00/0000:00:01.2
+/devices/pci0000:00/0000:00:01.2/usb1
+  name: /dev/bus/usb/001/001
+/devices/pci0000:00/0000:00:01.2/usb1/1-0:1.0
+/devices/pci0000:00/0000:00:01.2/usb1/1-1
+  name: /dev/bus/usb/001/002
+/devices/pci0000:00/0000:00:01.2/usb1/1-1/1-1:1.0
+/devices/pci0000:00/0000:00:01.3
+/devices/pci0000:00/0000:00:02.0
+/devices/pci0000:00/0000:00:03.0
+/devices/pci0000:00/0000:00:03.0/virtio0
+/devices/pci0000:00/0000:00:03.0/virtio0/net/ens3
+/devices/pci0000:00/0000:00:04.0
+/devices/pci0000:00/0000:00:04.0/virtio1
+/devices/pci0000:00/0000:00:04.0/virtio1/block/vda
+  name: /dev/vda
+  links: /dev/disk/by-path/virtio-pci-0000:00:04.0
+/devices/pci0000:00/0000:00:04.0/virtio1/block/vda/vda1
+  name: /dev/vda1
+  links: /dev/disk/by-label/cloudimg-rootfs, /dev/disk/by-path/virtio-pci-0000:00:04.0-part1, /dev/disk/by-uuid/60afd8f9-49f6-4152-8b41-22e2640778d2
+/devices/pci0000:00/0000:00:05.0
+/devices/pci0000:00/0000:00:05.0/virtio2
+/devices/pci0000:00/pci_bus/0000:00
+/devices/platform/Fixed
+/devices/platform/Fixed
+/devices/platform/alarmtimer
+/devices/platform/i8042
+/devices/platform/i8042/serio0
+/devices/platform/i8042/serio0/input/input1
+/devices/platform/i8042/serio0/input/input1/event1
+  name: /dev/input/event1
+  links: /dev/input/by-path/platform-i8042-serio-0-event-kbd
+/devices/platform/i8042/serio1
+/devices/platform/i8042/serio1/input/input3
+/devices/platform/i8042/serio1/input/input3/event3
+  name: /dev/input/event3
+  links: /dev/input/by-path/platform-i8042-serio-1-event-mouse
+/devices/platform/i8042/serio1/input/input3/mouse1
+  name: /dev/input/mouse1
+  links: /dev/input/by-path/platform-i8042-serio-1-mouse
+/devices/platform/i8042/serio1/input/input4
+/devices/platform/i8042/serio1/input/input4/event2
+  name: /dev/input/event2
+  links: /dev/input/by-path/platform-i8042-serio-1-event-mouse
+/devices/platform/i8042/serio1/input/input4/mouse0
+  name: /dev/input/mouse0
+  links: /dev/input/by-path/platform-i8042-serio-1-mouse
+/devices/platform/microcode
+/devices/platform/pcspkr
+/devices/platform/platform-framebuffer.0
+/devices/platform/reg-dummy
+/devices/platform/reg-dummy/regulator/regulator.0
+/devices/platform/serial8250
+/devices/platform/serial8250/tty/ttyS10
+  name: /dev/ttyS10
+/devices/platform/serial8250/tty/ttyS11
+  name: /dev/ttyS11
+/devices/platform/serial8250/tty/ttyS12
+  name: /dev/ttyS12
+/devices/platform/serial8250/tty/ttyS13
+  name: /dev/ttyS13
+/devices/platform/serial8250/tty/ttyS14
+  name: /dev/ttyS14
+/devices/platform/serial8250/tty/ttyS15
+  name: /dev/ttyS15
+/devices/platform/serial8250/tty/ttyS16
+  name: /dev/ttyS16
+/devices/platform/serial8250/tty/ttyS17
+  name: /dev/ttyS17
+/devices/platform/serial8250/tty/ttyS18
+  name: /dev/ttyS18
+/devices/platform/serial8250/tty/ttyS19
+  name: /dev/ttyS19
+/devices/platform/serial8250/tty/ttyS2
+  name: /dev/ttyS2
+/devices/platform/serial8250/tty/ttyS20
+  name: /dev/ttyS20
+/devices/platform/serial8250/tty/ttyS21
+  name: /dev/ttyS21
+/devices/platform/serial8250/tty/ttyS22
+  name: /dev/ttyS22
+/devices/platform/serial8250/tty/ttyS23
+  name: /dev/ttyS23
+/devices/platform/serial8250/tty/ttyS24
+  name: /dev/ttyS24
+/devices/platform/serial8250/tty/ttyS25
+  name: /dev/ttyS25
+/devices/platform/serial8250/tty/ttyS26
+  name: /dev/ttyS26
+/devices/platform/serial8250/tty/ttyS27
+  name: /dev/ttyS27
+/devices/platform/serial8250/tty/ttyS28
+  name: /dev/ttyS28
+/devices/platform/serial8250/tty/ttyS29
+  name: /dev/ttyS29
+/devices/platform/serial8250/tty/ttyS3
+  name: /dev/ttyS3
+/devices/platform/serial8250/tty/ttyS30
+  name: /dev/ttyS30
+/devices/platform/serial8250/tty/ttyS31
+  name: /dev/ttyS31
+/devices/platform/serial8250/tty/ttyS4
+  name: /dev/ttyS4
+/devices/platform/serial8250/tty/ttyS5
+  name: /dev/ttyS5
+/devices/platform/serial8250/tty/ttyS6
+  name: /dev/ttyS6
+/devices/platform/serial8250/tty/ttyS7
+  name: /dev/ttyS7
+/devices/platform/serial8250/tty/ttyS8
+  name: /dev/ttyS8
+/devices/platform/serial8250/tty/ttyS9
+  name: /dev/ttyS9
+/devices/pnp0/00:00
+/devices/pnp0/00:00/rtc/rtc0
+  name: /dev/rtc0
+  links: /dev/rtc
+/devices/pnp0/00:01
+/devices/pnp0/00:02
+/devices/pnp0/00:03
+/devices/pnp0/00:04
+/devices/pnp0/00:04/tty/ttyS0
+  name: /dev/ttyS0
+/devices/pnp0/00:05
+/devices/pnp0/00:05/tty/ttyS1
+  name: /dev/ttyS1
+/devices/software
+/devices/system/clockevents/broadcast
+/devices/system/clockevents/clockevent0
+/devices/system/clocksource/clocksource0
+/devices/system/container/PNP0A06:01
+/devices/system/container/PNP0A06:02
+/devices/system/container/PNP0A06:03
+/devices/system/cpu/cpu0
+/devices/system/machinecheck/machinecheck0
+/devices/system/memory/memory0
+/devices/system/memory/memory1
+/devices/system/memory/memory10
+/devices/system/memory/memory11
+/devices/system/memory/memory12
+/devices/system/memory/memory13
+/devices/system/memory/memory14
+/devices/system/memory/memory15
+/devices/system/memory/memory2
+/devices/system/memory/memory3
+/devices/system/memory/memory4
+/devices/system/memory/memory5
+/devices/system/memory/memory6
+/devices/system/memory/memory7
+/devices/system/memory/memory8
+/devices/system/memory/memory9
+/devices/system/node/node0
+/devices/tracepoint
+/devices/virtual/bdi/0:39
+/devices/virtual/bdi/1:0
+/devices/virtual/bdi/1:1
+/devices/virtual/bdi/1:10
+/devices/virtual/bdi/1:11
+/devices/virtual/bdi/1:12
+/devices/virtual/bdi/1:13
+/devices/virtual/bdi/1:14
+/devices/virtual/bdi/1:15
+/devices/virtual/bdi/1:2
+/devices/virtual/bdi/1:3
+/devices/virtual/bdi/1:4
+/devices/virtual/bdi/1:5
+/devices/virtual/bdi/1:6
+/devices/virtual/bdi/1:7
+/devices/virtual/bdi/1:8
+/devices/virtual/bdi/1:9
+/devices/virtual/bdi/253:0
+/devices/virtual/bdi/7:0
+/devices/virtual/bdi/7:1
+/devices/virtual/bdi/7:2
+/devices/virtual/bdi/7:3
+/devices/virtual/bdi/7:4
+/devices/virtual/bdi/7:5
+/devices/virtual/bdi/7:6
+/devices/virtual/bdi/7:7
+/devices/virtual/block/loop0
+  name: /dev/loop0
+/devices/virtual/block/loop1
+  name: /dev/loop1
+/devices/virtual/block/loop2
+  name: /dev/loop2
+/devices/virtual/block/loop3
+  name: /dev/loop3
+/devices/virtual/block/loop4
+  name: /dev/loop4
+/devices/virtual/block/loop5
+  name: /dev/loop5
+/devices/virtual/block/loop6
+  name: /dev/loop6
+/devices/virtual/block/loop7
+  name: /dev/loop7
+/devices/virtual/block/ram0
+  name: /dev/ram0
+/devices/virtual/block/ram1
+  name: /dev/ram1
+/devices/virtual/block/ram10
+  name: /dev/ram10
+/devices/virtual/block/ram11
+  name: /dev/ram11
+/devices/virtual/block/ram12
+  name: /dev/ram12
+/devices/virtual/block/ram13
+  name: /dev/ram13
+/devices/virtual/block/ram14
+  name: /dev/ram14
+/devices/virtual/block/ram15
+  name: /dev/ram15
+/devices/virtual/block/ram2
+  name: /dev/ram2
+/devices/virtual/block/ram3
+  name: /dev/ram3
+/devices/virtual/block/ram4
+  name: /dev/ram4
+/devices/virtual/block/ram5
+  name: /dev/ram5
+/devices/virtual/block/ram6
+  name: /dev/ram6
+/devices/virtual/block/ram7
+  name: /dev/ram7
+/devices/virtual/block/ram8
+  name: /dev/ram8
+/devices/virtual/block/ram9
+  name: /dev/ram9
+/devices/virtual/dmi/id
+/devices/virtual/graphics/fbcon
+/devices/virtual/input/mice
+  name: /dev/input/mice
+/devices/virtual/iscsi_transport/iser
+/devices/virtual/iscsi_transport/tcp
+/devices/virtual/mem/full
+  name: /dev/full
+/devices/virtual/mem/kmsg
+  name: /dev/kmsg
+/devices/virtual/mem/mem
+  name: /dev/mem
+/devices/virtual/mem/null
+  name: /dev/null
+/devices/virtual/mem/port
+  name: /dev/port
+/devices/virtual/mem/random
+  name: /dev/random
+/devices/virtual/mem/urandom
+  name: /dev/urandom
+/devices/virtual/mem/zero
+  name: /dev/zero
+/devices/virtual/misc/autofs
+  name: /dev/autofs
+/devices/virtual/misc/btrfs-control
+  name: /dev/btrfs-control
+/devices/virtual/misc/cpu_dma_latency
+  name: /dev/cpu_dma_latency
+/devices/virtual/misc/device-mapper
+  name: /dev/mapper/control
+/devices/virtual/misc/ecryptfs
+  name: /dev/ecryptfs
+/devices/virtual/misc/fuse
+  name: /dev/fuse
+/devices/virtual/misc/hpet
+  name: /dev/hpet
+/devices/virtual/misc/hw_random
+  name: /dev/hwrng
+/devices/virtual/misc/kvm
+  name: /dev/kvm
+/devices/virtual/misc/lightnvm
+  name: /dev/lightnvm/control
+/devices/virtual/misc/loop-control
+  name: /dev/loop-control
+/devices/virtual/misc/mcelog
+  name: /dev/mcelog
+/devices/virtual/misc/memory_bandwidth
+  name: /dev/memory_bandwidth
+/devices/virtual/misc/microcode
+  name: /dev/cpu/microcode
+/devices/virtual/misc/network_latency
+  name: /dev/network_latency
+/devices/virtual/misc/network_throughput
+  name: /dev/network_throughput
+/devices/virtual/misc/psaux
+  name: /dev/psaux
+/devices/virtual/misc/rfkill
+  name: /dev/rfkill
+/devices/virtual/misc/snapshot
+  name: /dev/snapshot
+/devices/virtual/misc/tun
+  name: /dev/net/tun
+/devices/virtual/misc/uinput
+  name: /dev/uinput
+/devices/virtual/misc/vga_arbiter
+  name: /dev/vga_arbiter
+/devices/virtual/net/lo
+/devices/virtual/ppp/ppp
+  name: /dev/ppp
+/devices/virtual/thermal/cooling_device0
+/devices/virtual/tty/console
+  name: /dev/console
+/devices/virtual/tty/ptmx
+  name: /dev/ptmx
+/devices/virtual/tty/tty
+  name: /dev/tty
+/devices/virtual/tty/tty0
+  name: /dev/tty0
+/devices/virtual/tty/tty1
+  name: /dev/tty1
+/devices/virtual/tty/tty10
+  name: /dev/tty10
+/devices/virtual/tty/tty11
+  name: /dev/tty11
+/devices/virtual/tty/tty12
+  name: /dev/tty12
+/devices/virtual/tty/tty13
+  name: /dev/tty13
+/devices/virtual/tty/tty14
+  name: /dev/tty14
+/devices/virtual/tty/tty15
+  name: /dev/tty15
+/devices/virtual/tty/tty16
+  name: /dev/tty16
+/devices/virtual/tty/tty17
+  name: /dev/tty17
+/devices/virtual/tty/tty18
+  name: /dev/tty18
+/devices/virtual/tty/tty19
+  name: /dev/tty19
+/devices/virtual/tty/tty2
+  name: /dev/tty2
+/devices/virtual/tty/tty20
+  name: /dev/tty20
+/devices/virtual/tty/tty21
+  name: /dev/tty21
+/devices/virtual/tty/tty22
+  name: /dev/tty22
+/devices/virtual/tty/tty23
+  name: /dev/tty23
+/devices/virtual/tty/tty24
+  name: /dev/tty24
+/devices/virtual/tty/tty25
+  name: /dev/tty25
+/devices/virtual/tty/tty26
+  name: /dev/tty26
+/devices/virtual/tty/tty27
+  name: /dev/tty27
+/devices/virtual/tty/tty28
+  name: /dev/tty28
+/devices/virtual/tty/tty29
+  name: /dev/tty29
+/devices/virtual/tty/tty3
+  name: /dev/tty3
+/devices/virtual/tty/tty30
+  name: /dev/tty30
+/devices/virtual/tty/tty31
+  name: /dev/tty31
+/devices/virtual/tty/tty32
+  name: /dev/tty32
+/devices/virtual/tty/tty33
+  name: /dev/tty33
+/devices/virtual/tty/tty34
+  name: /dev/tty34
+/devices/virtual/tty/tty35
+  name: /dev/tty35
+/devices/virtual/tty/tty36
+  name: /dev/tty36
+/devices/virtual/tty/tty37
+  name: /dev/tty37
+/devices/virtual/tty/tty38
+  name: /dev/tty38
+/devices/virtual/tty/tty39
+  name: /dev/tty39
+/devices/virtual/tty/tty4
+  name: /dev/tty4
+/devices/virtual/tty/tty40
+  name: /dev/tty40
+/devices/virtual/tty/tty41
+  name: /dev/tty41
+/devices/virtual/tty/tty42
+  name: /dev/tty42
+/devices/virtual/tty/tty43
+  name: /dev/tty43
+/devices/virtual/tty/tty44
+  name: /dev/tty44
+/devices/virtual/tty/tty45
+  name: /dev/tty45
+/devices/virtual/tty/tty46
+  name: /dev/tty46
+/devices/virtual/tty/tty47
+  name: /dev/tty47
+/devices/virtual/tty/tty48
+  name: /dev/tty48
+/devices/virtual/tty/tty49
+  name: /dev/tty49
+/devices/virtual/tty/tty5
+  name: /dev/tty5
+/devices/virtual/tty/tty50
+  name: /dev/tty50
+/devices/virtual/tty/tty51
+  name: /dev/tty51
+/devices/virtual/tty/tty52
+  name: /dev/tty52
+/devices/virtual/tty/tty53
+  name: /dev/tty53
+/devices/virtual/tty/tty54
+  name: /dev/tty54
+/devices/virtual/tty/tty55
+  name: /dev/tty55
+/devices/virtual/tty/tty56
+  name: /dev/tty56
+/devices/virtual/tty/tty57
+  name: /dev/tty57
+/devices/virtual/tty/tty58
+  name: /dev/tty58
+/devices/virtual/tty/tty59
+  name: /dev/tty59
+/devices/virtual/tty/tty6
+  name: /dev/tty6
+/devices/virtual/tty/tty60
+  name: /dev/tty60
+/devices/virtual/tty/tty61
+  name: /dev/tty61
+/devices/virtual/tty/tty62
+  name: /dev/tty62
+/devices/virtual/tty/tty63
+  name: /dev/tty63
+/devices/virtual/tty/tty7
+  name: /dev/tty7
+/devices/virtual/tty/tty8
+  name: /dev/tty8
+/devices/virtual/tty/tty9
+  name: /dev/tty9
+/devices/virtual/tty/ttyprintk
+  name: /dev/ttyprintk
+/devices/virtual/vc/vcs
+  name: /dev/vcs
+/devices/virtual/vc/vcs1
+  name: /dev/vcs1
+/devices/virtual/vc/vcs2
+  name: /dev/vcs2
+/devices/virtual/vc/vcs3
+  name: /dev/vcs3
+/devices/virtual/vc/vcs4
+  name: /dev/vcs4
+/devices/virtual/vc/vcs5
+  name: /dev/vcs5
+/devices/virtual/vc/vcs6
+  name: /dev/vcs6
+/devices/virtual/vc/vcsa
+  name: /dev/vcsa
+/devices/virtual/vc/vcsa1
+  name: /dev/vcsa1
+/devices/virtual/vc/vcsa2
+  name: /dev/vcsa2
+/devices/virtual/vc/vcsa3
+  name: /dev/vcsa3
+/devices/virtual/vc/vcsa4
+  name: /dev/vcsa4
+/devices/virtual/vc/vcsa5
+  name: /dev/vcsa5
+/devices/virtual/vc/vcsa6
+  name: /dev/vcsa6
+/devices/virtual/vtconsole/vtcon0
+/devices/virtual/workqueue/raid5wq
+/devices/virtual/workqueue/writeback
+>> int.13: device names
+>> int.14: soft raid
+----- soft raid devices -----
+----- soft raid devices end -----
+>> int.15: geo
+>> int.16: parent
+  prop read: rdCR.lZF+r4EgHp4 (failed)
+  old prop read: rdCR.lZF+r4EgHp4 (failed)
+  prop read: rdCR.n_7QNeEnh23 (failed)
+  old prop read: rdCR.n_7QNeEnh23 (failed)
+  prop read: rdCR.EMpH5pjcahD (failed)
+  old prop read: rdCR.EMpH5pjcahD (failed)
+  prop read: rdCR.f5u1ucRm+H9 (failed)
+  old prop read: rdCR.f5u1ucRm+H9 (failed)
+  prop read: rdCR.8uRK7LxiIA2 (failed)
+  old prop read: rdCR.8uRK7LxiIA2 (failed)
+  prop read: rdCR.9N+EecqykME (failed)
+  old prop read: rdCR.9N+EecqykME (failed)
+  prop read: rdCR.3wRL2_g4d2B (failed)
+  old prop read: rdCR.3wRL2_g4d2B (failed)
+  prop read: rdCR.DziBbWO85o5 (failed)
+  old prop read: rdCR.DziBbWO85o5 (failed)
+  prop read: rdCR.CxwsZFjVASF (failed)
+  old prop read: rdCR.CxwsZFjVASF (failed)
+  prop read: qLht.YeL3TKDjrxE (failed)
+  old prop read: qLht.YeL3TKDjrxE (failed)
+  prop read: vSkL.ucdhKwLeeAA (failed)
+  old prop read: vSkL.ucdhKwLeeAA (failed)
+  prop read: mnDB.3sKqaxiizg6 (failed)
+  old prop read: mnDB.3sKqaxiizg6 (failed)
+  prop read: e6j0.11QfsCI0gT0 (failed)
+  old prop read: e6j0.11QfsCI0gT0 (failed)
+  prop read: VRCs.M9Cc8lcQjE2 (failed)
+  old prop read: VRCs.M9Cc8lcQjE2 (failed)
+  prop read: _Znp.v67VofT6db4 (failed)
+  old prop read: _Znp.v67VofT6db4 (failed)
+  prop read: 3hqH.pkM7KXDR457 (failed)
+  old prop read: 3hqH.pkM7KXDR457 (failed)
+  prop read: 8otl.qHLOOfQ42uE (failed)
+  old prop read: 8otl.qHLOOfQ42uE (failed)
+  prop read: CvwD.MwuZkiRyYE1 (failed)
+  old prop read: CvwD.MwuZkiRyYE1 (failed)
+  prop read: vWuh.VIRhsc57kTD (failed)
+  old prop read: vWuh.VIRhsc57kTD (failed)
+  prop read: sNGd.+FFPFBVXZu6 (failed)
+  old prop read: sNGd.+FFPFBVXZu6 (failed)
+  prop read: O+ol.X_5slLnRyc6 (failed)
+  old prop read: O+ol.X_5slLnRyc6 (failed)
+  prop read: S_Uw.3fyvFV+mbWD (failed)
+  old prop read: S_Uw.3fyvFV+mbWD (failed)
+  prop read: v9l_.3fyvFV+mbWD (failed)
+  old prop read: v9l_.3fyvFV+mbWD (failed)
+  prop read: KSbE.Fxp0d3BezAE (failed)
+  old prop read: KSbE.Fxp0d3BezAE (failed)
+  prop read: tyyG.SE1wIdpsiiC (failed)
+  old prop read: tyyG.SE1wIdpsiiC (failed)
+  prop read: CWFH.Fxp0d3BezAE (failed)
+  old prop read: CWFH.Fxp0d3BezAE (failed)
+  prop read: ghVL.Fxp0d3BezAE (failed)
+  old prop read: ghVL.Fxp0d3BezAE (failed)
+  prop read: 7tlP.Fxp0d3BezAE (failed)
+  old prop read: 7tlP.Fxp0d3BezAE (failed)
+  prop read: a20U.Fxp0d3BezAE (failed)
+  old prop read: a20U.Fxp0d3BezAE (failed)
+  prop read: 1EGY.Fxp0d3BezAE (failed)
+  old prop read: 1EGY.Fxp0d3BezAE (failed)
+  prop read: UPWc.Fxp0d3BezAE (failed)
+  old prop read: UPWc.Fxp0d3BezAE (failed)
+  prop read: xamg.Fxp0d3BezAE (failed)
+  old prop read: xamg.Fxp0d3BezAE (failed)
+  prop read: d1y9.Fxp0d3BezAE (failed)
+  old prop read: d1y9.Fxp0d3BezAE (failed)
+  prop read: 4DCE.Fxp0d3BezAE (failed)
+  old prop read: 4DCE.Fxp0d3BezAE (failed)
+  prop read: XOSI.Fxp0d3BezAE (failed)
+  old prop read: XOSI.Fxp0d3BezAE (failed)
+  prop read: 2K8Y.Fxp0d3BezAE (failed)
+  old prop read: 2K8Y.Fxp0d3BezAE (failed)
+  prop read: VVOc.Fxp0d3BezAE (failed)
+  old prop read: VVOc.Fxp0d3BezAE (failed)
+  prop read: ygeg.Fxp0d3BezAE (failed)
+  old prop read: ygeg.Fxp0d3BezAE (failed)
+  prop read: Psuk.Fxp0d3BezAE (failed)
+  old prop read: Psuk.Fxp0d3BezAE (failed)
+  prop read: s19p.Fxp0d3BezAE (failed)
+  old prop read: s19p.Fxp0d3BezAE (failed)
+  prop read: JDPt.Fxp0d3BezAE (failed)
+  old prop read: JDPt.Fxp0d3BezAE (failed)
+  prop read: k4bc.lBczeyMQyT5 (failed)
+  old prop read: k4bc.lBczeyMQyT5 (failed)
+  prop read: ADDn.Aror24c6BX2 (failed)
+  old prop read: ADDn.Aror24c6BX2 (failed)
+  prop read: EXC1.+49ps10DtUF (failed)
+  old prop read: EXC1.+49ps10DtUF (failed)
+  prop read: AH6Q.mYF0pYoTCW7 (failed)
+  old prop read: AH6Q.mYF0pYoTCW7 (failed)
+  prop read: AH6Q.++hSeDccb2F (failed)
+  old prop read: AH6Q.++hSeDccb2F (failed)
+  prop read: rdCR.j8NaKXDZtZ6 (failed)
+  old prop read: rdCR.j8NaKXDZtZ6 (failed)
+  prop read: Fyby.5lXXuQkv_C5 (failed)
+  old prop read: Fyby.5lXXuQkv_C5 (failed)
+  prop read: ZsBS.GQNx7L4uPNA (failed)
+  old prop read: ZsBS.GQNx7L4uPNA (failed)
+  prop read: U2Mp.ndpeucax6V1 (failed)
+  old prop read: U2Mp.ndpeucax6V1 (failed)
+----- kernel log -----
+  <5>[    1.155622] random: udevadm: uninitialized urandom read (16 bytes read, 1 bits of entropy available)
+  <5>[    1.158513] random: udevadm: uninitialized urandom read (16 bytes read, 1 bits of entropy available)
+  <6>[    1.210687] virtio_net virtio0 ens3: renamed from eth0
+  <6>[    1.221465] input: VirtualPS/2 VMware VMMouse as /devices/platform/i8042/serio1/input/input4
+  <6>[    1.223548] input: VirtualPS/2 VMware VMMouse as /devices/platform/i8042/serio1/input/input3
+  <6>[    1.257321] FDC 0 is a S82078B
+  <6>[    1.264052] AVX2 version of gcm_enc/dec engaged.
+  <6>[    1.264890] AES CTR mode by8 optimization enabled
+  <6>[    1.288968] usb 1-1: new full-speed USB device number 2 using uhci_hcd
+  <6>[    1.449946] usb 1-1: New USB device found, idVendor=0627, idProduct=0001
+  <6>[    1.451263] usb 1-1: New USB device strings: Mfr=1, Product=3, SerialNumber=5
+  <6>[    1.453204] usb 1-1: Product: QEMU USB Tablet
+  <6>[    1.454557] usb 1-1: Manufacturer: QEMU
+  <6>[    1.455798] usb 1-1: SerialNumber: 42
+  <6>[    1.773055] tsc: Refined TSC clocksource calibration: 2399.988 MHz
+  <6>[    1.774863] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x22982c12b6d, max_idle_ns: 440795281273 ns
+  <6>[    2.710040] md: linear personality registered for level -1
+  <6>[    2.713621] md: multipath personality registered for level -4
+  <6>[    2.717132] md: raid0 personality registered for level 0
+  <6>[    2.721066] md: raid1 personality registered for level 1
+  <6>[    2.792946] raid6: sse2x1   gen()  7407 MB/s
+  <6>[    2.860948] raid6: sse2x1   xor()  5949 MB/s
+  <6>[    2.928942] raid6: sse2x2   gen()  9446 MB/s
+  <6>[    2.996943] raid6: sse2x2   xor()  6523 MB/s
+  <6>[    3.064942] raid6: sse2x4   gen() 11004 MB/s
+  <6>[    3.132943] raid6: sse2x4   xor()  7743 MB/s
+  <6>[    3.200945] raid6: avx2x1   gen() 14777 MB/s
+  <6>[    3.268942] raid6: avx2x2   gen() 16911 MB/s
+  <6>[    3.336944] raid6: avx2x4   gen() 20306 MB/s
+  <6>[    3.337622] raid6: using algorithm avx2x4 gen() 20306 MB/s
+  <6>[    3.338323] raid6: using avx2x2 recovery algorithm
+  <6>[    3.341424] xor: automatically using best checksumming function:
+  <6>[    3.380945]    avx       : 24502.000 MB/sec
+  <6>[    3.383940] async_tx: api initialized (async)
+  <6>[    3.395827] md: raid6 personality registered for level 6
+  <6>[    3.396666] md: raid5 personality registered for level 5
+  <6>[    3.397433] md: raid4 personality registered for level 4
+  <6>[    3.403339] md: raid10 personality registered for level 10
+  <6>[    3.434507] Btrfs loaded
+  <6>[    3.464249] EXT4-fs (vda1): mounted filesystem with ordered data mode. Opts: (null)
+  <30>[    3.551200] systemd[1]: systemd 229 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ -LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD -IDN)
+  <30>[    3.556351] systemd[1]: Detected virtualization kvm.
+  <30>[    3.557902] systemd[1]: Detected architecture x86-64.
+  <30>[    3.562720] systemd[1]: Set hostname to <vps359298>.
+  <30>[    3.940286] systemd[1]: Listening on Journal Socket.
+  <30>[    3.943650] systemd[1]: Listening on /dev/initctl Compatibility Named Pipe.
+  <30>[    3.947480] systemd[1]: Listening on LVM2 poll daemon socket.
+  <30>[    3.950901] systemd[1]: Reached target User and Group Name Lookups.
+  <30>[    3.954616] systemd[1]: Created slice System Slice.
+  <30>[    3.958696] systemd[1]: Starting Uncomplicated firewall...
+  <30>[    3.963397] systemd[1]: Created slice system-serial\x2dgetty.slice.
+  <30>[    3.968478] systemd[1]: Starting Set console keymap...
+  <30>[    3.973835] systemd[1]: Starting Nameserver information manager...
+  <30>[    3.979578] systemd[1]: Mounting Huge Pages File System...
+  <30>[    3.990358] systemd[1]: Starting Load Kernel Modules...
+  <30>[    3.997818] systemd[1]: Listening on Syslog Socket.
+  <30>[    4.003202] systemd[1]: Listening on udev Control Socket.
+  <30>[    4.009349] systemd[1]: Listening on udev Kernel Socket.
+  <30>[    4.012177] systemd[1]: Mounting POSIX Message Queue File System...
+  <6>[    4.013629] Loading iSCSI transport class v2.0-870.
+  <30>[    4.018859] systemd[1]: Starting Create list of required static device nodes for the current kernel...
+  <30>[    4.027728] systemd[1]: Reached target Encrypted Volumes.
+  <30>[    4.033313] systemd[1]: Listening on LVM2 metadata daemon socket.
+  <30>[    4.037268] systemd[1]: Created slice User and Session Slice.
+  <5>[    4.042321] iscsi: registered transport (tcp)
+  <30>[    4.043832] systemd[1]: Reached target Slices.
+  <30>[    4.045630] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+  <30>[    4.053023] systemd[1]: Listening on Journal Audit Socket.
+  <30>[    4.054974] systemd[1]: Listening on Journal Socket (/dev/log).
+  <30>[    4.059473] systemd[1]: Starting Journal Service...
+  <30>[    4.065450] systemd[1]: Listening on Device-mapper event daemon FIFOs.
+  <30>[    4.070389] systemd[1]: Starting Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling...
+  <30>[    4.076858] systemd[1]: Set up automount Arbitrary Executable File Formats File System Automount Point.
+  <30>[    4.083095] systemd[1]: Reached target Swap.
+  <30>[    4.086693] systemd[1]: Starting Remount Root and Kernel File Systems...
+  <30>[    4.091729] systemd[1]: Mounting Debug File System...
+  <30>[    4.098886] systemd[1]: Mounted POSIX Message Queue File System.
+  <30>[    4.100703] systemd[1]: Mounted Huge Pages File System.
+  <30>[    4.106304] systemd[1]: Mounted Debug File System.
+  <6>[    4.108652] EXT4-fs (vda1): re-mounted. Opts: (null)
+  <30>[    4.112579] systemd[1]: Started Uncomplicated firewall.
+  <30>[    4.125588] systemd[1]: Started Set console keymap.
+  <30>[    4.130466] systemd[1]: Started Create list of required static device nodes for the current kernel.
+  <30>[    4.142851] systemd[1]: Started Remount Root and Kernel File Systems.
+  <30>[    4.150661] systemd[1]: Started Journal Service.
+  <5>[    4.164436] iscsi: registered transport (iser)
+  <46>[    4.380181] systemd-journald[394]: Received request to flush runtime journal from PID 1
+  <5>[    4.692020] audit: type=1400 audit(1491405997.156:2): apparmor="STATUS" operation="profile_load" profile="unconfined" name="lxc-container-default" pid=571 comm="apparmor_parser"
+  <5>[    4.692028] audit: type=1400 audit(1491405997.156:3): apparmor="STATUS" operation="profile_load" profile="unconfined" name="lxc-container-default-cgns" pid=571 comm="apparmor_parser"
+  <5>[    4.692032] audit: type=1400 audit(1491405997.156:4): apparmor="STATUS" operation="profile_load" profile="unconfined" name="lxc-container-default-with-mounting" pid=571 comm="apparmor_parser"
+  <5>[    4.692035] audit: type=1400 audit(1491405997.156:5): apparmor="STATUS" operation="profile_load" profile="unconfined" name="lxc-container-default-with-nesting" pid=571 comm="apparmor_parser"
+  <5>[    4.752526] audit: type=1400 audit(1491405997.216:6): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/sbin/dhclient" pid=572 comm="apparmor_parser"
+  <5>[    4.752533] audit: type=1400 audit(1491405997.216:7): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/NetworkManager/nm-dhcp-client.action" pid=572 comm="apparmor_parser"
+  <5>[    4.752537] audit: type=1400 audit(1491405997.216:8): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/NetworkManager/nm-dhcp-helper" pid=572 comm="apparmor_parser"
+  <5>[    4.752540] audit: type=1400 audit(1491405997.216:9): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/connman/scripts/dhclient-script" pid=572 comm="apparmor_parser"
+  <5>[    4.760316] audit: type=1400 audit(1491405997.224:10): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/bin/lxc-start" pid=574 comm="apparmor_parser"
+  <6>[    5.844994] ppdev: user-space parallel port driver
+  <4>[   30.951615] cgroup: new mount options do not match the existing superblock, will be ignored
+  <5>[   48.913134] random: nonblocking pool is initialized
+  <6>[45140.484325] SGI XFS with ACLs, security attributes, realtime, no debug enabled
+  <4>[93106.103706] nr_pdflush_threads exported in /proc is scheduled for removal
+----- kernel log end -----
+----- /proc/modules -----
+  lp 20480 0 - Live 0xffffffffc04c2000
+  parport_pc 32768 0 - Live 0xffffffffc02f4000
+  binfmt_misc 20480 1 - Live 0xffffffffc03a1000
+  ufs 73728 0 - Live 0xffffffffc038e000
+  msdos 20480 0 - Live 0xffffffffc0388000
+  xfs 970752 0 - Live 0xffffffffc03d4000
+  ppdev 20480 0 - Live 0xffffffffc0382000
+  kvm_intel 172032 0 - Live 0xffffffffc03a9000
+  kvm 540672 1 kvm_intel, Live 0xffffffffc02fd000
+  irqbypass 16384 1 kvm, Live 0xffffffffc025b000
+  joydev 20480 0 - Live 0xffffffffc02e1000
+  serio_raw 16384 0 - Live 0xffffffffc02c1000
+  parport 49152 3 lp,parport_pc,ppdev, Live 0xffffffffc02e7000
+  ib_iser 49152 0 - Live 0xffffffffc02d4000
+  rdma_cm 49152 1 ib_iser, Live 0xffffffffc02c7000
+  iw_cm 45056 1 rdma_cm, Live 0xffffffffc02b5000
+  ib_cm 45056 1 rdma_cm, Live 0xffffffffc0292000
+  ib_sa 36864 2 rdma_cm,ib_cm, Live 0xffffffffc02ab000
+  ib_mad 49152 2 ib_cm,ib_sa, Live 0xffffffffc029e000
+  ib_core 106496 6 ib_iser,rdma_cm,iw_cm,ib_cm,ib_sa,ib_mad, Live 0xffffffffc0277000
+  ib_addr 20480 2 rdma_cm,ib_core, Live 0xffffffffc0255000
+  iscsi_tcp 20480 0 - Live 0xffffffffc0127000
+  libiscsi_tcp 24576 1 iscsi_tcp, Live 0xffffffffc0270000
+  libiscsi 53248 3 ib_iser,iscsi_tcp,libiscsi_tcp, Live 0xffffffffc0262000
+  scsi_transport_iscsi 98304 4 ib_iser,iscsi_tcp,libiscsi, Live 0xffffffffc023c000
+  autofs4 40960 2 - Live 0xffffffffc0231000
+  btrfs 987136 0 - Live 0xffffffffc013f000
+  raid10 49152 0 - Live 0xffffffffc012e000
+  raid456 110592 0 - Live 0xffffffffc010b000
+  async_raid6_recov 20480 1 raid456, Live 0xffffffffc0105000
+  async_memcpy 16384 2 raid456,async_raid6_recov, Live 0xffffffffc0100000
+  async_pq 16384 2 raid456,async_raid6_recov, Live 0xffffffffc00fb000
+  async_xor 16384 3 raid456,async_raid6_recov,async_pq, Live 0xffffffffc00f6000
+  async_tx 16384 5 raid456,async_raid6_recov,async_memcpy,async_pq,async_xor, Live 0xffffffffc00f1000
+  xor 24576 2 btrfs,async_xor, Live 0xffffffffc00e6000
+  raid6_pq 102400 4 btrfs,raid456,async_raid6_recov,async_pq, Live 0xffffffffc00c8000
+  libcrc32c 16384 2 xfs,raid456, Live 0xffffffffc00c0000
+  raid1 36864 0 - Live 0xffffffffc00b2000
+  raid0 20480 0 - Live 0xffffffffc00ac000
+  multipath 16384 0 - Live 0xffffffffc008b000
+  linear 16384 0 - Live 0xffffffffc00a4000
+  crct10dif_pclmul 16384 0 - Live 0xffffffffc009c000
+  crc32_pclmul 16384 0 - Live 0xffffffffc0094000
+  ghash_clmulni_intel 16384 0 - Live 0xffffffffc0013000
+  aesni_intel 167936 0 - Live 0xffffffffc0061000
+  aes_x86_64 20480 1 aesni_intel, Live 0xffffffffc0040000
+  lrw 16384 1 aesni_intel, Live 0xffffffffc005c000
+  gf128mul 16384 1 lrw, Live 0xffffffffc0055000
+  glue_helper 16384 1 aesni_intel, Live 0xffffffffc0050000
+  ablk_helper 16384 1 aesni_intel, Live 0xffffffffc003b000
+  cryptd 20480 3 ghash_clmulni_intel,aesni_intel,ablk_helper, Live 0xffffffffc0046000
+  psmouse 131072 0 - Live 0xffffffffc001a000
+  floppy 73728 0 - Live 0xffffffffc0000000
+----- /proc/modules end -----
+  used irqs: 0,1,3,4,6,8,9,10,11,12,14,15,24,25,26,27,28
+=========== end debug info ============
+01: None 00.0: 10105 BIOS
+  [Created at bios.186]
+  Unique ID: rdCR.lZF+r4EgHp4
+  Hardware Class: bios
+  BIOS Keyboard LED Status:
+    Scroll Lock: off
+    Num Lock: off
+    Caps Lock: off
+  Serial Port 0: 0x3f8
+  Serial Port 1: 0x2f8
+  Base Memory: 639 kB
+  PnP BIOS: @@@0000
+  MP spec rev 1.4 info:
+    OEM id: "BOCHSCPU"
+    Product id: "0.1"
+    1 CPUs (0 disabled)
+  BIOS32 Service Directory Entry: 0xfd4ae
+  SMBIOS Version: 2.8
+  BIOS Info: #0
+    Vendor: "SeaBIOS"
+    Version: "Ubuntu-1.8.2-1ubuntu1~cloud0+ovh1"
+    Date: "04/01/2014"
+    Start Address: 0xe8000
+    ROM Size: 64 kB
+    Features: 0x04000000000000000008
+  System Info: #256
+    Manufacturer: "OpenStack Foundation"
+    Product: "OpenStack Nova"
+    Version: "2014.2.4"
+    Serial: "00000000-0000-0000-0000-0cc47adf1f1c"
+    UUID: undefined, but settable
+    Wake-up: 0x06 (Power Switch)
+  Chassis Info: #768
+    Manufacturer: "QEMU"
+    Version: "pc-i440fx-vivid"
+    Type: 0x01 (Other)
+    Bootup State: 0x03 (Safe)
+    Power Supply State: 0x03 (Safe)
+    Thermal State: 0x03 (Safe)
+    Security Status: 0x02 (Unknown)
+  Processor Info: #1024
+    Socket: "CPU 0"
+    Socket Type: 0x01 (Other)
+    Socket Status: Populated
+    Type: 0x03 (CPU)
+    Family: 0x01 (Other)
+    Manufacturer: "QEMU"
+    Version: "pc-i440fx-vivid"
+    Processor ID: 0x0f8bfbff000306c1
+    Status: 0x01 (Enabled)
+    Max. Speed: 2000 MHz
+    Current Speed: 2000 MHz
+  Physical Memory Array: #4096
+    Use: 0x03 (System memory)
+    Location: 0x01 (Other)
+    Slots: 1
+    Max. Size: 2000 MB
+    ECC: 0x06 (Multi-bit)
+  Memory Device: #4352
+    Location: "DIMM 0"
+    Manufacturer: "QEMU"
+    Memory Array: #4096
+    Form Factor: 0x09 (DIMM)
+    Type: 0x07 (RAM)
+    Type Detail: 0x0002 (Other)
+    Data Width: 0 bits
+    Size: 2000 MB
+  Memory Array Mapping: #4864
+    Memory Array: #4096
+    Partition Width: 1
+    Start Address: 0x00000000
+    End Address: 0x7d000000
+  Type 32 Record: #8192
+    Data 00: 20 0b 00 20 00 00 00 00 00 00 00
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+02: None 00.0: 10107 System
+  [Created at sys.63]
+  Unique ID: rdCR.n_7QNeEnh23
+  Hardware Class: system
+  Model: "System"
+  Formfactor: "desktop"
+  Driver Info #0:
+    Driver Status: thermal,fan are not active
+    Driver Activation Cmd: "modprobe thermal; modprobe fan"
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+03: None 00.0: 10104 FPU
+  [Created at misc.191]
+  Unique ID: rdCR.EMpH5pjcahD
+  Hardware Class: unknown
+  Model: "FPU"
+  I/O Ports: 0xf0-0xff (rw)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+04: None 00.0: 0801 DMA controller (8237)
+  [Created at misc.205]
+  Unique ID: rdCR.f5u1ucRm+H9
+  Hardware Class: unknown
+  Model: "DMA controller"
+  I/O Ports: 0x00-0xcf7 (rw)
+  I/O Ports: 0xc0-0xdf (rw)
+  I/O Ports: 0x80-0x8f (rw)
+  DMA: 4
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+05: None 00.0: 0800 PIC (8259)
+  [Created at misc.218]
+  Unique ID: rdCR.8uRK7LxiIA2
+  Hardware Class: unknown
+  Model: "PIC"
+  I/O Ports: 0x20-0x21 (rw)
+  I/O Ports: 0xa0-0xa1 (rw)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+06: None 00.0: 0900 Keyboard controller
+  [Created at misc.250]
+  Unique ID: rdCR.9N+EecqykME
+  Hardware Class: unknown
+  Model: "Keyboard controller"
+  I/O Port: 0x60 (rw)
+  I/O Port: 0x64 (rw)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+07: None 00.0: 0102 Floppy disk controller
+  [Created at misc.281]
+  Unique ID: rdCR.3wRL2_g4d2B
+  Hardware Class: storage
+  Model: "Floppy disk controller"
+  I/O Port: 0x3f2 (rw)
+  I/O Ports: 0x3f4-0x3f5 (rw)
+  I/O Port: 0x3f7 (rw)
+  DMA: 2
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+08: None 00.0: 10400 PS/2 Controller
+  [Created at misc.303]
+  Unique ID: rdCR.DziBbWO85o5
+  Hardware Class: unknown
+  Model: "PS/2 Controller"
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+10: None 00.0: 10102 Main Memory
+  [Created at memory.74]
+  Unique ID: rdCR.CxwsZFjVASF
+  Hardware Class: memory
+  Model: "Main Memory"
+  Memory Range: 0x00000000-0x7a048fff (rw)
+  Memory Size: 1 GB + 896 MB
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+11: PCI 00.0: 0600 Host bridge
+  [Created at pci.366]
+  Unique ID: qLht.YeL3TKDjrxE
+  SysFS ID: /devices/pci0000:00/0000:00:00.0
+  SysFS BusID: 0000:00:00.0
+  Hardware Class: bridge
+  Model: "Red Hat Qemu virtual machine"
+  Vendor: pci 0x8086 "Intel Corporation"
+  Device: pci 0x1237 "440FX - 82441FX PMC [Natoma]"
+  SubVendor: pci 0x1af4 "Red Hat, Inc"
+  SubDevice: pci 0x1100 "Qemu virtual machine"
+  Revision: 0x02
+  Module Alias: "pci:v00008086d00001237sv00001AF4sd00001100bc06sc00i00"
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+12: PCI 01.0: 0601 ISA bridge
+  [Created at pci.366]
+  Unique ID: vSkL.ucdhKwLeeAA
+  SysFS ID: /devices/pci0000:00/0000:00:01.0
+  SysFS BusID: 0000:00:01.0
+  Hardware Class: bridge
+  Model: "Red Hat Qemu virtual machine"
+  Vendor: pci 0x8086 "Intel Corporation"
+  Device: pci 0x7000 "82371SB PIIX3 ISA [Natoma/Triton II]"
+  SubVendor: pci 0x1af4 "Red Hat, Inc"
+  SubDevice: pci 0x1100 "Qemu virtual machine"
+  Module Alias: "pci:v00008086d00007000sv00001AF4sd00001100bc06sc01i00"
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+13: PCI 01.1: 0101 IDE interface
+  [Created at pci.366]
+  Unique ID: mnDB.3sKqaxiizg6
+  SysFS ID: /devices/pci0000:00/0000:00:01.1
+  SysFS BusID: 0000:00:01.1
+  Hardware Class: storage
+  Model: "Red Hat Qemu virtual machine"
+  Vendor: pci 0x8086 "Intel Corporation"
+  Device: pci 0x7010 "82371SB PIIX3 IDE [Natoma/Triton II]"
+  SubVendor: pci 0x1af4 "Red Hat, Inc"
+  SubDevice: pci 0x1100 "Qemu virtual machine"
+  Driver: "ata_piix"
+  Driver Modules: "ata_piix"
+  I/O Ports: 0x1f0-0x1f7 (rw)
+  I/O Port: 0x3f6 (rw)
+  I/O Ports: 0x170-0x177 (rw)
+  I/O Port: 0x376 (rw)
+  I/O Ports: 0xc0a0-0xc0af (rw)
+  Module Alias: "pci:v00008086d00007010sv00001AF4sd00001100bc01sc01i80"
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+14: PCI 01.2: 0c03 USB Controller (UHCI)
+  [Created at pci.366]
+  Unique ID: e6j0.11QfsCI0gT0
+  SysFS ID: /devices/pci0000:00/0000:00:01.2
+  SysFS BusID: 0000:00:01.2
+  Hardware Class: usb controller
+  Model: "Red Hat QEMU Virtual Machine"
+  Vendor: pci 0x8086 "Intel Corporation"
+  Device: pci 0x7020 "82371SB PIIX3 USB [Natoma/Triton II]"
+  SubVendor: pci 0x1af4 "Red Hat, Inc"
+  SubDevice: pci 0x1100 "QEMU Virtual Machine"
+  Revision: 0x01
+  Driver: "uhci_hcd"
+  Driver Modules: "uhci_hcd"
+  I/O Ports: 0xc040-0xc05f (rw)
+  IRQ: 11 (26 events)
+  Module Alias: "pci:v00008086d00007020sv00001AF4sd00001100bc0Csc03i00"
+  Driver Info #0:
+    Driver Status: uhci-hcd is not active
+    Driver Activation Cmd: "modprobe uhci-hcd"
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+15: PCI 01.3: 0680 Bridge
+  [Created at pci.366]
+  Unique ID: VRCs.M9Cc8lcQjE2
+  SysFS ID: /devices/pci0000:00/0000:00:01.3
+  SysFS BusID: 0000:00:01.3
+  Hardware Class: bridge
+  Model: "Red Hat Qemu virtual machine"
+  Vendor: pci 0x8086 "Intel Corporation"
+  Device: pci 0x7113 "82371AB/EB/MB PIIX4 ACPI"
+  SubVendor: pci 0x1af4 "Red Hat, Inc"
+  SubDevice: pci 0x1100 "Qemu virtual machine"
+  Revision: 0x03
+  IRQ: 9 (no events)
+  Module Alias: "pci:v00008086d00007113sv00001AF4sd00001100bc06sc80i00"
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+16: PCI 02.0: 0300 VGA compatible controller (VGA)
+  [Created at pci.366]
+  Unique ID: _Znp.v67VofT6db4
+  SysFS ID: /devices/pci0000:00/0000:00:02.0
+  SysFS BusID: 0000:00:02.0
+  Hardware Class: graphics card
+  Model: "Red Hat QEMU Virtual Machine"
+  Vendor: pci 0x1013 "Cirrus Logic"
+  Device: pci 0x00b8 "GD 5446"
+  SubVendor: pci 0x1af4 "Red Hat, Inc"
+  SubDevice: pci 0x1100 "QEMU Virtual Machine"
+  Memory Range: 0xfc000000-0xfdffffff (ro,non-prefetchable)
+  Memory Range: 0xfebd0000-0xfebd0fff (rw,non-prefetchable)
+  Memory Range: 0xfebc0000-0xfebcffff (ro,non-prefetchable,disabled)
+  I/O Ports: 0x3c0-0x3df (rw)
+  Module Alias: "pci:v00001013d000000B8sv00001AF4sd00001100bc03sc00i00"
+  Driver Info #0:
+    XFree86 v4 Server Module: cirrus
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+17: PCI 03.0: 0200 Ethernet controller
+  [Created at pci.366]
+  Unique ID: 3hqH.pkM7KXDR457
+  SysFS ID: /devices/pci0000:00/0000:00:03.0
+  SysFS BusID: 0000:00:03.0
+  Hardware Class: network
+  Model: "Red Hat Virtio network device"
+  Vendor: pci 0x1af4 "Red Hat, Inc"
+  Device: pci 0x1000 "Virtio network device"
+  SubVendor: pci 0x1af4 "Red Hat, Inc"
+  SubDevice: pci 0x0001 
+  Driver: "virtio-pci"
+  Driver Modules: "virtio_pci"
+  I/O Ports: 0xc060-0xc07f (rw)
+  Memory Range: 0xfebd1000-0xfebd1fff (rw,non-prefetchable)
+  Memory Range: 0xfeb80000-0xfebbffff (ro,non-prefetchable,disabled)
+  IRQ: 10 (10082 events)
+  Module Alias: "pci:v00001AF4d00001000sv00001AF4sd00000001bc02sc00i00"
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+18: PCI 04.0: 0100 SCSI storage controller
+  [Created at pci.366]
+  Unique ID: 8otl.qHLOOfQ42uE
+  SysFS ID: /devices/pci0000:00/0000:00:04.0
+  SysFS BusID: 0000:00:04.0
+  Hardware Class: storage
+  Model: "Red Hat Virtio block device"
+  Vendor: pci 0x1af4 "Red Hat, Inc"
+  Device: pci 0x1001 "Virtio block device"
+  SubVendor: pci 0x1af4 "Red Hat, Inc"
+  SubDevice: pci 0x0002 
+  Driver: "virtio-pci"
+  Driver Modules: "virtio_pci"
+  I/O Ports: 0xc000-0xc03f (rw)
+  Memory Range: 0xfebd2000-0xfebd2fff (rw,non-prefetchable)
+  IRQ: 11 (26 events)
+  Module Alias: "pci:v00001AF4d00001001sv00001AF4sd00000002bc01sc00i00"
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+19: PCI 05.0: 00ff Unclassified device
+  [Created at pci.366]
+  Unique ID: CvwD.MwuZkiRyYE1
+  SysFS ID: /devices/pci0000:00/0000:00:05.0
+  SysFS BusID: 0000:00:05.0
+  Hardware Class: unknown
+  Model: "Red Hat Virtio memory balloon"
+  Vendor: pci 0x1af4 "Red Hat, Inc"
+  Device: pci 0x1002 "Virtio memory balloon"
+  SubVendor: pci 0x1af4 "Red Hat, Inc"
+  SubDevice: pci 0x0005 
+  Driver: "virtio-pci"
+  Driver Modules: "virtio_pci"
+  I/O Ports: 0xc080-0xc09f (rw)
+  IRQ: 10 (10082 events)
+  Module Alias: "pci:v00001AF4d00001002sv00001AF4sd00000005bc00scFFi00"
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+20: Virtio 00.0: 0200 Ethernet controller
+  [Created at pci.1618]
+  Unique ID: vWuh.VIRhsc57kTD
+  SysFS ID: /devices/pci0000:00/0000:00:03.0/virtio0
+  SysFS BusID: virtio0
+  Hardware Class: network
+  Model: "Virtio Ethernet Card 0"
+  Vendor: int 0x6014 "Virtio"
+  Device: int 0x0001 "Ethernet Card 0"
+  Driver: "virtio_net"
+  Device File: ens3
+  HW Address: fa:16:3e:05:38:92
+  Link detected: yes
+  Module Alias: "virtio:d00000001v00001AF4"
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+21: Virtio 00.0: 0180 Storage controller
+  [Created at pci.1618]
+  Unique ID: sNGd.+FFPFBVXZu6
+  SysFS ID: /devices/pci0000:00/0000:00:04.0/virtio1
+  SysFS BusID: virtio1
+  Hardware Class: storage
+  Model: "Virtio Storage 0"
+  Vendor: int 0x6014 "Virtio"
+  Device: int 0x0002 "Storage 0"
+  Driver: "virtio_blk"
+  Module Alias: "virtio:d00000002v00001AF4"
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+22: None 00.0: 0000 Unclassified device
+  [Created at pci.1618]
+  Unique ID: O+ol.X_5slLnRyc6
+  SysFS ID: /devices/pci0000:00/0000:00:05.0/virtio2
+  SysFS BusID: virtio2
+  Hardware Class: unknown
+  Model: "Virtio Unclassified device"
+  Vendor: int 0x6014 "Virtio"
+  Device: int 0x0005 
+  Driver: "virtio_balloon"
+  Module Alias: "virtio:d00000005v00001AF4"
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+23: None 00.0: 0700 Serial controller (16550)
+  [Created at serial.74]
+  Unique ID: S_Uw.3fyvFV+mbWD
+  Hardware Class: unknown
+  Model: "16550A"
+  Device: "16550A"
+  Device File: /dev/ttyS0
+  Tags: mouse, modem, braille
+  I/O Ports: 0x3f8-0x3ff (rw)
+  IRQ: 4 (3567 events)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+24: None 00.1: 0700 Serial controller (16550)
+  [Created at serial.74]
+  Unique ID: v9l_.3fyvFV+mbWD
+  Hardware Class: unknown
+  Model: "16550A"
+  Device: "16550A"
+  Device File: /dev/ttyS1
+  I/O Ports: 0x2f8-0x2ff (rw)
+  IRQ: 3 (1 event)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+25: None 00.0: 10600 Disk
+  [Created at block.245]
+  Unique ID: KSbE.Fxp0d3BezAE
+  Parent ID: sNGd.+FFPFBVXZu6
+  SysFS ID: /class/block/vda
+  SysFS BusID: virtio1
+  SysFS Device Link: /devices/pci0000:00/0000:00:04.0/virtio1
+  Hardware Class: disk
+  Model: "Disk"
+  Driver: "virtio-pci", "virtio_blk"
+  Driver Modules: "virtio_pci"
+  Device File: /dev/vda
+  Device Files: /dev/vda, /dev/disk/by-path/virtio-pci-0000:00:04.0
+  Device Number: block 253:0-253:15
+  Geometry (Logical): CHS 20805/16/63
+  Size: 20971520 sectors a 512 bytes
+  Capacity: 10 GB (10737418240 bytes)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+  Attached to: #21 (Storage controller)
+
+26: None 00.0: 11300 Partition
+  [Created at block.434]
+  Unique ID: tyyG.SE1wIdpsiiC
+  Parent ID: KSbE.Fxp0d3BezAE
+  SysFS ID: /class/block/vda/vda1
+  Hardware Class: partition
+  Model: "Partition"
+  Device File: /dev/vda1
+  Device Files: /dev/vda1, /dev/disk/by-label/cloudimg-rootfs, /dev/disk/by-path/virtio-pci-0000:00:04.0-part1, /dev/disk/by-uuid/60afd8f9-49f6-4152-8b41-22e2640778d2
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+  Attached to: #25 (Disk)
+
+27: None 00.0: 10600 Disk
+  [Created at block.245]
+  Unique ID: CWFH.Fxp0d3BezAE
+  SysFS ID: /class/block/ram0
+  Hardware Class: disk
+  Model: "Disk"
+  Device File: /dev/ram0
+  Device Number: block 1:0
+  Size: 131072 sectors a 512 bytes
+  Capacity: 0 GB (67108864 bytes)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+28: None 00.0: 10600 Disk
+  [Created at block.245]
+  Unique ID: ghVL.Fxp0d3BezAE
+  SysFS ID: /class/block/ram1
+  Hardware Class: disk
+  Model: "Disk"
+  Device File: /dev/ram1
+  Device Number: block 1:1
+  Size: 131072 sectors a 512 bytes
+  Capacity: 0 GB (67108864 bytes)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+29: None 00.0: 10600 Disk
+  [Created at block.245]
+  Unique ID: 7tlP.Fxp0d3BezAE
+  SysFS ID: /class/block/ram2
+  Hardware Class: disk
+  Model: "Disk"
+  Device File: /dev/ram2
+  Device Number: block 1:2
+  Size: 131072 sectors a 512 bytes
+  Capacity: 0 GB (67108864 bytes)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+30: None 00.0: 10600 Disk
+  [Created at block.245]
+  Unique ID: a20U.Fxp0d3BezAE
+  SysFS ID: /class/block/ram3
+  Hardware Class: disk
+  Model: "Disk"
+  Device File: /dev/ram3
+  Device Number: block 1:3
+  Size: 131072 sectors a 512 bytes
+  Capacity: 0 GB (67108864 bytes)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+31: None 00.0: 10600 Disk
+  [Created at block.245]
+  Unique ID: 1EGY.Fxp0d3BezAE
+  SysFS ID: /class/block/ram4
+  Hardware Class: disk
+  Model: "Disk"
+  Device File: /dev/ram4
+  Device Number: block 1:4
+  Size: 131072 sectors a 512 bytes
+  Capacity: 0 GB (67108864 bytes)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+32: None 00.0: 10600 Disk
+  [Created at block.245]
+  Unique ID: UPWc.Fxp0d3BezAE
+  SysFS ID: /class/block/ram5
+  Hardware Class: disk
+  Model: "Disk"
+  Device File: /dev/ram5
+  Device Number: block 1:5
+  Size: 131072 sectors a 512 bytes
+  Capacity: 0 GB (67108864 bytes)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+33: None 00.0: 10600 Disk
+  [Created at block.245]
+  Unique ID: xamg.Fxp0d3BezAE
+  SysFS ID: /class/block/ram6
+  Hardware Class: disk
+  Model: "Disk"
+  Device File: /dev/ram6
+  Device Number: block 1:6
+  Size: 131072 sectors a 512 bytes
+  Capacity: 0 GB (67108864 bytes)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+34: None 00.0: 10600 Disk
+  [Created at block.245]
+  Unique ID: d1y9.Fxp0d3BezAE
+  SysFS ID: /class/block/ram7
+  Hardware Class: disk
+  Model: "Disk"
+  Device File: /dev/ram7
+  Device Number: block 1:7
+  Size: 131072 sectors a 512 bytes
+  Capacity: 0 GB (67108864 bytes)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+35: None 00.0: 10600 Disk
+  [Created at block.245]
+  Unique ID: 4DCE.Fxp0d3BezAE
+  SysFS ID: /class/block/ram8
+  Hardware Class: disk
+  Model: "Disk"
+  Device File: /dev/ram8
+  Device Number: block 1:8
+  Size: 131072 sectors a 512 bytes
+  Capacity: 0 GB (67108864 bytes)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+36: None 00.0: 10600 Disk
+  [Created at block.245]
+  Unique ID: XOSI.Fxp0d3BezAE
+  SysFS ID: /class/block/ram9
+  Hardware Class: disk
+  Model: "Disk"
+  Device File: /dev/ram9
+  Device Number: block 1:9
+  Size: 131072 sectors a 512 bytes
+  Capacity: 0 GB (67108864 bytes)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+37: None 00.0: 10600 Disk
+  [Created at block.245]
+  Unique ID: 2K8Y.Fxp0d3BezAE
+  SysFS ID: /class/block/ram10
+  Hardware Class: disk
+  Model: "Disk"
+  Device File: /dev/ram10
+  Device Number: block 1:10
+  Size: 131072 sectors a 512 bytes
+  Capacity: 0 GB (67108864 bytes)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+38: None 00.0: 10600 Disk
+  [Created at block.245]
+  Unique ID: VVOc.Fxp0d3BezAE
+  SysFS ID: /class/block/ram11
+  Hardware Class: disk
+  Model: "Disk"
+  Device File: /dev/ram11
+  Device Number: block 1:11
+  Size: 131072 sectors a 512 bytes
+  Capacity: 0 GB (67108864 bytes)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+39: None 00.0: 10600 Disk
+  [Created at block.245]
+  Unique ID: ygeg.Fxp0d3BezAE
+  SysFS ID: /class/block/ram12
+  Hardware Class: disk
+  Model: "Disk"
+  Device File: /dev/ram12
+  Device Number: block 1:12
+  Size: 131072 sectors a 512 bytes
+  Capacity: 0 GB (67108864 bytes)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+40: None 00.0: 10600 Disk
+  [Created at block.245]
+  Unique ID: Psuk.Fxp0d3BezAE
+  SysFS ID: /class/block/ram13
+  Hardware Class: disk
+  Model: "Disk"
+  Device File: /dev/ram13
+  Device Number: block 1:13
+  Size: 131072 sectors a 512 bytes
+  Capacity: 0 GB (67108864 bytes)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+41: None 00.0: 10600 Disk
+  [Created at block.245]
+  Unique ID: s19p.Fxp0d3BezAE
+  SysFS ID: /class/block/ram14
+  Hardware Class: disk
+  Model: "Disk"
+  Device File: /dev/ram14
+  Device Number: block 1:14
+  Size: 131072 sectors a 512 bytes
+  Capacity: 0 GB (67108864 bytes)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+42: None 00.0: 10600 Disk
+  [Created at block.245]
+  Unique ID: JDPt.Fxp0d3BezAE
+  SysFS ID: /class/block/ram15
+  Hardware Class: disk
+  Model: "Disk"
+  Device File: /dev/ram15
+  Device Number: block 1:15
+  Size: 131072 sectors a 512 bytes
+  Capacity: 0 GB (67108864 bytes)
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+43: USB 00.0: 10a00 Hub
+  [Created at usb.122]
+  Unique ID: k4bc.lBczeyMQyT5
+  Parent ID: e6j0.11QfsCI0gT0
+  SysFS ID: /devices/pci0000:00/0000:00:01.2/usb1/1-0:1.0
+  SysFS BusID: 1-0:1.0
+  Hardware Class: hub
+  Model: "Linux Foundation 1.1 root hub"
+  Hotplug: USB
+  Vendor: usb 0x1d6b "Linux Foundation"
+  Device: usb 0x0001 "1.1 root hub"
+  Revision: "4.04"
+  Serial ID: "0000:00:01.2"
+  Driver: "hub"
+  Driver Modules: "usbcore"
+  Speed: 12 Mbps
+  Module Alias: "usb:v1D6Bp0001d0404dc09dsc00dp00ic09isc00ip00in00"
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+  Attached to: #14 (USB Controller)
+
+44: USB 00.0: 0000 Unclassified device
+  [Created at usb.122]
+  Unique ID: ADDn.Aror24c6BX2
+  Parent ID: k4bc.lBczeyMQyT5
+  SysFS ID: /devices/pci0000:00/0000:00:01.2/usb1/1-1/1-1:1.0
+  SysFS BusID: 1-1:1.0
+  Hardware Class: unknown
+  Model: "Adomax QEMU USB Tablet"
+  Hotplug: USB
+  Vendor: usb 0x0627 "Adomax Technology Co., Ltd"
+  Device: usb 0x0001 "QEMU USB Tablet"
+  Serial ID: "42"
+  Speed: 12 Mbps
+  Module Alias: "usb:v0627p0001d0000dc00dsc00dp00ic03isc00ip02in00"
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+  Attached to: #43 (Hub)
+
+45: PS/2 00.0: 10800 Keyboard
+  [Created at input.226]
+  Unique ID: EXC1.+49ps10DtUF
+  Hardware Class: keyboard
+  Model: "AT Translated Set 2 keyboard"
+  Vendor: 0x0001 
+  Device: 0x0001 "AT Translated Set 2 keyboard"
+  Compatible to: int 0x0211 0x0001
+  Device File: /dev/input/event1
+  Device Files: /dev/input/event1, /dev/input/by-path/platform-i8042-serio-0-event-kbd
+  Device Number: char 13:65
+  Driver Info #0:
+    XkbRules: xfree86
+    XkbModel: pc104
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+46: PS/2 00.0: 10500 PS/2 Mouse
+  [Created at input.249]
+  Unique ID: AH6Q.mYF0pYoTCW7
+  Hardware Class: mouse
+  Model: "VirtualPS/2 VMware VMMouse"
+  Vendor: 0x0002 
+  Device: 0x0013 "VirtualPS/2 VMware VMMouse"
+  Compatible to: int 0x0210 0x0003
+  Device File: /dev/input/mice (/dev/input/mouse0)
+  Device Files: /dev/input/mice, /dev/input/mouse0, /dev/input/event2, /dev/input/by-path/platform-i8042-serio-1-event-mouse, /dev/input/by-path/platform-i8042-serio-1-mouse
+  Device Number: char 13:63 (char 13:32)
+  Driver Info #0:
+    Buttons: 3
+    Wheels: 0
+    XFree86 Protocol: explorerps/2
+    GPM Protocol: exps2
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+47: PS/2 00.0: 10500 PS/2 Mouse
+  [Created at input.249]
+  Unique ID: AH6Q.++hSeDccb2F
+  Hardware Class: mouse
+  Model: "VirtualPS/2 VMware VMMouse"
+  Vendor: 0x0002 
+  Device: 0x0013 "VirtualPS/2 VMware VMMouse"
+  Compatible to: int 0x0210 0x0012
+  Device File: /dev/input/mice (/dev/input/mouse1)
+  Device Files: /dev/input/mice, /dev/input/mouse1, /dev/input/event3, /dev/input/by-path/platform-i8042-serio-1-event-mouse, /dev/input/by-path/platform-i8042-serio-1-mouse
+  Device Number: char 13:63 (char 13:33)
+  Driver Info #0:
+    Buttons: 2
+    Wheels: 1
+    XFree86 Protocol: explorerps/2
+    GPM Protocol: exps2
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+48: None 00.0: 10103 CPU
+  [Created at cpu.460]
+  Unique ID: rdCR.j8NaKXDZtZ6
+  Hardware Class: cpu
+  Arch: X86-64
+  Vendor: "GenuineIntel"
+  Model: 6.60.1 "Intel Core Processor (Haswell, no TSX)"
+  Features: fpu,vme,de,pse,tsc,msr,pae,mce,cx8,apic,sep,mtrr,pge,mca,cmov,pat,pse36,clflush,mmx,fxsr,sse,sse2,ss,syscall,nx,pdpe1gb,rdtscp,lm,constant_tsc,rep_good,nopl,eagerfpu,pni,pclmulqdq,vmx,ssse3,fma,cx16,pcid,sse4_1,sse4_2,x2apic,movbe,popcnt,tsc_deadline_timer,aes,xsave,avx,f16c,rdrand,hypervisor,lahf_lm,abm,tpr_shadow,vnmi,flexpriority,ept,vpid,fsgsbase,bmi1,avx2,smep,bmi2,erms,invpcid,xsaveopt
+  Clock: 2400 MHz
+  BogoMips: 4799.99
+  Cache: 4096 kb
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+49: Serial 00.0: 10801 Console
+  [Created at kbd.167]
+  Unique ID: Fyby.5lXXuQkv_C5
+  Hardware Class: keyboard
+  Model: "serial console"
+  Device: "serial console"
+  Device File: /dev/ttyS0
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+50: None 00.0: 10700 Loopback
+  [Created at net.125]
+  Unique ID: ZsBS.GQNx7L4uPNA
+  SysFS ID: /class/net/lo
+  Hardware Class: network interface
+  Model: "Loopback network interface"
+  Device File: lo
+  Link detected: yes
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+51: None 03.0: 10701 Ethernet
+  [Created at net.125]
+  Unique ID: U2Mp.ndpeucax6V1
+  Parent ID: vWuh.VIRhsc57kTD
+  SysFS ID: /class/net/ens3
+  SysFS Device Link: /devices/pci0000:00/0000:00:03.0/virtio0
+  Hardware Class: network interface
+  Model: "Ethernet network interface"
+  Driver: "virtio_net"
+  Device File: ens3
+  HW Address: fa:16:3e:05:38:92
+  Link detected: yes
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+  Attached to: #20 (Ethernet controller)

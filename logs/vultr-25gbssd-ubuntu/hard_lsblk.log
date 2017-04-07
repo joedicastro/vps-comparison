@@ -1,0 +1,4 @@
+NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+/dev/sr0     11:0    1 1024M  0 rom  
+/dev/vda    253:0    0   25G  0 disk 
+└─/dev/vda1 253:1    0   25G  0 part /

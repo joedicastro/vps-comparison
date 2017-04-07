@@ -1,0 +1,21 @@
+- hosts: all
+  become: yes
+  become_method: sudo
+
+  # pre_tasks:
+  #   - name: Install python for Ansible on Ubuntu
+  #     raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+  #     when: ansible_distribution == "Ubuntu"
+  #     changed_when: False
+
+  roles:
+    - { role: lynis,      tags: ['security', 'lynis', 'info']}
+    - { role: hardware,   tags: ['hardware', 'info']}
+    - { role: unixbench,  tags: ['unixbench', 'benchmark']}
+    - { role: sysbench,   tags: ['sysbench', 'benchmark']}
+    - { role: dd,         tags: ['dd', 'disk', 'benchmark']}
+    - { role: fio,        tags: ['fio', 'disk', 'benchmark']}
+    - { role: speedtest,  tags: ['speedtest', 'network', 'benchmark']}
+    - { role: downloads,  tags: ['downloads', 'network', 'benchmark']}
+    - { role: compiler,   tags: ['compiler', 'benchmark']} # fails! check!
+    - { role: transcode,  tags: ['transcode', 'multimedia', 'benchmark']} # fails! check!

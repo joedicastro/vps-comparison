@@ -1,0 +1,116 @@
+---
+
+- name: install sysbench
+  apt:
+    name: sysbench
+    state: latest
+    update_cache: yes
+    install_recommends: no
+
+- name: run sysbench cpu
+  shell: sysbench --test=cpu --cpu-max-prime=20000 --num-threads=1 run >> /tmp/sysbench_cpu.log
+  args:
+    chdir: /tmp
+    executable: /bin/bash
+  with_sequence: count=5
+
+- name: retrieve cpu log
+  fetch:
+    src: /tmp/sysbench_cpu.log
+    dest: ../logs/{{inventory_hostname}}/sysbench_cpu.log
+    flat: yes
+
+- name: prepare sysbench fileio
+  shell: sysbench --test=fileio --file-total-size=8G prepare 
+  args:
+    chdir: /tmp
+
+- name: run sysbench fileio random write
+  shell: sysbench --test=fileio --file-total-size=8G --file-test-mode=rndrw --init-rng=on --max-time=300 --max-requests=0 --file-block-size=4K run >> /tmp/sysbench_randrw.log
+  args:
+    chdir: /tmp
+    executable: /bin/bash
+  with_sequence: count=5
+
+- name: run sysbench fileio random read
+  shell: sysbench --test=fileio --file-total-size=8G --file-test-mode=rndrd --init-rng=on --max-time=300 --max-requests=0 --file-block-size=4K run >> /tmp/sysbench_randrd.log
+  args:
+    chdir: /tmp
+    executable: /bin/bash
+  with_sequence: count=5
+
+- name: cleanup sysbench fileio
+  shell: sysbench --test=fileio --file-total-size=8G cleanup
+  args:
+    chdir: /tmp
+
+- name: retrieve randrw log
+  fetch:
+    src: /tmp/sysbench_randrw.log
+    dest: ../logs/{{inventory_hostname}}/sysbench_randrw.log
+    flat: yes
+
+- name: retrieve randrd log
+  fetch:
+    src: /tmp/sysbench_randrd.log
+    dest: ../logs/{{inventory_hostname}}/sysbench_randrd.log
+    flat: yes
+
+- name: set MySQL root password before installing
+  debconf:
+    name: 'mysql-server'
+    question: 'mysql-server/root_password'
+    value: '{{mysql_root_pass | quote}}'
+    vtype: 'password'
+
+- name: confirm MySQL root password before installing
+  debconf:
+    name: 'mysql-server'
+    question: 'mysql-server/root_password_again'
+    value: '{{mysql_root_pass | quote}}'
+    vtype: 'password'
+
+- name: install mysql
+  apt:
+    name: mysql-server
+    state: latest
+    install_recommends: no
+
+- name: create sysbench database
+  shell: mysql -u root -ppassword -e "CREATE DATABASE sysbench;"
+
+- name: create database user
+  shell: mysql -u root -ppassword -e "CREATE USER 'sysbench'@'localhost' IDENTIFIED BY 'password';"
+
+- name: set database user privileges
+  shell: mysql -u root -ppassword -e "GRANT ALL PRIVILEGES ON *.* TO 'sysbench'@'localhost' IDENTIFIED  BY 'password';"
+
+- name: prepare sysbench database
+  shell: sysbench --test=oltp --db-driver=mysql --oltp-table-size=10000000 --mysql-db=sysbench --mysql-user=sysbench --mysql-password=password prepare
+
+- name: run sysbench oltp
+  shell: sysbench --test=oltp --oltp-table-size=10000000 --mysql-db=sysbench --mysql-user=root --mysql-password=password --max-time=60 --max-requests=0 --num-threads=1 --oltp-reconnect-mode=random run >> /tmp/sysbench_mysql.log
+  args:
+    chdir: /tmp
+    executable: /bin/bash
+  with_sequence: count=5
+
+- name: retrieve oltp log
+  fetch:
+    src: /tmp/sysbench_mysql.log
+    dest: ../logs/{{inventory_hostname}}/sysbench_oltp.log
+    flat: yes
+
+- name: remove sysbench
+  apt:
+    name: sysbench
+    autoremove: yes
+    purge: yes
+    state: absent
+
+- name: remove mysql
+  apt:
+    name: mysql-server
+    autoremove: yes
+    purge: yes
+    state: absent

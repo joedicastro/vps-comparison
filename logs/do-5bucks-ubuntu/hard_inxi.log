@@ -1,0 +1,22 @@
+System:    Host: do-5bucks-ubuntu Kernel: 4.4.0-66-generic x86_64 (64 bit gcc: 5.4.0) Console: tty
+           Distro: Ubuntu 16.04 xenial
+Machine:   System: DigitalOcean product: Droplet v: 20161103 Chassis: Bochs type: 1
+           Mobo: N/A model: N/A Bios: DigitalOcean v: 20161103 date: 11/03/2016
+CPU:       Single core Intel Xeon E5-2650L v3 (-MCP-) cache: 30720 KB
+           flags: (lm nx sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx) bmips: 3599 speed: 1799 MHz (max)
+Graphics:  Card: Red Hat QXL paravirtual graphic card bus-ID: 00:02.0 chip-ID: 1b36:0100
+           Display Server: N/A driver: N/A tty size: N/A Advanced Data: N/A for root out of X
+Network:   Card-1: Red Hat Virtio network device
+           driver: virtio-pci port: c0c0 bus-ID: 00:03.0 chip-ID: 1af4:1000
+           IF: eth0 state: up speed: -1 duplex: unknown mac: <filter>
+           Card-2: Red Hat Virtio network device
+           driver: virtio-pci port: c0e0 bus-ID: 00:04.0 chip-ID: 1af4:1000
+           IF: ens4 state: down mac: <filter>
+Drives:    HDD Total Size: 21.5GB (4.8% used) ID-1: /dev/vda model: N/A size: 21.5GB serial: N/A
+Partition: ID-1: / size: 20G used: 987M (5%) fs: ext4 dev: /dev/vda1
+RAID:      System: supported: linear multipath raid0 raid1 raid6 raid5 raid4 raid10
+           No RAID devices: /proc/mdstat, md_mod kernel module present
+           Unused Devices: none
+Sensors:   None detected - is lm-sensors installed and configured?
+Info:      Processes: 119 Uptime: 8:01 Memory: 98.4/488.4MB Init: systemd v: 229 runlevel: 5 Gcc sys: N/A
+           Client: Unknown python3.5 client inxi: 2.2.35

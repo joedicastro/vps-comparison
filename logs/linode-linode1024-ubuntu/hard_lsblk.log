@@ -1,0 +1,3 @@
+NAME     MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+/dev/sdb   8:16   0  256M  0 disk [SWAP]
+/dev/sda   8:0    0 19.8G  0 disk /

@@ -1,0 +1,24 @@
+System:    Host: localhost Kernel: 4.9.7-x86_64-linode80 x86_64 (64 bit gcc: 4.7.2) Console: tty
+           Distro: Ubuntu 16.04 xenial
+Machine:   System: QEMU product: Standard PC (i440FX + PIIX 1996) v: pc-i440fx-2.6
+           Mobo: N/A model: N/A
+           Bios: Sea v: rel-1.9.1-0-gb3ef39f-prebuilt.qemu-project.org date: 04/01/2014
+           Chassis: type: 1 v: pc-i440fx-2.6
+CPU:       Single core Intel Xeon E5-2680 v3 (-MCP-) cache: 4096 KB
+           flags: (lm nx sse sse2 sse3 sse4_1 sse4_2 ssse3) bmips: 5001 speed: 2499 MHz (max)
+Graphics:  Card: Device 1234:1111 bus-ID: 00:02.0 chip-ID: 1234:1111
+           Display Server: N/A driver: N/A tty size: N/A Advanced Data: N/A for root out of X
+Network:   Card: Red Hat Virtio network device
+           driver: virtio-pci port: c040 bus-ID: 00:04.0 chip-ID: 1af4:1000
+           IF: eth0 state: up speed: -1 duplex: unknown mac: <filter>
+Drives:    HDD Total Size: 21.5GB (1.2% used)
+           ID-1: /dev/sda model: QEMU_HARDDISK size: 21.2GB serial: drive-scsi-disk-0
+           ID-2: /dev/sdb model: QEMU_HARDDISK size: 0.3GB serial: drive-scsi-disk-1
+Partition: ID-1: / size: 20G used: 772M (5%) fs: ext4 dev: /dev/root
+           ID-2: swap-1 size: 0.27GB used: 0.00GB (0%) fs: swap dev: /dev/sdb
+RAID:      System: supported: linear raid0 raid1 raid10 raid6 raid5 raid4 multipath
+           No RAID devices: /proc/mdstat, md_mod kernel module present
+           Unused Devices: none
+Sensors:   None detected - is lm-sensors installed and configured?
+Info:      Processes: 128 Uptime: 1 day Memory: 134.6/989.0MB
+           Init: systemd v: 229 runlevel: 5 Gcc sys: N/A Client: Unknown python3.5 client inxi: 2.2.35

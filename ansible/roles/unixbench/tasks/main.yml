@@ -1,0 +1,52 @@
+---
+
+- name: install packages needed by UnixBench
+  apt:
+    name: "{{item}}"
+    state: latest
+    update_cache: yes
+    install_recommends: no
+  with_items:
+    - gcc-5
+    - build-essential
+
+- name: download UnixBench
+  get_url:
+    url: https://github.com/kdlucas/byte-unixbench/archive/master.tar.gz
+    dest: /tmp/unixbench.tar.gz
+
+- name: untar the file
+  unarchive:
+    src: /tmp/unixbench.tar.gz
+    dest: /tmp
+    copy: no
+
+- name: run UnixBench
+  shell: ./Run >> /tmp/unixbench.log
+  args:
+    chdir: /tmp/byte-unixbench-master/UnixBench
+
+- name: remove UnixBench
+  file: 
+    path: "{{item}}"
+    state: absent
+  with_items:
+    - /tmp/byte-unixbench-master
+    - /tmp/unixbench.tar.gz
+
+- name: retrieve log
+  fetch:
+    src: /tmp/unixbench.log
+    dest: ../logs/{{inventory_hostname}}/unixbench.log
+    flat: yes
+
+- name: remove installed packages 
+  apt:
+    name: "{{item}}"
+    autoremove: yes
+    purge: yes
+    state: absent
+  with_items:
+    - gcc-5
+    - build-essential
+

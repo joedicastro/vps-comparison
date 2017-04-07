@@ -1,0 +1,167 @@
+vps359298
+    description: Computer
+    product: OpenStack Nova
+    vendor: OpenStack Foundation
+    version: 2014.2.4
+    serial: 00000000-0000-0000-0000-0cc47adf1f1c
+    width: 64 bits
+    capabilities: smbios-2.8 dmi-2.8 vsyscall32
+    configuration: boot=normal uuid=E02A9D9B-C3D8-8648-83F2-050A5CE9F71F
+  *-core
+       description: Motherboard
+       physical id: 0
+     *-firmware
+          description: BIOS
+          vendor: SeaBIOS
+          physical id: 0
+          version: Ubuntu-1.8.2-1ubuntu1~cloud0+ovh1
+          date: 04/01/2014
+          size: 96KiB
+     *-cpu
+          description: CPU
+          product: Intel Core Processor (Haswell, no TSX)
+          vendor: Intel Corp.
+          physical id: 400
+          bus info: cpu@0
+          version: pc-i440fx-vivid
+          slot: CPU 0
+          size: 2GHz
+          capacity: 2GHz
+          width: 64 bits
+          capabilities: fpu fpu_exception wp vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp x86-64 constant_tsc rep_good nopl eagerfpu pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm tpr_shadow vnmi flexpriority ept vpid fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveopt
+          configuration: cores=1 enabledcores=1 threads=1
+     *-memory
+          description: System Memory
+          physical id: 1000
+          size: 2000MiB
+          capacity: 2000MiB
+        *-bank
+             description: DIMM RAM
+             vendor: QEMU
+             physical id: 0
+             slot: DIMM 0
+             size: 2000MiB
+     *-pci
+          description: Host bridge
+          product: 440FX - 82441FX PMC [Natoma]
+          vendor: Intel Corporation
+          physical id: 100
+          bus info: pci@0000:00:00.0
+          version: 02
+          width: 32 bits
+          clock: 33MHz
+        *-isa
+             description: ISA bridge
+             product: 82371SB PIIX3 ISA [Natoma/Triton II]
+             vendor: Intel Corporation
+             physical id: 1
+             bus info: pci@0000:00:01.0
+             version: 00
+             width: 32 bits
+             clock: 33MHz
+             capabilities: isa
+             configuration: latency=0
+        *-ide
+             description: IDE interface
+             product: 82371SB PIIX3 IDE [Natoma/Triton II]
+             vendor: Intel Corporation
+             physical id: 1.1
+             bus info: pci@0000:00:01.1
+             version: 00
+             width: 32 bits
+             clock: 33MHz
+             capabilities: ide bus_master
+             configuration: driver=ata_piix latency=0
+             resources: irq:0 ioport:1f0(size=8) ioport:3f6 ioport:170(size=8) ioport:376 ioport:c0a0(size=16)
+        *-usb
+             description: USB controller
+             product: 82371SB PIIX3 USB [Natoma/Triton II]
+             vendor: Intel Corporation
+             physical id: 1.2
+             bus info: pci@0000:00:01.2
+             version: 01
+             width: 32 bits
+             clock: 33MHz
+             capabilities: uhci bus_master
+             configuration: driver=uhci_hcd latency=0
+             resources: irq:11 ioport:c040(size=32)
+           *-usbhost
+                product: UHCI Host Controller
+                vendor: Linux 4.4.0-62-generic uhci_hcd
+                physical id: 1
+                bus info: usb@1
+                logical name: usb1
+                version: 4.04
+                capabilities: usb-1.10
+                configuration: driver=hub slots=2 speed=12Mbit/s
+              *-usb UNCLAIMED
+                   description: Mouse
+                   product: QEMU USB Tablet
+                   vendor: QEMU
+                   physical id: 1
+                   bus info: usb@1:1
+                   version: 0.00
+                   serial: 42
+                   capabilities: usb-2.00
+                   configuration: maxpower=100mA speed=12Mbit/s
+        *-bridge UNCLAIMED
+             description: Bridge
+             product: 82371AB/EB/MB PIIX4 ACPI
+             vendor: Intel Corporation
+             physical id: 1.3
+             bus info: pci@0000:00:01.3
+             version: 03
+             width: 32 bits
+             clock: 33MHz
+             capabilities: bridge
+             configuration: latency=0
+        *-display UNCLAIMED
+             description: VGA compatible controller
+             product: GD 5446
+             vendor: Cirrus Logic
+             physical id: 2
+             bus info: pci@0000:00:02.0
+             version: 00
+             width: 32 bits
+             clock: 33MHz
+             capabilities: vga_controller
+             configuration: latency=0
+             resources: memory:fc000000-fdffffff memory:febd0000-febd0fff memory:febc0000-febcffff
+        *-network
+             description: Ethernet interface
+             product: Virtio network device
+             vendor: Red Hat, Inc
+             physical id: 3
+             bus info: pci@0000:00:03.0
+             logical name: ens3
+             version: 00
+             serial: fa:16:3e:05:38:92
+             width: 32 bits
+             clock: 33MHz
+             capabilities: msix bus_master cap_list rom ethernet physical
+             configuration: autonegotiation=off broadcast=yes driver=virtio_net driverversion=1.0.0 ip=137.74.40.150 latency=0 link=yes multicast=yes
+             resources: irq:10 ioport:c060(size=32) memory:febd1000-febd1fff memory:feb80000-febbffff
+        *-scsi
+             description: SCSI storage controller
+             product: Virtio block device
+             vendor: Red Hat, Inc
+             physical id: 4
+             bus info: pci@0000:00:04.0
+             version: 00
+             width: 32 bits
+             clock: 33MHz
+             capabilities: scsi msix bus_master cap_list
+             configuration: driver=virtio-pci latency=0
+             resources: irq:11 ioport:c000(size=64) memory:febd2000-febd2fff
+        *-generic
+             description: Unclassified device
+             product: Virtio memory balloon
+             vendor: Red Hat, Inc
+             physical id: 5
+             bus info: pci@0000:00:05.0
+             version: 00
+             width: 32 bits
+             clock: 33MHz
+             capabilities: bus_master
+             configuration: driver=virtio-pci latency=0
+             resources: irq:10 ioport:c080(size=32)

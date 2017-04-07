@@ -1,0 +1,22 @@
+System:    Host: scw-016449 Kernel: 4.4.38-std-1 x86_64 (64 bit gcc: 5.3.1) Console: tty
+           Distro: Ubuntu 16.04 xenial
+Machine:   System: QEMU product: Standard PC (i440FX + PIIX 1996) v: pc-i440fx-wily
+           Mobo: N/A model: N/A Bios: Sea v: Ubuntu-1.8.2-1ubuntu1 date: 04/01/2014
+           Chassis: type: 1 v: pc-i440fx-wily
+CPU(s):    2 Single core Intel Atom C2750s (-HT-SMP-) cache: 2048 KB
+           flags: (lm nx sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx) bmips: 9575
+           clock speeds: max: 2393 MHz 1: 2393 MHz 2: 2393 MHz
+Graphics:  Card: Failed to Detect Video Card!
+           Display Server: N/A driver: N/A tty size: N/A Advanced Data: N/A for root out of X
+Network:   Card: Red Hat Virtio network device
+           driver: virtio-pci port: c040 bus-ID: 00:02.0 chip-ID: 1af4:1000
+           IF: eth0 state: up speed: N/A duplex: N/A mac: <filter>
+Drives:    HDD Total Size: 50.0GB (2.3% used) ID-1: /dev/vda model: N/A size: 50.0GB serial: N/A
+Partition: ID-1: / size: 46G used: 1.1G (3%) fs: ext4 dev: /dev/vda
+RAID:      System: supported: linear raid0 raid1 raid10 raid6 raid5 raid4 multipath faulty
+           No RAID devices: /proc/mdstat, md_mod kernel module present
+           Unused Devices: none
+Sensors:   None detected - is lm-sensors installed and configured?
+Info:      Processes: 78 Uptime: 1 day Memory: 119.2/2003.0MB
+           Init: systemd v: 229 runlevel: 3 default: multi-user.target Gcc sys: N/A
+           Client: Unknown python3.5 client inxi: 2.2.35

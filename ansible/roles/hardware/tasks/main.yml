@@ -1,0 +1,110 @@
+---
+
+- name: install dmidecode & lshw & inxi & hwinfo
+  apt:
+    name: "{{item}}"
+    state: latest
+    update_cache: yes
+    install_recommends: no
+  with_items:
+    - dmidecode
+    - lshw
+    - inxi
+    - hwinfo
+
+- name: run dmidecode
+  shell: dmidecode > hard_dmidecode.log
+  args:
+    chdir: /tmp
+
+- name: retrieve dmidecode log
+  fetch:
+    src: /tmp/hard_dmidecode.log
+    dest: ../logs/{{inventory_hostname}}/hard_dmidecode.log
+    flat: yes
+
+- name: detect virtualization technology
+  shell: systemd-detect-virt > hard_virt_tech.log
+  args:
+    chdir: /tmp
+
+- name: retrieve vir-tech log
+  fetch:
+    src: /tmp/hard_virt_tech.log
+    dest: ../logs/{{inventory_hostname}}/hard_virt_tech.log
+    flat: yes
+
+- name: run lscpu
+  shell: lscpu > hard_lscpu.log
+  args:
+    chdir: /tmp
+
+- name: retrieve lscpu log
+  fetch:
+    src: /tmp/hard_lscpu.log
+    dest: ../logs/{{inventory_hostname}}/hard_lscpu.log
+    flat: yes
+
+- name: run lsblk
+  shell: lsblk -p > hard_lsblk.log
+  args:
+    chdir: /tmp
+
+- name: retrieve lsblk log
+  fetch:
+    src: /tmp/hard_lsblk.log
+    dest: ../logs/{{inventory_hostname}}/hard_lsblk.log
+    flat: yes
+
+- name: run lshw
+  shell: lshw > hard_lshw.log
+  args:
+    chdir: /tmp
+
+- name: retrieve lshw log
+  fetch:
+    src: /tmp/hard_lshw.log
+    dest: ../logs/{{inventory_hostname}}/hard_lshw.log
+    flat: yes
+
+- name: run inxi
+  shell: inxi -Fxxx -c0 > hard_inxi.log
+  args:
+    chdir: /tmp
+
+- name: retrieve inxi log
+  fetch:
+    src: /tmp/hard_inxi.log
+    dest: ../logs/{{inventory_hostname}}/hard_inxi.log
+    flat: yes
+
+- name: run hwinfo
+  shell: hwinfo > hard_hwinfo.log
+  args:
+    chdir: /tmp
+
+- name: retrieve hwinfo log
+  fetch:
+    src: /tmp/hard_hwinfo.log
+    dest: ../logs/{{inventory_hostname}}/hard_hwinfo.log
+    flat: yes
+
+- name: remove dmidecode & lswh & inxi & hwinfo
+  apt:
+    name: "{{item}}"
+    autoremove: yes
+    purge: yes
+    state: absent
+  with_items:
+    - dmidecode
+    - lshw
+    - inxi
+    - hwinfo
+
+
+
+
+
+
+
+

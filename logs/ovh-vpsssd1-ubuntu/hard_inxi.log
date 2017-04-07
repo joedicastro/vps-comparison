@@ -1,0 +1,20 @@
+System:    Host: vps359298 Kernel: 4.4.0-62-generic x86_64 (64 bit gcc: 5.4.0) Console: tty
+           Distro: Ubuntu 16.04 xenial
+Machine:   System: OpenStack Foundation product: OpenStack Nova v: 2014.2.4
+           Mobo: N/A model: N/A Bios: Sea v: Ubuntu-1.8.2-1ubuntu1~cloud0+ovh1 date: 04/01/2014
+           Chassis: QEMU type: 1 v: pc-i440fx-vivid
+CPU:       Single core Intel Core (Haswell no TSX) (-UP-) cache: 4096 KB
+           flags: (lm nx sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx) bmips: 4799 speed: 2399 MHz (max)
+Graphics:  Card: Cirrus Logic GD 5446 bus-ID: 00:02.0 chip-ID: 1013:00b8
+           Display Server: N/A driver: N/A tty size: N/A Advanced Data: N/A for root out of X
+Network:   Card: Red Hat Virtio network device
+           driver: virtio-pci port: c060 bus-ID: 00:03.0 chip-ID: 1af4:1000
+           IF: ens3 state: up speed: -1 duplex: unknown mac: <filter>
+Drives:    HDD Total Size: 10.7GB (12.1% used) ID-1: /dev/vda model: N/A size: 10.7GB serial: N/A
+Partition: ID-1: / size: 9.7G used: 1.3G (13%) fs: ext4 dev: /dev/vda1
+RAID:      System: supported: linear multipath raid0 raid1 raid6 raid5 raid4 raid10
+           No RAID devices: /proc/mdstat, md_mod kernel module present
+           Unused Devices: none
+Sensors:   None detected - is lm-sensors installed and configured?
+Info:      Processes: 121 Uptime: 1 day Memory: 185.7/1952.3MB
+           Init: systemd v: 229 runlevel: 5 Gcc sys: N/A Client: Unknown python3.5 client inxi: 2.2.35
