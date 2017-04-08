@@ -433,7 +433,7 @@ A pair of well-known fast tests to measure the CPU and disk performance. Not ver
 
 ![](./img/dd_io.png)
 
-### Compiler
+### compiler
 
 This test measures the times that takes the server to compile the MariaDB server.
 
@@ -446,6 +446,47 @@ This test measures the times that takes the server to compile the MariaDB server
 Notes:
 
 -   The compilation in DO fails at 65% after about 35min (I'll fix that)
+
+### speedtest
+
+This test uses speedtest.net to measure the average download/upload network speed from the VPS server.
+
+Keep in mind that this test is not very reliable because depends a lot of the network capabilities and status of the speedtest's nodes (I try to choose always the fastest node in each city). But it gives you an idea of the network interconnections of each provider.
+
+Nearest location
+
+| Plan                    | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+|-------------------------|---------------|-------------|-----------|---------------|----------------|----------------|
+| Nearest Download (Mb/s) | 99,487        | 719,030     | 743,270   | 815,250       |                | 584,740        |
+| Nearest Upload (Mb/s)   | 80,552        | 273,677     | 464,403   | 288,130       |                | 94,037         |
+
+![](./img/speedtest_near.png)
+
+European cities download
+
+| Plan      | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+|-----------|---------------|-------------|-----------|---------------|----------------|----------------|
+| Madrid    | 98,940        | 390,947     | 376,187   | 367,177       |                | 535,477        |
+| Barcelona | 98,550        | 319,777     | 489,210   | 558,573       |                | 796,617        |
+| Paris     | 96,237        | 343,067     | 720,700   | 339,76        |                | 493,723        |
+| London    | 98,897        | 1395,290    | 1260,607  | 766,277       |                | 3050,463       |
+| Berlin    | 94,233        | 309,860     | 525,137   | 453,267       |                | 943,980        |
+| Rome      | 98,910        | 321,69      | 527,560   | 636,857       |                | 964,350        |
+
+![](./img/speedtest_eur_down.png)
+
+European cities upload
+
+| Plan      | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+|-----------|---------------|-------------|-----------|---------------|----------------|----------------|
+| Madrid    | 87,937        | 151,977     | 172,437   | 57,333        |                | 128,560        |
+| Barcelona | 85,670        | 152,757     | 148,080   | 41,480        |                | 177,963        |
+| Paris     | 91,173        | 182,267     | 337,737   | 199,737       |                | 169,450        |
+| London    | 86,360        | 302,350     | 282,380   | 107,260       |                | 489,013        |
+| Berlin    | 86,353        | 99,223      | 206,170   | 75,100        |                | 194,157        |
+| Rome      | 87,387        | 116,90      | 44,350    | 59,053        |                | 121,390        |
+
+![](./img/speedtest_eur_up.png)
 
 Web Performance
 ---------------

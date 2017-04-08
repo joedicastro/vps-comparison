@@ -1,0 +1,75 @@
+---
+
+- name: download speedtest-cli
+  get_url:
+    url: https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
+    dest: /tmp/speedtest-cli
+
+- name: set execution permission
+  file: 
+    path: /tmp/speedtest-cli
+    mode: "u=rwx,g=rwx,o=rx"
+
+- name: run speedtest-cli
+  shell: ./speedtest-cli >> speedtest_near.log
+  args:
+    chdir: /tmp
+  with_sequence: count=3
+
+- name: run speedtest-cli for Madrid
+  shell: ./speedtest-cli --server 1680 >> speedtest_mad.log
+  args:
+    chdir: /tmp
+  with_sequence: count=3
+ 
+- name: run speedtest-cli for Barcelona
+  shell: ./speedtest-cli --server 1695 >> speedtest_bar.log
+  args:
+    chdir: /tmp
+  with_sequence: count=3
+ 
+- name: run speedtest-cli for Paris
+  shell: ./speedtest-cli --server 5559 >> speedtest_par.log
+  args:
+    chdir: /tmp
+  with_sequence: count=3
+ 
+- name: run speedtest-cli for London
+  shell: ./speedtest-cli --server 2789 >> speedtest_lon.log
+  args:
+    chdir: /tmp
+  with_sequence: count=3
+
+- name: run speedtest-cli for Berlin
+  shell: ./speedtest-cli --server 10259 >> speedtest_ber.log
+  args:
+    chdir: /tmp
+  with_sequence: count=3
+
+- name: run speedtest-cli for Rome
+  shell: ./speedtest-cli --server 3243 >> speedtest_rom.log
+  args:
+    chdir: /tmp
+  with_sequence: count=3
+ 
+- name: retrieve logs
+  fetch:
+    src: /tmp/{{item}}.log
+    dest: ../logs/{{inventory_hostname}}/{{item}}.log
+    flat: yes
+  with_items:
+    - speedtest_near
+    - speedtest_mad
+    - speedtest_bar
+    - speedtest_par
+    - speedtest_lon
+    - speedtest_ber
+    - speedtest_rom
+
+- name: remove speedtest-cli
+  file: 
+    path: "{{item}}"
+    state: absent
+  with_items:
+    - /tmp/speedtest-cli
+
