@@ -1,0 +1,119 @@
+Download a 100Mb file:
+======================
+
+IPv4 speedtests
+
+CacheFly CDN (IPv4):  90.1MB/s
+DigitalOcean (GB) (IPv4):  105MB/s
+LeaseWeb (NL) (IPv4):  105MB/s
+Linode (GB) (IPv4):  89.2MB/s
+Online.net (FR) (IPv4):  91.9MB/s
+OVH (FR) (IPv4):  52.3MB/s
+Softlayer (FR) (IPv4):  23.6MB/s
+Vultr (GB) (IPv4):  55.6MB/s
+
+IPv6 speedtests
+
+CacheFly CDN (IPv6): 
+DigitalOcean (GB) (IPv6):  119MB/s
+LeaseWeb (NL) (IPv6):  95.9MB/s
+Linode (GB) (IPv6):  120MB/s
+Online.net (FR) (IPv6): 
+OVH (FR) (IPv6): 
+Softlayer (FR) (IPv6):  25.0MB/s
+Vultr (GB) (IPv6): 
+
+Download a 10Gb file:
+======================
+
+IPv4 speedtests
+
+CDN77.com (NL) (IPv4):  123MB/s
+Online.net (FR) (IPv4):  115MB/s
+OVH (FR) (IPv4):  30.0MB/s
+
+IPv6 speedtests
+
+CDN77.com (NL) (IPv6): 
+Online.net (FR) (IPv6): 
+OVH (FR) (IPv6): 
+
+Download a 100Mb file:
+======================
+
+IPv4 speedtests
+
+CacheFly CDN (IPv4):  77.8MB/s
+DigitalOcean (GB) (IPv4):  61.7MB/s
+LeaseWeb (NL) (IPv4):  107MB/s
+Linode (GB) (IPv4):  87.6MB/s
+Online.net (FR) (IPv4):  119MB/s
+OVH (FR) (IPv4):  36.5MB/s
+Softlayer (FR) (IPv4):  60.0MB/s
+Vultr (GB) (IPv4):  60.6MB/s
+
+IPv6 speedtests
+
+CacheFly CDN (IPv6): 
+DigitalOcean (GB) (IPv6):  114MB/s
+LeaseWeb (NL) (IPv6):  116MB/s
+Linode (GB) (IPv6):  112MB/s
+Online.net (FR) (IPv6): 
+OVH (FR) (IPv6): 
+Softlayer (FR) (IPv6):  43.3MB/s
+Vultr (GB) (IPv6): 
+
+Download a 10Gb file:
+======================
+
+IPv4 speedtests
+
+CDN77.com (NL) (IPv4):  119MB/s
+Online.net (FR) (IPv4):  118MB/s
+OVH (FR) (IPv4):  26.5MB/s
+
+IPv6 speedtests
+
+CDN77.com (NL) (IPv6): 
+Online.net (FR) (IPv6): 
+OVH (FR) (IPv6): 
+
+Download a 100Mb file:
+======================
+
+IPv4 speedtests
+
+CacheFly CDN (IPv4):  79.8MB/s
+DigitalOcean (GB) (IPv4):  72.2MB/s
+LeaseWeb (NL) (IPv4):  105MB/s
+Linode (GB) (IPv4):  54.9MB/s
+Online.net (FR) (IPv4):  120MB/s
+OVH (FR) (IPv4):  36.6MB/s
+Softlayer (FR) (IPv4):  72.7MB/s
+Vultr (GB) (IPv4):  64.4MB/s
+
+IPv6 speedtests
+
+CacheFly CDN (IPv6): 
+DigitalOcean (GB) (IPv6):  106MB/s
+LeaseWeb (NL) (IPv6):  109MB/s
+Linode (GB) (IPv6):  102MB/s
+Online.net (FR) (IPv6): 
+OVH (FR) (IPv6): 
+Softlayer (FR) (IPv6):  25.4MB/s
+Vultr (GB) (IPv6): 
+
+Download a 10Gb file:
+======================
+
+IPv4 speedtests
+
+CDN77.com (NL) (IPv4):  120MB/s
+Online.net (FR) (IPv4):  119MB/s
+OVH (FR) (IPv4):  57.1MB/s
+
+IPv6 speedtests
+
+CDN77.com (NL) (IPv6): 
+Online.net (FR) (IPv6): 
+OVH (FR) (IPv6): 

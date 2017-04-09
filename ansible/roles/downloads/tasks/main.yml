@@ -1,0 +1,16 @@
+---
+
+- name: test downloads
+  script: downloads.sh
+
+- name: concatenate logs
+  shell: cat downloads_1.log downloads_2.log downloads_3.log > downloads.log
+  args:
+    chdir: /tmp
+ 
+- name: retrieve log
+  fetch:
+    src: /tmp/downloads.log
+    dest: ../logs/{{inventory_hostname}}/downloads.log
+    flat: yes
+

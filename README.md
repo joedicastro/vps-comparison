@@ -226,7 +226,7 @@ Features
 | IPv6                 | Yes              | Yes                    | Optional                               | Optional           | Optional                               | Optional                               |
 | Additional public IP | 2$ (up to 16)    | Yes                    | Floating IPs (0,006$ hour if inactive) | 0,9€ (up to 10)    | 2$ (up to 2) / 3$ floating IPs         | 2$ (up to 2) / 3$ floating IPs         |
 | Private Network      | No               | Optional               | Optional                               | No (dynamic IPs)   | Optional                               | Optional                               |
-| Group firewall       | No               | No                     | No                                     | Yes                | Yes                                    | Yes                                    |
+| Firewall             | Yes (by IP)      | No                     | No                                     | Yes (by group)     | Yes (by group)                         | Yes (by group)                         |
 | Block Storage        | From 5€ - 50GB   | No                     | From 10$ - 100GB                       | From 1€ - 50GB     | From 1$ - 10GB                         | From 1$ - 10GB                         |
 | Monitoring           | Yes (SLA)        | Yes (metrics, SLA)     | Beta (metrics, performance, SLA)       | No                 | No                                     | No                                     |
 | Load Balancer        | 13$              | 20$                    | 20$                                    | No                 | High availability (floating IPs & BGP) | High availability (floating IPs & BGP) |
@@ -446,6 +446,46 @@ This test measures the times that takes the server to compile the MariaDB server
 Notes:
 
 -   The compilation in DO fails at 65% after about 35min (I'll fix that)
+
+### downloads
+
+This test try to measure the top network speed downloading a 100mbit files and the sustained speed downloading a 10gb file from various locations.
+
+1.  100Mbit file IPv4
+
+    | Plan              |     | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+    |-------------------|-----|---------------|-------------|-----------|---------------|----------------|----------------|
+    | Cachefly CDN      | A   | 11,033        | 84,367      | 123       | 82,567        |                | 182,333        |
+    | DigitalOcean (GB) | B   | 11,9          | 90,767      | 137       | 79,633        |                | 148,333        |
+    | LeaseWeb (NL)     | C   | 11,9          | 100,067     | 87,867    | 105,667       |                | 162,333        |
+    | Linode (GB)       | D   | 11,9          | 110,667     | 125,333   | 77,233        |                | 134,667        |
+    | Online.net (FR)   | E   | 11,9          | 17,90       | 66,200    | 110,3         |                | 73.267         |
+    | OVH (FR)          | F   | 12            | 43,10       | 53,9      | 41,8          |                |                |
+    | Softlayer (FR)    | G   | 11,8          | 34,067      | 77,267    | 52,1          |                | 79,533         |
+    | Vultr (GB)        | H   | 11,9          | 32,867      | 121,667   | 60,2          |                | 195            |
+
+    ![](./img/downloads_100v4.png)
+
+2.  100Mbit file IPv6
+
+    | Plan              | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+    |-------------------|---------------|-------------|-----------|---------------|----------------|----------------|
+    | DigitalOcean (GB) |               | 89,7        | 145,667   | 113           |                | 146            |
+    | LeaseWeb (NL)     |               | 98,7        | 13,6      | 109,967       |                | 174,333        |
+    | Linode (GB)       |               | 109,667     | 126,333   | 111,333       |                | 113,333        |
+    | Softlayer (FR)    |               | 42,223      | 91,567    | 31,233        |                | 63,633         |
+
+    ![](./img/downloads_100v6.png)
+
+3.  10Gbit file IPv4
+
+    | Plan            | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+    |-----------------|---------------|-------------|-----------|---------------|----------------|----------------|
+    | CDN77 (NL)      | 11,967        | 91,6        | 65,9      | 120,667       |                | 161,667        |
+    | Online.net (FR) | 11,933        | 21,467      | 64,333    | 117,333       |                | 158,333        |
+    | OVH (FR)        | 11,967        | 54,2        | 41,15     | 37,867        |                | 158            |
+
+    ![](./img/downloads_10gv4.png)
 
 ### speedtest
 

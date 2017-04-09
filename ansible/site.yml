@@ -16,6 +16,6 @@
     - { role: dd,         tags: ['dd', 'disk', 'benchmark']}
     - { role: fio,        tags: ['fio', 'disk', 'benchmark']}
     - { role: speedtest,  tags: ['speedtest', 'network', 'benchmark']}
-    - { role: downloads,  tags: ['downloads', 'network', 'benchmark']}
+    - { role: downloads,  tags: ['downloads', 'network', 'benchmark']} #caution! ~93Gbits
     - { role: compiler,   tags: ['compiler', 'benchmark']} # fails in do! check!
     - { role: transcode,  tags: ['transcode', 'multimedia', 'benchmark']} # fails! check!
