@@ -272,7 +272,7 @@ The first thing that you have to do is to edit the `/ansible/hosts` file to use 
     [digitalocean]
     do-5bucks-ubuntu          ansible_host=X.X.X.X   ansible_python_interpreter=/usr/bin/python3 
 
-You should have to put your own server IP. The interpreter path is only needed when there is not a Python 2 interpreter available (like in Ubuntu). Also I'm using the variables per group to declare the default user of a server, and I'm grouping servers by provider. So, a complete example for a new provider using a new instance running Ubuntu should be like this:
+You should have to put your own server IP. The interpreter path is only needed when there is not a Python 2 interpreter available by default (like in Ubuntu). Also I'm using the variables per group to declare the default user of a server, and I'm grouping servers by provider. So, a complete example for a new provider using a new instance running Ubuntu should be like this:
 
     [new_provider]
     new_provider-plan_name-ubuntu   ansible_host=X.X.X.X   ansible_python_interpreter=/usr/bin/python3 
@@ -331,8 +331,8 @@ I only execute this test once because it takes some time -about 30-45 minutes de
 
 | Plan                         | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
 |------------------------------|---------------|-------------|-----------|---------------|----------------|----------------|
-| UnixBench (index, 1 thread)  | 1598,1        | 1248,6      | 1264,6    | 629,8         | 1555,1         | 1579.9         |
-| UnixBench (index, 2 threads) |               |             |           | 1115,1        |                |                |
+| UnixBench (index, 1 thread)  | 1598.1        | 1248.6      | 1264.6    | 629.8         | 1555.1         | 1579.9         |
+| UnixBench (index, 2 threads) |               |             |           | 1115.1        |                |                |
 
 ![](./img/unixbench.png)
 
@@ -370,23 +370,23 @@ Notes:
 
     | Plan                   | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
     |------------------------|---------------|-------------|-----------|---------------|----------------|----------------|
-    | Sysbench CPU (seconds) | 31,922        | 37,502      | 39,080    | 46,130        | 30,222         | 30,544         |
+    | Sysbench CPU (seconds) | 31.922        | 37.502      | 39.080    | 46.130        | 30.222         | 30.544         |
 
     ![](./img/sysbench_cpu.png)
 
 2.  Sysbench fileio
 
-    | Plan                            | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
-    |---------------------------------|---------------|-------------|-----------|---------------|----------------|----------------|
-    | Sysbench file rand read (Mb/s)  | 4,813         | 19,240      | 48,807    | 41,353        |                | 23,022         |
-    | Sysbench file rand write (Mb/s) | 4,315         | 5,529       | 21,400    | 2,482         |                | 17,510         |
+    | Plan                            | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
+    |---------------------------------|---------------|-------------|-----------|---------------|-------------------|----------------|
+    | Sysbench file rand read (Mb/s)  | 4.813         | 19.240      | 48.807    | 41.353        | Temp. unavailable | 23.022         |
+    | Sysbench file rand write (Mb/s) | 4.315         | 5.529       | 21.400    | 2.482         | Temp. unavailable | 17.510         |
 
     ![](./img/sysbench_fileio_mb.png)
 
-    | Plan                            | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
-    |---------------------------------|---------------|-------------|-----------|---------------|----------------|----------------|
-    | Sysbench file rand read (IOPS)  | 1232          | 4925        | 12495     | 10586         |                | 5984           |
-    | Sysbench file rand write (IOPS) | 1105          | 1415        | 5478      | 635           |                | 4482           |
+    | Plan                            | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
+    |---------------------------------|---------------|-------------|-----------|---------------|-------------------|----------------|
+    | Sysbench file rand read (IOPS)  | 1232          | 4925        | 12495     | 10586         | Temp. unavailable | 5984           |
+    | Sysbench file rand write (IOPS) | 1105          | 1415        | 5478      | 635           | Temp. unavailable | 4482           |
 
     ![](./img/sysbench_fileio_iops.png)
 
@@ -396,8 +396,8 @@ Notes:
 
     | Plan                     | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
     |--------------------------|---------------|-------------|-----------|---------------|----------------|----------------|
-    | DB R/W (request/second)  | 245,590       | 212,42      | 232,266   | 176,700       | 245,127        | 243,832        |
-    | request approx. 95% (ms) | 203,210       | 242,100     | 218,490   | 268,086       | 203,410        | 205,786        |
+    | DB R/W (request/second)  | 245.590       | 212.42      | 232.266   | 176.700       | 245.127        | 243.832        |
+    | request approx. 95% (ms) | 203.210       | 242.100     | 218.490   | 268.086       | 203.410        | 205.786        |
 
     ![](./img/sysbench_oltp.png)
 
@@ -405,8 +405,8 @@ Notes:
 
 | Plan            | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
 |-----------------|---------------|-------------|-----------|---------------|----------------|----------------|
-| Read IO (MB/s)  | 3,999         | 111,622     | 581,851   | 266,779       | 249,672        | 244,385        |
-| Write IO (MB/s) | 3,991         | 93,6        | 35,317    | 84,684        | 192,748        | 194,879        |
+| Read IO (MB/s)  | 3.999         | 111.622     | 581.851   | 266.779       | 249.672        | 244.385        |
+| Write IO (MB/s) | 3.991         | 93.6        | 35.317    | 84.684        | 192.748        | 194.879        |
 
 ![](./img/fio_io.png)
 
@@ -423,29 +423,29 @@ A pair of well-known fast tests to measure the CPU and disk performance. Not ver
 
 | Plan             | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
 |------------------|---------------|-------------|-----------|---------------|----------------|----------------|
-| dd CPU (seconds) | 2,684         | 2,935       | 3,292     | 4,199         | 2,667          | 2,715          |
+| dd CPU (seconds) | 2.684         | 2.935       | 3.292     | 4.199         | 2.667          | 2.715          |
 
 ![](./img/dd_cpu.png)
 
 | Plan         | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
 |--------------|---------------|-------------|-----------|---------------|----------------|----------------|
-| dd IO (MB/s) | 550           | 467,4       | 702,6     | 163,6         | 477            | 458,2          |
+| dd IO (MB/s) | 550           | 467.4       | 702.6     | 163.6         | 477            | 458.2          |
 
 ![](./img/dd_io.png)
 
 ### compiler
 
-This test measures the times that takes the server to compile the MariaDB server.
+This test measures the times that the server takes to compile the MariaDB server.
 
-| Plan                      | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
-|---------------------------|---------------|-------------|-----------|---------------|----------------|----------------|
-| Compile MariaDB (seconds) | 1904,7        | 3070,2      |           | 5692.7        |                | 2069,3         |
+| Plan                      | OVH VPS SSD 1 | Linode 1024 | DO 5bucks     | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
+|---------------------------|---------------|-------------|---------------|---------------|-------------------|----------------|
+| Compile MariaDB (seconds) | 1904.7        | 3070.2      | out of memory | 5692.7        | Temp. unavailable | 2069.3         |
 
 ![](./img/compile_mariadb.png)
 
 Notes:
 
--   The compilation in DO fails at 65% after about 35min (I'll fix that)
+-   The compilation in DO fails at 65% after about 35min, the process it's killed when gets out of memory.
 
 ### downloads
 
@@ -453,37 +453,37 @@ This test try to measure the top network speed downloading a 100mbit files and t
 
 1.  100Mbit file IPv4
 
-    | Plan              |     | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
-    |-------------------|-----|---------------|-------------|-----------|---------------|----------------|----------------|
-    | Cachefly CDN      | A   | 11,033        | 84,367      | 123       | 82,567        |                | 182,333        |
-    | DigitalOcean (GB) | B   | 11,9          | 90,767      | 137       | 79,633        |                | 148,333        |
-    | LeaseWeb (NL)     | C   | 11,9          | 100,067     | 87,867    | 105,667       |                | 162,333        |
-    | Linode (GB)       | D   | 11,9          | 110,667     | 125,333   | 77,233        |                | 134,667        |
-    | Online.net (FR)   | E   | 11,9          | 17,90       | 66,200    | 110,3         |                | 73.267         |
-    | OVH (FR)          | F   | 12            | 43,10       | 53,9      | 41,8          |                |                |
-    | Softlayer (FR)    | G   | 11,8          | 34,067      | 77,267    | 52,1          |                | 79,533         |
-    | Vultr (GB)        | H   | 11,9          | 32,867      | 121,667   | 60,2          |                | 195            |
+    | Plan              |     | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
+    |-------------------|-----|---------------|-------------|-----------|---------------|-------------------|----------------|
+    | Cachefly CDN      | A   | 11.033        | 84.367      | 123       | 82.567        | Temp. unavailable | 182.333        |
+    | DigitalOcean (GB) | B   | 11.9          | 90.767      | 137       | 79.633        |                   | 148.333        |
+    | LeaseWeb (NL)     | C   | 11.9          | 100.067     | 87.867    | 105.667       |                   | 162.333        |
+    | Linode (GB)       | D   | 11.9          | 110.667     | 125.333   | 77.233        |                   | 134.667        |
+    | Online.net (FR)   | E   | 11.9          | 17.90       | 66.200    | 110.3         |                   | 73.267         |
+    | OVH (FR)          | F   | 12            | 43.10       | 53.9      | 41.8          |                   |                |
+    | Softlayer (FR)    | G   | 11.8          | 34.067      | 77.267    | 52.1          |                   | 79.533         |
+    | Vultr (GB)        | H   | 11.9          | 32.867      | 121.667   | 60.2          |                   | 195            |
 
     ![](./img/downloads_100v4.png)
 
 2.  100Mbit file IPv6
 
-    | Plan              | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
-    |-------------------|---------------|-------------|-----------|---------------|----------------|----------------|
-    | DigitalOcean (GB) |               | 89,7        | 145,667   | 113           |                | 146            |
-    | LeaseWeb (NL)     |               | 98,7        | 13,6      | 109,967       |                | 174,333        |
-    | Linode (GB)       |               | 109,667     | 126,333   | 111,333       |                | 113,333        |
-    | Softlayer (FR)    |               | 42,223      | 91,567    | 31,233        |                | 63,633         |
+    | Plan              | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
+    |-------------------|---------------|-------------|-----------|---------------|-------------------|----------------|
+    | DigitalOcean (GB) |               | 89.7        | 145.667   | 113           | Temp. unavailable | 146            |
+    | LeaseWeb (NL)     |               | 98.7        | 13.6      | 109.967       |                   | 174.333        |
+    | Linode (GB)       |               | 109.667     | 126.333   | 111.333       |                   | 113.333        |
+    | Softlayer (FR)    |               | 42.223      | 91.567    | 31.233        |                   | 63.633         |
 
     ![](./img/downloads_100v6.png)
 
 3.  10Gbit file IPv4
 
-    | Plan            | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
-    |-----------------|---------------|-------------|-----------|---------------|----------------|----------------|
-    | CDN77 (NL)      | 11,967        | 91,6        | 65,9      | 120,667       |                | 161,667        |
-    | Online.net (FR) | 11,933        | 21,467      | 64,333    | 117,333       |                | 158,333        |
-    | OVH (FR)        | 11,967        | 54,2        | 41,15     | 37,867        |                | 158            |
+    | Plan            | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
+    |-----------------|---------------|-------------|-----------|---------------|-------------------|----------------|
+    | CDN77 (NL)      | 11.967        | 91.6        | 65.9      | 120.667       | Temp. unavailable | 161.667        |
+    | Online.net (FR) | 11.933        | 21.467      | 64.333    | 117.333       |                   | 158.333        |
+    | OVH (FR)        | 11.967        | 54.2        | 41.15     | 37.867        |                   | 158            |
 
     ![](./img/downloads_10gv4.png)
 
@@ -495,38 +495,48 @@ Keep in mind that this test is not very reliable because depends a lot of the ne
 
 Nearest location
 
-| Plan                    | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
-|-------------------------|---------------|-------------|-----------|---------------|----------------|----------------|
-| Nearest Download (Mb/s) | 99,487        | 719,030     | 743,270   | 815,250       |                | 584,740        |
-| Nearest Upload (Mb/s)   | 80,552        | 273,677     | 464,403   | 288,130       |                | 94,037         |
+| Plan                    | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
+|-------------------------|---------------|-------------|-----------|---------------|-------------------|----------------|
+| Nearest Download (Mb/s) | 99.487        | 719.030     | 743.270   | 815.250       | Temp. unavailable | 584.740        |
+| Nearest Upload (Mb/s)   | 80.552        | 273.677     | 464.403   | 288.130       |                   | 94.037         |
 
 ![](./img/speedtest_near.png)
 
 European cities download
 
-| Plan      | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
-|-----------|---------------|-------------|-----------|---------------|----------------|----------------|
-| Madrid    | 98,940        | 390,947     | 376,187   | 367,177       |                | 535,477        |
-| Barcelona | 98,550        | 319,777     | 489,210   | 558,573       |                | 796,617        |
-| Paris     | 96,237        | 343,067     | 720,700   | 339,76        |                | 493,723        |
-| London    | 98,897        | 1395,290    | 1260,607  | 766,277       |                | 3050,463       |
-| Berlin    | 94,233        | 309,860     | 525,137   | 453,267       |                | 943,980        |
-| Rome      | 98,910        | 321,69      | 527,560   | 636,857       |                | 964,350        |
+| Plan      | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
+|-----------|---------------|-------------|-----------|---------------|-------------------|----------------|
+| Madrid    | 98.940        | 390.947     | 376.187   | 367.177       | Temp. unavailable | 535.477        |
+| Barcelona | 98.550        | 319.777     | 489.210   | 558.573       |                   | 796.617        |
+| Paris     | 96.237        | 343.067     | 720.700   | 339.76        |                   | 493.723        |
+| London    | 98.897        | 1395.290    | 1260.607  | 766.277       |                   | 3050.463       |
+| Berlin    | 94.233        | 309.860     | 525.137   | 453.267       |                   | 943.980        |
+| Rome      | 98.910        | 321.69      | 527.560   | 636.857       |                   | 964.350        |
 
 ![](./img/speedtest_eur_down.png)
 
 European cities upload
 
-| Plan      | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
-|-----------|---------------|-------------|-----------|---------------|----------------|----------------|
-| Madrid    | 87,937        | 151,977     | 172,437   | 57,333        |                | 128,560        |
-| Barcelona | 85,670        | 152,757     | 148,080   | 41,480        |                | 177,963        |
-| Paris     | 91,173        | 182,267     | 337,737   | 199,737       |                | 169,450        |
-| London    | 86,360        | 302,350     | 282,380   | 107,260       |                | 489,013        |
-| Berlin    | 86,353        | 99,223      | 206,170   | 75,100        |                | 194,157        |
-| Rome      | 87,387        | 116,90      | 44,350    | 59,053        |                | 121,390        |
+| Plan      | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
+|-----------|---------------|-------------|-----------|---------------|-------------------|----------------|
+| Madrid    | 87.937        | 151.977     | 172.437   | 57.333        | Temp. unavailable | 128.560        |
+| Barcelona | 85.670        | 152.757     | 148.080   | 41.480        |                   | 177.963        |
+| Paris     | 91.173        | 182.267     | 337.737   | 199.737       |                   | 169.450        |
+| London    | 86.360        | 302.350     | 282.380   | 107.260       |                   | 489.013        |
+| Berlin    | 86.353        | 99.223      | 206.170   | 75.100        |                   | 194.157        |
+| Rome      | 87.387        | 116.90      | 44.350    | 59.053        |                   | 121.390        |
 
 ![](./img/speedtest_eur_up.png)
+
+### transcode video
+
+In this test the measure is the frames per second achieved to transcode a video with ffmpeg (or avconv in Debian). In this test, more is better.
+
+| Plan | OVH VPS SSD 1 | Linode 1024 | DO 5bucks     | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
+|------|---------------|-------------|---------------|---------------|-------------------|----------------|
+| FPS  | 5.9           | 4.7         | out of memory | 3.2           | Temp. unavailable | 5.6            |
+
+![](./img/transcode.png)
 
 Web Performance
 ---------------

@@ -1,0 +1,47 @@
+---
+- name: check if video has been already downloaded
+  stat:
+    path: /tmp/video4k.mp4
+  register: video_down
+
+- name: download the video
+  get_url:
+    url: http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_2160p_30fps_normal.mp4
+    dest: /tmp/video4k.mp4
+  when: video_down.stat.exists == False 
+
+- name: install ffmpeg
+  apt:
+    name: ffmpeg
+    state: latest
+    update_cache: yes
+    install_recommends: no
+
+- name: transcode video
+  shell: (ffmpeg -i video4k.mp4 -vf scale=1920:1080 -c:v h264 -b:v 5000k -minrate 5000k -maxrate 5000k -c:a aac -strict -2 -y -b:a 128k /tmp/video_1080p.mp4) > /tmp/transcode.log 2>&1
+  args:
+    chdir: /tmp/
+    executable: /bin/bash
+
+- name: retrieve log
+  fetch:
+    src: /tmp/transcode.log
+    dest: ../logs/{{inventory_hostname}}/transcode.log
+    flat: yes
+
+- name: remove ffmpeg
+  apt:
+    name: ffmpeg
+    autoremove: yes
+    purge: yes
+    state: absent
+
+- name: remove videos
+  file: 
+    path: "{{item}}"
+    state: absent
+  with_items:
+    - /tmp/video4k.mp4
+    - /tmp/video_1080p.mp4
+
+
