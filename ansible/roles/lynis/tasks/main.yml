@@ -41,3 +41,9 @@
     dest: ../logs/{{inventory_hostname}}/lynis.log
     flat: yes
 
+  # running it in local allows you to retrieve the original unchanged file from
+  # the server if you need it.
+- name: clean IPs from log
+  script: clean_ips.py lynis.log -p ../logs
+  delegate_to: localhost
+  become: no

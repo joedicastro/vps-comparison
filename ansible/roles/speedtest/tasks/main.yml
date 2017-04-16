@@ -73,3 +73,18 @@
   with_items:
     - /tmp/speedtest-cli
 
+  # running it in local allows you to retrieve the original unchanged file from
+  # the server if you need it.
+- name: clean IPs from log
+  script: clean_ips.py {{item}} -p ../logs
+  delegate_to: localhost
+  become: no
+  with_items:
+    - speedtest_near
+    - speedtest_mad
+    - speedtest_bar
+    - speedtest_par
+    - speedtest_lon
+    - speedtest_ber
+    - speedtest_rom
+

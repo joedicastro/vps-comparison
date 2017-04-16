@@ -794,7 +794,7 @@ Notes:
 *** transcode video
 
     In this test the measure is the frames per second achieved to transcode a
-    video with ffmpeg (or avconv in Debian). In this test, more is better.
+    video with ~ffmpeg~ (or ~avconv~ in Debian). In this test, more is better.
 
   #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:6.5]" 
   #+PLOT: set:"style histogram cluster gap 1"
@@ -814,6 +814,10 @@ Notes:
     |------+---------------+-------------+---------------+---------------+-------------------+----------------|
  
 [[./img/transcode.png]]
+
+   Note:
+
+   - In DO the process is killed when ran out of memory.
 
 ** Web Performance
 
