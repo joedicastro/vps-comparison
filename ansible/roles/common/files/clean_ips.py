@@ -119,7 +119,6 @@ def main():
         for f in files:
             if f == args.file:
                 log_file = os.path.abspath(os.path.join(root, f))
-                print(log_file)
 
                 with open(log_file, mode="r") as file_input:
                     file_content = file_input.read()
