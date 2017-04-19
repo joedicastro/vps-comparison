@@ -291,7 +291,10 @@ becomes this:
 
 And finally using also a little magic from org-mode, org-babel and gnuplot, that
 table would generate automatically a graph like the ones showed here with only a
-few lines of text (see this file in raw mode to see how).
+few lines of text (see this file in raw mode to see how) and using the same key
+combination over those lines. Thus, the only manual step is to copy/paste those
+tables from that file into this one, and with only two key combinations for
+table/graph the job is done.
 
 There is another python script that automatically removes any public IPv4/IPv6
 from the log files.
