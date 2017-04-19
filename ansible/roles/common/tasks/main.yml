@@ -1,0 +1,6 @@
+---
+
+- name: gather data from logs
+  script: gather_data.py -p ../logs -j {{ role_path }}/files/criteria.json
+  delegate_to: localhost
+  become: no
