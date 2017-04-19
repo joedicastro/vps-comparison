@@ -31,7 +31,7 @@
     chdir: /tmp/mariadb-10.1.22
 
 - name: compile mariadb
-  shell: (time make) > /tmp/compiler.log 2>&1
+  shell: (time -p make) > /tmp/compiler.log 2>&1
   args:
     executable: /bin/bash
     chdir: /tmp/mariadb-10.1.22

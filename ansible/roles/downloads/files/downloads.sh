@@ -40,8 +40,8 @@ do
         declare -A test_files_10gb=(
             # ["CDN77.com (FR)"]="http://fra.download.10gbps.io/10000mb.bin"
             ["CDN77.com (NL)"]="http://ams.download.10gbps.io/10000mb.bin"
-            ["Online.net (FR)"]="http://ping.online.net/10000Mo.dat"
-            ["OVH (FR)"]="http://ovh.net/files/10Gb.dat"
+            ["Online.net 10G (FR)"]="http://ping.online.net/10000Mo.dat"
+            ["OVH 10G (FR)"]="http://ovh.net/files/10Gb.dat"
         )
 
         ipv4=$(wget -qO - --timeout=5 http://ipv4.icanhazip.com/)

@@ -1,0 +1,246 @@
+LYNIS
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Lynis (hardening index) |59 | 67 | 62 | 64 | 60 | 60
+| Lynis (tests performed) |220 | 220 | 220 | 225 | 230 | 231
+|-
+
+
+UNIXBENCH
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| UnixBench (index, 1 thread) |1264.6 | 1248.6 | 1598.1 | 629.8 | 1555.1 | 1579.9
+| UnixBench (index, 2 thread) | |  |  | 1115.1 |  | 
+|-
+
+
+UNIXBENCH DETAILED
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Dhrystone 2 using register variables | A |2061.0 | 2150.0 | 2510.2 | 1057.9 | 2530.5 | 2474.5
+| Double-Precision Whetstone | B |474.6 | 539.7 | 583.6 | 367.5 | 578.2 | 656.9
+| Execl Throughput | C |799.5 | 941.8 | 1038.9 | 400.0 | 963.8 | 1027.8
+| File Copy 1024 bufsize 2000 maxblocks | D |2222.5 | 1972.7 | 2799.5 | 1094.4 | 2775.3 | 2608.8
+| File Copy 256 bufsize 500 maxblocks | E |1440.1 | 1286.2 | 1908.7 | 752.6 | 1888.8 | 1851.4
+| File Copy 4096 bufsize 8000 maxblocks | F |2692.6 | 2435.6 | 3507.1 | 1729.9 | 3248.4 | 3212.1
+| Pipe Throughput | G |1468.7 | 1472.1 | 1846.5 | 894.0 | 1813.6 | 1789.6
+| Pipe-based Context Switching | H |597.2 | 623.2 | 744.0 | 60.3 | 739.0 | 746.3
+| Process Creation | I |706.8 | 690.5 | 904.5 | 288.2 | 848.1 | 949.9
+| Shell Scripts (1 concurrent) | J |1501.9 | 1442.0 | 1883.2 | 801.9 | 1787.8 | 1851.2
+| Shell Scripts (8 concurrent) | K |1362.7 | 1144.4 | 1725.0 | 1221.8 | 1665.9 | 1679.1
+| System Call Overhead | L |1955.6 | 2034.4 | 2410.1 | 1154.7 | 2461.0 | 2366.4
+|-
+
+
+SYSBENCH CPU
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Sysbench CPU (seconds) |39.344 | 37.261 | 31.903 | 46.130 | 30.222 | 30.550
+|-
+
+
+SYSBENCH FILEIO MB/S
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Sysbench file rand read (Mb/s) |48.807 | 19.240 | 4.813 | 41.353 |  | 23.022
+| Sysbench file rand write (Mb/s) |21.400 | 5.529 | 4.315 | 2.492 |  | 17.510
+|-
+
+
+SYSBENCH FILEIO IOPS
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Sysbench file rand read (IOPS) |12495 | 4925 | 1232 | 10586 | 0 | 5894
+| Sysbench file rand write (IOPS) |5478 | 1415 | 1105 | 638 | 0 | 4482
+|-
+
+
+SYSBENCH OLTP
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| DB R/W (request/second) |232.266 | 212.242 | 245.590 | 176.700 | 245.127 | 243.832
+| request approx. 95% (ms) |218.490 | 242.100 | 203.210 | 268.086 | 203.410 | 205.786
+|-
+
+
+DD CPU
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| dd CPU (seconds) |3.292 | 2.935 | 2.684 | 4.199 | 2.667 | 2.715
+|-
+
+
+DD IO
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| dd IO (MB/s) |702.600 | 467.400 | 550.000 | 163.600 | 477.000 | 458.200
+|-
+
+
+FIO MB/S
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Read IO (MB/s) |581.952 | 111.622 | 3.999 | 266.779 | 249.672 | 244.385
+| Write IO (MB/s) |35.317 | 93.601 | 3.991 | 84.684 | 192.748 | 194.879
+|-
+
+
+FIO IOPS
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Read IOPS |145487 | 27905 | 999 | 66694 | 62417 | 61095
+| Write IOPS |8829 | 23400 | 997 | 21170 | 48186 | 48719
+|-
+
+
+SPEEDTEST NEAR
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Nearest Download (Mb/s) |743.270 | 719.030 | 99.507 | 815.250 |  | 584.740
+| Nearest Upload (Mb/s) |464.403 | 273.677 | 93.873 | 288.130 |  | 94.037
+|-
+
+
+SPEEDTEST EUR DOWN
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Madrid |376.187 | 390.947 | 98.940 | 367.177 |  | 535.477
+| Barcelona |489.210 | 319.777 | 98.550 | 558.573 |  | 796.617
+| Paris |720.700 | 343.067 | 96.237 | 339.763 |  | 493.723
+| London |1260.607 | 1395.290 | 98.897 | 766.277 |  | 3050.463
+| Berlin |525.137 | 309.860 | 94.243 | 453.300 |  | 943.980
+| Rome |527.560 | 321.333 | 98.910 | 636.857 |  | 964.350
+|-
+
+
+SPEEDTEST EUR UP
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Madrid |172.437 | 151.977 | 87.937 | 57.333 |  | 128.560
+| Barcelona |148.080 | 152.757 | 85.670 | 41.480 |  | 177.963
+| Paris |337.737 | 182.267 | 91.173 | 199.737 |  | 169.450
+| London |282.380 | 302.350 | 86.360 | 107.260 |  | 489.013
+| Berlin |206.170 | 99.223 | 86.353 | 75.100 |  | 194.517
+| Rome |44.350 | 116.900 | 87.387 | 59.053 |  | 121.390
+|-
+
+
+DOWNLOADS 100MB V4
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Cachefly CDN | A |123.000 | 84.367 | 11.033 | 82.567 |  | 182.333
+| DigitalOcean (GB) | B |137.000 | 90.767 | 11.900 | 79.633 |  | 148.333
+| LeaseWeb (NL) | C |87.867 | 100.067 | 11.900 | 105.667 |  | 162.333
+| Linode (GB) | D |125.333 | 110.667 | 11.900 | 77.233 |  | 134.667
+| Online.net (FR) | E |66.200 | 17.090 | 11.900 | 110.300 |  | 73.267
+| OVH (FR) | F |53.900 | 43.100 | 12.000 | 41.800 |  | 
+| Softlayer (FR) | G |77.267 | 34.067 | 11.800 | 52.100 |  | 79.533
+| Vultr (GB) | H |121.667 | 32.867 | 11.900 | 60.200 |  | 195.000
+|-
+
+
+DOWNLOADS 100MB V6
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Cachefly CDN | A | |  |  |  |  | 
+| DigitalOcean (GB) | B |145.667 | 89.700 |  | 113.000 |  | 146.000
+| LeaseWeb (NL) | C |13.600 | 98.700 |  | 106.967 |  | 174.333
+| Linode (GB) | D |126.333 | 109.667 |  | 111.333 |  | 113.333
+| Online.net (FR) | E | |  |  |  |  | 
+| OVH (FR) | F | |  |  |  |  | 
+| Softlayer (FR) | G |91.567 | 42.233 |  | 31.233 |  | 63.633
+| Vultr (GB) | H | |  |  |  |  | 
+|-
+
+
+DOWNLOADS 10GB V4
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| CDN77 (NL) |65.900 | 91.600 | 11.967 | 120.667 |  | 161.667
+| Online.net (FR) |64.333 | 21.467 | 11.933 | 117.333 |  | 158.333
+| OVH (FR) |41.150 | 54.200 | 11.967 | 37.867 |  | 158.000
+|-
+
+
+DOWNLOADS 10GB V6
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| CDN77 (NL) | |  |  |  |  | 
+| Online.net (FR) | |  |  |  |  | 
+| OVH (FR) | |  |  |  |  | 
+|-
+
+
+COMPILER
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Compile MariaDB (seconds) | |  |  |  |  | 
+|-
+
+
+TRANSCODE VIDEO
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| FPS | | 4.700 | 5.900 | 3.200 |  | 5.600
+|-
+

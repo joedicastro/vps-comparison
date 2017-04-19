@@ -1,0 +1,623 @@
+{
+    "criteria_per_log": {
+        "lynis.log": {
+            "lynis_idx": {
+                "regex": "Hardening index \\: \\[(\\d{1,3})\\]",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": false
+            },
+            "lynis_tests": {
+                "regex": "Tests performed:\\s+(\\d{1,3})",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": false
+            }
+        },
+        "unixbench.log": {
+            "unixbench_idx_1t": {
+                "regex": "System Benchmarks Index Score\\s+(\\d+\\.\\d+)",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": false
+            },
+            "unixbench_idx_2t": {
+                "regex": "System Benchmarks Index Score\\s+(\\d+\\.\\d+)",
+                "idx": 1,
+                "exp": 0,
+                "round": true,
+                "average": false
+            },
+            "unixbench_dhry": {
+                "regex": "Dhrystone 2 using register variables.+\\s(\\d+\\.\\d+)\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": false
+            },
+            "unixbench_whet": {
+                "regex": "Double-Precision Whetstone.+\\s(\\d+\\.\\d+)\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": false
+            },
+            "unixbench_execl": {
+                "regex": "Execl Throughput.+\\s(\\d+\\.\\d+)\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": false
+            },
+            "unixbench_copy1k": {
+                "regex": "File Copy 1024 bufsize 2000 maxblocks.+\\s(\\d+\\.\\d+)\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": false
+            },
+            "unixbench_copy256": {
+                "regex": "File Copy 256 bufsize 500 maxblocks.+\\s(\\d+\\.\\d+)\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": false
+            },
+            "unixbench_copy4k": {
+                "regex": "File Copy 4096 bufsize 8000 maxblocks.+\\s(\\d+\\.\\d+)\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": false
+            },
+            "unixbench_through": {
+                "regex": "Pipe Throughput.+\\s(\\d+\\.\\d+)\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": false
+            },
+            "unixbench_switch": {
+                "regex": "Pipe-based Context Switching.+\\s(\\d+\\.\\d+)\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": false
+            },
+            "unixbench_proc": {
+                "regex": "Process Creation.+\\s(\\d+\\.\\d+)\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": false
+            },
+            "unixbench_shell1": {
+                "regex": "Shell Scripts \\(1 concurrent\\).+\\s(\\d+\\.\\d+)\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": false
+            },
+            "unixbench_shell8": {
+                "regex": "Shell Scripts \\(8 concurrent\\).+\\s(\\d+\\.\\d+)\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": false
+            },
+            "unixbench_syscall": {
+                "regex": "System Call Overhead.+\\s(\\d+\\.\\d+)\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": false
+            }
+        },
+        "sysbench_cpu.log": {
+            "sysbench_sec": {
+                "regex": "total time\\:.+\\s(\\d+\\.\\d+)s\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            }
+        },
+        "sysbench_randrd.log": {
+            "sysbench_randrd_mb": {
+                "regex": "Total transferred.+\\s\\((\\d+\\.\\d+)Mb/sec\\)\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "sysbench_randrd_iops": {
+                "regex": "\\s(\\d+\\.\\d+) Requests/sec executed\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": false,
+                "average": true
+            }
+        },
+        "sysbench_randrw.log": {
+            "sysbench_randrw_mb": {
+                "regex": "Total transferred.+\\s\\((\\d+\\.\\d+)Mb/sec\\)\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "sysbench_randrw_iops": {
+                "regex": "\\s(\\d+\\.\\d+) Requests/sec executed\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": false,
+                "average": true
+            }
+        },
+        "sysbench_oltp.log": {
+            "sysbench_oltp_req": {
+                "regex": "read/write requests\\:.+\\s\\((\\d+\\.\\d+) per sec.\\)\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "sysbench_oltp_95p": {
+                "regex": "approx.  95 percentile\\:.+\\s(\\d+\\.\\d+)ms\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            }
+        },
+        "dd_cpu.log": {
+            "dd_cpu_sec": {
+                "regex": "copied,\\s(\\d+\\.\\d+) s,",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            }
+        },
+        "dd_io.log": {
+            "dd_io_mb": {
+                "regex": "s,\\s(\\d+) MB/s\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            }
+        },
+        "fio_randread.log": {
+            "fio_read_mb": {
+                "regex": "bw=(\\d+\\.?\\d+?)KB/s",
+                "idx": 0,
+                "exp": 3,
+                "round": true,
+                "average": true
+            },
+            "fio_read_iops": {
+                "regex": "iops=(\\d+),",
+                "idx": 0,
+                "exp": 0,
+                "round": false,
+                "average": true
+            }
+        },
+        "fio_randwrite.log": {
+            "fio_write_mb": {
+                "regex": "bw=(\\d+\\.?\\d+?)KB/s",
+                "idx": 0,
+                "exp": 3,
+                "round": true,
+                "average": true
+            },
+             "fio_write_iops": {
+                "regex": "iops=(\\d+),",
+                "idx": 0,
+                "exp": 0,
+                "round": false,
+                "average": true
+            }
+        },
+        "speedtest_near.log": {
+            "speedtest_near_down": {
+                "regex": "Download:\\s(\\d+\\.\\d+) Mbit/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "speedtest_near_up": {
+                "regex": "Upload:\\s(\\d+\\.\\d+) Mbit/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            }
+        },
+        "speedtest_bar.log": {
+            "speedtest_bar_down": {
+                "regex": "Download:\\s(\\d+\\.\\d+) Mbit/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "speedtest_bar_up": {
+                "regex": "Upload:\\s(\\d+\\.\\d+) Mbit/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            }
+        },
+        "speedtest_ber.log": {
+            "speedtest_ber_down": {
+                "regex": "Download:\\s(\\d+\\.\\d+) Mbit/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "speedtest_ber_up": {
+                "regex": "Upload:\\s(\\d+\\.\\d+) Mbit/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            }
+        },
+        "speedtest_lon.log": {
+            "speedtest_lon_down": {
+                "regex": "Download:\\s(\\d+\\.\\d+) Mbit/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "speedtest_lon_up": {
+                "regex": "Upload:\\s(\\d+\\.\\d+) Mbit/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            }
+        },
+        "speedtest_mad.log": {
+            "speedtest_mad_down": {
+                "regex": "Download:\\s(\\d+\\.\\d+) Mbit/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "speedtest_mad_up": {
+                "regex": "Upload:\\s(\\d+\\.\\d+) Mbit/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            }
+        },
+        "speedtest_par.log": {
+            "speedtest_par_down": {
+                "regex": "Download:\\s(\\d+\\.\\d+) Mbit/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "speedtest_par_up": {
+                "regex": "Upload:\\s(\\d+\\.\\d+) Mbit/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            }
+        },
+        "speedtest_rom.log": {
+            "speedtest_rom_down": {
+                "regex": "Download:\\s(\\d+\\.\\d+) Mbit/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "speedtest_rom_up": {
+                "regex": "Upload:\\s(\\d+\\.\\d+) Mbit/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            }
+        },
+        "downloads.log": {
+            "downloads_cach_100m4": {
+                "regex": "CacheFly CDN \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_cach_100m6": {
+                "regex": "CacheFly CDN \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_do_100m4": {
+                "regex": "DigitalOcean \\(GB\\) \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_do_100m6": {
+                "regex": "DigitalOcean \\(GB\\) \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_lea_100m4": {
+                "regex": "LeaseWeb \\(NL\\) \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_lea_100m6": {
+                "regex": "LeaseWeb \\(NL\\) \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_lin_100m4": {
+                "regex": "Linode \\(GB\\) \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_lin_100m6": {
+                "regex": "Linode \\(GB\\) \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_onl_100m4": {
+                "regex": "Online.net \\(FR\\) \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_onl_100m6": {
+                "regex": "Online.net \\(FR\\) \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_ovh_100m4": {
+                "regex": "OVH \\(FR\\) \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_ovh_100m6": {
+                "regex": "OVH \\(FR\\) \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_soft_100m4": {
+                "regex": "Softlayer \\(FR\\) \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_soft_100m6": {
+                "regex": "Softlayer \\(FR\\) \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_vul_100m4": {
+                "regex": "Vultr \\(GB\\) \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_vul_100m6": {
+                "regex": "Vultr \\(GB\\) \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_cdn_10g4": {
+                "regex": "CDN77.com \\(NL\\) \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_cdn_10g6": {
+                "regex": "CDN77.com \\(NL\\) \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_onl_10g4": {
+                "regex": "Online.net 10G \\(FR\\) \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_onl_10g6": {
+                "regex": "Online.net 10G \\(FR\\) \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_ovh_10g4": {
+                "regex": "OVH 10G \\(FR\\) \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            },
+            "downloads_ovh_10g6": {
+                "regex": "OVH 10G \\(FR\\) \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            }
+        },
+        "compiler.log": {
+            "compiler_sec": {
+                "regex": "real\\s(\\d+\\.\\d+)\\n",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            }
+        },
+        "transcode.log": {
+            "transcode_fps": {
+                "regex": "fps=(\\d+\\.\\d+).*\\nvideo:",
+                "idx": 0,
+                "exp": 0,
+                "round": true,
+                "average": true
+            }
+        }
+    },
+
+    "criteria_per_table": {
+        "lynis": {
+            "lynis_idx": "Lynis (hardening index)",
+            "lynis_tests": "Lynis (tests performed)"
+        },
+        "unixbench": {
+            "unixbench_idx_1t": "UnixBench (index, 1 thread)",
+            "unixbench_idx_2t": "UnixBench (index, 2 thread)"
+        },
+        "unixbench_detailed": {
+            "unixbench_dhry": "Dhrystone 2 using register variables | A",
+            "unixbench_whet": "Double-Precision Whetstone | B",
+            "unixbench_execl": "Execl Throughput | C",
+            "unixbench_copy1k": "File Copy 1024 bufsize 2000 maxblocks | D",
+            "unixbench_copy256": "File Copy 256 bufsize 500 maxblocks | E",
+            "unixbench_copy4k": "File Copy 4096 bufsize 8000 maxblocks | F",
+            "unixbench_through": "Pipe Throughput | G",
+            "unixbench_switch": "Pipe-based Context Switching | H",
+            "unixbench_proc": "Process Creation | I",
+            "unixbench_shell1": "Shell Scripts (1 concurrent) | J",
+            "unixbench_shell8": "Shell Scripts (8 concurrent) | K",
+            "unixbench_syscall": "System Call Overhead | L"
+        },
+        "sysbench_cpu": {
+            "sysbench_sec": "Sysbench CPU (seconds)"
+        },
+        "sysbench_fileio_mb/s": {
+            "sysbench_randrd_mb": "Sysbench file rand read (Mb/s)",
+            "sysbench_randrw_mb": "Sysbench file rand write (Mb/s)"
+        },
+        "sysbench_fileio_iops": {
+            "sysbench_randrd_iops": "Sysbench file rand read (IOPS)",
+            "sysbench_randrw_iops": "Sysbench file rand write (IOPS)"
+        },
+        "sysbench_oltp": {
+            "sysbench_oltp_req": "DB R/W (request/second)",
+            "sysbench_oltp_95p": "request approx. 95% (ms)"
+        },
+        "dd_cpu": {
+            "dd_cpu_sec": "dd CPU (seconds)"
+        },
+        "dd_io": {
+            "dd_io_mb": "dd IO (MB/s)"
+        },
+        "fio_mb/s": {
+            "fio_read_mb": "Read IO (MB/s)",
+            "fio_write_mb": "Write IO (MB/s)"
+        },
+        "fio_iops": {
+            "fio_read_iops": "Read IOPS",
+            "fio_write_iops": "Write IOPS"
+        },
+        "speedtest_near": {
+            "speedtest_near_down": "Nearest Download (Mb/s)",
+            "speedtest_near_up": "Nearest Upload (Mb/s)"
+        },
+        "speedtest_eur_down": {
+            "speedtest_mad_down": "Madrid",
+            "speedtest_bar_down": "Barcelona",
+            "speedtest_par_down": "Paris",
+            "speedtest_lon_down": "London",
+            "speedtest_ber_down": "Berlin",
+            "speedtest_rom_down": "Rome"
+        },
+        "speedtest_eur_up": {
+            "speedtest_mad_up": "Madrid",
+            "speedtest_bar_up": "Barcelona",
+            "speedtest_par_up": "Paris",
+            "speedtest_lon_up": "London",
+            "speedtest_ber_up": "Berlin",
+            "speedtest_rom_up": "Rome"
+        },
+        "downloads_100mb_v4": {
+            "downloads_cach_100m4": "Cachefly CDN | A",
+            "downloads_do_100m4": "DigitalOcean (GB) | B",
+            "downloads_lea_100m4": "LeaseWeb (NL) | C",
+            "downloads_lin_100m4": "Linode (GB) | D",
+            "downloads_onl_100m4": "Online.net (FR) | E",
+            "downloads_ovh_100m4": "OVH (FR) | F",
+            "downloads_soft_100m4": "Softlayer (FR) | G",
+            "downloads_vul_100m4": "Vultr (GB) | H"
+        },
+        "downloads_100mb_v6": {
+            "downloads_cach_100m6": "Cachefly CDN | A",
+            "downloads_do_100m6": "DigitalOcean (GB) | B",
+            "downloads_lea_100m6": "LeaseWeb (NL) | C",
+            "downloads_lin_100m6": "Linode (GB) | D",
+            "downloads_onl_100m6": "Online.net (FR) | E",
+            "downloads_ovh_100m6": "OVH (FR) | F",
+            "downloads_soft_100m6": "Softlayer (FR) | G",
+            "downloads_vul_100m6": "Vultr (GB) | H"
+        },
+        "downloads_10gb_v4": {
+            "downloads_cdn_10g4": "CDN77 (NL)",
+            "downloads_onl_10g4": "Online.net (FR)",
+            "downloads_ovh_10g4": "OVH (FR)"
+        },
+        "downloads_10gb_v6": {
+            "downloads_cdn_10g6": "CDN77 (NL)",
+            "downloads_onl_10g6": "Online.net (FR)",
+            "downloads_ovh_10g6": "OVH (FR)"
+        },
+        "compiler": {
+            "compiler_sec": "Compile MariaDB (seconds)"
+        },
+        "transcode_video": {
+            "transcode_fps": "FPS"
+        }
+    }
+}
