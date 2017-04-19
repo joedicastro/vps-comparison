@@ -263,13 +263,38 @@ Notes:
  the same test.
 
  The graphs are generated with gnuplot directly from the tables of the ~README.org~ org-mode file.
+ The tables are also automatically generated with a python script gathering the
+ data contained in the log files. The output is a ~/logs/tables.org~ file that contain
+ tables likes this:
 
- TODO:
- 
- The next steps are going to add a few more tests and also to create two local
- scripts: one to collect the data from the logs automatically and get the averages in
- a csv table format, and other to clean the IPs from the logs. In this way would
- be more easy to create new tables and graphs with the data already available.
+#+BEGIN_EXAMPLE
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Lynis (hardening index) |59 | 67 | 62 | 64 | 60 | 60
+| Lynis (tests performed) |220 | 220 | 220 | 225 | 230 | 231
+|-
+#+END_EXAMPLE
+
+That does not seems like a table, but thanks to the awesome org-mode table
+manipulation features, only by using the ~Ctrl-C Ctrl-C~ key combination that
+becomes this:
+
+#+BEGIN_EXAMPLE
+|-------------------------+------------------+--------------------------+--------------------+----------------------+----------------------+----------------------|
+|                         | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu |
+|-------------------------+------------------+--------------------------+--------------------+----------------------+----------------------+----------------------|
+| Lynis (hardening index) |               59 |                       67 |                 62 |                   64 |                   60 |                   60 |
+| Lynis (tests performed) |              220 |                      220 |                220 |                  225 |                  230 |                  231 |
+|-------------------------+------------------+--------------------------+--------------------+----------------------+----------------------+----------------------|
+#+END_EXAMPLE
+
+And finally using also a little magic from org-mode, org-babel and gnuplot, that
+table would generate automatically a graph like the ones showed here with only a
+few lines of text (see this file in raw mode to see how).
+
+There is another python script that automatically removes any public IPv4/IPv6
+from the log files.
 
 *** WARNING
 
