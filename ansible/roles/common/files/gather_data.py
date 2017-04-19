@@ -125,8 +125,6 @@ def main():
     with open(os.path.join(args.path, 'tables.org'), 'w') as tables_file:
         tables_file.write(tables)
 
-    print(tables)
-
 
 if __name__ == '__main__':
     main()
