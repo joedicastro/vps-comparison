@@ -3,7 +3,7 @@
 * VPS Comparison
 
 A comparison between some VPS providers that have data centers located in
-*Europe*. 
+*Europe*.
 
 Initially I'm comparing only entry plans, below *5$* monthly.
 
@@ -211,7 +211,7 @@ Notes:
 - Vultr never sends you the root password, only the needed ones for one-click apps.
 - Linode only register the last login time for each user, and does not register the IP.
 - The account password recovery should be always through a reset link by email, and never get you current password back (and in plain text), but you never know... and if you find a provider doing that, you don't need to know anymore, get out of there as soon as possible and never reuse that password (any password).
-  
+
 * Plans (≤5$)
 
 ** Features
@@ -257,15 +257,18 @@ Notes:
 - Scaleway uses dynamic IPs by default as private IPs and you only can opt to use static IPs if you *remove* the Public IP from the instance.
 
 * Tests
-  
+
  All the numbers showed here can be founded in the ~/logs~ folder in this
  repository, keep in mind that usually I show averages of several iterations of
  the same test.
 
- The graphs are generated with gnuplot directly from the tables of the ~README.org~ org-mode file.
- The tables are also automatically generated with a python script gathering the
- data contained in the log files. The output is a ~/logs/tables.org~ file that contain
- tables likes this:
+ The graphs are generated with gnuplot directly from the tables of the
+ ~README.org~ org-mode file.  The tables are also automatically generated with a
+ python script (~/ansible/roles/common/files/gather_data.py~) gathering the data
+ contained in the log files. To be able to add more tests without touching the
+ script, the criteria to gather the data and generate the tables are stored in a
+ separate json file (~/ansible/roles/common/files/criteria.json~). The output of
+ that script is a ~/logs/tables.org~ file that contain tables likes this:
 
 #+BEGIN_EXAMPLE
 |-
@@ -291,10 +294,11 @@ becomes this:
 
 And finally using also a little magic from org-mode, org-babel and gnuplot, that
 table would generate automatically a graph like the ones showed here with only a
-few lines of text (see this file in raw mode to see how) and using the same key
-combination over those lines. Thus, the only manual step is to copy/paste those
-tables from that file into this one, and with only two key combinations for
-table/graph the job is done.
+few lines of text (see this file in raw mode to see how) and the ~Ctrl-c " g~
+key combination over those lines. Thus, the only manual step is to copy/paste
+those tables from that file into this one, and with only two key combinations
+for table/graph the job is almost done (you can move/add/delete columns very
+easily with org-mode).
 
 There is another python script that automatically removes any public IPv4/IPv6
 from the log files.
@@ -323,9 +327,9 @@ from the log files.
    present, but serves you as a guide of how to manage them. For example in this
    server:
 
-#+BEGIN_SRC 
+#+BEGIN_SRC
     [digitalocean]
-    do-5bucks-ubuntu          ansible_host=X.X.X.X   ansible_python_interpreter=/usr/bin/python3 
+    do-5bucks-ubuntu          ansible_host=X.X.X.X   ansible_python_interpreter=/usr/bin/python3
 #+END_SRC
 
    You should have to put your own server IP. The interpreter path is only
@@ -334,11 +338,11 @@ from the log files.
    of a server, and I'm grouping servers by provider. So, a complete example for
    a new provider using a new instance running Ubuntu should be like this:
 
-#+BEGIN_SRC 
+#+BEGIN_SRC
     [new_provider]
-    new_provider-plan_name-ubuntu   ansible_host=X.X.X.X   ansible_python_interpreter=/usr/bin/python3 
+    new_provider-plan_name-ubuntu   ansible_host=X.X.X.X   ansible_python_interpreter=/usr/bin/python3
 
-    [new_provider:vars] 
+    [new_provider:vars]
     ansible_user=root
 #+END_SRC
 
@@ -352,7 +356,7 @@ from the log files.
 
 #+BEGIN_SRC sh
   $ ansible all -m ping
-#+END_SRC   
+#+END_SRC
 
    If it's the first time that you are SSHing to a server, you are probably
    going to be asked to add it to the ~\~/.ssh/known_hosts~ file.
@@ -427,40 +431,46 @@ from the log files.
 
 [[./img/unixbench.png]]
 
- 
+
 **** Individual test indexes of the UnixBench benchmark.
- #+PLOT: ind:2 type:2d with:histogram set:"yrange [0:*]" 
- #+PLOT: set:"style histogram cluster gap 1"
- #+PLOT: set:"style fill solid"
- #+PLOT: set:"boxwidth bw"
- #+PLOT: set:"grid"
- #+PLOT: set:"xrange writeback extend"
- #+PLOT: set:"xtics scale 0"
- #+PLOT: set:"key outside horizontal"
- #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,400"
- #+PLOT: file:"./img/unixbench_detailed.png"
-   |---------------------------------------+---+---------------+-------------+-----------+---------------+----------------+----------------|
-   | Plan                                  |   | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
-   |---------------------------------------+---+---------------+-------------+-----------+---------------+----------------+----------------|
-   | Dhrystone 2 using register variables  | A |        2510.2 |      2150.0 |    2061.0 |        2100.1 |         2530.5 |         2474.5 |
-   | Double-Precision Whetstone            | B |         583.6 |       539.7 |     474.6 |         732.8 |          578.2 |          656.9 |
-   | Execl Throughput                      | C |        1038.9 |       941.8 |     799.5 |         736.0 |          963.8 |         1027.8 |
-   | File Copy 1024 bufsize 2000 maxblocks | D |        2799.5 |      1972.7 |    2222.5 |        1186.5 |         2775.3 |         2608.8 |
-   | File Copy 256 bufsize 500 maxblocks   | E |        1908.7 |      1286.2 |    1440.1 |         809.9 |         1888.8 |         1851.4 |
-   | File Copy 4096 bufsize 8000 maxblocks | F |        3507.1 |      2435.6 |    2692.6 |        2228.1 |         3248.4 |         3212.1 |
-   | Pipe Throughput                       | G |        1846.5 |      1472.1 |    1468.7 |        1785.3 |         1813.6 |         1789.6 |
-   | Pipe-based Context Switching          | H |         744.0 |       623.2 |     597.2 |         432.6 |          739.0 |          746.3 |
-   | Process Creation                      | I |         904.5 |       690.5 |     706.8 |         691.8 |          848.1 |          949.9 |
-   | Shell Scripts (1 concurrent)          | J |        1883.2 |      1442.0 |    1501.9 |        1268.6 |         1787.8 |         1851.2 |
-   | Shell Scripts (8 concurrent)          | K |        1725.0 |      1144.4 |    1362.7 |        1264.8 |         1665.9 |         1679.1 |
-   | System Call Overhead                  | L |        2410.1 |      2034.4 |    1955.6 |        1777.9 |         2461.0 |         2366.4 |
-   |---------------------------------------+---+---------------+-------------+-----------+---------------+----------------+----------------|
- 
+
+     In this table I show the individual tests results that compose the UnixBench
+     benchmark index.
+
+    #+PLOT: ind:2 type:2d with:histogram set:"yrange [0:*]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,400"
+    #+PLOT: file:"./img/unixbench_detailed.png"
+
+    |---------------------------------------+---+---------------+-------------+-----------+---------------+----------------+----------------|
+    | Plan                                  |   | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+    |---------------------------------------+---+---------------+-------------+-----------+---------------+----------------+----------------|
+    | Dhrystone 2 using register variables  | A |        2510.2 |      2150.0 |    2061.0 |        1057.9 |         2530.5 |         2474.5 |
+    | Double-Precision Whetstone            | B |         583.6 |       539.7 |     474.6 |         367.5 |          578.2 |          656.9 |
+    | Execl Throughput                      | C |        1038.9 |       941.8 |     799.5 |         400.0 |          963.8 |         1027.8 |
+    | File Copy 1024 bufsize 2000 maxblocks | D |        2799.5 |      1972.7 |    2222.5 |        1094.4 |         2775.3 |         2608.8 |
+    | File Copy 256 bufsize 500 maxblocks   | E |        1908.7 |      1286.2 |    1440.1 |         752.6 |         1888.8 |         1851.4 |
+    | File Copy 4096 bufsize 8000 maxblocks | F |        3507.1 |      2435.6 |    2692.6 |        1729.9 |         3248.4 |         3212.1 |
+    | Pipe Throughput                       | G |        1846.5 |      1472.1 |    1468.7 |         894.0 |         1813.6 |         1789.6 |
+    | Pipe-based Context Switching          | H |         744.0 |       623.2 |     597.2 |          60.3 |          739.0 |          746.3 |
+    | Process Creation                      | I |         904.5 |       690.5 |     706.8 |         288.2 |          848.1 |          949.9 |
+    | Shell Scripts (1 concurrent)          | J |        1883.2 |      1442.0 |    1501.9 |         801.9 |         1787.8 |         1851.2 |
+    | Shell Scripts (8 concurrent)          | K |        1725.0 |      1144.4 |    1362.7 |        1221.8 |         1665.9 |         1679.1 |
+    | System Call Overhead                  | L |        2410.1 |      2034.4 |    1955.6 |        1154.7 |         2461.0 |         2366.4 |
+    |---------------------------------------+---+---------------+-------------+-----------+---------------+----------------+----------------|
+
  [[./img/unixbench_detailed.png]]
 
    Notes:
 
-   - Scaleway VC1S is the only plan that offers two CPU threads, so I show in the table the index for one and two threads but in the graph I only show the single thread one for a more fair comparison.
+   - Scaleway VC1S is the only plan that offers two CPU threads, so in the table
+     and the graph I only show the single thread numbers for a more fair comparison.
 
 *** Sysbench
 
@@ -470,10 +480,10 @@ from the log files.
       with the last configuration, and therefore the average come from three
       iterations of the tests instead of five.
     - I'm only using one thread here for Scaleway's plan, to a more fair comparison.
-     
+
 **** Sysbench cpu
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]" 
+  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
   #+PLOT: set:"style histogram cluster gap 1"
   #+PLOT: set:"style fill solid"
   #+PLOT: set:"boxwidth bw"
@@ -490,10 +500,10 @@ from the log files.
     |------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
 
   [[./img/sysbench_cpu.png]]
- 
+
 **** Sysbench fileio
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]" 
+  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
   #+PLOT: set:"style histogram cluster gap 1"
   #+PLOT: set:"style fill solid"
   #+PLOT: set:"boxwidth bw"
@@ -512,7 +522,7 @@ from the log files.
 
 [[./img/sysbench_fileio_mb.png]]
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]" 
+  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
   #+PLOT: set:"style histogram cluster gap 1"
   #+PLOT: set:"style fill solid"
   #+PLOT: set:"boxwidth bw"
@@ -536,7 +546,7 @@ from the log files.
      I used the MySQL database for this tests, but the results could be
      applied also to the MariaDB database.
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]" 
+  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
   #+PLOT: set:"style histogram cluster gap 1"
   #+PLOT: set:"style fill solid"
   #+PLOT: set:"boxwidth bw"
@@ -552,12 +562,12 @@ from the log files.
     | DB R/W (request/second)  |       245.590 |      212.42 |   232.266 |       176.700 |        245.127 |        243.832 |
     | request approx. 95% (ms) |       203.210 |     242.100 |   218.490 |       268.086 |        203.410 |        205.786 |
     |--------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
- 
+
 [[./img/sysbench_oltp.png]]
 
 *** fio
-  
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]" 
+
+  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
   #+PLOT: set:"style histogram cluster gap 1"
   #+PLOT: set:"style fill solid"
   #+PLOT: set:"boxwidth bw"
@@ -576,7 +586,7 @@ from the log files.
 
 [[./img/fio_io.png]]
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]" 
+  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
   #+PLOT: set:"style histogram cluster gap 1"
   #+PLOT: set:"style fill solid"
   #+PLOT: set:"boxwidth bw"
@@ -600,7 +610,7 @@ from the log files.
     A pair of well-known fast tests to measure the CPU and disk performance. Not
     very reliable, but they are good enough to get an idea.
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:4.5]" 
+  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:4.5]"
   #+PLOT: set:"style histogram cluster gap 1"
   #+PLOT: set:"style fill solid"
   #+PLOT: set:"boxwidth bw"
@@ -618,7 +628,7 @@ from the log files.
 
   [[./img/dd_cpu.png]]
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]" 
+  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
   #+PLOT: set:"style histogram cluster gap 1"
   #+PLOT: set:"style fill solid"
   #+PLOT: set:"boxwidth bw"
@@ -633,14 +643,14 @@ from the log files.
     |--------------+---------------+-------------+-----------+---------------+----------------+----------------|
     | dd IO (MB/s) |           550 |       467.4 |     702.6 |         163.6 |            477 |          458.2 |
     |--------------+---------------+-------------+-----------+---------------+----------------+----------------|
- 
+
 [[./img/dd_io.png]]
 
 *** compiler
 
     This test measures the times that the server takes to compile the MariaDB server.
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]" 
+  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
   #+PLOT: set:"style histogram cluster gap 1"
   #+PLOT: set:"style fill solid"
   #+PLOT: set:"boxwidth bw"
@@ -656,7 +666,7 @@ from the log files.
     | Compile MariaDB (seconds) |        1904.7 |      3070.2 | out of memory |        5692.7 | Temp. unavailable |         2069.3 |
     |---------------------------+---------------+-------------+---------------+---------------+-------------------+----------------|
 
-[[./img/compile_mariadb.png]] 
+[[./img/compile_mariadb.png]]
 
   Notes:
 
@@ -670,7 +680,7 @@ from the log files.
 
 **** 100Mbit file IPv4
 
-  #+PLOT: ind:2 type:2d with:histogram set:"yrange [0:*]" 
+  #+PLOT: ind:2 type:2d with:histogram set:"yrange [0:*]"
   #+PLOT: set:"style histogram cluster gap 1"
   #+PLOT: set:"style fill solid"
   #+PLOT: set:"boxwidth bw"
@@ -697,7 +707,7 @@ from the log files.
 
 **** 100Mbit file IPv6
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]" 
+  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
   #+PLOT: set:"style histogram cluster gap 1"
   #+PLOT: set:"style fill solid"
   #+PLOT: set:"boxwidth bw"
@@ -720,7 +730,7 @@ from the log files.
 
 **** 10Gbit file IPv4
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]" 
+  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
   #+PLOT: set:"style histogram cluster gap 1"
   #+PLOT: set:"style fill solid"
   #+PLOT: set:"boxwidth bw"
@@ -751,7 +761,7 @@ from the log files.
 
     Nearest location
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]" 
+  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
   #+PLOT: set:"style histogram cluster gap 1"
   #+PLOT: set:"style fill solid"
   #+PLOT: set:"boxwidth bw"
@@ -771,7 +781,7 @@ from the log files.
 [[./img/speedtest_near.png]]
 
   European cities download
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]" 
+  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
   #+PLOT: set:"style histogram cluster gap 1"
   #+PLOT: set:"style fill solid"
   #+PLOT: set:"boxwidth bw"
@@ -796,7 +806,7 @@ from the log files.
 
 
   European cities upload
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]" 
+  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
   #+PLOT: set:"style histogram cluster gap 1"
   #+PLOT: set:"style fill solid"
   #+PLOT: set:"boxwidth bw"
@@ -824,7 +834,7 @@ from the log files.
     In this test the measure is the frames per second achieved to transcode a
     video with ~ffmpeg~ (or ~avconv~ in Debian). In this test, more is better.
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:6.5]" 
+  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:6.5]"
   #+PLOT: set:"style histogram cluster gap 1"
   #+PLOT: set:"style fill solid"
   #+PLOT: set:"boxwidth bw"
@@ -840,7 +850,7 @@ from the log files.
     |------+---------------+-------------+---------------+---------------+-------------------+----------------|
     | FPS  |           5.9 |         4.7 | out of memory |           3.2 | Temp. unavailable |            5.6 |
     |------+---------------+-------------+---------------+---------------+-------------------+----------------|
- 
+
 [[./img/transcode.png]]
 
    Note:
@@ -853,7 +863,7 @@ from the log files.
 
 ** Default Security
 
-#+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]" 
+#+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
 #+PLOT: set:"style histogram cluster gap 1"
 #+PLOT: set:"style fill solid"
 #+PLOT: set:"boxwidth bw"
@@ -872,7 +882,7 @@ from the log files.
 [[./img/lynis.png]]
 
  Notes:
- 
+
 - All the instances were allocated in London (GB), except for OVH VPS SSD 1 in Gravelines (FR) and Scaleway VC1S in Paris (FR).
 - All the instances were running on Ubuntu 16.04 LTS
 - The number between round brackets are the number of tests performed in every server.
