@@ -292,7 +292,7 @@ becomes this:
 |-------------------------+------------------+--------------------------+--------------------+----------------------+----------------------+----------------------|
 #+END_EXAMPLE
 
-And finally using also a little magic from org-mode, org-babel and gnuplot, that
+And finally using also a little magic from org-mode, org-plot and gnuplot, that
 table would generate automatically a graph like the ones showed here with only a
 few lines of text (see this file in raw mode to see how) and the ~Ctrl-c " g~
 key combination over those lines. Thus, the only manual step is to copy/paste
@@ -412,22 +412,28 @@ from the log files.
   depending of the server- and the variations between several runs are almost
   never significant.
 
-#+PLOT: ind:1 type:2d with:histogram set:"yrange [0:1700]"
-#+PLOT: set:"style histogram cluster gap 1"
-#+PLOT: set:"style fill solid"
-#+PLOT: set:"boxwidth bw"
-#+PLOT: set:"grid"
-#+PLOT: set:"xrange writeback extend"
-#+PLOT: set:"xtics scale 0"
-#+PLOT: set:"key outside horizontal"
-#+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-#+PLOT: file:"./img/unixbench.png"
-|------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
-| Plan                         | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
-|------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
-| UnixBench (index, 1 thread)  |        1598.1 |      1248.6 |    1264.6 |         629.8 |         1555.1 |         1579.9 |
-| UnixBench (index, 2 threads) |               |             |           |        1115.1 |                |                |
-|------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:1700]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/unixbench.png"
+    |------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+    | Plan                         | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+    |------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+    | UnixBench (index, 1 thread)  |        1598.1 |      1248.6 |    1264.6 |         629.8 |         1555.1 |         1579.9 |
+    | UnixBench (index, 2 threads) |               |             |           |        1115.1 |                |                |
+    |------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
 
 [[./img/unixbench.png]]
 
@@ -440,6 +446,13 @@ from the log files.
     #+PLOT: ind:2 type:2d with:histogram set:"yrange [0:*]"
     #+PLOT: set:"style histogram cluster gap 1"
     #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb 'black'"   # This is the dumb column to identify the rows
+    #+PLOT: set:"linetype 2 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 3 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 4 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 5 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 6 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 7 lc rgb '#0072B2'"
     #+PLOT: set:"boxwidth bw"
     #+PLOT: set:"grid"
     #+PLOT: set:"xrange writeback extend"
@@ -447,7 +460,6 @@ from the log files.
     #+PLOT: set:"key outside horizontal"
     #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,400"
     #+PLOT: file:"./img/unixbench_detailed.png"
-
     |---------------------------------------+---+---------------+-------------+-----------+---------------+----------------+----------------|
     | Plan                                  |   | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
     |---------------------------------------+---+---------------+-------------+-----------+---------------+----------------+----------------|
@@ -483,16 +495,22 @@ from the log files.
 
 **** Sysbench cpu
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
-  #+PLOT: set:"style histogram cluster gap 1"
-  #+PLOT: set:"style fill solid"
-  #+PLOT: set:"boxwidth bw"
-  #+PLOT: set:"grid"
-  #+PLOT: set:"xrange writeback extend"
-  #+PLOT: set:"xtics scale 0"
-  #+PLOT: set:"key outside horizontal"
-  #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-  #+PLOT: file:"./img/sysbench_cpu.png"
+    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/sysbench_cpu.png"
     |------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
     | Plan                   | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
     |------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
@@ -503,16 +521,22 @@ from the log files.
 
 **** Sysbench fileio
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
-  #+PLOT: set:"style histogram cluster gap 1"
-  #+PLOT: set:"style fill solid"
-  #+PLOT: set:"boxwidth bw"
-  #+PLOT: set:"grid"
-  #+PLOT: set:"xrange writeback extend"
-  #+PLOT: set:"xtics scale 0"
-  #+PLOT: set:"key outside horizontal"
-  #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-  #+PLOT: file:"./img/sysbench_fileio_mb.png"
+    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/sysbench_fileio_mb.png"
     |---------------------------------+---------------+-------------+-----------+---------------+-------------------+----------------|
     | Plan                            | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
     |---------------------------------+---------------+-------------+-----------+---------------+-------------------+----------------|
@@ -522,16 +546,22 @@ from the log files.
 
 [[./img/sysbench_fileio_mb.png]]
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
-  #+PLOT: set:"style histogram cluster gap 1"
-  #+PLOT: set:"style fill solid"
-  #+PLOT: set:"boxwidth bw"
-  #+PLOT: set:"grid"
-  #+PLOT: set:"xrange writeback extend"
-  #+PLOT: set:"xtics scale 0"
-  #+PLOT: set:"key outside horizontal"
-  #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-  #+PLOT: file:"./img/sysbench_fileio_iops.png"
+    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/sysbench_fileio_iops.png"
     |---------------------------------+---------------+-------------+-----------+---------------+-------------------+----------------|
     | Plan                            | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
     |---------------------------------+---------------+-------------+-----------+---------------+-------------------+----------------|
@@ -546,16 +576,22 @@ from the log files.
      I used the MySQL database for this tests, but the results could be
      applied also to the MariaDB database.
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
-  #+PLOT: set:"style histogram cluster gap 1"
-  #+PLOT: set:"style fill solid"
-  #+PLOT: set:"boxwidth bw"
-  #+PLOT: set:"grid"
-  #+PLOT: set:"xrange writeback extend"
-  #+PLOT: set:"xtics scale 0"
-  #+PLOT: set:"key outside horizontal"
-  #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-  #+PLOT: file:"./img/sysbench_oltp.png"
+    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/sysbench_oltp.png"
     |--------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
     | Plan                     | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
     |--------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
@@ -567,16 +603,22 @@ from the log files.
 
 *** fio
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
-  #+PLOT: set:"style histogram cluster gap 1"
-  #+PLOT: set:"style fill solid"
-  #+PLOT: set:"boxwidth bw"
-  #+PLOT: set:"grid"
-  #+PLOT: set:"xrange writeback extend"
-  #+PLOT: set:"xtics scale 0"
-  #+PLOT: set:"key outside horizontal"
-  #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-  #+PLOT: file:"./img/fio_io.png"
+    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/fio_io.png"
     |-----------------+---------------+-------------+-----------+---------------+----------------+----------------|
     | Plan            | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
     |-----------------+---------------+-------------+-----------+---------------+----------------+----------------|
@@ -586,16 +628,22 @@ from the log files.
 
 [[./img/fio_io.png]]
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
-  #+PLOT: set:"style histogram cluster gap 1"
-  #+PLOT: set:"style fill solid"
-  #+PLOT: set:"boxwidth bw"
-  #+PLOT: set:"grid"
-  #+PLOT: set:"xrange writeback extend"
-  #+PLOT: set:"xtics scale 0"
-  #+PLOT: set:"key outside horizontal"
-  #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-  #+PLOT: file:"./img/fio_iops.png"
+    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/fio_iops.png"
     |------------+---------------+-------------+-----------+---------------+----------------+----------------|
     | Plan       | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
     |------------+---------------+-------------+-----------+---------------+----------------+----------------|
@@ -610,16 +658,22 @@ from the log files.
     A pair of well-known fast tests to measure the CPU and disk performance. Not
     very reliable, but they are good enough to get an idea.
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:4.5]"
-  #+PLOT: set:"style histogram cluster gap 1"
-  #+PLOT: set:"style fill solid"
-  #+PLOT: set:"boxwidth bw"
-  #+PLOT: set:"grid"
-  #+PLOT: set:"xrange writeback extend"
-  #+PLOT: set:"xtics scale 0"
-  #+PLOT: set:"key outside horizontal"
-  #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-  #+PLOT: file:"./img/dd_cpu.png"
+    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:4.5]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/dd_cpu.png"
     |------------------+---------------+-------------+-----------+---------------+----------------+----------------|
     | Plan             | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
     |------------------+---------------+-------------+-----------+---------------+----------------+----------------|
@@ -628,16 +682,22 @@ from the log files.
 
   [[./img/dd_cpu.png]]
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
-  #+PLOT: set:"style histogram cluster gap 1"
-  #+PLOT: set:"style fill solid"
-  #+PLOT: set:"boxwidth bw"
-  #+PLOT: set:"grid"
-  #+PLOT: set:"xrange writeback extend"
-  #+PLOT: set:"xtics scale 0"
-  #+PLOT: set:"key outside horizontal"
-  #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-  #+PLOT: file:"./img/dd_io.png"
+    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/dd_io.png"
     |--------------+---------------+-------------+-----------+---------------+----------------+----------------|
     | Plan         | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
     |--------------+---------------+-------------+-----------+---------------+----------------+----------------|
@@ -650,16 +710,22 @@ from the log files.
 
     This test measures the times that the server takes to compile the MariaDB server.
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
-  #+PLOT: set:"style histogram cluster gap 1"
-  #+PLOT: set:"style fill solid"
-  #+PLOT: set:"boxwidth bw"
-  #+PLOT: set:"grid"
-  #+PLOT: set:"xrange writeback extend"
-  #+PLOT: set:"xtics scale 0"
-  #+PLOT: set:"key outside horizontal"
-  #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-  #+PLOT: file:"./img/compile_mariadb.png"
+    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/compile_mariadb.png"
     |---------------------------+---------------+-------------+---------------+---------------+-------------------+----------------|
     | Plan                      | OVH VPS SSD 1 | Linode 1024 | DO 5bucks     | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
     |---------------------------+---------------+-------------+---------------+---------------+-------------------+----------------|
@@ -680,16 +746,23 @@ from the log files.
 
 **** 100Mbit file IPv4
 
-  #+PLOT: ind:2 type:2d with:histogram set:"yrange [0:*]"
-  #+PLOT: set:"style histogram cluster gap 1"
-  #+PLOT: set:"style fill solid"
-  #+PLOT: set:"boxwidth bw"
-  #+PLOT: set:"grid"
-  #+PLOT: set:"xrange writeback extend"
-  #+PLOT: set:"xtics scale 0"
-  #+PLOT: set:"key outside horizontal"
-  #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-  #+PLOT: file:"./img/downloads_100v4.png"
+    #+PLOT: ind:2 type:2d with:histogram set:"yrange [0:*]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb 'black'"   # This is the dumb column to identify the rows
+    #+PLOT: set:"linetype 2 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 3 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 4 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 5 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 6 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 7 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/downloads_100v4.png"
     |-------------------+---+---------------+-------------+-----------+---------------+-------------------+----------------|
     | Plan              |   | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
     |-------------------+---+---------------+-------------+-----------+---------------+-------------------+----------------|
@@ -707,16 +780,22 @@ from the log files.
 
 **** 100Mbit file IPv6
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
-  #+PLOT: set:"style histogram cluster gap 1"
-  #+PLOT: set:"style fill solid"
-  #+PLOT: set:"boxwidth bw"
-  #+PLOT: set:"grid"
-  #+PLOT: set:"xrange writeback extend"
-  #+PLOT: set:"xtics scale 0"
-  #+PLOT: set:"key outside horizontal"
-  #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-  #+PLOT: file:"./img/downloads_100v6.png"
+    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/downloads_100v6.png"
     |-------------------+---------------+-------------+-----------+---------------+-------------------+----------------|
     | Plan              | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
     |-------------------+---------------+-------------+-----------+---------------+-------------------+----------------|
@@ -730,16 +809,22 @@ from the log files.
 
 **** 10Gbit file IPv4
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
-  #+PLOT: set:"style histogram cluster gap 1"
-  #+PLOT: set:"style fill solid"
-  #+PLOT: set:"boxwidth bw"
-  #+PLOT: set:"grid"
-  #+PLOT: set:"xrange writeback extend"
-  #+PLOT: set:"xtics scale 0"
-  #+PLOT: set:"key outside horizontal"
-  #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-  #+PLOT: file:"./img/downloads_10gv4.png"
+    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/downloads_10gv4.png"
     |-----------------+---------------+-------------+-----------+---------------+-------------------+----------------|
     | Plan            | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
     |-----------------+---------------+-------------+-----------+---------------+-------------------+----------------|
@@ -761,16 +846,22 @@ from the log files.
 
     Nearest location
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
-  #+PLOT: set:"style histogram cluster gap 1"
-  #+PLOT: set:"style fill solid"
-  #+PLOT: set:"boxwidth bw"
-  #+PLOT: set:"grid"
-  #+PLOT: set:"xrange writeback extend"
-  #+PLOT: set:"xtics scale 0"
-  #+PLOT: set:"key outside horizontal"
-  #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-  #+PLOT: file:"./img/speedtest_near.png"
+    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/speedtest_near.png"
     |-------------------------+---------------+-------------+-----------+---------------+-------------------+----------------|
     | Plan                    | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
     |-------------------------+---------------+-------------+-----------+---------------+-------------------+----------------|
@@ -781,16 +872,23 @@ from the log files.
 [[./img/speedtest_near.png]]
 
   European cities download
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
-  #+PLOT: set:"style histogram cluster gap 1"
-  #+PLOT: set:"style fill solid"
-  #+PLOT: set:"boxwidth bw"
-  #+PLOT: set:"grid"
-  #+PLOT: set:"xrange writeback extend"
-  #+PLOT: set:"xtics scale 0"
-  #+PLOT: set:"key outside horizontal"
-  #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-  #+PLOT: file:"./img/speedtest_eur_down.png"
+
+    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/speedtest_eur_down.png"
     |-----------+---------------+-------------+-----------+---------------+-------------------+----------------|
     | Plan      | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
     |-----------+---------------+-------------+-----------+---------------+-------------------+----------------|
@@ -806,16 +904,23 @@ from the log files.
 
 
   European cities upload
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
-  #+PLOT: set:"style histogram cluster gap 1"
-  #+PLOT: set:"style fill solid"
-  #+PLOT: set:"boxwidth bw"
-  #+PLOT: set:"grid"
-  #+PLOT: set:"xrange writeback extend"
-  #+PLOT: set:"xtics scale 0"
-  #+PLOT: set:"key outside horizontal"
-  #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-  #+PLOT: file:"./img/speedtest_eur_up.png"
+
+    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/speedtest_eur_up.png"
     |-----------+---------------+-------------+-----------+---------------+-------------------+----------------|
     | Plan      | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
     |-----------+---------------+-------------+-----------+---------------+-------------------+----------------|
@@ -834,17 +939,23 @@ from the log files.
     In this test the measure is the frames per second achieved to transcode a
     video with ~ffmpeg~ (or ~avconv~ in Debian). In this test, more is better.
 
-  #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:6.5]"
-  #+PLOT: set:"style histogram cluster gap 1"
-  #+PLOT: set:"style fill solid"
-  #+PLOT: set:"boxwidth bw"
-  #+PLOT: set:"grid"
-  #+PLOT: set:"datafile commentschars '#'"
-  #+PLOT: set:"xrange writeback extend"
-  #+PLOT: set:"xtics scale 0"
-  #+PLOT: set:"key outside horizontal"
-  #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-  #+PLOT: file:"./img/transcode.png"
+    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:6.5]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"datafile commentschars '#'"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/transcode.png"
     |------+---------------+-------------+---------------+---------------+-------------------+----------------|
     | Plan | OVH VPS SSD 1 | Linode 1024 | DO 5bucks     | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
     |------+---------------+-------------+---------------+---------------+-------------------+----------------|
@@ -863,21 +974,27 @@ from the log files.
 
 ** Default Security
 
-#+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
-#+PLOT: set:"style histogram cluster gap 1"
-#+PLOT: set:"style fill solid"
-#+PLOT: set:"boxwidth bw"
-#+PLOT: set:"grid"
-#+PLOT: set:"xrange writeback extend"
-#+PLOT: set:"xtics scale 0"
-#+PLOT: set:"key outside horizontal"
-#+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-#+PLOT: file:"./img/lynis.png"
- |-------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
- | Plan                    | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
- |-------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
- | Lynis (hardening index) | 62 (220)      | 67 (220)    | 59 (220)  | 64 (225)      | 60 (230)       | 60 (231)       |
- |-------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/lynis.png"
+    |-------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+    | Plan                    | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+    |-------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+    | Lynis (hardening index) | 62 (220)      | 67 (220)    | 59 (220)  | 64 (225)      | 60 (230)       | 60 (231)       |
+    |-------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
 
 [[./img/lynis.png]]
 
