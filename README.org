@@ -974,40 +974,77 @@ from the log files.
 
 ** Default Security
 
-    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
-    #+PLOT: set:"style histogram cluster gap 1"
-    #+PLOT: set:"style fill solid"
-    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
-    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
-    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
-    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
-    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
-    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
-    #+PLOT: set:"boxwidth bw"
-    #+PLOT: set:"grid"
-    #+PLOT: set:"xrange writeback extend"
-    #+PLOT: set:"xtics scale 0"
-    #+PLOT: set:"key outside horizontal"
-    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-    #+PLOT: file:"./img/lynis.png"
-    |-------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
-    | Plan                    | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
-    |-------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
-    | Lynis (hardening index) | 62 (220)      | 67 (220)    | 59 (220)  | 64 (225)      | 60 (230)       | 60 (231)       |
-    |-------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+  *Warning*: Security in a VPS is your responsibility, nobody else. But taking a
+   look to the default security applied in the default instances of a provider
+   could give you a reference of the care that they take in this matter. And
+   maybe it could give you also a good reference of how they care about their
+   own systems security.
 
-[[./img/lynis.png]]
+*** Lynis
 
- Notes:
+     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+     #+PLOT: set:"style histogram cluster gap 1"
+     #+PLOT: set:"style fill solid"
+     #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+     #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+     #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+     #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+     #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+     #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+     #+PLOT: set:"boxwidth bw"
+     #+PLOT: set:"grid"
+     #+PLOT: set:"xrange writeback extend"
+     #+PLOT: set:"xtics scale 0"
+     #+PLOT: set:"key outside horizontal"
+     #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+     #+PLOT: file:"./img/lynis.png"
+     |-------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     | Plan                    | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+     |-------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     | Lynis (hardening index) | 62 (220)      | 67 (220)    | 59 (220)  | 64 (225)      | 60 (230)       | 60 (231)       |
+     |-------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
 
-- All the instances were allocated in London (GB), except for OVH VPS SSD 1 in Gravelines (FR) and Scaleway VC1S in Paris (FR).
-- All the instances were running on Ubuntu 16.04 LTS
-- The number between round brackets are the number of tests performed in every server.
-- Linode Debian Lynis audit had two warnings: an vulnerable old kernel image and iptables not configured. In CentOS the same warning with iptables.
+ [[./img/lynis.png]]
 
- *Warning*: Lynis index should be take with caution, it's not an absolute value, only a reference. It not covers yet all the security measures of a machine and could be not well balanced to do a effective comparison.
+  Notes:
 
- *Warning*: Security in a VPS is your responsibility, nobody else. But taking a look to the default security applied in the default instances of a provider could give you a reference of the care that they take in this matter. And maybe it could give you also a good reference of how they care about their own systems security.
+ - All the instances were allocated in London (GB), except for OVH VPS SSD 1 in Gravelines (FR) and Scaleway VC1S in Paris (FR).
+ - All the instances were running on Ubuntu 16.04 LTS
+ - The number between round brackets are the number of tests performed in every server.
+
+  *Warning*: Lynis index should be take with caution, it's not an absolute value, only a reference. It not covers yet all the security measures of a machine and could be not well balanced to do a effective comparison.
+
+*** Open ports
+
+    This tests uses nmap (also netstat to double check) to see the network ports
+    and protocols that are open by default in each instance.
+
+**** open ports IPv4
+
+    |----------------+---------------+-------------+-----------+-----------------------+----------------+-----------------------|
+    | Plan           | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S         | Vultr 20GB SSD | Vultr 25GB SSD        |
+    |----------------+---------------+-------------+-----------+-----------------------+----------------+-----------------------|
+    | Open TCP ports | 22 (ssh)      | 22 (ssh)    | 22 (ssh)  | 22 (ssh)              |                | 22 (ssh)              |
+    | Open UDP ports | 68 (dhcpc)    |             |           | 68 (dhcpc), 123 (ntp) |                | 68 (dhcpc), 123 (ntp) |
+    |----------------+---------------+-------------+-----------+-----------------------+----------------+-----------------------|
+
+**** open ports IPv6
+
+    |----------------+---------------+-------------+-----------+---------------+----------------+----------------|
+    | Plan           | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+    |----------------+---------------+-------------+-----------+---------------+----------------+----------------|
+    | Open TCP ports |               | 22 (ssh)    |           | 22 (ssh)      |                | 22 (ssh)       |
+    | Open UDP ports |               | 22 (ssh)    |           | 22 (ssh)      |                | 22 (ssh)       |
+    |----------------+---------------+-------------+-----------+---------------+----------------+----------------|
+
+**** open protocols
+
+    |---------------------+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+----------------+-------------------------------------------------------------------------------------------------------------------------------|
+    | Plan                | OVH VPS SSD 1                                                                  | Linode 1024                                                                                                                                                                                    | DO 5bucks                                                                      | Scaleway VC1S                                                                                                      | Vultr 20GB SSD | Vultr 25GB SSD                                                                                                                |
+    |---------------------+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+----------------+-------------------------------------------------------------------------------------------------------------------------------|
+    | Open protocols IPv4 | 1 (icmp), 2 (igmp), 6 (tcp), 17 (udp), 103 (pim), 136 (udplite), 255 (unknown) | 1 (icmp), 2 (igmp), 4 (ipv4), 6 (tcp), 17 (udp), 41 (ipv6), 47 (gre), 50 (esp), 51 (ah), 64 (sat), 103 (pim), 108 (ipcomp), 132 (sctp), 136 (udplite), 242 (unknown), 255 (unknown)            | 1 (icmp), 2 (igmp), 6 (tcp), 17 (udp), 103 (pim), 136 (udplite), 255 (unknown) | 1 (icmp), 2 (igmp), 6 (tcp), 17 (udp), 136 (udplite), 255 (unknown)                                                |                | 1 (icmp), 2 (igmp), 6 (tcp), 17 (udp), 103 (pim), 136 (udplite), 196 (unknown), 255 (unknown)                                 |
+    | Open protocols IPv6 |                                                                                | 0 (hopopt), 4 (ipv4), 6 (tcp), 17 (udp), 41 (ipv6), 43 (ipv6), 44 (ipv6), 47 (gre), 50 (esp), 51 (ah), 58 (ipv6), 59 (ipv6), 60 (ipv6), 108 (ipcomp), 132 (sctp), 136 (udplite), 255 (unknown) |                                                                                | 0 (hopopt), 6 (tcp), 17 (udp), 43 (ipv6), 44 (ipv6), 58 (ipv6), 59 (ipv6), 60 (ipv6), 136 (udplite), 255 (unknown) |                | 0 (hopopt), 6 (tcp), 17 (udp), 43 (ipv6), 44 (ipv6), 58 (ipv6), 59 (ipv6), 60 (ipv6), 103 (pim), 136 (udplite), 255 (unknown) |
+    |---------------------+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+----------------+-------------------------------------------------------------------------------------------------------------------------------|
 
 ** Custom DIY distro install
 

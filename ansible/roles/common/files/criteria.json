@@ -2,16 +2,10 @@
     "criteria_per_log": {
         "lynis.log": {
             "lynis_idx": {
-                "regex": "Hardening index \\: \\[(\\d{1,3})\\]",
+                "regex": "Hardening index \\: \\[(?P<idx>\\d{1,3})\\].*Tests performed:\\s+(?P<tests>\\d{1,3})",
                 "idx": 0,
                 "exp": 0,
-                "round": true,
-                "average": false
-            },
-            "lynis_tests": {
-                "regex": "Tests performed:\\s+(\\d{1,3})",
-                "idx": 0,
-                "exp": 0,
+                "dual": true,
                 "round": true,
                 "average": false
             }
@@ -21,6 +15,7 @@
                 "regex": "System Benchmarks Index Score\\s+(\\d+\\.\\d+)",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": false
             },
@@ -28,6 +23,7 @@
                 "regex": "System Benchmarks Index Score\\s+(\\d+\\.\\d+)",
                 "idx": 1,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": false
             },
@@ -35,6 +31,7 @@
                 "regex": "Dhrystone 2 using register variables.+\\s(\\d+\\.\\d+)\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": false
             },
@@ -42,6 +39,7 @@
                 "regex": "Double-Precision Whetstone.+\\s(\\d+\\.\\d+)\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": false
             },
@@ -49,6 +47,7 @@
                 "regex": "Execl Throughput.+\\s(\\d+\\.\\d+)\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": false
             },
@@ -56,6 +55,7 @@
                 "regex": "File Copy 1024 bufsize 2000 maxblocks.+\\s(\\d+\\.\\d+)\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": false
             },
@@ -63,6 +63,7 @@
                 "regex": "File Copy 256 bufsize 500 maxblocks.+\\s(\\d+\\.\\d+)\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": false
             },
@@ -70,6 +71,7 @@
                 "regex": "File Copy 4096 bufsize 8000 maxblocks.+\\s(\\d+\\.\\d+)\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": false
             },
@@ -77,6 +79,7 @@
                 "regex": "Pipe Throughput.+\\s(\\d+\\.\\d+)\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": false
             },
@@ -84,6 +87,7 @@
                 "regex": "Pipe-based Context Switching.+\\s(\\d+\\.\\d+)\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": false
             },
@@ -91,6 +95,7 @@
                 "regex": "Process Creation.+\\s(\\d+\\.\\d+)\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": false
             },
@@ -98,6 +103,7 @@
                 "regex": "Shell Scripts \\(1 concurrent\\).+\\s(\\d+\\.\\d+)\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": false
             },
@@ -105,6 +111,7 @@
                 "regex": "Shell Scripts \\(8 concurrent\\).+\\s(\\d+\\.\\d+)\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": false
             },
@@ -112,6 +119,7 @@
                 "regex": "System Call Overhead.+\\s(\\d+\\.\\d+)\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": false
             }
@@ -121,6 +129,7 @@
                 "regex": "total time\\:.+\\s(\\d+\\.\\d+)s\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             }
@@ -130,6 +139,7 @@
                 "regex": "Total transferred.+\\s\\((\\d+\\.\\d+)Mb/sec\\)\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -137,6 +147,7 @@
                 "regex": "\\s(\\d+\\.\\d+) Requests/sec executed\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": false,
                 "average": true
             }
@@ -146,6 +157,7 @@
                 "regex": "Total transferred.+\\s\\((\\d+\\.\\d+)Mb/sec\\)\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -153,6 +165,7 @@
                 "regex": "\\s(\\d+\\.\\d+) Requests/sec executed\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": false,
                 "average": true
             }
@@ -162,6 +175,7 @@
                 "regex": "read/write requests\\:.+\\s\\((\\d+\\.\\d+) per sec.\\)\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -169,6 +183,7 @@
                 "regex": "approx.  95 percentile\\:.+\\s(\\d+\\.\\d+)ms\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             }
@@ -178,6 +193,7 @@
                 "regex": "copied,\\s(\\d+\\.\\d+) s,",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             }
@@ -187,6 +203,7 @@
                 "regex": "s,\\s(\\d+) MB/s\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             }
@@ -196,6 +213,7 @@
                 "regex": "bw=(\\d+\\.?\\d+?)KB/s",
                 "idx": 0,
                 "exp": 3,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -203,6 +221,7 @@
                 "regex": "iops=(\\d+),",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": false,
                 "average": true
             }
@@ -212,6 +231,7 @@
                 "regex": "bw=(\\d+\\.?\\d+?)KB/s",
                 "idx": 0,
                 "exp": 3,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -219,6 +239,7 @@
                 "regex": "iops=(\\d+),",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": false,
                 "average": true
             }
@@ -228,6 +249,7 @@
                 "regex": "Download:\\s(\\d+\\.\\d+) Mbit/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -235,6 +257,7 @@
                 "regex": "Upload:\\s(\\d+\\.\\d+) Mbit/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             }
@@ -244,6 +267,7 @@
                 "regex": "Download:\\s(\\d+\\.\\d+) Mbit/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -251,6 +275,7 @@
                 "regex": "Upload:\\s(\\d+\\.\\d+) Mbit/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             }
@@ -260,6 +285,7 @@
                 "regex": "Download:\\s(\\d+\\.\\d+) Mbit/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -267,6 +293,7 @@
                 "regex": "Upload:\\s(\\d+\\.\\d+) Mbit/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             }
@@ -276,6 +303,7 @@
                 "regex": "Download:\\s(\\d+\\.\\d+) Mbit/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -283,6 +311,7 @@
                 "regex": "Upload:\\s(\\d+\\.\\d+) Mbit/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             }
@@ -292,6 +321,7 @@
                 "regex": "Download:\\s(\\d+\\.\\d+) Mbit/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -299,6 +329,7 @@
                 "regex": "Upload:\\s(\\d+\\.\\d+) Mbit/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             }
@@ -308,6 +339,7 @@
                 "regex": "Download:\\s(\\d+\\.\\d+) Mbit/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -315,6 +347,7 @@
                 "regex": "Upload:\\s(\\d+\\.\\d+) Mbit/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             }
@@ -324,6 +357,7 @@
                 "regex": "Download:\\s(\\d+\\.\\d+) Mbit/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -331,6 +365,7 @@
                 "regex": "Upload:\\s(\\d+\\.\\d+) Mbit/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             }
@@ -340,6 +375,7 @@
                 "regex": "CacheFly CDN \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -347,6 +383,7 @@
                 "regex": "CacheFly CDN \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -354,6 +391,7 @@
                 "regex": "DigitalOcean \\(GB\\) \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -361,6 +399,7 @@
                 "regex": "DigitalOcean \\(GB\\) \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -368,6 +407,7 @@
                 "regex": "LeaseWeb \\(NL\\) \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -375,6 +415,7 @@
                 "regex": "LeaseWeb \\(NL\\) \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -382,6 +423,7 @@
                 "regex": "Linode \\(GB\\) \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -389,6 +431,7 @@
                 "regex": "Linode \\(GB\\) \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -396,6 +439,7 @@
                 "regex": "Online.net \\(FR\\) \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -403,6 +447,7 @@
                 "regex": "Online.net \\(FR\\) \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -410,6 +455,7 @@
                 "regex": "OVH \\(FR\\) \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -417,6 +463,7 @@
                 "regex": "OVH \\(FR\\) \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -424,6 +471,7 @@
                 "regex": "Softlayer \\(FR\\) \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -431,6 +479,7 @@
                 "regex": "Softlayer \\(FR\\) \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -438,6 +487,7 @@
                 "regex": "Vultr \\(GB\\) \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -445,6 +495,7 @@
                 "regex": "Vultr \\(GB\\) \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -452,6 +503,7 @@
                 "regex": "CDN77.com \\(NL\\) \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -459,6 +511,7 @@
                 "regex": "CDN77.com \\(NL\\) \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -466,6 +519,7 @@
                 "regex": "Online.net 10G \\(FR\\) \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -473,6 +527,7 @@
                 "regex": "Online.net 10G \\(FR\\) \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -480,6 +535,7 @@
                 "regex": "OVH 10G \\(FR\\) \\(IPv4\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             },
@@ -487,6 +543,7 @@
                 "regex": "OVH 10G \\(FR\\) \\(IPv6\\):\\s\\s(\\d+\\.?\\d+?)MB/s",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             }
@@ -496,6 +553,7 @@
                 "regex": "real\\s(\\d+\\.\\d+)\\n",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             }
@@ -505,16 +563,71 @@
                 "regex": "fps=(\\d+\\.\\d+).*\\nvideo:",
                 "idx": 0,
                 "exp": 0,
+                "dual": false,
                 "round": true,
                 "average": true
             }
+        },
+        "nmap.log": {
+            "nmap_ports_tcp_v4": {
+                "regex": "(?P<number>\\d+)/tcp\\s+open(?:\\|filtered)?\\s+(?P<port>\\w+)",
+                "idx": 0,
+                "exp": 0,
+                "dual": true,
+                "round": false,
+                "average": false
+            },
+            "nmap_ports_udp_v4": {
+                "regex": "(?P<number>\\d+)/udp\\s+open(?:\\|filtered)?\\s+(?P<port>\\w+)",
+                "idx": 0,
+                "exp": 0,
+                "dual": true,
+                "round": false,
+                "average": false
+            }
+        },
+        "nmap_v6.log": {
+            "nmap_ports_tcp_v6": {
+                "regex": "(?P<number>\\d+)/tcp\\s+open(?:\\|filtered)?\\s+(?P<port>\\w+)",
+                "idx": 0,
+                "exp": 0,
+                "dual": true,
+                "round": false,
+                "average": false
+            },
+            "nmap_ports_udp_v6": {
+                "regex": "(?P<number>\\d+)/tcp\\s+open(?:\\|filtered)?\\s+(?P<port>\\w+)",
+                "idx": 0,
+                "exp": 0,
+                "dual": true,
+                "round": false,
+                "average": false
+            }
+        },
+        "nmap_pro.log": {
+            "nmap_protocols_v4": {
+                "regex": "(?P<number>\\d+)\\s+open(?:\\|filtered)?\\s+(?P<port>\\w+)",
+                "idx": 0,
+                "exp": 0,
+                "dual": true,
+                "round": false,
+                "average": false
+            }
+        },
+        "nmap_pro_v6.log": {
+            "nmap_protocols_v6": {
+                "regex": "(?P<number>\\d+)\\s+open(?:\\|filtered)?\\s+(?P<port>\\w+)",
+                "idx": 0,
+                "exp": 0,
+                "dual": true,
+                "round": false,
+                "average": false
+            }
         }
     },
-
     "criteria_per_table": {
         "lynis": {
-            "lynis_idx": "Lynis (hardening index)",
-            "lynis_tests": "Lynis (tests performed)"
+            "lynis_idx": "Lynis (hardening index)"
         },
         "unixbench": {
             "unixbench_idx_1t": "UnixBench (index, 1 thread)",
@@ -618,6 +731,18 @@
         },
         "transcode_video": {
             "transcode_fps": "FPS"
+        },
+        "ports_v4": {
+            "nmap_ports_tcp_v4": "Open TCP ports",
+            "nmap_ports_udp_v4": "Open UDP ports"
+        },
+        "ports_v6": {
+            "nmap_ports_tcp_v6": "Open TCP ports",
+            "nmap_ports_udp_v6": "Open UDP ports"
+        },
+        "protocols": {
+            "nmap_protocols_v4": "Open protocols IPv4",
+            "nmap_protocols_v6": "Open protocols IPv6"
         }
     }
 }

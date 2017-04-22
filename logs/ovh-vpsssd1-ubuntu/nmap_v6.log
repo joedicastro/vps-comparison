@@ -1,0 +1,6 @@
+# Nmap 7.01 scan initiated Sat Apr 22 16:15:53 2017 as: nmap -vvv -6 -sT -sU -sV -oN nmap_v6.log --top-ports 5000 localhost
+Warning: Hostname localhost resolves, but not to any IPv6 address. Try scanning without -6
+Failed to resolve "localhost".
+Read data files from: /usr/bin/../share/nmap
+WARNING: No targets were specified, so 0 hosts scanned.
+# Nmap done at Sat Apr 22 16:15:54 2017 -- 0 IP addresses (0 hosts up) scanned in 0.44 seconds

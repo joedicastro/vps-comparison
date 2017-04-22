@@ -4,8 +4,7 @@ LYNIS
 |-
 | | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
 |-
-| Lynis (hardening index) |59 | 67 | 62 | 64 | 60 | 60
-| Lynis (tests performed) |220 | 220 | 220 | 225 | 230 | 231
+| Lynis (hardening index) |59 (220) | 67 (220) | 62 (220) | 64 (225) | 60 (230) | 60 (231)
 |-
 
 
@@ -242,5 +241,38 @@ TRANSCODE VIDEO
 | | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
 |-
 | FPS | | 4.700 | 5.900 | 3.200 |  | 5.600
+|-
+
+
+PORTS V4
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Open TCP ports |22 (ssh) | 22 (ssh) | 22 (ssh) | 22 (ssh) |  | 22 (ssh)
+| Open UDP ports | |  | 68 (dhcpc) | 68 (dhcpc), 123 (ntp) |  | 68 (dhcpc), 123 (ntp)
+|-
+
+
+PORTS V6
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Open TCP ports | | 22 (ssh) |  | 22 (ssh) |  | 22 (ssh)
+| Open UDP ports | | 22 (ssh) |  | 22 (ssh) |  | 22 (ssh)
+|-
+
+
+PROTOCOLS
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Open protocols IPv4 |1 (icmp), 2 (igmp), 6 (tcp), 17 (udp), 103 (pim), 136 (udplite), 255 (unknown) | 1 (icmp), 2 (igmp), 4 (ipv4), 6 (tcp), 17 (udp), 41 (ipv6), 47 (gre), 50 (esp), 51 (ah), 64 (sat), 103 (pim), 108 (ipcomp), 132 (sctp), 136 (udplite), 242 (unknown), 255 (unknown) | 1 (icmp), 2 (igmp), 6 (tcp), 17 (udp), 103 (pim), 136 (udplite), 255 (unknown) | 1 (icmp), 2 (igmp), 6 (tcp), 17 (udp), 136 (udplite), 255 (unknown) |  | 1 (icmp), 2 (igmp), 6 (tcp), 17 (udp), 103 (pim), 136 (udplite), 196 (unknown), 255 (unknown)
+| Open protocols IPv6 | | 0 (hopopt), 4 (ipv4), 6 (tcp), 17 (udp), 41 (ipv6), 43 (ipv6), 44 (ipv6), 47 (gre), 50 (esp), 51 (ah), 58 (ipv6), 59 (ipv6), 60 (ipv6), 108 (ipcomp), 132 (sctp), 136 (udplite), 255 (unknown) |  | 0 (hopopt), 6 (tcp), 17 (udp), 43 (ipv6), 44 (ipv6), 58 (ipv6), 59 (ipv6), 60 (ipv6), 136 (udplite), 255 (unknown) |  | 0 (hopopt), 6 (tcp), 17 (udp), 43 (ipv6), 44 (ipv6), 58 (ipv6), 59 (ipv6), 60 (ipv6), 103 (pim), 136 (udplite), 255 (unknown)
 |-
 

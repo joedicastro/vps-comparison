@@ -1,0 +1,12 @@
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      3367/sshd       
+tcp6       0      0 :::22                   :::*                    LISTEN      3367/sshd       
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           3314/dhclient   
+udp        0      0 10.3.86.13:123          0.0.0.0:*                           3578/ntpd       
+udp        0      0 127.0.0.1:123           0.0.0.0:*                           3578/ntpd       
+udp        0      0 0.0.0.0:123             0.0.0.0:*                           3578/ntpd       
+udp6       0      0 fe80::dc19:58ff:fe3:123 :::*                                3578/ntpd       
+udp6       0      0 2001:bc8:4400:2300::123 :::*                                3578/ntpd       
+udp6       0      0 ::1:123                 :::*                                3578/ntpd       
+udp6       0      0 :::123                  :::*                                3578/ntpd       

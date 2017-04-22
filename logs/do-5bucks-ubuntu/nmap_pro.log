@@ -1,0 +1,17 @@
+# Nmap 7.01 scan initiated Sat Apr 22 14:15:56 2017 as: nmap -vvv -sO -oN nmap_pro.log localhost
+Nmap scan report for localhost (127.0.0.1)
+Host is up, received localhost-response (0.0000060s latency).
+Scanned at 2017-04-22 14:15:56 UTC for 2s
+Not shown: 249 closed protocols
+Reason: 249 proto-unreaches
+PROTOCOL STATE         SERVICE REASON
+1        open          icmp    proto-unreach ttl 64
+2        open|filtered igmp    no-response
+6        open          tcp     proto-response ttl 64
+17       open          udp     port-unreach ttl 64
+103      open|filtered pim     no-response
+136      open|filtered udplite no-response
+255      open|filtered unknown no-response
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Sat Apr 22 14:15:58 2017 -- 1 IP address (1 host up) scanned in 1.52 seconds

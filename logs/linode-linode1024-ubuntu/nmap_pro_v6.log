@@ -1,0 +1,29 @@
+# Nmap 7.01 scan initiated Sat Apr 22 14:16:04 2017 as: nmap -vvv -sO -6 -oN nmap_pro_v6.log localhost
+Warning: Hostname localhost resolves to 2 IPs. Using ::1.
+Nmap scan report for localhost (::1)
+Host is up, received localhost-response (0.000010s latency).
+Other addresses for localhost (not scanned): 127.0.0.1
+Scanned at 2017-04-22 14:16:04 UTC for 1s
+Not shown: 239 closed protocols
+Reason: 239 param-problems
+PROTOCOL STATE         SERVICE    REASON
+0        open|filtered hopopt     no-response
+4        open|filtered ipv4       no-response
+6        open          tcp        proto-response ttl 64
+17       open          udp        port-unreach ttl 64
+41       open|filtered ipv6       no-response
+43       open|filtered ipv6-route no-response
+44       open          ipv6-frag  param-problem ttl 64
+47       open|filtered gre        no-response
+50       open|filtered esp        no-response
+51       open|filtered ah         no-response
+58       open          ipv6-icmp  proto-response ttl 64
+59       open|filtered ipv6-nonxt no-response
+60       open|filtered ipv6-opts  no-response
+108      open|filtered ipcomp     no-response
+132      open          sctp       proto-response ttl 64
+136      open|filtered udplite    no-response
+255      open|filtered unknown    no-response
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Sat Apr 22 14:16:05 2017 -- 1 IP address (1 host up) scanned in 1.42 seconds

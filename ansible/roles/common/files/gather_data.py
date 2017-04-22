@@ -45,13 +45,14 @@ def gather_datum(rules, log_text):
     :rules: dictionary that contains a set of rules to gather the datum
     "log_text: string containing the text of a log file
     """
-    regex = re.compile(rules['regex'])
-    if not rules['average']:
-        try:
-            datum = re.findall(regex, log_text)[rules['idx']]
-        except IndexError:
-            datum = ''
-    else:
+    regex = re.compile(rules['regex'], re.DOTALL if rules['dual'] else 0)
+    if rules['dual']:
+        datum = ', '.join(
+            '{0} ({1})'.format(i.group(1), i.group(2))
+            for i
+            in regex.finditer(log_text)
+        )
+    elif rules['average']:
         values = [
             (float(i) / pow(10, rules['exp']))
             for i
@@ -61,6 +62,11 @@ def gather_datum(rules, log_text):
             str_format = '{0:.3f}' if rules['round'] else '{0:.0f}'
             datum = str_format.format(sum(values) / len(values))
         except ZeroDivisionError:
+            datum = ''
+    else:
+        try:
+            datum = re.findall(regex, log_text)[rules['idx']]
+        except IndexError:
             datum = ''
     return datum
 

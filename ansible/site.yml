@@ -10,6 +10,7 @@
 
   roles:
     - { role: lynis,      tags: ['security', 'lynis', 'info']}
+    - { role: ports,      tags: ['security', 'ports', 'network', 'info']}
     - { role: hardware,   tags: ['hardware', 'info']}
     - { role: unixbench,  tags: ['unixbench', 'benchmark']}
     - { role: sysbench,   tags: ['sysbench', 'benchmark']}

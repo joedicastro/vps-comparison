@@ -1,0 +1,53 @@
+---
+  # Some of this information is also available in the Lynis tool report
+
+- name: install nmap
+  apt:
+    name: nmap
+    state: latest
+    update_cache: yes
+    install_recommends: no
+
+- name: run netstat
+  shell: netstat -plunt > netstat.log
+  args:
+    chdir: /tmp
+
+- name: run nmap scan IPv4
+  shell: nmap -vvv -sT -sU -sV localhost -oN nmap.log --top-ports 5000
+  args:
+    chdir: /tmp
+
+- name: run nmap scan IPv6
+  shell: nmap -vvv -6 -sT -sU -sV localhost -oN nmap_v6.log --top-ports 5000
+  args:
+    chdir: /tmp
+
+- name: run nmap scan protocols IPv4
+  shell: nmap -vvv -sO localhost -oN nmap_pro.log
+  args:
+    chdir: /tmp
+
+- name: run nmap scan protocols IPv6
+  shell: nmap -vvv -6 -sO localhost -oN nmap_pro_v6.log
+  args:
+    chdir: /tmp
+
+- name: retrieve logs
+  fetch:
+    src: /tmp/{{item}}.log
+    dest: ../logs/{{inventory_hostname}}/{{item}}.log
+    flat: yes
+  with_items:
+    - netstat
+    - nmap
+    - nmap_v6
+    - nmap_pro
+    - nmap_pro_v6
+
+- name: remove nmap
+  apt:
+    name: nmap
+    autoremove: yes
+    purge: yes
+    state: absent

@@ -1,0 +1,15 @@
+# Nmap 7.01 scan initiated Sat Apr 22 14:07:02 2017 as: nmap -vvv -sT -sU -sV -oN nmap.log --top-ports 5000 localhost
+Warning: Hostname localhost resolves to 2 IPs. Using 127.0.0.1.
+Nmap scan report for localhost (127.0.0.1)
+Host is up, received localhost-response (0.000095s latency).
+Other addresses for localhost (not scanned): ::1
+Scanned at 2017-04-22 14:07:02 UTC for 3s
+Not shown: 9252 closed ports
+Reason: 5000 port-unreaches and 4252 conn-refused
+PORT   STATE SERVICE REASON  VERSION
+22/tcp open  ssh     syn-ack OpenSSH 7.2p2 Ubuntu 4ubuntu2.1 (Ubuntu Linux; protocol 2.0)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Apr 22 14:07:05 2017 -- 1 IP address (1 host up) scanned in 2.94 seconds
