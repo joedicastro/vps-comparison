@@ -616,7 +616,7 @@
         },
         "nmap_pro_v6.log": {
             "nmap_protocols_v6": {
-                "regex": "(?P<number>\\d+)\\s+open(?:\\|filtered)?\\s+(?P<port>\\w+)",
+                "regex": "(?P<number>\\d+)\\s+open(?:\\|filtered)?\\s+(?P<port>\\w+-?\\w+)",
                 "idx": 0,
                 "exp": 0,
                 "dual": true,
