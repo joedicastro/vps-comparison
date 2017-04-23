@@ -198,6 +198,7 @@ Notes:
 | Restrict access IPs         | Yes  | Yes     | No           | No       | No    |
 | Account Login Logs          | No   | Partial | Yes          | No       | No    |
 | SSL Quality                 | [[https://www.ssllabs.com/ssltest/analyze.html?d=www.ovh.com][A-]]   | [[https://www.ssllabs.com/ssltest/analyze.html?d=manager.linode.com&s=69.164.200.204&latest][A+]]      | [[https://www.ssllabs.com/ssltest/analyze.html?d=cloud.digitalocean.com&s=104.16.25.4&hideResults=on][A+]]           | [[https://www.ssllabs.com/ssltest/analyze.html?d=cloud.scaleway.com][A]]        | [[https://www.ssllabs.com/ssltest/analyze.html?d=my.vultr.com&s=104.20.22.240&latest][A]]     |
+| DNS SPY Report              | [[https://dnsspy.io/scan/ovh.com][B]]    | [[https://dnsspy.io/scan/linode.com][B]]       | [[https://dnsspy.io/scan/digitalocean.com][B]]            | [[https://dnsspy.io/scan/scaleway.com][B]]        | [[https://dnsspy.io/scan/vultr.com][C]]     |
 | Send root password by email | Yes  | No      | No           | No       | No    |
 | Account password recovery   | Link | Link    | Link         | Link     | Link  |
 |-----------------------------+------+---------+--------------+----------+-------|
@@ -211,6 +212,8 @@ Notes:
 - Vultr never sends you the root password, only the needed ones for one-click apps.
 - Linode only register the last login time for each user, and does not register the IP.
 - The account password recovery should be always through a reset link by email, and never get you current password back (and in plain text), but you never know... and if you find a provider doing that, you don't need to know anymore, get out of there as soon as possible and never reuse that password (any password).
+- DNS Spy Report is very useful to those that are going to use the provider to
+  manage their domains.
 
 * Plans (≤5$)
 
