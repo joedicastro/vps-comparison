@@ -20,6 +20,29 @@
     dest: ../logs/{{inventory_hostname}}/sysbench_cpu.log
     flat: yes
 
+- name: run sysbench memory random read
+  shell: sysbench --test=memory --memory-access-mode=rnd --memory-oper=read --num-threads=1 run >> /tmp/sysbench_ram_randrd.log
+  args:
+    chdir: /tmp
+    executable: /bin/bash
+  with_sequence: count=5
+
+- name: run sysbench memory random write
+  shell: sysbench --test=memory --memory-access-mode=rnd --memory-oper=write --num-threads=1 run >> /tmp/sysbench_ram_randrw.log
+  args:
+    chdir: /tmp
+    executable: /bin/bash
+  with_sequence: count=5
+
+- name: retrieve memory logs
+  fetch:
+    src: /tmp/{{item}}.log
+    dest: ../logs/{{inventory_hostname}}/{{item}}.log
+    flat: yes
+  with_items:
+    - sysbench_ram_randrd
+    - sysbench_ram_randrw
+
 - name: prepare sysbench fileio
   shell: sysbench --test=fileio --file-total-size=8G prepare 
   args:

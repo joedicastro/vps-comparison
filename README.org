@@ -442,7 +442,6 @@ those that is needed).
 
 [[./img/unixbench.png]]
 
-
 **** Individual test indexes of the UnixBench benchmark.
 
      In this table I show the individual tests results that compose the UnixBench
@@ -498,7 +497,19 @@ those that is needed).
       iterations of the tests instead of five.
     - I'm only using one thread here for Scaleway's plan, to a more fair comparison.
 
+   [[https://github.com/akopytov/sysbench][Sysbench]] is a popular benchmarking tool that can test CPU, file I/O, memory,
+   threads, mutex and MySQL performance. One of the key features is that is
+   scriptable and can perform complex tests, but I rely here on several
+   well-known standard tests, basically to compare them easily to others that
+   you can find across the web.
+
 **** Sysbench cpu
+
+    In this test the cpu would verify a given primer number, by a brute force
+    algorithm that calculates all the divisions between this one and all the
+    numbers prior the square root of it from 2. It's a classic cpu stress test
+    and usually a more powerful cpu would employ less time in this test, thus
+    less is better.
 
     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
     #+PLOT: set:"style histogram cluster gap 1"
@@ -524,7 +535,78 @@ those that is needed).
 
   [[./img/sysbench_cpu.png]]
 
+**** Sysbench memory
+
+    This test measures the memory performance, it allocates a memory buffer and
+    reads/writes from it randomly until all the buffer is done. In this test,
+    more is better.
+
+    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/sysbench_ram_mb.png"
+    |--------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+    | Plan                           | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+    |--------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+    | Sysbench RAM rand read (Mb/s)  |      2279.750 |    1334.162 |  1262.542 |      1228.898 |                |       2146.132 |
+    | Sysbench RAM rand write (Mb/s) |      2196.174 |    1310.624 |  1221.276 |      1181.516 |                |       2062.046 |
+    |--------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+
+    [[./img/sysbench_ram_mb.png]]
+ 
+    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/sysbench_ram_iops.png"
+    |--------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+    | Plan                           | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+    |--------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+    | Sysbench RAM rand read (IOPS)  |       2334463 |     1366183 |   1292842 |       1258393 |                |        2197641 |
+    | Sysbench RAM rand write (IOPS) |       2248883 |     1342079 |   1250589 |       1209873 |                |        2111535 |
+    |--------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+
+[[./img/sysbench_ram_iops.png]]
+
 **** Sysbench fileio
+
+     Here is the file system what is put to test. It measures the disk
+     input/output operations with random reads and writes. The numbers are more
+     reliable when the total file size is more greater than the amount of memory
+     available, but due to the limitations that some plans have in disk space I
+     had to restrain that to only 8GB. In this test, more is better.
+
+     Notes:
+
+     - It's very clear that something is going on with OVH in this plan, in all
+       the tests like this that I did the numbers were always close to or even
+       exactly 1000 IOPS and around to 4 MB/s. The only explanation to those
+       numbers that occurs to me is that they are limited on purpose. Seems that
+       other clients with this plan does not have this problem, while others
+       complain about the same results I have.
 
     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
     #+PLOT: set:"style histogram cluster gap 1"
@@ -578,8 +660,10 @@ those that is needed).
 
 **** Sysbench oltp (database)
 
-     I used the MySQL database for this tests, but the results could be
-     applied also to the MariaDB database.
+     Here the test measures the database performance. I used the MySQL database
+     for this tests, but the results could be applied also to the MariaDB
+     database. More requests per second is better but less 95% percentile is
+     better.
 
     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
     #+PLOT: set:"style histogram cluster gap 1"
@@ -743,6 +827,41 @@ those that is needed).
 
   - The compilation in DO fails at 65% after about 35min, the process it's killed when gets
     out of memory.
+*** transcode video
+
+    In this test the measure is the frames per second achieved to transcode a
+    video with ~ffmpeg~ (or ~avconv~ in Debian). In this test, more is better.
+
+    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:6.5]"
+    #+PLOT: set:"style histogram cluster gap 1"
+    #+PLOT: set:"style fill solid"
+    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+    #+PLOT: set:"boxwidth bw"
+    #+PLOT: set:"grid"
+    #+PLOT: set:"datafile commentschars '#'"
+    #+PLOT: set:"xrange writeback extend"
+    #+PLOT: set:"xtics scale 0"
+    #+PLOT: set:"key outside horizontal"
+    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+    #+PLOT: file:"./img/transcode.png"
+    |------+---------------+-------------+---------------+---------------+-------------------+----------------|
+    | Plan | OVH VPS SSD 1 | Linode 1024 | DO 5bucks     | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
+    |------+---------------+-------------+---------------+---------------+-------------------+----------------|
+    | FPS  |           5.9 |         4.7 | out of memory |           3.2 | Temp. unavailable |            5.6 |
+    |------+---------------+-------------+---------------+---------------+-------------------+----------------|
+
+[[./img/transcode.png]]
+
+   Note:
+
+   - In DO the process is killed when ran out of memory.
+
+** Network Performance
 
 *** downloads
 
@@ -938,40 +1057,6 @@ those that is needed).
     |-----------+---------------+-------------+-----------+---------------+-------------------+----------------|
 
 [[./img/speedtest_eur_up.png]]
-
-*** transcode video
-
-    In this test the measure is the frames per second achieved to transcode a
-    video with ~ffmpeg~ (or ~avconv~ in Debian). In this test, more is better.
-
-    #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:6.5]"
-    #+PLOT: set:"style histogram cluster gap 1"
-    #+PLOT: set:"style fill solid"
-    #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
-    #+PLOT: set:"linetype 2 lc rgb '#009E73'"
-    #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
-    #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
-    #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
-    #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
-    #+PLOT: set:"boxwidth bw"
-    #+PLOT: set:"grid"
-    #+PLOT: set:"datafile commentschars '#'"
-    #+PLOT: set:"xrange writeback extend"
-    #+PLOT: set:"xtics scale 0"
-    #+PLOT: set:"key outside horizontal"
-    #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-    #+PLOT: file:"./img/transcode.png"
-    |------+---------------+-------------+---------------+---------------+-------------------+----------------|
-    | Plan | OVH VPS SSD 1 | Linode 1024 | DO 5bucks     | Scaleway VC1S | Vultr 20GB SSD    | Vultr 25GB SSD |
-    |------+---------------+-------------+---------------+---------------+-------------------+----------------|
-    | FPS  |           5.9 |         4.7 | out of memory |           3.2 | Temp. unavailable |            5.6 |
-    |------+---------------+-------------+---------------+---------------+-------------------+----------------|
-
-[[./img/transcode.png]]
-
-   Note:
-
-   - In DO the process is killed when ran out of memory.
 
 ** Web Performance
 

@@ -134,6 +134,42 @@
                 "average": true
             }
         },
+        "sysbench_ram_randrd.log": {
+            "sysbench_ram_randrd_mb": {
+                "regex": "transferred \\((\\d+\\.\\d+) MB/sec\\)",
+                "idx": 0,
+                "exp": 0,
+                "dual": false,
+                "round": true,
+                "average": true
+            },
+            "sysbench_ram_randrd_iops": {
+                "regex": "Operations performed: \\d+ \\((\\d+\\.\\d+) ops/sec\\)",
+                "idx": 0,
+                "exp": 0,
+                "dual": false,
+                "round": false,
+                "average": true
+            }
+        },
+        "sysbench_ram_randrw.log": {
+            "sysbench_ram_randrw_mb": {
+                "regex": "transferred \\((\\d+\\.\\d+) MB/sec\\)",
+                "idx": 0,
+                "exp": 0,
+                "dual": false,
+                "round": true,
+                "average": true
+            },
+            "sysbench_ram_randrw_iops": {
+                "regex": "Operations performed: \\d+ \\((\\d+\\.\\d+) ops/sec\\)",
+                "idx": 0,
+                "exp": 0,
+                "dual": false,
+                "round": false,
+                "average": true
+            }
+        },
         "sysbench_randrd.log": {
             "sysbench_randrd_mb": {
                 "regex": "Total transferred.+\\s\\((\\d+\\.\\d+)Mb/sec\\)\\n",
@@ -649,6 +685,14 @@
         },
         "sysbench_cpu": {
             "sysbench_sec": "Sysbench CPU (seconds)"
+        },
+        "sysbench_ram_mb/s": {
+            "sysbench_ram_randrd_mb": "Sysbench memory rand read (Mb/s)",
+            "sysbench_ram_randrw_mb": "Sysbench memory rand write (Mb/s)"
+        },
+        "sysbench_ram_iops": {
+            "sysbench_ram_randrd_iops": "Sysbench memory rand read (IOPS)",
+            "sysbench_ram_randrw_iops": "Sysbench memory rand write (IOPS)"
         },
         "sysbench_fileio_mb/s": {
             "sysbench_randrd_mb": "Sysbench file rand read (Mb/s)",

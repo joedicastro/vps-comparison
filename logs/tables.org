@@ -50,6 +50,28 @@ SYSBENCH CPU
 |-
 
 
+SYSBENCH RAM MB/S
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Sysbench memory rand read (Mb/s) |1262.542 | 1334.162 | 2279.750 | 1228.898 |  | 2146.132
+| Sysbench memory rand write (Mb/s) |1221.276 | 1310.624 | 2196.174 | 1181.516 |  | 2062.046
+|-
+
+
+SYSBENCH RAM IOPS
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Sysbench memory rand read (IOPS) |1292842 | 1366183 | 2334463 | 1258393 |  | 2197641
+| Sysbench memory rand write (IOPS) |1250589 | 1342079 | 2248883 | 1209873 |  | 2111535
+|-
+
+
 SYSBENCH FILEIO MB/S
 ===============================================================================
 
