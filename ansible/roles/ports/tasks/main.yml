@@ -45,6 +45,13 @@
     - nmap_pro
     - nmap_pro_v6
 
+  # running it in local allows you to retrieve the original unchanged file from
+  # the server if you need it.
+- name: clean IPs from log
+  script: clean_ips.py netstat.log -p ../logs
+  delegate_to: localhost
+  become: no
+
 - name: remove nmap
   apt:
     name: nmap

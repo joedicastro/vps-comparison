@@ -3,7 +3,7 @@ Proto Recv-Q Send-Q Local Address           Foreign Address         State       
 tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      1013/sshd       
 tcp6       0      0 :::22                   :::*                    LISTEN      1013/sshd       
 udp        0      0 0.0.0.0:68              0.0.0.0:*                           800/dhclient    
-udp        0      0 45.76.142.38:123        0.0.0.0:*                           1074/ntpd       
+udp        0      0 x.x.x.x:123        0.0.0.0:*                           1074/ntpd       
 udp        0      0 127.0.0.1:123           0.0.0.0:*                           1074/ntpd       
 udp        0      0 0.0.0.0:123             0.0.0.0:*                           1074/ntpd       
 udp6       0      0 2001:19f0:7402:3c6::123 :::*                                1074/ntpd       
