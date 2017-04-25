@@ -7,9 +7,9 @@ A comparison between some VPS providers that have data centers located in
 
 Initially I'm comparing only entry plans, below *5$* monthly.
 
-What I trying to show here it's basically a lot of things that I would want to know
-before sign up with any of them. If I save you a few hours researching, like I
-spend, I'll be glad!
+What I trying to show here it's basically a lot of things that I would want to
+know before sign up with any of them. If I save you a few hours researching,
+like I spend, I'll be glad!
 
 * VPS Providers
 
@@ -265,8 +265,8 @@ Notes:
  repository, keep in mind that usually I show averages of several iterations of
  the same test.
 
- The graphs are generated with gnuplot directly from the tables of the
- ~README.org~ org-mode file.  The tables are also automatically generated with a
+ The graphs are generated with gnuplot directly from the tables of this
+ ~README.org~ org-mode file. The tables are also automatically generated with a
  python script (~/ansible/roles/common/files/gather_data.py~) gathering the data
  contained in the log files. To be able to add more tests without touching the
  script, the criteria to gather the data and generate the tables are stored in a
@@ -303,8 +303,9 @@ those tables from that file into this one, and with only two key combinations
 for table/graph the job is almost done (you can move/add/delete columns very
 easily with org-mode).
 
-There is another python script that automatically removes any public IPv4/IPv6
-from the log files.
+There is another python script (~/ansible~/roles/common/files/clean_ips.py~)
+that automatically removes any public IPv4/IPv6 from the log files (only on
+those that is needed).
 
 *** WARNING
 
@@ -353,8 +354,8 @@ from the log files.
    familiar with Ansible, you can suit the inventory file (~/ansible/hosts~) as
    you need.
 
-   The, you can start to tests the servers/providers using Ansible by running
-   the playbook, but should be a good idea to test the acces first with a ping
+   Then, you can start to tests the servers/providers using Ansible by running
+   the playbook, but should be a good idea to test the access first with a ping
    (from the ~/ansible~ folder):
 
 #+BEGIN_SRC sh
@@ -362,7 +363,7 @@ from the log files.
 #+END_SRC
 
    If it's the first time that you are SSHing to a server, you are probably
-   going to be asked to add it to the ~\~/.ssh/known_hosts~ file.
+   going to be asked to add it to the =~/.ssh/known_hosts= file.
 
    Then you can easily execute all the tasks in a server by:
 
@@ -371,8 +372,8 @@ from the log files.
 #+END_SRC
 
    With the ~-f 6~ option you can specify how many forks you want to create to
-   execute the tasks in parallel, the default is 5 but as I use here 6 VPS plans I
-   use also 6 forks.
+   execute the tasks in parallel, the default is 5 but as I use here 6 VPS plans
+   I use also 6 forks.
 
    You can also run only selected tasks/roles by using tags. You can list all
    the available tasks:
@@ -392,7 +393,8 @@ from the log files.
 
 ** System Performance
 
- All the instances were allocated in London (GB), except for OVH VPS SSD 1 in Gravelines (FR) and Scaleway VC1S in Paris (FR).
+ All the instances were allocated in London (GB), except for OVH VPS SSD 1 in
+ Gravelines (FR) and Scaleway VC1S in Paris (FR).
 
  All the instances were running on Ubuntu 16.04 LTS
 
@@ -408,8 +410,8 @@ from the log files.
   make an overall index for the system.
 
   Keep in mind, that this index is very influenced by the CPU raw power, and
-  does not reflect very well another aspects like disk performance and does
-  test nothing about network. In this index, more is better.
+  does not reflect very well another aspects like disk performance. In this
+  index, more is better.
 
   I only execute this test once because it takes some time -about 30-45 minutes
   depending of the server- and the variations between several runs are almost
