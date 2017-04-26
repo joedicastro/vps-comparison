@@ -391,6 +391,32 @@ those that is needed).
   All the roles are set to store the logs of the tests in the ~/logs/~ folder
   using the ~/logs/server_name~ folder structure.
 
+  *WARNING:*
+
+  All the tests that I include here are as "atomic" as possible, that is that in
+  every one of them I try to leave the server in a state as close as it was
+  before perform it, with the exception that I keep the logs. By the way, the
+  logs are stored in the ~/tmp~ folder intentionally because they will disappear
+  when you reboot the instance. There are three main reasons why I try to make
+  the tests as atomic as possible and do not take advantage of some common tasks
+  and perform them only once:
+
+  - Some plans have so little disk space available that if I do not erase
+    auxiliary files and packages between tests, they run out of space soon, and
+    worse, some of them until the point of make them unavailable to SSH
+    connections (e.g. OVH), making necessary manual intervention in the control
+    panel and ruining the advantage of the automation that Ansible give us.
+  - I want as little interference as possible between tests, and try to perform
+    them always in a state close to the default one of the instance. Some of
+    them (e.g. lynis, ports) change their results significantly if they are
+    performed after some of the package/configuration changes that other tests
+    do.
+  - In this way, and with a clever use of the Ansible tags, you can perform
+    individual tests without the need of execute the entire Ansible playbook.
+
+  Perhaps the only major drawback of this approach is that it consumes more time
+  globally when you perform all the tests together.
+
 ** System Performance
 
  All the instances were allocated in London (GB), except for OVH VPS SSD 1 in
@@ -691,6 +717,12 @@ those that is needed).
 [[./img/sysbench_oltp.png]]
 
 *** fio
+
+    [[https://github.com/axboe/fio][fio]] is a benchmarking tool used to measure I/O operations performance,
+    usually oriented to disk workloads, but you could use it to measure network,
+    cpu and memory I/O as well. It's scriptable and can simulate complex
+    workloads, but I use it here in a simple way to measure the disk
+    performance. In this test, more is better.
 
     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
     #+PLOT: set:"style histogram cluster gap 1"
