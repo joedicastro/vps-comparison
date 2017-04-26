@@ -417,12 +417,19 @@ those that is needed).
   Perhaps the only major drawback of this approach is that it consumes more time
   globally when you perform all the tests together.
 
+** Location and SO
+
+   All the instances were allocated in London (GB), except for OVH VPS SSD 1 in
+Gravelines (FR) and Scaleway VC1S in Paris (FR).
+
+   All the instances were running on Ubuntu 16.04 LTS
+
+   Currently the Vultr's 20GB SSD plan is sold out and is unavailable
+   temporarily, thus I only performed some tests (and some in a previous
+   version) in an instance that I deleted before new ones become unavailable. I
+   have the intention to retake the test as soon as the plan is available again.
+
 ** System Performance
-
- All the instances were allocated in London (GB), except for OVH VPS SSD 1 in
- Gravelines (FR) and Scaleway VC1S in Paris (FR).
-
- All the instances were running on Ubuntu 16.04 LTS
 
 *** UnixBench
 
@@ -518,9 +525,6 @@ those that is needed).
 
     Notes:
 
-    - The Vultr 20GB SSD plan is currently temporarily unavailable and I cant' run the test
-      with the last configuration, and therefore the average come from three
-      iterations of the tests instead of five.
     - I'm only using one thread here for Scaleway's plan, to a more fair comparison.
 
    [[https://github.com/akopytov/sysbench][Sysbench]] is a popular benchmarking tool that can test CPU, file I/O, memory,
@@ -591,7 +595,7 @@ those that is needed).
     |--------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
 
     [[./img/sysbench_ram_mb.png]]
- 
+
     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
     #+PLOT: set:"style histogram cluster gap 1"
     #+PLOT: set:"style fill solid"
@@ -776,8 +780,12 @@ those that is needed).
 
 *** dd
 
-    A pair of well-known fast tests to measure the CPU and disk performance. Not
-    very reliable, but they are good enough to get an idea.
+    A classic, the ubiquitous ~dd~ tool that is being used forever for tons of
+    sysadmins for diverse purposes. I use here a pair of well-known fast tests
+    to measure the CPU and disk performance. Not very reliable (e.g. the disk is
+    only a sequential operation) but they are good enough to get an idea, and I
+    include them here because many people use them. In the CPU test less is
+    better and the opposite in the disk test.
 
     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:4.5]"
     #+PLOT: set:"style histogram cluster gap 1"
@@ -829,7 +837,11 @@ those that is needed).
 
 *** compiler
 
-    This test measures the times that the server takes to compile the MariaDB server.
+    This test measures the time in seconds that a server takes to compile the
+    MariaDB server. This is not a synthetic test and gives you a more realistic
+    workload to compare them. Also helps to reveal the flaws that some plans
+    have due their limitations (e.g. cpu power in Scaleway and memory available
+    in DO). In this test, less is better.
 
     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
     #+PLOT: set:"style histogram cluster gap 1"
@@ -859,10 +871,14 @@ those that is needed).
 
   - The compilation in DO fails at 65% after about 35min, the process it's killed when gets
     out of memory.
+
 *** transcode video
 
     In this test the measure is the frames per second achieved to transcode a
-    video with ~ffmpeg~ (or ~avconv~ in Debian). In this test, more is better.
+    video with ~ffmpeg~ (or ~avconv~ in Debian). This is also a more realistic
+    approach to compare them, because is a more real workload (even when is not
+    usually performed in VPS servers) and stress heavily the CPU, but making
+    also a good use of the disk and memory. In this test, more is better.
 
     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:6.5]"
     #+PLOT: set:"style histogram cluster gap 1"
