@@ -18,6 +18,7 @@
     - { role: fio,        tags: ['fio', 'disk', 'benchmark']}
     - { role: speedtest,  tags: ['speedtest', 'network', 'benchmark']}
     - { role: downloads,  tags: ['downloads', 'network', 'benchmark']} #caution! ~93Gbits
-    - { role: compiler,   tags: ['compiler', 'benchmark']} 
-    - { role: transcode,  tags: ['transcode', 'multimedia', 'benchmark']} 
+    - { role: compiler,   tags: ['compiler', 'benchmark']}
+    - { role: transcode,  tags: ['transcode', 'multimedia', 'benchmark']}
+    - { role: web,        tags: ['web', 'benchmark']}
     - { role: common,     tags: ['common']}

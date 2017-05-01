@@ -73,14 +73,14 @@ def replace_ip(matchobj):
 def main():
     ipv4_regex = re.compile(
         r"""
-        (?P<pre>\s)          # try to avoid to match version numbers
+        (?P<pre>[\s|/])          # try to avoid to match version numbers
         (?P<ip>
         \d{1,3}\.
         \d{1,3}\.
         \d{1,3}\.
         \d{1,3}
         )
-        (?P<pos>[:|\s|\n])  # try to avoid to match version numbers
+        (?P<pos>[:|\s|\n|/])  # try to avoid to match version numbers
         """,
         re.IGNORECASE | re.VERBOSE)
 

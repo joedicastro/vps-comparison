@@ -298,3 +298,72 @@ PROTOCOLS
 | Open protocols IPv6 | | 0 (hopopt), 4 (ipv4), 6 (tcp), 17 (udp), 41 (ipv6), 43 (ipv6-route), 44 (ipv6-frag), 47 (gre), 50 (esp), 51 (ah), 58 (ipv6-icmp), 59 (ipv6-nonxt), 60 (ipv6-opts), 108 (ipcomp), 132 (sctp), 136 (udplite), 255 (unknown) |  | 0 (hopopt), 6 (tcp), 17 (udp), 43 (ipv6-route), 44 (ipv6-frag), 58 (ipv6-icmp), 59 (ipv6-nonxt), 60 (ipv6-opts), 136 (udplite), 255 (unknown) |  | 0 (hopopt), 6 (tcp), 17 (udp), 43 (ipv6-route), 44 (ipv6-frag), 58 (ipv6-icmp), 59 (ipv6-nonxt), 60 (ipv6-opts), 103 (pim), 136 (udplite), 255 (unknown)
 |-
 
+
+WEB WP AB RPS
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Requests per second (mean, RPS) |59.02 | 54.12 | 96.00 | 64.63 |  | 92.10
+|-
+
+
+WEB WP AB TIMES
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Time per request (mean, ms) |847.195 | 923.857 | 520.849 | 773.665 |  | 542.895
+| 95% request under this time (ms) |1278 | 1338 | 634 | 1043 |  | 657
+|-
+
+
+WEB WP WRK 100
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Total (requests) |3793 | 11398 | 17099 | 11862 |  | 16544
+| Timeout (requests) |3214 | 444 | 115 | 149 |  | 149
+| Failed (requests) | |  |  |  |  | 
+|-
+
+
+WEB WP WRK 150
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Total (requests) |1728 | 11422 | 16812 | 11774 |  | 133738
+| Timeout (requests) |1125 | 9215 | 352 | 7693 |  | 644
+| Failed (requests) |1 |  |  |  |  | 131986
+|-
+
+
+WEB WP WRK 200
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Total (requests) |59824 | 55949 | 25287 | 21781 |  | 82194
+| Timeout (requests) |1276 | 2481 | 9003 | 9162 |  | 1088
+| Failed (requests) |58848 | 53480 | 11379 | 11867 |  | 80670
+|-
+
+
+WEB GHOST WRK
+===============================================================================
+
+|-
+| | Do-5Bucks-Ubuntu | Linode-Linode1024-Ubuntu | Ovh-Vpsssd1-Ubuntu | Scaleway-Vc1S-Ubuntu | Vultr-20Gbssd-Ubuntu | Vultr-25Gbssd-Ubuntu
+|-
+| Total (requests) |23449 | 29315 | 42347 | 15517 |  | 43992
+| Timeout (requests) |137 | 47 | 138 | 46 |  | 73
+| Failed (requests) | |  |  |  |  | 
+|-
+

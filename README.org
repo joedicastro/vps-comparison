@@ -1115,7 +1115,274 @@ Gravelines (FR) and Scaleway VC1S in Paris (FR).
 
 ** Web Performance
 
-   TODO. Pending to do a more real work load tests.
+   I'm going to use two popular blog platforms to benchmark the web performance
+   in each instance: WordPress and Ghost. In order to minimize the hassle and
+   avoid any controversies (Apache vs Nginx, which DB, wich PHP, what cache to
+   use, etc) and also make all the process easier I'm going to use the [[https://bitnami.com/][Bitnami]]
+   stacks to install both programs. Even when I'm not specially fond of Bitnami
+   stacks (I would use other components), being self-contained helps a lot to
+   make easier the task as atomic and revert the server at the end to the
+   previous state.  To use two real products, even with dummy blog pages, makes
+   a great difference from using only a "Hello world!" HTML page, specially with
+   WordPress that also stresses heavily the database.
+
+   The [[https://bitnami.com/stack/wordpress][Bitnami's Wordpress]] stack uses Apache 2.4, MySQL 5.7, PHP 7, Varnish
+   4.1, and Wordpress 4.7
+
+   The [[https://bitnami.com/stack/ghost][Ghost]] stack uses Apache 2.4, Node.js 6.10, SQlite 3.7, Python 2.7 y Ghost
+   0.11
+
+   To perform the tests I'm going to use also another two popular tools:
+   [[https://httpd.apache.org/docs/2.4/programs/ab.html][ApacheBench (aka ab)]] and [[https://github.com/wg/wrk][wrk.]] In order to do the tests properly, you have to
+   perform the tests from another machine, and even when I could use a new
+   instance to test all the other instances, I think that the local computer is
+   enough to test all of this plans. But there is a drawback, you need a good
+   internet connection, preferably with a small latency and a great bandwidth,
+   because all the tests are going to be performed in parallel. I'm using a
+   symmetric fiber optic internet access with enough bandwidth, thus I did not
+   had any constrain in my side. But with bigger plans, and specially with wrk
+   and testing with more simultaneous connections it wold be eventually a
+   problem, in that case a good VPS server to perform the tests would be
+   probably a better solution. I cold use an online service but that would make
+   more difficult and costly the reproducibility of these tests by anyone by
+   their own. Also I could use another tools (Locust, Gatling, etc), but they
+   have more requirements and would cause more trouble sooner in the local
+   machine. Also wrk is enough in their own to saturate almost any VPS web
+   server with very small requirements in the local machine, and faster.
+
+   To avoid install or compile any software in the local machine, specially wrk
+   that is not present in all the distributions, I'm going to use two Docker
+   images ([[https://hub.docker.com/r/williamyeh/wrk/][williamyeh/wrk]] and [[https://hub.docker.com/r/jordi/ab/][jordi/ab]]) to perform the tests. In the
+   circumstances of these tests, using Docker almost does not cause any
+   performance loss on the local machine, is more than enough. But if we want to
+   test bigger plans with more stress, then it would be wiser to install locally
+   both tools and perform the tests from them.
+
+   Anyway, there is a moment, no matter with software I use to perform the tests
+   (but specially with wrk), that when testing WordPress the requests are so
+   much that the system runs out of memory and the MySQL database is killed and
+   eventually the Apache server is killed too if the test persists enough, until
+   that the server would be unavailable for a few minutes (some times never
+   recover on its own and I had to restart it from the control panel). After
+   all, is a kind of mini DDoS attack what are performing here. This can be
+   improved a lot with other stack components and a careful configuration. The
+   thing here is that all of the instances are tested with the same
+   configuration. Thus, I do not try here to test the maximum capacity of a
+   server as much as I try to compare them under the same circumstances. To
+   avoid lost the SSH connection with the servers, I limit the connections until
+   a certain point, pause the playbook five minutes and then restart the stack
+   before perform the next test.
+
+   In the servers where the memory available is less than 1GB, to be able to
+   install the stacks, I set a swap cache file of 512GB.
+   
+*** WordPress
+
+**** ApacheBench
+
+     This graph show the requests per second achieved with 50 concurrent
+     connections in 3 minutes, more is better.
+
+     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+     #+PLOT: set:"style histogram cluster gap 1"
+     #+PLOT: set:"style fill solid"
+     #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+     #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+     #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+     #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+     #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+     #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+     #+PLOT: set:"boxwidth bw"
+     #+PLOT: set:"grid"
+     #+PLOT: set:"xrange writeback extend"
+     #+PLOT: set:"xtics scale 0"
+     #+PLOT: set:"key outside horizontal"
+     #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+     #+PLOT: file:"./img/web_wp_ab_rps.png"
+     |----------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     | Plan                             | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+     |----------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     | Requests per second (mean, RPS)  |         96.00 |       54.12 |     59.02 |         64.63 |                |          92.10 |
+     |----------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+
+     [[./img/web_wp_ab_rps.png]]
+    
+     This other one shows the mean time per request and under what time are
+     served the 95% of all requests. Less is better.
+
+     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+     #+PLOT: set:"style histogram cluster gap 1"
+     #+PLOT: set:"style fill solid"
+     #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+     #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+     #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+     #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+     #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+     #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+     #+PLOT: set:"boxwidth bw"
+     #+PLOT: set:"grid"
+     #+PLOT: set:"xrange writeback extend"
+     #+PLOT: set:"xtics scale 0"
+     #+PLOT: set:"key outside horizontal"
+     #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+     #+PLOT: file:"./img/web_wp_ab_times.png"
+     |------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     | Plan                         | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+     |------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     | Time per request (mean, ms)  |       520.849 |     923.857 |   847.195 |       773.665 |                |        542.895 |
+     | 95% requests under this (ms) |           634 |        1338 |      1278 |          1043 |                |            657 |
+     |------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+
+     [[./img/web_wp_ab_times.png]]
+
+     
+**** wrk
+
+     With those tests, using the wrk capacity to saturate almost any server, I
+     increment the connections in three steps (100, 150, 200) under a 3 minutes
+     load to be how the performance of each server is degrading. I could use
+     a linear plot, but that would make me to change the gather python script
+     and I think that's clear enough in this way.
+
+     Of course, the key here is the amount of memory, the plans that support
+     more load are also the ones that have more memory.
+
+     More valid requests is better.
+
+***** 100 connections
+
+     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+     #+PLOT: set:"style histogram cluster gap 1"
+     #+PLOT: set:"style fill solid"
+     #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+     #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+     #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+     #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+     #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+     #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+     #+PLOT: set:"boxwidth bw"
+     #+PLOT: set:"grid"
+     #+PLOT: set:"xrange writeback extend"
+     #+PLOT: set:"xtics scale 0"
+     #+PLOT: set:"key outside horizontal"
+     #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+     #+PLOT: file:"./img/web_wp_wrk_100.png"
+     |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     | Plan               | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+     |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     | Total (requests)   |         17099 |       11398 |      3793 |         11862 |                |          16544 |
+     | Timeout (requests) |           115 |         444 |      3214 |           149 |                |            149 |
+     | Failed (requests)  |               |             |           |               |                |                |
+     |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     | Valid (requests)   |         16984 |       10954 |       579 |         11713 |              0 |          16395 |
+     |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     #+TBLFM: @5$2=@2-@3-@4::@5$3=@2-@3-@4::@5$4=@2-@3-@4::@5$5=@2-@3-@4::@5$6=@2-@3-@4::@5$7=@2-@3-@4
+
+     [[./img/web_wp_wrk_100.png]]
+
+***** 150 connections
+
+     I truncate the graph by the top here because of the excess of invalid
+     requests (the database is killed to soon) from Vultr misrepresents the most
+     important value, the successful requests.
+
+     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:20000]"
+     #+PLOT: set:"style histogram cluster gap 1"
+     #+PLOT: set:"style fill solid"
+     #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+     #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+     #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+     #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+     #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+     #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+     #+PLOT: set:"boxwidth bw"
+     #+PLOT: set:"grid"
+     #+PLOT: set:"xrange writeback extend"
+     #+PLOT: set:"xtics scale 0"
+     #+PLOT: set:"key outside horizontal"
+     #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+     #+PLOT: file:"./img/web_wp_wrk_150.png"
+     |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     | Plan               | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+     |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     | Total (requests)   |         16812 |       11422 |      1728 |         11774 |                |         133738 |
+     | Timeout (requests) |           352 |        9215 |      1125 |          7693 |                |            644 |
+     | Failed (requests)  |               |             |         1 |               |                |         131986 |
+     |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     | Valid (requests)   |         16460 |        2207 |       602 |          4081 |              0 |           1108 |
+     |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     #+TBLFM: @5$2=@2-@3-@4::@5$3=@2-@3-@4::@5$4=@2-@3-@4::@5$5=@2-@3-@4::@5$6=@2-@3-@4::@5$7=@2-@3-@4
+
+     [[./img/web_wp_wrk_150.png]]
+
+***** 200 connections
+
+     I truncate the graph by the top here because of the excess of invalid
+     requests (the database is killed to soon) from Vultr misrepresents the most
+     important value, the successful requests.
+
+     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:25000]"
+     #+PLOT: set:"style histogram cluster gap 1"
+     #+PLOT: set:"style fill solid"
+     #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+     #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+     #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+     #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+     #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+     #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+     #+PLOT: set:"boxwidth bw"
+     #+PLOT: set:"grid"
+     #+PLOT: set:"xrange writeback extend"
+     #+PLOT: set:"xtics scale 0"
+     #+PLOT: set:"key outside horizontal"
+     #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+     #+PLOT: file:"./img/web_wp_wrk_200.png"
+     |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     | Plan               | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+     |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     | Total (requests)   |         25287 |       55949 |     59824 |         21781 |                |          82194 |
+     | Timeout (requests) |          9003 |        2481 |      1276 |          9162 |                |           1088 |
+     | Failed (requests)  |         11379 |       53480 |     58848 |         11867 |                |          80670 |
+     |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     | Valid (requests)   |          4905 |         -12 |      -300 |           752 |              0 |            436 |
+     |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     #+TBLFM: @5$2=@2-@3-@4::@5$3=@2-@3-@4::@5$4=@2-@3-@4::@5$5=@2-@3-@4::@5$6=@2-@3-@4::@5$7=@2-@3-@4
+
+     [[./img/web_wp_wrk_200.png]]
+
+*** Ghost
+
+    The same test as above but with 20 threads and 150 connections in Ghost, a
+    faster and more efficient blog than wordpress. More valid request is better.
+
+     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+     #+PLOT: set:"style histogram cluster gap 1"
+     #+PLOT: set:"style fill solid"
+     #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+     #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+     #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+     #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+     #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+     #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+     #+PLOT: set:"boxwidth bw"
+     #+PLOT: set:"grid"
+     #+PLOT: set:"xrange writeback extend"
+     #+PLOT: set:"xtics scale 0"
+     #+PLOT: set:"key outside horizontal"
+     #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+     #+PLOT: file:"./img/web_ghost_wrk.png"
+     |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     | Plan               | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+     |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     | Total (requests)   |         42347 |       29315 |     23449 |         15517 |                |          43992 |
+     | Timeout (requests) |           138 |          47 |       137 |            46 |                |             73 |
+     | Failed (requests)  |               |             |           |               |                |                |
+     |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     | Valid (requests)   |         42209 |       29268 |     23312 |         15471 |              0 |          43919 |
+     |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+     #+TBLFM: @5$2=@2-@3-@4::@5$3=@2-@3-@4::@5$4=@2-@3-@4::@5$5=@2-@3-@4::@5$6=@2-@3-@4::@5$7=@2-@3-@4
+
+     [[./img/web_ghost_wrk.png]]
 
 ** Default Security
 

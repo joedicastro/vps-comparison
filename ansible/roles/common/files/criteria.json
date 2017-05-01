@@ -659,6 +659,136 @@
                 "round": false,
                 "average": false
             }
+        },
+        "web_wp_wrk_100.log": {
+            "wp_wrk_100_requests": {
+                "regex": "(\\d+) requests in",
+                "idx": 0,
+                "exp": 0,
+                "dual": false,
+                "round": false,
+                "average": false
+            },
+            "wp_wrk_100_timeout": {
+                "regex": ", timeout (\\d+)",
+                "idx": 0,
+                "exp": 0,
+                "dual": false,
+                "round": false,
+                "average": false
+            },
+             "wp_wrk_100_failed": {
+                "regex": "3xx responses: (\\d+)",
+                "idx": 0,
+                "exp": 0,
+                "dual": false,
+                "round": false,
+                "average": false
+            }
+        },
+        "web_wp_wrk_150.log": {
+            "wp_wrk_150_requests": {
+                "regex": "(\\d+) requests in",
+                "idx": 0,
+                "exp": 0,
+                "dual": false,
+                "round": false,
+                "average": false
+            },
+            "wp_wrk_150_timeout": {
+                "regex": ", timeout (\\d+)",
+                "idx": 0,
+                "exp": 0,
+                "dual": false,
+                "round": false,
+                "average": false
+            },
+             "wp_wrk_150_failed": {
+                "regex": "3xx responses: (\\d+)",
+                "idx": 0,
+                "exp": 0,
+                "dual": false,
+                "round": false,
+                "average": false
+            }
+        },
+        "web_wp_wrk_200.log": {
+            "wp_wrk_200_requests": {
+                "regex": "(\\d+) requests in",
+                "idx": 0,
+                "exp": 0,
+                "dual": false,
+                "round": false,
+                "average": false
+            },
+            "wp_wrk_200_timeout": {
+                "regex": ", timeout (\\d+)",
+                "idx": 0,
+                "exp": 0,
+                "dual": false,
+                "round": false,
+                "average": false
+            },
+             "wp_wrk_200_failed": {
+                "regex": "3xx responses: (\\d+)",
+                "idx": 0,
+                "exp": 0,
+                "dual": false,
+                "round": false,
+                "average": false
+            }
+        } ,
+        "web_ghost_wrk.log": {
+            "ghost_wrk_requests": {
+                "regex": "(\\d+) requests in",
+                "idx": 0,
+                "exp": 0,
+                "dual": false,
+                "round": false,
+                "average": true
+            },
+            "ghost_wrk_timeout": {
+                "regex": ", timeout (\\d+)",
+                "idx": 0,
+                "exp": 0,
+                "dual": false,
+                "round": false,
+                "average": true
+            },
+            "ghost_wrk_failed": {
+                "regex": "3xx responses: (\\d+)",
+                "idx": 0,
+                "exp": 0,
+                "dual": false,
+                "round": false,
+                "average": true
+            }
+        },
+        "web_wp_ab.log": {
+            "wp_ab_rps": {
+                "regex": "Requests per second:\\s+(\\d+\\.\\d+)",
+                "idx": 0,
+                "exp": 0,
+                "dual": false,
+                "round": false,
+                "average": false
+            },
+            "wp_ab_mean": {
+                "regex": "Time per request:\\s+(\\d+\\.\\d+)",
+                "idx": 0,
+                "exp": 0,
+                "dual": false,
+                "round": false,
+                "average": false
+            },
+             "wp_ab_95p": {
+                "regex": "95%\\s+(\\d+)",
+                "idx": 0,
+                "exp": 0,
+                "dual": false,
+                "round": false,
+                "average": false
+            }
         }
     },
     "criteria_per_table": {
@@ -787,6 +917,36 @@
         "protocols": {
             "nmap_protocols_v4": "Open protocols IPv4",
             "nmap_protocols_v6": "Open protocols IPv6"
+        },
+        "web_wp_ab_rps": {
+            "wp_ab_rps": "Requests per second (mean, RPS)"
+        },
+        "web_wp_ab_times": {
+            "wp_ab_mean": "Time per request (mean, ms)",
+            "wp_ab_95p": "95% request under this time (ms)"
+        },
+        "web_wp_wrk_100": {
+            "wp_wrk_100_requests": "Total (requests)",
+            "wp_wrk_100_timeout": "Timeout (requests)",
+            "wp_wrk_100_failed": "Failed (requests)"
+        },
+        "web_wp_wrk_150": {
+            "wp_wrk_150_requests": "Total (requests)",
+            "wp_wrk_150_timeout": "Timeout (requests)",
+            "wp_wrk_150_failed": "Failed (requests)"
+        },
+        "web_wp_wrk_200": {
+            "wp_wrk_200_requests": "Total (requests)",
+            "wp_wrk_200_timeout": "Timeout (requests)",
+            "wp_wrk_200_failed": "Failed (requests)"
+        },
+        "web_ghost_wrk": {
+            "ghost_wrk_requests": "Total (requests)",
+            "ghost_wrk_timeout": "Timeout (requests)",
+            "ghost_wrk_failed": "Failed (requests)"
         }
     }
 }
+
+
+

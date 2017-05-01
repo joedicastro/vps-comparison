@@ -1,0 +1,26 @@
+Running 1m test @ http://x.x.x.x/welcome-to-ghost
+  20 threads and 150 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   185.37ms   46.48ms   1.29s    84.68%
+    Req/Sec    37.78     18.30   130.00     65.38%
+  40797 requests in 1.00m, 8.92MB read
+  Socket errors: connect 0, read 0, write 0, timeout 138
+Requests/sec:    679.17
+Transfer/sec:    151.98KB
+Running 1m test @ http://x.x.x.x/welcome-to-ghost
+  20 threads and 150 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   184.25ms   29.98ms 695.22ms   80.55%
+    Req/Sec    38.52     17.65    90.00     55.51%
+  45048 requests in 1.00m, 9.85MB read
+  Socket errors: connect 0, read 0, write 0, timeout 8
+Requests/sec:    749.91
+Transfer/sec:    167.83KB
+Running 1m test @ http://x.x.x.x/welcome-to-ghost
+  20 threads and 150 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   181.06ms   26.82ms   1.14s    75.51%
+    Req/Sec    39.12     17.40    70.00     56.53%
+  46131 requests in 1.00m, 10.08MB read
+Requests/sec:    768.11
+Transfer/sec:    171.91KB
