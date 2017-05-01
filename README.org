@@ -1141,7 +1141,7 @@ Gravelines (FR) and Scaleway VC1S in Paris (FR).
    because all the tests are going to be performed in parallel. I'm using a
    symmetric fiber optic internet access with enough bandwidth, thus I did not
    had any constrain in my side. But with bigger plans, and specially with wrk
-   and testing with more simultaneous connections it wold be eventually a
+   and testing with more simultaneous connections it would be eventually a
    problem, in that case a good VPS server to perform the tests would be
    probably a better solution. I cold use an online service but that would make
    more difficult and costly the reproducibility of these tests by anyone by
@@ -1235,7 +1235,6 @@ Gravelines (FR) and Scaleway VC1S in Paris (FR).
 
      [[./img/web_wp_ab_times.png]]
 
-     
 **** wrk
 
      With those tests, using the wrk capacity to saturate almost any server, I
@@ -1318,8 +1317,8 @@ Gravelines (FR) and Scaleway VC1S in Paris (FR).
 ***** 200 connections
 
      I truncate the graph by the top here because of the excess of invalid
-     requests (the database is killed to soon) from Vultr misrepresents the most
-     important value, the successful requests.
+     requests (the database is killed to soon) from several plans misrepresents
+     the most important value, the successful requests.
 
      #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:25000]"
      #+PLOT: set:"style histogram cluster gap 1"
