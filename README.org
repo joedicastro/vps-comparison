@@ -76,7 +76,7 @@ Note:
 
 *** European data centers
 
-   - *OVH*: Gravelines (FR), Roubaix (FR), Strasboug (DE). It has also a data center in Paris (FR), but is not available for these plans.
+   - *OVH*: Gravelines (FR), Roubaix (FR), Strasbourg (FR). It has also a data center in Paris (FR), but is not available for these plans.
    - *Linode*: Frankfurt (DE), London (GB)
    - *DigitalOcean*: Amsterdam (NL), Frankfurt (DE), London (GB)
    - *Scaleway*: Amsterdam (NL), Paris (FR)
