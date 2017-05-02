@@ -54,7 +54,7 @@ Note:
 |-----------------------------+------------------+------------------+------------------+-----------------------------------+------------------|
 | European data centers       | 3                | 2                | 3                | 2                                 | 4                |
 | Documentation               | [[https://www.ovh.co.uk/community/knowledge/][Docs]]             | [[https://www.linode.com/docs/][Docs]]             | [[https://www.digitalocean.com/community][Docs]]             | [[https://www.scaleway.com/docs/][Docs]]                              | [[https://www.vultr.com/docs/][Docs]]             |
-| Doc. subjetive valuation    | 6/10             | 9/10             | 9/10             | 6/10                              | 8/10             |
+| Doc. subjective valuation    | 6/10             | 9/10             | 9/10             | 6/10                              | 8/10             |
 | Uptime guaranteed (SLA)     | 99,95%           | 99,9%            | 99,99%           | 99,9%                             | 100%             |
 | Outage refund/credit (SLA)  | Yes              | Yes              | Yes              | No                                | Yes              |
 | API                         | Yes              | Yes              | Yes              | Yes                               | Yes              |
