@@ -134,7 +134,7 @@ Notes:
  | Linux    | Arch Linux, CentOS, Debian, Ubuntu | Arch, CentOS, Debian, Fedora, Gentoo, OpenSUSE, Slackware, Ubuntu | CentOS, Debian, Fedora, Ubuntu | Alpine, CentOS, Debian, Gentoo, Ubuntu | CentOS, Debian, Fedora, Ubuntu |
  | BSD      | No                                 | No                                                                | FreeBSD                        | No                                     | FreeBSD, OpenBSD               |
  | Windows  | No                                 | No                                                                | No                             | No                                     | Windows 2012 R2 (16$)          |
- | Other SO | No                                 | No                                                                | CoreOS                         | No                                     | CoreOS                         |
+ | Other OS | No                                 | No                                                                | CoreOS                         | No                                     | CoreOS                         |
  |----------+------------------------------------+-------------------------------------------------------------------+--------------------------------+----------------------------------------+--------------------------------|
 
  Note:
