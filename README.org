@@ -28,7 +28,7 @@ Notes:
 
 - The companies are sorted by the year of foundation.
 - Scaleway is a cloud division of Online.net (1999), itself subsidiary of the Iliad group (1990) owner also of the famous French ISP Free.
-- Vultr Holdings LLC is owned by Choopa LLC founded in 2010.
+- Vultr Holdings LLC is owned by Choopa LLC founded in 2000.
 - The Market numbers are extracted from the Wikipedia an other sources
 
 ** Billing
@@ -104,7 +104,7 @@ Note:
  | Recovery mode                       | No                | Yes                   | Yes                                          | Yes          | Boot with custom ISO                 |
  | Tag instances                       | No                | Yes                   | Yes                                          | Yes          | Yes                                  |
  | Responsive design (mobile UI)       | No                | No                    | No                                           | No           | Yes                                  |
- | Android App                         | Only in France    | Yes                   | Unofficial                                   | No           | Yes                                  |
+ | Android App                         | Only in France    | Yes                   | Unofficial                                   | No           | Unofficial                                  |
  | iOS App                             | Yes               | Yes                   | Unofficial                                   | No           | Unofficial                           |
  |-------------------------------------+-------------------+-----------------------+----------------------------------------------+--------------+--------------------------------------|
 
