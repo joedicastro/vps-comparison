@@ -28,7 +28,7 @@ Notes:
 
 - The companies are sorted by the year of foundation.
 - Scaleway is a cloud division of Online.net (1999), itself subsidiary of the Iliad group (1990) owner also of the famous French ISP Free.
-- Vultr Holdings LLC is owned by Choopa LLC founded in 2010.
+- Vultr Holdings LLC is owned by Choopa LLC founded in 2000.
 - The Market numbers are extracted from the Wikipedia an other sources
 
 ** Billing
@@ -104,7 +104,7 @@ Note:
  | Recovery mode                       | No                | Yes                   | Yes                                          | Yes          | Boot with custom ISO                 |
  | Tag instances                       | No                | Yes                   | Yes                                          | Yes          | Yes                                  |
  | Responsive design (mobile UI)       | No                | No                    | No                                           | No           | Yes                                  |
- | Android App                         | Only in France    | Yes                   | Unofficial                                   | No           | Yes                                  |
+ | Android App                         | Only in France    | Yes                   | Unofficial                                   | No           | Unofficial                                  |
  | iOS App                             | Yes               | Yes                   | Unofficial                                   | No           | Unofficial                           |
  |-------------------------------------+-------------------+-----------------------+----------------------------------------------+--------------+--------------------------------------|
 
@@ -115,7 +115,7 @@ Notes:
 - Linode let you choose the Linux Kernel version in the profile of your instance.
 - To reset the root password from the control panel is not a good security measure IMHO, it's useful, but you already have the KVM console for that.
 - In Vultr you can copy/see the masked default root password, but not reset it. This is necessary because the password is never sent by email.
-- You can reinstall the instances using the same SO/App or choosing another one.
+- You can resintall the instances using the same SO/App or choosing another one.
 - Linode reinstall time (they call it rebuild) does not include the boot time, the instance is not started automatically.
 - In Vultr can use a custom ISO or choose one from the library like SystemRescueCD or Trinity Rescue Kit to boot your instance and perform recovery tasks.
 - Linode has an additional console (Lish) that allows you to control your instance even when is inaccessible by ssh and perform rescue or management tasks.
