@@ -27,6 +27,7 @@ like I spend, I'll be glad!
 Notes:
 
 - The companies are sorted by the year of foundation.
+- Linode was spun-off from a company providing ColdFusion hosting (TheShore.net) that was founded in 1999.
 - Scaleway is a cloud division of Online.net (1999), itself subsidiary of the Iliad group (1990) owner also of the famous French ISP Free.
 - Vultr Holdings LLC is owned by Choopa LLC founded in 2000.
 - The Market numbers are extracted from the Wikipedia an other sources
