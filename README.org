@@ -187,7 +187,7 @@ Notes:
 - The Vultr's ISO image library include several ISOs like Alpine, Arch, Finnix, FreePBX, pfSense, Rancher Os, SystemRescueCD, and Trinity Rescue Kit.
 - The Vultr's "Custom ISO image" feature allows you to install virtually any SO supported by KVM and the server architecture.
 - Linode does not preload your ssh keys into the instance automatically, but it's trivial to do it manually anyway (ssh-copy-id).
-- Scaleway has a curious way to provide custom images, a service called [[https://github.com/scaleway/image-builder][Image Builder.]] You have to create an instance with the Image Builder an from there you are able to create you own ISO image usign a Docker builder system that create images that can run on real hardware.
+- Scaleway has a curious way to provide custom images, a service called [[https://github.com/scaleway/image-builder][Image Builder.]] You have to create an instance with the Image Builder and from there you are able to create you own ISO image using a Docker builder system that create images that can run on real hardware.
 
 ** Security
 
