@@ -251,7 +251,6 @@ Notes:
 - OVH hides its real CPU, but what they claim in their web matches with the hardware information reported in the tests (an E5-2620 v3 or  E5-2630 v3).
 - Vultr also hides the real CPU, but it could be a Xeon E5-2620/2630 v3 for the 20GB SSD plan and probably a v4 for the 25GB SSD one.
 - The prices for DigitalOcean and Vultr do not include taxes (VAT) for European countries.
-- I have serious doubts about the OVH's and Scaleway's unlimited traffic, seems more marketing strategy than real to me (joe di castro).
 - Linode allows you to have free additional public IPs but you have to request them to support and justify that you need them.
 - Linode Longview's monitoring system is free up to 10 clients, but also has a professional version that starts at 20$/mo for three client.
 - Linode don't support currently block storage, but they are working on it to offer the service in the upcoming months.
