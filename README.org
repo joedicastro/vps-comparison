@@ -71,7 +71,7 @@ Note:
 - Scaleway has four grades of SLA, the first basic is for free but if you want something better, you have to pay a monthly fee.
 - One of the reasons why the Linode's documentation is so good and detailed is that they [[https://www.linode.com/docs/linode-writers-guide/][pay you 250$]] for write a guide for them if it's good enough to publish. They are a small team (about 70 people), so it makes sense.
 - The Linode API is not a RESTful API yet, but they are working in an upcoming one.
-- The default limits usually can be increased by asking support. Those limits are set by default by the providers to stop abusing the accounts.
+- The default limits usually can be increased by asking support, but not in Scaleway, where you would have to pay fo a higher level of support. Those limits are set by default by the providers to stop abusing the accounts. 
 - Scaleway also imposes a lot more of limits that can be looked up in the account settings (e.g. 100 images or 25 snapshots).
 - Vultr also impose a limit of a maximum instance cost of 150$ per month and requires a deposit when charges exceed 50$.
 
