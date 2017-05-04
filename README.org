@@ -1,5 +1,9 @@
 *WARNING: A work in progress!*
 
+*ATTENTION*
+
+If you like this project, and you would like to have more plans and providers in the comparison, please take a look at the issue #22
+
 * VPS Comparison
 
 A comparison between some VPS providers that have data centers located in
