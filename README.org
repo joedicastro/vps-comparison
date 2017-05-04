@@ -2,7 +2,7 @@
 
 *ATTENTION*
 
-If you like this project, and you would like to have more plans and providers in the comparison, please take a look at the issue #22
+If you like this project, and you would like to have more plans and providers in the comparison, please take a look at [[https://github.com/joedicastro/vps-comparison/issues/22][this issue.]]
 
 * VPS Comparison
 
