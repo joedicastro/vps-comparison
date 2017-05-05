@@ -234,7 +234,7 @@ Notes:
  | CPU model            | Xeon E5v3 2.4GHz | Xeon E5-2680 v3 2.5GHz | Xeon E5-2650L v3 1.80 GHz              | Atom C2750 2.4 GHz | Intel Xeon 2.4 GHz                     | Intel Xeon 2.4 GHz                     |
  | RAM                  | 2 GB             | 1 GB                   | 512 MB                                 | 2 GB               | 512 MB                                 | 1 GB                                   |
  | SSD Storage          | 10 GB            | 20 GB                  | 20 GB                                  | 50 GB              | 20 GB                                  | 25 GB                                  |
- | Traffic              | 10 TB                | 1 TB                   | 1 TB                                   | ∞                  | 500 GB                                 | 1 TB                                   |
+ | Traffic              | ∞                | 1 TB                   | 1 TB                                   | ∞                  | 500 GB                                 | 1 TB                                   |
  | Bandwidth (In / Out) | 100/100 Mbps     | 40/1 Gbps              | 1/10 Gbps                              | 200/200 Mbps       | 1/10 Gbps                              | 1/10 Gbps                              |
  | Virtualization       | KVM              | KVM (Qemu)             | KVM                                    | KVM (Qemu)         | KVM (Qemu)                             | KVM (Qemu)                             |
  | Anti-DDoS Protection | Yes              | No                     | No                                     | No                 | 10$                                    | 10$                                    |
@@ -254,6 +254,7 @@ Notes:
  Note:
 - OVH hides its real CPU, but what they claim in their web matches with the hardware information reported in the tests (an E5-2620 v3 or  E5-2630 v3).
 - Vultr also hides the real CPU, but it could be a Xeon E5-2620/2630 v3 for the 20GB SSD plan and probably a v4 for the 25GB SSD one.
+- OVH throttle network speed to 1 Mbps after excess monthly 10 TB traffic
 - The prices for DigitalOcean and Vultr do not include taxes (VAT) for European countries.
 - Linode allows you to have free additional public IPs but you have to request them to support and justify that you need them.
 - Linode Longview's monitoring system is free up to 10 clients, but also has a professional version that starts at 20$/mo for three client.
@@ -261,7 +262,7 @@ Notes:
 - Linode snapshots (called Images) are limited to 2GB per Image, with a total of 10GB total Image storage and 3 Images per account. Disks of recently rebuilt instances are automatically stored as Images.
 - Scaleway also offers for the same price a BareMetal plan (with 4 ARM Cores), but as it is a dedicated server, I do not include it here.
 - Scaleway does not offers Anti-DDoS protection but they maintain that they use the Online.net's standard one.
-- Scaleway uses dynamic IPs by default as private IPs and you only can opt to use static IPs if you *remove* the Public IP from the instance.
+- Scaleway uses dynamic IPs by default as private IPs and you only can opt to use static IPs if you *remove* the public IP from the instance.
 
 * Tests
 
