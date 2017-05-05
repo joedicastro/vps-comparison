@@ -234,7 +234,7 @@ Notes:
  | CPU model            | Xeon E5v3 2.4GHz | Xeon E5-2680 v3 2.5GHz | Xeon E5-2650L v3 1.80 GHz              | Atom C2750 2.4 GHz | Intel Xeon 2.4 GHz                     | Intel Xeon 2.4 GHz                     |
  | RAM                  | 2 GB             | 1 GB                   | 512 MB                                 | 2 GB               | 512 MB                                 | 1 GB                                   |
  | SSD Storage          | 10 GB            | 20 GB                  | 20 GB                                  | 50 GB              | 20 GB                                  | 25 GB                                  |
- | Traffic              | ∞                | 1 TB                   | 1 TB                                   | ∞                  | 500 GB                                 | 1 TB                                   |
+ | Traffic              | 10 TB                | 1 TB                   | 1 TB                                   | ∞                  | 500 GB                                 | 1 TB                                   |
  | Bandwidth (In / Out) | 100/100 Mbps     | 40/1 Gbps              | 1/10 Gbps                              | 200/200 Mbps       | 1/10 Gbps                              | 1/10 Gbps                              |
  | Virtualization       | KVM              | KVM (Qemu)             | KVM                                    | KVM (Qemu)         | KVM (Qemu)                             | KVM (Qemu)                             |
  | Anti-DDoS Protection | Yes              | No                     | No                                     | No                 | 10$                                    | 10$                                    |
