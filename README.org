@@ -262,6 +262,7 @@ Notes:
 - Scaleway also offers for the same price a BareMetal plan (with 4 ARM Cores), but as it is a dedicated server, I do not include it here.
 - Scaleway does not offers Anti-DDoS protection but they maintain that they use the Online.net's standard one.
 - Scaleway uses dynamic IPs by default as private IPs and you only can opt to use static IPs if you *remove* the Public IP from the instance.
+- Scaleway uses dynamic IPv6, meaning that IPv6 will change if you stop your server. You can't even opt to reserve IPv6.
 
 * Tests
 
