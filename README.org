@@ -54,21 +54,21 @@ Note:
 
 ** General Features
 
-|-----------------------------+------------------+------------------+------------------+-----------------------------------+------------------|
-|                             | OVH              | Linode           | DigitalOcean     | Scaleway                          | Vultr            |
-|-----------------------------+------------------+------------------+------------------+-----------------------------------+------------------|
-| European data centers       | 3                | 2                | 3                | 2                                 | 4                |
-| Documentation               | [[https://www.ovh.co.uk/community/knowledge/][Docs]]             | [[https://www.linode.com/docs/][Docs]]             | [[https://www.digitalocean.com/community][Docs]]             | [[https://www.scaleway.com/docs/][Docs]]                              | [[https://www.vultr.com/docs/][Docs]]             |
-| Doc. subjective valuation    | 6/10             | 9/10             | 9/10             | 6/10                              | 8/10             |
-| Uptime guaranteed (SLA)     | 99,95%           | 99,9%            | 99,99%           | 99,9%                             | 100%             |
-| Outage refund/credit (SLA)  | Yes              | Yes              | Yes              | No                                | Yes              |
-| API                         | Yes              | Yes              | Yes              | Yes                               | Yes              |
-| API Docs                    | [[https://api.ovh.com/][API Docs]]         | [[https://www.linode.com/api][API Docs]]         | [[https://developers.digitalocean.com/documentation/][API Docs]]         | [[https://developer.scaleway.com/][API Docs]]                          | [[https://www.vultr.com/api/][API Docs]]         |
-| Services status page        | [[http://status.ovh.com/][Status]]           | [[https://status.linode.com/][Status]]           | [[https://status.digitalocean.com/][Status]]           | [[https://status.online.net/tasklist/?project=11&status=&perpage=50&order=id&sort=desc][Status]]                            | [[https://www.vultr.com/status/][Status]]           |
-| Support Quality             |                  |                  |                  |                                   |                  |
-| Account Limits              |                  |                  | 10 instances     | Limited instances (e.g. 50 VC1S ) | 10 instances     |
-| Legal/ToS                   | [[https://www.ovh.com/us/support/termsofservice/][ToS]]              | [[https://www.linode.com/tos][ToS]]              | [[https://www.digitalocean.com/legal/terms/][ToS]]              | [[https://www.scaleway.com/terms/][ToS]]                               | [[https://www.vultr.com/legal/tos/][ToS]]              |
-|-----------------------------+------------------+------------------+------------------+-----------------------------------+------------------|
+|----------------------------+----------+----------+--------------+-----------------------------------+--------------|
+|                            | OVH      | Linode   | DigitalOcean | Scaleway                          | Vultr        |
+|----------------------------+----------+----------+--------------+-----------------------------------+--------------|
+| European data centers      | 3        | 2        | 3            | 2                                 | 4            |
+| Documentation              | [[https://www.ovh.co.uk/community/knowledge/][Docs]]     | [[https://www.linode.com/docs/][Docs]]     | [[https://www.digitalocean.com/community][Docs]]         | [[https://www.scaleway.com/docs/][Docs]]                              | [[https://www.vultr.com/docs/][Docs]]         |
+| Doc. subjective valuation  | 6/10     | 9/10     | 9/10         | 6/10                              | 8/10         |
+| Uptime guaranteed (SLA)    | 99,95%   | 99,9%    | 99,99%       | 99,9%                             | 100%         |
+| Outage refund/credit (SLA) | Yes      | Yes      | Yes          | No                                | Yes          |
+| API                        | Yes      | Yes      | Yes          | Yes                               | Yes          |
+| API Docs                   | [[https://api.ovh.com/][API Docs]] | [[https://www.linode.com/api][API Docs]] | [[https://developers.digitalocean.com/documentation/][API Docs]]     | [[https://developer.scaleway.com/][API Docs]]                          | [[https://www.vultr.com/api/][API Docs]]     |
+| Services status page       | [[http://status.ovh.com/][Status]]   | [[https://status.linode.com/][Status]]   | [[https://status.digitalocean.com/][Status]]       | [[https://status.online.net/tasklist/?project=11&status=&perpage=50&order=id&sort=desc][Status]]                            | [[https://www.vultr.com/status/][Status]]       |
+| Support Quality            |          |          |              |                                   |              |
+| Account Limits             |          |          | 10 instances | Limited instances (e.g. 50 VC1S ) | 10 instances |
+| Legal/ToS                  | [[https://www.ovh.com/us/support/termsofservice/][ToS]]      | [[https://www.linode.com/tos][ToS]]      | [[https://www.digitalocean.com/legal/terms/][ToS]]          | [[https://www.scaleway.com/terms/][ToS]]                               | [[https://www.vultr.com/legal/tos/][ToS]]          |
+|----------------------------+----------+----------+--------------+-----------------------------------+--------------|
 
 Note:
 
@@ -109,7 +109,7 @@ Note:
  | Recovery mode                       | No                | Yes                   | Yes                                          | Yes          | Boot with custom ISO                 |
  | Tag instances                       | No                | Yes                   | Yes                                          | Yes          | Yes                                  |
  | Responsive design (mobile UI)       | No                | No                    | No                                           | No           | Yes                                  |
- | Android App                         | Only in France    | Yes                   | Unofficial                                   | No           | Unofficial                                  |
+ | Android App                         | Only in France    | Yes                   | Unofficial                                   | No           | Unofficial                           |
  | iOS App                             | Yes               | Yes                   | Unofficial                                   | No           | Unofficial                           |
  |-------------------------------------+-------------------+-----------------------+----------------------------------------------+--------------+--------------------------------------|
 
@@ -133,14 +133,14 @@ Notes:
 
 *** Operating Systems
 
- |----------+------------------------------------+-------------------------------------------------------------------+--------------------------------+----------------------------------------+--------------------------------|
- |          | OVH                                | Linode                                                            | DigitalOcean                   | Scaleway                               | Vultr                          |
- |----------+------------------------------------+-------------------------------------------------------------------+--------------------------------+----------------------------------------+--------------------------------|
- | Linux    | Arch Linux, CentOS, Debian, Ubuntu | Arch, CentOS, Debian, Fedora, Gentoo, OpenSUSE, Slackware, Ubuntu | CentOS, Debian, Fedora, Ubuntu | Alpine, CentOS, Debian, Gentoo, Ubuntu | CentOS, Debian, Fedora, Ubuntu |
- | BSD      | No                                 | No                                                                | FreeBSD                        | No                                     | FreeBSD, OpenBSD               |
+ |----------+------------------------------------+-------------------------------------------------------------------+--------------------------------+----------------------------------------+---------------------------------------------|
+ |          | OVH                                | Linode                                                            | DigitalOcean                   | Scaleway                               | Vultr                                       |
+ |----------+------------------------------------+-------------------------------------------------------------------+--------------------------------+----------------------------------------+---------------------------------------------|
+ | Linux    | Arch Linux, CentOS, Debian, Ubuntu | Arch, CentOS, Debian, Fedora, Gentoo, OpenSUSE, Slackware, Ubuntu | CentOS, Debian, Fedora, Ubuntu | Alpine, CentOS, Debian, Gentoo, Ubuntu | CentOS, Debian, Fedora, Ubuntu              |
+ | BSD      | No                                 | No                                                                | FreeBSD                        | No                                     | FreeBSD, OpenBSD                            |
  | Windows  | No                                 | No                                                                | No                             | No                                     | Windows 2012 R2 (16$) or Windows 2016 (16$) |
- | Other OS | No                                 | No                                                                | CoreOS                         | No                                     | CoreOS                         |
- |----------+------------------------------------+-------------------------------------------------------------------+--------------------------------+----------------------------------------+--------------------------------|
+ | Other OS | No                                 | No                                                                | CoreOS                         | No                                     | CoreOS                                      |
+ |----------+------------------------------------+-------------------------------------------------------------------+--------------------------------+----------------------------------------+---------------------------------------------|
 
  Note:
 
@@ -1175,71 +1175,310 @@ Gravelines (FR) and Scaleway VC1S in Paris (FR).
    thing here is that all of the instances are tested with the same
    configuration. Thus, I do not try here to test the maximum capacity of a
    server as much as I try to compare them under the same circumstances. To
-   avoid lost the SSH connection with the servers, I limit the connections until
-   a certain point, pause the playbook five minutes and then restart the stack
-   before perform the next test.
+   avoid lost the SSH connection (and have to perform a manual intervention)
+   with the servers, I limit the connections until a certain point, pause the
+   playbook five minutes and then restart the stack before perform the next
+   test.
 
    In the servers where the memory available is less than 1GB, to be able to
-   install the stacks, I set a swap cache file of 512GB.
+   install the stacks, I set a swap cache file of 512GB. But to perform the
+   tests I deactivate that cache memory to compare all of them in the default
+   offered conditions.
    
 *** WordPress
 
 **** ApacheBench
 
-     This graph show the requests per second achieved with 50 concurrent
-     connections in 3 minutes, more is better.
+***** Requests
 
-     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
-     #+PLOT: set:"style histogram cluster gap 1"
-     #+PLOT: set:"style fill solid"
-     #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
-     #+PLOT: set:"linetype 2 lc rgb '#009E73'"
-     #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
-     #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
-     #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
-     #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
-     #+PLOT: set:"boxwidth bw"
-     #+PLOT: set:"grid"
-     #+PLOT: set:"xrange writeback extend"
-     #+PLOT: set:"xtics scale 0"
-     #+PLOT: set:"key outside horizontal"
-     #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-     #+PLOT: file:"./img/web_wp_ab_rps.png"
-     |----------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
-     | Plan                             | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
-     |----------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
-     | Requests per second (mean, RPS)  |         96.00 |       54.12 |     59.02 |         64.63 |                |          92.10 |
-     |----------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       This graph show the number of requests achieved with several concurrent
+       connections in 3 minutes, more valid requests is better.
 
-     [[./img/web_wp_ab_rps.png]]
+****** 10 connections
+
+       #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+       #+PLOT: set:"style histogram cluster gap 1"
+       #+PLOT: set:"style fill solid"
+       #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+       #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+       #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+       #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+       #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+       #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+       #+PLOT: set:"boxwidth bw"
+       #+PLOT: set:"grid"
+       #+PLOT: set:"xrange writeback extend"
+       #+PLOT: set:"xtics scale 0"
+       #+PLOT: set:"key outside horizontal"
+       #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+       #+PLOT: file:"./img/web_wp_ab_10_requests.png"
+       |-------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Plan              | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+       |-------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Total (requests)  |          4562 |        3496 |      3921 |          3901 |                |           4180 |
+       | Failed (requests) |             0 |           0 |         0 |             0 |                |              0 |
+       |-------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Valid (requests)  |          4562 |        3496 |      3921 |          3901 |              0 |           4180 |
+       |-------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       #+TBLFM: @4$2=@2-@3::@4$3=@2-@3::@4$4=@2-@3::@4$5=@2-@3::@4$6=@2-@3::@4$7=@2-@3
+
+       [[./img/web_wp_ab_10_requests.png]]
+
+****** 25 connections
+
+       I truncate the graph by the top here because of the excess of invalid
+       requests from DO misrepresents the most important value, the successful
+       requests.
+
+       #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:7000]"
+       #+PLOT: set:"style histogram cluster gap 1"
+       #+PLOT: set:"style fill solid"
+       #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+       #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+       #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+       #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+       #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+       #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+       #+PLOT: set:"boxwidth bw"
+       #+PLOT: set:"grid"
+       #+PLOT: set:"xrange writeback extend"
+       #+PLOT: set:"xtics scale 0"
+       #+PLOT: set:"key outside horizontal"
+       #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+       #+PLOT: file:"./img/web_wp_ab_25_requests.png"
+       |-------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Plan              | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+       |-------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Total (requests)  |          5412 |        4310 |     18653 |          4248 |                |           5293 |
+       | Failed (requests) |             0 |           0 |     18542 |             0 |                |              0 |
+       |-------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Valid (requests)  |          5412 |        4310 |       111 |          4248 |              0 |           5293 |
+       |-------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       #+TBLFM: @4$2=@2-@3::@4$3=@2-@3::@4$4=@2-@3::@4$5=@2-@3::@4$6=@2-@3::@4$7=@2-@3
+
+       [[./img/web_wp_ab_25_requests.png]]
+
+****** 50 connections
+
+       I truncate the graph by the top here because of the excess of invalid
+       requests from DO misrepresents the most important value, the successful
+       requests.
+
+       #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:7000]"
+       #+PLOT: set:"style histogram cluster gap 1"
+       #+PLOT: set:"style fill solid"
+       #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+       #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+       #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+       #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+       #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+       #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+       #+PLOT: set:"boxwidth bw"
+       #+PLOT: set:"grid"
+       #+PLOT: set:"xrange writeback extend"
+       #+PLOT: set:"xtics scale 0"
+       #+PLOT: set:"key outside horizontal"
+       #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+       #+PLOT: file:"./img/web_wp_ab_50_requests.png"
+       |-------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Plan              | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+       |-------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Total (requests)  |          5597 |        3976 |     30283 |          3900 |                |           5267 |
+       | Failed (requests) |             0 |           0 |     30201 |             0 |                |              0 |
+       |-------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Valid (requests)  |          5597 |        3976 |        82 |          3900 |              0 |           5267 |
+       |-------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       #+TBLFM: @4$2=@2-@3::@4$3=@2-@3::@4$4=@2-@3::@4$5=@2-@3::@4$6=@2-@3::@4$7=@2-@3
+
+       [[./img/web_wp_ab_50_requests.png]]
+
+***** Requests per second
+
+       This graph show the requests per second achieved with several concurrent
+       connections in 3 minutes, more is better.
+
+****** 10 connections
+
+       #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+       #+PLOT: set:"style histogram cluster gap 1"
+       #+PLOT: set:"style fill solid"
+       #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+       #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+       #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+       #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+       #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+       #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+       #+PLOT: set:"boxwidth bw"
+       #+PLOT: set:"grid"
+       #+PLOT: set:"xrange writeback extend"
+       #+PLOT: set:"xtics scale 0"
+       #+PLOT: set:"key outside horizontal"
+       #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+       #+PLOT: file:"./img/web_wp_ab_10_rps.png"
+       |---------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Plan                            | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+       |---------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Requests per second (mean, RPS) |         25.34 |       19.40 |     21.78 |         21.66 |                |          23.22 |
+       |---------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+
+       [[./img/web_wp_ab_10_rps.png]]
+
+****** 25 connections
+
+       #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+       #+PLOT: set:"style histogram cluster gap 1"
+       #+PLOT: set:"style fill solid"
+       #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+       #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+       #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+       #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+       #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+       #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+       #+PLOT: set:"boxwidth bw"
+       #+PLOT: set:"grid"
+       #+PLOT: set:"xrange writeback extend"
+       #+PLOT: set:"xtics scale 0"
+       #+PLOT: set:"key outside horizontal"
+       #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+       #+PLOT: file:"./img/web_wp_ab_25_rps.png"
+       |---------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Plan                            | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+       |---------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Requests per second (mean, RPS) |         30.06 |       23.93 |           |         23.60 |                |          29.40 |
+       |---------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+
+       [[./img/web_wp_ab_25_rps.png]]
+
+        Note:
+
+       - The requests per second in DO is not a valid number because ab makes no
+         distinction between valid and failed requests.
     
-     This other one shows the mean time per request and under what time are
-     served the 95% of all requests. Less is better.
+****** 50 connections
 
-     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
-     #+PLOT: set:"style histogram cluster gap 1"
-     #+PLOT: set:"style fill solid"
-     #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
-     #+PLOT: set:"linetype 2 lc rgb '#009E73'"
-     #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
-     #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
-     #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
-     #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
-     #+PLOT: set:"boxwidth bw"
-     #+PLOT: set:"grid"
-     #+PLOT: set:"xrange writeback extend"
-     #+PLOT: set:"xtics scale 0"
-     #+PLOT: set:"key outside horizontal"
-     #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-     #+PLOT: file:"./img/web_wp_ab_times.png"
-     |------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
-     | Plan                         | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
-     |------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
-     | Time per request (mean, ms)  |       520.849 |     923.857 |   847.195 |       773.665 |                |        542.895 |
-     | 95% requests under this (ms) |           634 |        1338 |      1278 |          1043 |                |            657 |
-     |------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+       #+PLOT: set:"style histogram cluster gap 1"
+       #+PLOT: set:"style fill solid"
+       #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+       #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+       #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+       #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+       #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+       #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+       #+PLOT: set:"boxwidth bw"
+       #+PLOT: set:"grid"
+       #+PLOT: set:"xrange writeback extend"
+       #+PLOT: set:"xtics scale 0"
+       #+PLOT: set:"key outside horizontal"
+       #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+       #+PLOT: file:"./img/web_wp_ab_50_rps.png"
+       |---------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Plan                            | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+       |---------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Requests per second (mean, RPS) |         31.09 |       22.09 |           |         21.67 |                |          29.26 |
+       |---------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
 
-     [[./img/web_wp_ab_times.png]]
+       [[./img/web_wp_ab_50_rps.png]]
+
+       Note:
+
+       - The requests per second in DO is not a valid number because ab makes no
+         distinction between valid and failed requests.
+    
+***** Time per request
+
+       This other chart shows the mean time per request and under what time are
+       served the 95% of all requests. Less is better.
+
+****** 10 connections
+
+       #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+       #+PLOT: set:"style histogram cluster gap 1"
+       #+PLOT: set:"style fill solid"
+       #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+       #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+       #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+       #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+       #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+       #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+       #+PLOT: set:"boxwidth bw"
+       #+PLOT: set:"grid"
+       #+PLOT: set:"xrange writeback extend"
+       #+PLOT: set:"xtics scale 0"
+       #+PLOT: set:"key outside horizontal"
+       #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+       #+PLOT: file:"./img/web_wp_ab_10_times.png"
+       |----------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Plan                             | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+       |----------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Time per request (mean, ms)      |       394.565 |     515.481 |   459.156 |       461.720 |                |        430.655 |
+       | 95% request under this time (ms) |           624 |         840 |       779 |           711 |                |            725 |
+       |----------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+
+       [[./img/web_wp_ab_10_times.png]]
+
+****** 25 connections
+
+       #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+       #+PLOT: set:"style histogram cluster gap 1"
+       #+PLOT: set:"style fill solid"
+       #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+       #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+       #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+       #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+       #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+       #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+       #+PLOT: set:"boxwidth bw"
+       #+PLOT: set:"grid"
+       #+PLOT: set:"xrange writeback extend"
+       #+PLOT: set:"xtics scale 0"
+       #+PLOT: set:"key outside horizontal"
+       #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+       #+PLOT: file:"./img/web_wp_ab_25_times.png"
+       |----------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Plan                             | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+       |----------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Time per request (mean, ms)      |       831.539 |    1044.750 |           |      1059.526 |                |        850.458 |
+       | 95% request under this time (ms) |          1157 |        1492 |           |          1486 |                |           1195 |
+       |----------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+
+
+       [[./img/web_wp_ab_25_times.png]]
+
+       Note:
+
+       - The times in DO are not a valid numbers because ab makes no distinction between valid and failed requests.
+
+****** 50 connections
+
+       #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+       #+PLOT: set:"style histogram cluster gap 1"
+       #+PLOT: set:"style fill solid"
+       #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+       #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+       #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+       #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+       #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+       #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+       #+PLOT: set:"boxwidth bw"
+       #+PLOT: set:"grid"
+       #+PLOT: set:"xrange writeback extend"
+       #+PLOT: set:"xtics scale 0"
+       #+PLOT: set:"key outside horizontal"
+       #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+       #+PLOT: file:"./img/web_wp_ab_50_times.png"
+       |----------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Plan                             | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+       |----------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+       | Time per request (mean, ms)      |      1608.017 |    2263.603 |           |      2307.753 |                |       1708.784 |
+       | 95% request under this time (ms) |          2289 |        3122 |           |          3082 |                |           2489 |
+       |----------------------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+
+       [[./img/web_wp_ab_50_times.png]]
+
+       Note:
+
+       - The times in DO are not a valid numbers because ab makes no distinction between valid and failed requests.
 
 **** wrk
 
@@ -1256,7 +1495,11 @@ Gravelines (FR) and Scaleway VC1S in Paris (FR).
 
 ***** 100 connections
 
-     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+     I truncate the graph by the top here because of the excess of invalid
+     requests (the database is killed to soon) from Vultr misrepresents the
+     most important value, the successful requests.
+
+     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:7000]"
      #+PLOT: set:"style histogram cluster gap 1"
      #+PLOT: set:"style fill solid"
      #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
@@ -1275,11 +1518,11 @@ Gravelines (FR) and Scaleway VC1S in Paris (FR).
      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
      | Plan               | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
-     | Total (requests)   |         17099 |       11398 |      3793 |         11862 |                |          16544 |
-     | Timeout (requests) |           115 |         444 |      3214 |           149 |                |            149 |
-     | Failed (requests)  |               |             |           |               |                |                |
+     | Total (requests)   |          5190 |        4411 |     14872 |          4670 |                |           5644 |
+     | Timeout (requests) |          4088 |        3956 |      1106 |          4257 |                |           4297 |
+     | Failed (requests)  |               |             |     14773 |               |                |                |
      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
-     | Valid (requests)   |         16984 |       10954 |       579 |         11713 |              0 |          16395 |
+     | Valid (requests)   |          1102 |         455 |     -1007 |           413 |              0 |           1347 |
      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
      #+TBLFM: @5$2=@2-@3-@4::@5$3=@2-@3-@4::@5$4=@2-@3-@4::@5$5=@2-@3-@4::@5$6=@2-@3-@4::@5$7=@2-@3-@4
 
@@ -1288,10 +1531,10 @@ Gravelines (FR) and Scaleway VC1S in Paris (FR).
 ***** 150 connections
 
      I truncate the graph by the top here because of the excess of invalid
-     requests (the database is killed to soon) from Vultr misrepresents the most
-     important value, the successful requests.
+     requests (the database is killed to soon) from Vultr & DO misrepresents the
+     most important value, the successful requests.
 
-     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:20000]"
+     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:8000]"
      #+PLOT: set:"style histogram cluster gap 1"
      #+PLOT: set:"style fill solid"
      #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
@@ -1310,11 +1553,11 @@ Gravelines (FR) and Scaleway VC1S in Paris (FR).
      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
      | Plan               | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
-     | Total (requests)   |         16812 |       11422 |      1728 |         11774 |                |         133738 |
-     | Timeout (requests) |           352 |        9215 |      1125 |          7693 |                |            644 |
-     | Failed (requests)  |               |             |         1 |               |                |         131986 |
+     | Total (requests)   |          6870 |        4554 |     32561 |          4809 |                |          94838 |
+     | Timeout (requests) |          6647 |        4434 |       752 |          4709 |                |            824 |
+     | Failed (requests)  |               |             |     32464 |               |                |          94154 |
      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
-     | Valid (requests)   |         16460 |        2207 |       602 |          4081 |              0 |           1108 |
+     | Valid (requests)   |           223 |         120 |      -655 |           100 |              0 |           -140 |
      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
      #+TBLFM: @5$2=@2-@3-@4::@5$3=@2-@3-@4::@5$4=@2-@3-@4::@5$5=@2-@3-@4::@5$6=@2-@3-@4::@5$7=@2-@3-@4
 
@@ -1326,7 +1569,7 @@ Gravelines (FR) and Scaleway VC1S in Paris (FR).
      requests (the database is killed to soon) from several plans misrepresents
      the most important value, the successful requests.
 
-     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:25000]"
+     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:9000]"
      #+PLOT: set:"style histogram cluster gap 1"
      #+PLOT: set:"style fill solid"
      #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
@@ -1345,11 +1588,11 @@ Gravelines (FR) and Scaleway VC1S in Paris (FR).
      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
      | Plan               | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
-     | Total (requests)   |         25287 |       55949 |     59824 |         21781 |                |          82194 |
-     | Timeout (requests) |          9003 |        2481 |      1276 |          9162 |                |           1088 |
-     | Failed (requests)  |         11379 |       53480 |     58848 |         11867 |                |          80670 |
+     | Total (requests)   |         27967 |       44710 |      8817 |         22691 |                |          53795 |
+     | Timeout (requests) |          5003 |        1071 |      1040 |          3630 |                |           1216 |
+     | Failed (requests)  |         22774 |       43837 |      8740 |         18996 |                |          53088 |
      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
-     | Valid (requests)   |          4905 |         -12 |      -300 |           752 |              0 |            436 |
+     | Valid (requests)   |           190 |        -198 |      -963 |            65 |              0 |           -509 |
      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
      #+TBLFM: @5$2=@2-@3-@4::@5$3=@2-@3-@4::@5$4=@2-@3-@4::@5$5=@2-@3-@4::@5$6=@2-@3-@4::@5$7=@2-@3-@4
 
@@ -1357,37 +1600,101 @@ Gravelines (FR) and Scaleway VC1S in Paris (FR).
 
 *** Ghost
 
-    The same test as above but with 20 threads and 150 connections in Ghost, a
-    faster and more efficient blog than wordpress. More valid request is better.
+    The same tests with wrk as above but in Ghost, a faster and more efficient
+    blog than wordpress. More valid request is better.
 
-     #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
-     #+PLOT: set:"style histogram cluster gap 1"
-     #+PLOT: set:"style fill solid"
-     #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
-     #+PLOT: set:"linetype 2 lc rgb '#009E73'"
-     #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
-     #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
-     #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
-     #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
-     #+PLOT: set:"boxwidth bw"
-     #+PLOT: set:"grid"
-     #+PLOT: set:"xrange writeback extend"
-     #+PLOT: set:"xtics scale 0"
-     #+PLOT: set:"key outside horizontal"
-     #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
-     #+PLOT: file:"./img/web_ghost_wrk.png"
-     |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
-     | Plan               | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
-     |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
-     | Total (requests)   |         42347 |       29315 |     23449 |         15517 |                |          43992 |
-     | Timeout (requests) |           138 |          47 |       137 |            46 |                |             73 |
-     | Failed (requests)  |               |             |           |               |                |                |
-     |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
-     | Valid (requests)   |         42209 |       29268 |     23312 |         15471 |              0 |          43919 |
-     |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
-     #+TBLFM: @5$2=@2-@3-@4::@5$3=@2-@3-@4::@5$4=@2-@3-@4::@5$5=@2-@3-@4::@5$6=@2-@3-@4::@5$7=@2-@3-@4
+**** 100 connections
 
-     [[./img/web_ghost_wrk.png]]
+      #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+      #+PLOT: set:"style histogram cluster gap 1"
+      #+PLOT: set:"style fill solid"
+      #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+      #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+      #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+      #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+      #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+      #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+      #+PLOT: set:"boxwidth bw"
+      #+PLOT: set:"grid"
+      #+PLOT: set:"xrange writeback extend"
+      #+PLOT: set:"xtics scale 0"
+      #+PLOT: set:"key outside horizontal"
+      #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+      #+PLOT: file:"./img/web_ghost_wrk_100.png"
+      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+      | Plan               | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+      | Total (requests)   |        126831 |       85527 |     21247 |         45912 |                |         123244 |
+      | Timeout (requests) |            96 |          95 |       925 |            93 |                |             92 |
+      | Failed (requests)  |               |             |      9065 |               |                |                |
+      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+      | Valid (requests)   |        126735 |       85432 |     11257 |         45819 |              0 |         123152 |
+      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+      #+TBLFM: @5$2=@2-@3-@4::@5$3=@2-@3-@4::@5$4=@2-@3-@4::@5$5=@2-@3-@4::@5$6=@2-@3-@4::@5$7=@2-@3-@4
+
+      [[./img/web_ghost_wrk_100.png]]
+
+**** 150 connections
+
+      #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+      #+PLOT: set:"style histogram cluster gap 1"
+      #+PLOT: set:"style fill solid"
+      #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+      #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+      #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+      #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+      #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+      #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+      #+PLOT: set:"boxwidth bw"
+      #+PLOT: set:"grid"
+      #+PLOT: set:"xrange writeback extend"
+      #+PLOT: set:"xtics scale 0"
+      #+PLOT: set:"key outside horizontal"
+      #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+      #+PLOT: file:"./img/web_ghost_wrk_150.png"
+      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+      | Plan               | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+      | Total (requests)   |        127445 |       88424 |     69010 |         45924 |                |         121817 |
+      | Timeout (requests) |           157 |         147 |       864 |           156 |                |            156 |
+      | Failed (requests)  |               |             |     63794 |               |                |                |
+      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+      | Valid (requests)   |        127288 |       88277 |      4352 |         45768 |              0 |         121661 |
+      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+      #+TBLFM: @5$2=@2-@3-@4::@5$3=@2-@3-@4::@5$4=@2-@3-@4::@5$5=@2-@3-@4::@5$6=@2-@3-@4::@5$7=@2-@3-@4
+
+      [[./img/web_ghost_wrk_150.png]]
+
+**** 200 connections
+
+      #+PLOT: ind:1 type:2d with:histogram set:"yrange [0:*]"
+      #+PLOT: set:"style histogram cluster gap 1"
+      #+PLOT: set:"style fill solid"
+      #+PLOT: set:"linetype 1 lc rgb '#9400D3'"
+      #+PLOT: set:"linetype 2 lc rgb '#009E73'"
+      #+PLOT: set:"linetype 3 lc rgb '#56B4E9'"
+      #+PLOT: set:"linetype 4 lc rgb '#E69F00'"
+      #+PLOT: set:"linetype 5 lc rgb '#F0E442'"
+      #+PLOT: set:"linetype 6 lc rgb '#0072B2'"
+      #+PLOT: set:"boxwidth bw"
+      #+PLOT: set:"grid"
+      #+PLOT: set:"xrange writeback extend"
+      #+PLOT: set:"xtics scale 0"
+      #+PLOT: set:"key outside horizontal"
+      #+PLOT: set:"terminal pngcairo font 'Ubuntu,13' size 888,300"
+      #+PLOT: file:"./img/web_ghost_wrk_200.png"
+      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+      | Plan               | OVH VPS SSD 1 | Linode 1024 | DO 5bucks | Scaleway VC1S | Vultr 20GB SSD | Vultr 25GB SSD |
+      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+      | Total (requests)   |        126968 |       86381 |     83685 |         44906 |                |         122767 |
+      | Timeout (requests) |           236 |         229 |      1182 |           238 |                |            230 |
+      | Failed (requests)  |               |             |     80257 |               |                |                |
+      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+      | Valid (requests)   |        126732 |       86152 |      2246 |         44668 |              0 |         122537 |
+      |--------------------+---------------+-------------+-----------+---------------+----------------+----------------|
+      #+TBLFM: @5$2=@2-@3-@4::@5$3=@2-@3-@4::@5$4=@2-@3-@4::@5$5=@2-@3-@4::@5$6=@2-@3-@4::@5$7=@2-@3-@4
+
+      [[./img/web_ghost_wrk_200.png]]
 
 ** Default Security
 

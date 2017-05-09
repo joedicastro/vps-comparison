@@ -1,0 +1,9 @@
+Running 3m test @ http://x.x.x.x/welcome-to-ghost
+  10 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   380.09ms   87.27ms   1.75s    87.07%
+    Req/Sec    27.74     15.67    90.00     67.05%
+  45912 requests in 3.00m, 10.03MB read
+  Socket errors: connect 0, read 0, write 0, timeout 93
+Requests/sec:    254.94
+Transfer/sec:     57.05KB

@@ -1,15 +1,15 @@
-Running 3m test @ http://x.x.x.x/wordpress/2017/05/01/hello-world
+Running 3m test @ http://x.x.x.x/wordpress/2017/05/09/hello-world/
   10 threads and 200 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   316.58ms  327.13ms   2.00s    93.10%
-    Req/Sec    15.09      9.82    80.00     70.39%
+    Latency   262.51ms  137.26ms   2.00s    85.19%
+    Req/Sec    15.91     10.12    70.00     70.46%
   Latency Distribution
-     50%  229.72ms
-     75%  410.65ms
-     90%  537.85ms
-     99%    1.80s 
-  21781 requests in 3.00m, 9.79MB read
-  Socket errors: connect 0, read 10, write 0, timeout 9162
-  Non-2xx or 3xx responses: 11867
-Requests/sec:    120.95
-Transfer/sec:     55.64KB
+     50%  247.25ms
+     75%  297.99ms
+     90%  371.77ms
+     99%  800.76ms
+  22691 requests in 3.00m, 211.14MB read
+  Socket errors: connect 0, read 2, write 0, timeout 3630
+  Non-2xx or 3xx responses: 18996
+Requests/sec:    126.02
+Transfer/sec:      1.17MB

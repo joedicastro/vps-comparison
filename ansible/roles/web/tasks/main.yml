@@ -2,10 +2,11 @@
 
   # create the logs folder if does not currently exists
 - name: creates logs directory
-  file: path=../logs/{{inventory_hostname}} state=directory 
+  file: path=../logs/{{inventory_hostname}} state=directory
   delegate_to: localhost
   become: no
 
+  # INSTALL DOCKER APPS IN LOCAL
 - name: install local Docker wrk app
   command: docker pull williamyeh/wrk
   delegate_to: localhost
@@ -35,7 +36,7 @@
   when: ansible_memtotal_mb < 950
 
 
-  # WORDPRESS
+  # INSTALL BITNAMi STACKS
 - name: download the WordPress Bitnami stack
   get_url:
     url: https://downloads.bitnami.com/files/stacks/wordpress/4.7.4-0/bitnami-wordpress-4.7.4-0-linux-x64-installer.run
@@ -43,19 +44,94 @@
     mode: a+x
 
 - name: install WordPress
-  command: ./bitnami-wordpress-installer.run 
-             --mode unattended 
-             --prefix "/opt/wordpress" 
+  command: ./bitnami-wordpress-installer.run
+             --mode unattended
+             --prefix "/opt/wordpress"
              --disable-components "phpmyadmin"
-             --base_password "password" 
-             --baseinstalltype production 
+             --base_password "password"
+             --baseinstalltype production
   args:
     chdir: /tmp
   register: wordpress_installed
 
+- name: stop the WordPress Bitnami stack
+  command: /opt/wordpress/ctlscript.sh stop
+  when: wordpress_installed.rc == 0
+
+- name: download the Ghost Bitnami stack
+  get_url:
+    url: https://downloads.bitnami.com/files/stacks/ghost/0.11.7-0/bitnami-ghost-0.11.7-0-linux-x64-installer.run
+    dest: /tmp/bitnami-ghost-installer.run
+    mode: a+x
+
+- name: install Ghost
+  command: ./bitnami-ghost-installer.run
+             --mode unattended
+             --prefix /opt/ghost
+             --base_password "password"
+  args:
+    chdir: /tmp
+  register: ghost_installed
+
+- name: stop the Ghost Bitnami stack
+  command: /opt/ghost/ctlscript.sh stop
+  when: ghost_installed.rc == 0
+
+
+  # REMOVE SWAP
+- block:
+    - name: deactivate swap
+      command: swapoff /swapfile
+
+    - name: remove swap file
+      file:
+        path: /swapfile
+        state: absent
+  when: ansible_memtotal_mb < 950
+
+- pause:
+    minutes: 3
+
+  # WORDPRESS TESTS
+- name: start the WordPress Bitnami stack
+  command: /opt/wordpress/ctlscript.sh start
+  when: wordpress_installed.rc == 0
+
+- name: run ApacheBench app in local Docker against WordPress with 10 connections
+  shell: docker run --rm jordi/ab ab -t180 -c10 \
+         http://{{ansible_host}}/wordpress/{{ansible_date_time.year}}/{{ansible_date_time.month}}/{{ansible_date_time.day}}/hello-world/ > web_wp_ab_10.log
+  delegate_to: localhost
+  become: no
+  args:
+    chdir: ../logs/{{inventory_hostname}}
+  when: wordpress_installed.rc == 0
+
+- pause:
+    minutes: 5
+
+- name: restart the WordPress Bitnami stack
+  command: /opt/wordpress/ctlscript.sh restart
+  when: wordpress_installed.rc == 0
+
+- name: run ApacheBench app in local Docker against WordPress with 25 connections
+  shell: docker run --rm jordi/ab ab -t180 -c25 \
+         http://{{ansible_host}}/wordpress/{{ansible_date_time.year}}/{{ansible_date_time.month}}/{{ansible_date_time.day}}/hello-world/ > web_wp_ab_25.log
+  delegate_to: localhost
+  become: no
+  args:
+    chdir: ../logs/{{inventory_hostname}}
+  when: wordpress_installed.rc == 0
+
+- pause:
+    minutes: 5
+
+- name: restart the WordPress Bitnami stack
+  command: /opt/wordpress/ctlscript.sh restart
+  when: wordpress_installed.rc == 0
+
 - name: run ApacheBench app in local Docker against WordPress with 50 connections
   shell: docker run --rm jordi/ab ab -t180 -c50 \
-         http://{{ansible_host}}/wordpress/{{ansible_date_time.year}}/{{ansible_date_time.month}}/{{ansible_date_time.day}}/hello-world > web_wp_ab.log
+         http://{{ansible_host}}/wordpress/{{ansible_date_time.year}}/{{ansible_date_time.month}}/{{ansible_date_time.day}}/hello-world/ > web_wp_ab_50.log
   delegate_to: localhost
   become: no
   args:
@@ -71,7 +147,7 @@
 
 - name: run wrk app in local Docker against WordPress with 100 connections
   shell: docker run --rm williamyeh/wrk -t10 -c100 -d180s --latency \
-         http://{{ansible_host}}/wordpress/{{ansible_date_time.year}}/{{ansible_date_time.month}}/{{ansible_date_time.day}}/hello-world > web_wp_wrk_100.log 
+         http://{{ansible_host}}/wordpress/{{ansible_date_time.year}}/{{ansible_date_time.month}}/{{ansible_date_time.day}}/hello-world/ > web_wp_wrk_100.log
   delegate_to: localhost
   become: no
   args:
@@ -87,7 +163,7 @@
 
 - name: run wrk app in local Docker against WordPress with 150 connections
   shell: docker run --rm williamyeh/wrk -t10 -c150 -d180s --latency \
-         http://{{ansible_host}}/wordpress/{{ansible_date_time.year}}/{{ansible_date_time.month}}/{{ansible_date_time.day}}/hello-world > web_wp_wrk_150.log 
+         http://{{ansible_host}}/wordpress/{{ansible_date_time.year}}/{{ansible_date_time.month}}/{{ansible_date_time.day}}/hello-world/ > web_wp_wrk_150.log
   delegate_to: localhost
   become: no
   args:
@@ -103,7 +179,7 @@
 
 - name: run wrk app in local Docker against WordPress with 200 connections
   shell: docker run --rm williamyeh/wrk -t10 -c200 -d180s --latency \
-         http://{{ansible_host}}/wordpress/{{ansible_date_time.year}}/{{ansible_date_time.month}}/{{ansible_date_time.day}}/hello-world > web_wp_wrk_200.log 
+         http://{{ansible_host}}/wordpress/{{ansible_date_time.year}}/{{ansible_date_time.month}}/{{ansible_date_time.day}}/hello-world/ > web_wp_wrk_200.log
   delegate_to: localhost
   become: no
   args:
@@ -117,49 +193,71 @@
   command: /opt/wordpress/ctlscript.sh stop
   when: wordpress_installed.rc == 0
 
+
+
+  # GHOST TEST
+- name: start the Ghost Bitnami stack
+  command: /opt/ghost/ctlscript.sh start
+  when: ghost_installed.rc == 0
+
+- name: run wrk app in local Docker against Ghost (100 connections)
+  shell: docker run --rm williamyeh/wrk -t10 -c100 -d180s http://{{ansible_host}}/welcome-to-ghost > web_ghost_wrk_100.log
+  delegate_to: localhost
+  become: no
+  args:
+    chdir: ../logs/{{inventory_hostname}}
+  delay: 300
+  when: ghost_installed.rc == 0
+
+- name: restart the Ghost Bitnami stack
+  command: /opt/ghost/ctlscript.sh restart
+  when: ghost_installed.rc == 0
+
+- pause:
+    minutes: 5
+
+- name: run wrk app in local Docker against Ghost (150 connections)
+  shell: docker run --rm williamyeh/wrk -t10 -c150 -d180s http://{{ansible_host}}/welcome-to-ghost > web_ghost_wrk_150.log
+  delegate_to: localhost
+  become: no
+  args:
+    chdir: ../logs/{{inventory_hostname}}
+  delay: 300
+  when: ghost_installed.rc == 0
+
+- name: restart the Ghost Bitnami stack
+  command: /opt/ghost/ctlscript.sh restart
+  when: ghost_installed.rc == 0
+
+- pause:
+    minutes: 5
+
+- name: run wrk app in local Docker against Ghost (200 connections)
+  shell: docker run --rm williamyeh/wrk -t10 -c200 -d180s http://{{ansible_host}}/welcome-to-ghost > web_ghost_wrk_200.log
+  delegate_to: localhost
+  become: no
+  args:
+    chdir: ../logs/{{inventory_hostname}}
+  delay: 300
+  when: ghost_installed.rc == 0
+
+- name: stop the Ghost Bitnami stack
+  command: /opt/ghost/ctlscript.sh stop
+  when: ghost_installed.rc == 0
+
+
+
+# REMOVE BITNAMI STACKS
 - name: remove the WordPress Bitnami stack
   command: /opt/wordpress/uninstall --mode unattended
   when: wordpress_installed.rc == 0
 
-
-  # GHOST
-- block:
-    - name: download the Ghost Bitnami stack
-      get_url:
-        url: https://downloads.bitnami.com/files/stacks/ghost/0.11.7-0/bitnami-ghost-0.11.7-0-linux-x64-installer.run
-        dest: /tmp/bitnami-ghost-installer.run
-        mode: a+x
-    
-    - name: install Ghost
-      command: ./bitnami-ghost-installer.run 
-                 --mode unattended 
-                 --prefix /opt/ghost 
-                 --base_password "password" 
-      args:
-        chdir: /tmp
-      # when: ghost_installed.stat.exists == False 
-    
-    - name: run wrk app in local Docker against Ghost
-      shell: docker run --rm williamyeh/wrk -t20 -c150 -d60s http://{{ansible_host}}/welcome-to-ghost >> web_ghost_wrk.log 
-      delegate_to: localhost
-      become: no
-      args:
-        chdir: ../logs/{{inventory_hostname}}
-      delay: 300
-      with_sequence: count=3
-    
-    - name: stop the Ghost Bitnami stack
-      command: /opt/ghost/ctlscript.sh stop
-    
-    - name: remove the Ghost Bitnami stack
-      command: /opt/ghost/uninstall --mode unattended
-  rescue:
-    - name: This will only run in case of an error in the block.
-      debug: msg="There was an error in the Ghost test."
-
+- name: remove the Ghost Bitnami stack
+  command: /opt/ghost/uninstall --mode unattended
+  when: ghost_installed.rc == 0
 
 - name: remove installers and folders
-  file: 
+  file:
     path: "{{item}}"
     state: absent
   with_items:
@@ -168,26 +266,21 @@
     - /tmp/bitnami-ghost-installer.run
     - /opt/ghost
 
-- block:
-    - name: deactivate swap
-      command: swapoff /swapfile
 
-    - name: remove swap file
-      file:
-        path: /swapfile
-        state: absent
-
-  when: ansible_memtotal_mb < 950
-
-#   # running it in local allows you to retrieve the original unchanged file from
+  # CLEAR IPS
+  # running it in local allows you to retrieve the original unchanged file from
   # the server if you need it.
 - name: clean IPs from log
   script: clean_ips.py {{item}}.log -p ../logs
   delegate_to: localhost
   become: no
   with_items:
-    - web_wp_ab
+    - web_wp_ab_10
+    - web_wp_ab_25
+    - web_wp_ab_50
     - web_wp_wrk_100
     - web_wp_wrk_150
     - web_wp_wrk_200
-    - web_ghost_wrk
+    - web_ghost_wrk_100
+    - web_ghost_wrk_150
+    - web_ghost_wrk_200

@@ -1,0 +1,44 @@
+This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking x.x.x.x (be patient)
+
+
+Server Software:        Apache
+Server Hostname:        x.x.x.x
+Server Port:            80
+
+Document Path:          /wordpress/2017/05/09/hello-world/
+Document Length:        56231 bytes
+
+Concurrency Level:      25
+Time taken for tests:   180.010 seconds
+Complete requests:      18653
+Failed requests:        18542
+   (Connect: 0, Receive: 0, Length: 18542, Exceptions: 0)
+Non-2xx responses:      18531
+Total transferred:      17757915 bytes
+HTML transferred:       11537154 bytes
+Requests per second:    103.62 [#/sec] (mean)
+Time per request:       241.261 [ms] (mean)
+Time per request:       9.650 [ms] (mean, across all concurrent requests)
+Transfer rate:          96.34 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:       35   94 154.3     52    3352
+Processing:    37  147 1748.2     55   65465
+Waiting:       37  132 1288.6     55   45191
+Total:         73  241 1759.0    114   65659
+
+Percentage of the requests served within a certain time (ms)
+  50%    114
+  66%    178
+  75%    221
+  80%    245
+  90%    301
+  95%    348
+  98%   1115
+  99%   1231
+ 100%  65659 (longest request)
