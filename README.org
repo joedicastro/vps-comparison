@@ -161,7 +161,7 @@ Notes:
  | GitLab         | No            | No     | Yes                   | Yes            | Yes                  |
  | Node.js        | No            | No     | Yes                   | Yes            | No                   |
  | E-Commerce     | PrestaShop    | No     | Magento               | PrestaShop     | Magento, PrestaShop  |
- | Personal cloud | Coyz          | No     | NextCloud, ownCloud   | OwnCloud, Cozy | NextCloud, ownCloud  |
+ | Personal cloud | Cozy          | No     | NextCloud, ownCloud   | OwnCloud, Cozy | NextCloud, ownCloud  |
  | Panels         | Plesk, cPanel | No     | No                    | Webmin         | cPanel (15$), Webmin |
  |----------------+---------------+--------+-----------------------+----------------+----------------------|
 
