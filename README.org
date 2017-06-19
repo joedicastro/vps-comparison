@@ -199,7 +199,7 @@ Notes:
 |-----------------------------+------+---------+--------------+----------+-------|
 |                             | OVH  | Linode  | DigitalOcean | Scaleway | Vultr |
 |-----------------------------+------+---------+--------------+----------+-------|
-| 2FA                         | Yes  | Yes     | Yes          | No       | Yes   |
+| 2FA                         | Yes  | Yes     | Yes          | Yes      | Yes   |
 | Restrict access IPs         | Yes  | Yes     | No           | No       | No    |
 | Account Login Logs          | No   | Partial | Yes          | No       | No    |
 | SSL Quality                 | [[https://www.ssllabs.com/ssltest/analyze.html?d=www.ovh.com][A-]]   | [[https://www.ssllabs.com/ssltest/analyze.html?d=manager.linode.com&s=69.164.200.204&latest][A+]]      | [[https://www.ssllabs.com/ssltest/analyze.html?d=cloud.digitalocean.com&s=104.16.25.4&hideResults=on][A+]]           | [[https://www.ssllabs.com/ssltest/analyze.html?d=cloud.scaleway.com][A]]        | [[https://www.ssllabs.com/ssltest/analyze.html?d=my.vultr.com&s=104.20.22.240&latest][A]]     |
