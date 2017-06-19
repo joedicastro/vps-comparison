@@ -243,7 +243,7 @@ Notes:
  | IPv6                 | Yes              | Yes                    | Optional                               | Optional           | Optional                               | Optional                               |
  | Additional public IP | 2$ (up to 16)    | Yes                    | Floating IPs (0,006$ hour if inactive) | 0,9€ (up to 10)    | 2$ (up to 2) / 3$ floating IPs         | 2$ (up to 2) / 3$ floating IPs         |
  | Private Network      | No               | Optional               | Optional                               | No (dynamic IPs)   | Optional                               | Optional                               |
- | Firewall             | Yes (by IP)      | No                     | No                                     | Yes (by group)     | Yes (by group)                         | Yes (by group)                         |
+ | Firewall             | Yes (by IP)      | No                     | Yes (by group)    | Yes (by group)     | Yes (by group)                         | Yes (by group)                         |
  | Block Storage        | From 5€ - 50GB   | No                     | From 10$ - 100GB                       | From 1€ - 50GB     | From 1$ - 10GB                         | From 1$ - 10GB                         |
  | Monitoring           | Yes (SLA)        | Yes (metrics, SLA)     | Beta (metrics, performance, SLA)       | No                 | No                                     | No                                     |
  | Load Balancer        | 13$              | 20$                    | 20$                                    | No                 | High availability (floating IPs & BGP) | High availability (floating IPs & BGP) |
