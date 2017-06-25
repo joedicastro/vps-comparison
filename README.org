@@ -204,6 +204,7 @@ Notes:
 | Account Login Logs          | No   | Partial | Yes          | No       | No    |
 | SSL Quality                 | [[https://www.ssllabs.com/ssltest/analyze.html?d=www.ovh.com][A-]]   | [[https://www.ssllabs.com/ssltest/analyze.html?d=manager.linode.com&s=69.164.200.204&latest][A+]]      | [[https://www.ssllabs.com/ssltest/analyze.html?d=cloud.digitalocean.com&s=104.16.25.4&hideResults=on][A+]]           | [[https://www.ssllabs.com/ssltest/analyze.html?d=cloud.scaleway.com][A]]        | [[https://www.ssllabs.com/ssltest/analyze.html?d=my.vultr.com&s=104.20.22.240&latest][A]]     |
 | DNS SPY Report              | [[https://dnsspy.io/scan/ovh.com][B]]    | [[https://dnsspy.io/scan/linode.com][B]]       | [[https://dnsspy.io/scan/digitalocean.com][B]]            | [[https://dnsspy.io/scan/scaleway.com][B]]        | [[https://dnsspy.io/scan/vultr.com][C]]     |
+| HTTP Security headers       | [[https://securityheaders.io/?q=www.ovh.com&followRedirects=on][F]] | [[https://securityheaders.io/?q=manager.linode.com&followRedirects=on][E]] | [[https://securityheaders.io/?q=cloud.digitalocean.com&followRedirects=on][C]] | [[https://securityheaders.io/?q=cloud.scaleway.com&followRedirects=on][F]] | [[https://securityheaders.io/?q=my.vultr.com&followRedirects=on][D]] |
 | Send root password by email | Yes  | No      | No           | No       | No    |
 | Account password recovery   | Link | Link    | Link         | Link     | Link  |
 |-----------------------------+------+---------+--------------+----------+-------|
