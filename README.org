@@ -255,7 +255,7 @@ Notes:
  Note:
 - OVH hides its real CPU, but what they claim in their web matches with the hardware information reported in the tests (an E5-2620 v3 or  E5-2630 v3).
 - Vultr also hides the real CPU, but it could be a Xeon E5-2620/2630 v3 for the 20GB SSD plan and probably a v4 for the 25GB SSD one.
-- Vultr $2.50/month plan is only available in Miami, FL and New York, NJ.
+- Vultr $2.50/month plan is only currently available in Miami, FL and New York, NJ.
 - OVH throttle network speed to 1 Mbps after excess monthly 10 TB traffic
 - The prices for DigitalOcean and Vultr do not include taxes (VAT) for European countries.
 - Linode allows you to have free additional public IPs but you have to request them to support and justify that you need them.
