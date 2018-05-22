@@ -6,26 +6,43 @@
     chdir: /tmp
   with_sequence: count=5
 
-- name: retrieve log
-  fetch:
-    src: /tmp/dd_cpu.log
-    dest: ../logs/{{inventory_hostname}}/dd_cpu.log
-    flat: yes
-
 - name: run dd IO test
   shell: dd if=/dev/zero of=test bs=64k count=16k conv=fdatasync 2>> dd_io.log
   args:
     chdir: /tmp
   with_sequence: count=5
 
-- name: retrieve log
+- name: calculate sha512 checksums of logfiles
+  stat:
+    checksum_algorithm: sha512
+    get_checksum: true
+    get_attributes: false
+    get_md5: false
+    get_mime: false
+    path: /tmp/{{item}}.log
+  register: logfile
+  with_items:
+    - dd_io
+    - dd_cpu
+
+- name: save checksums to files
+  local_action:
+    copy content="{{item.stat.checksum}}" dest="../logs/{{inventory_hostname}}/{{item.item}}.log.sha512"
+  become: no
+  with_items:
+    - "{{ logfile.results }}"
+
+- name: retrieve logs
   fetch:
-    src: /tmp/dd_io.log
-    dest: ../logs/{{inventory_hostname}}/dd_io.log
+    src: /tmp/{{item}}.log
+    dest: ../logs/{{inventory_hostname}}/{{item}}.log
     flat: yes
+  with_items:
+    - dd_io
+    - dd_cpu
 
 - name: remove auxiliary file
-  file: 
+  file:
     path: /tmp/test
     state: absent
 

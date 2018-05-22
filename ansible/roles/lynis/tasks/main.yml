@@ -11,29 +11,29 @@
   get_url:
     url: https://github.com/CISOfy/lynis/archive/master.tar.gz
     dest: /tmp/lynis.tar.gz
-  when: lynis_log.stat.exists == False 
+  when: lynis_log.stat.exists == False
 
 - name: uncompress Lynis
   unarchive:
     src: /tmp/lynis.tar.gz
     dest: /tmp
     copy: no
-  when: lynis_log.stat.exists == False 
+  when: lynis_log.stat.exists == False
 
 - name: run Lynis
   command: ./lynis audit system
   args:
     chdir: /tmp/lynis-master
-  when: lynis_log.stat.exists == False 
+  when: lynis_log.stat.exists == False
 
 - name: remove Lynis
-  file: 
+  file:
     path: "{{item}}"
     state: absent
   with_items:
     - /tmp/lynis-master
     - /tmp/lynis.tar.gz
-  when: lynis_log.stat.exists == False 
+  when: lynis_log.stat.exists == False
 
 - name: retrieve Lynis log
   fetch:
@@ -46,4 +46,21 @@
 - name: clean IPs from log
   script: clean_ips.py lynis.log -p ../logs
   delegate_to: localhost
+  become: no
+
+- name: calculate sha512 checksum of logfile
+  stat:
+    checksum_algorithm: sha512
+    get_checksum: true
+    get_attributes: false
+    get_md5: false
+    get_mime: false
+    path: ../logs/{{inventory_hostname}}/lynis.log
+  delegate_to: localhost
+  become: no
+  register: logfile
+
+- name: save checksum to file
+  local_action:
+    copy content="{{ logfile.stat.checksum }}" dest="../logs/{{inventory_hostname}}/lynis.log.sha512"
   become: no

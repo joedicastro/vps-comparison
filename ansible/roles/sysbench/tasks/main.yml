@@ -36,12 +36,6 @@
     executable: /bin/bash
   with_sequence: count=5
 
-- name: retrieve cpu log
-  fetch:
-    src: /tmp/sysbench_cpu.log
-    dest: ../logs/{{inventory_hostname}}/sysbench_cpu.log
-    flat: yes
-
 - name: run sysbench memory random read
   shell: sysbench memory --memory-access-mode=rnd --memory-oper=read --num-threads=1 run >> /tmp/sysbench_ram_randrd.log
   args:
@@ -55,15 +49,6 @@
     chdir: /tmp
     executable: /bin/bash
   with_sequence: count=5
-
-- name: retrieve memory logs
-  fetch:
-    src: /tmp/{{item}}.log
-    dest: ../logs/{{inventory_hostname}}/{{item}}.log
-    flat: yes
-  with_items:
-    - sysbench_ram_randrd
-    - sysbench_ram_randrw
 
 - name: prepare sysbench fileio
   shell: sysbench fileio --file-total-size=8G prepare
@@ -88,18 +73,6 @@
   shell: sysbench fileio --file-total-size=8G cleanup
   args:
     chdir: /tmp
-
-- name: retrieve randrw log
-  fetch:
-    src: /tmp/sysbench_randrw.log
-    dest: ../logs/{{inventory_hostname}}/sysbench_randrw.log
-    flat: yes
-
-- name: retrieve randrd log
-  fetch:
-    src: /tmp/sysbench_randrd.log
-    dest: ../logs/{{inventory_hostname}}/sysbench_randrd.log
-    flat: yes
 
 - name: set MySQL root password before installing
   debconf:
@@ -134,17 +107,53 @@
     executable: /bin/bash
   with_sequence: count=5
 
-- name: retrieve oltp log
+- name: calculate sha512 checksums of logfiles
+  stat:
+    checksum_algorithm: sha512
+    get_checksum: true
+    get_attributes: false
+    get_md5: false
+    get_mime: false
+    path: /tmp/{{item}}.log
+  register: logfile
+  with_items:
+    - sysbench_ram_randrd
+    - sysbench_ram_randrw
+    - sysbench_randrw
+    - sysbench_randrd
+    - sysbench_mysql
+    - sysbench_cpu
+
+- name: save checksums to files
+  local_action:
+    copy content="{{item.stat.checksum}}" dest="../logs/{{inventory_hostname}}/{{item.item}}.log.sha512"
+  become: no
+  with_items:
+    - "{{ logfile.results }}"
+
+- name: retrieve logs
   fetch:
-    src: /tmp/sysbench_mysql.log
-    dest: ../logs/{{inventory_hostname}}/sysbench_oltp.log
+    src: /tmp/{{item}}.log
+    dest: ../logs/{{inventory_hostname}}/{{item}}.log
     flat: yes
+  with_items:
+    - sysbench_ram_randrd
+    - sysbench_ram_randrw
+    - sysbench_randrw
+    - sysbench_randrd
+    - sysbench_mysql
+    - sysbench_cpu
 
 - name: remove sysbench
   apt:
     name: sysbench
     autoremove: yes
     purge: yes
+    state: absent
+
+- name: remove sysbench repository
+  apt_repository:
+    repo: "deb https://packagecloud.io/akopytov/sysbench/{{ ansible_distribution | lower }}/ {{ ansible_distribution_release }} main"
     state: absent
 
 - name: remove mysql

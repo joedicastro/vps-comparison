@@ -45,6 +45,21 @@
     executable: /bin/bash
     chdir: /tmp/mariadb-{{mariadb_version}}
 
+- name: calculate sha512 checksum of logfile
+  stat:
+    checksum_algorithm: sha512
+    get_checksum: true
+    get_attributes: false
+    get_md5: false
+    get_mime: false
+    path: /tmp/compiler.log
+  register: logfile
+
+- name: save checksum to file
+  local_action:
+    copy content="{{ logfile.stat.checksum }}" dest="../logs/{{inventory_hostname}}/compiler.log.sha512"
+  become: no
+
 - name: retrieve log
   fetch:
     src: /tmp/compiler.log

@@ -28,12 +28,27 @@
     chdir: /tmp/byte-unixbench-master/UnixBench
 
 - name: remove UnixBench
-  file: 
+  file:
     path: "{{item}}"
     state: absent
   with_items:
     - /tmp/byte-unixbench-master
     - /tmp/unixbench.tar.gz
+
+- name: calculate sha512 checksum of logfile
+  stat:
+    checksum_algorithm: sha512
+    get_checksum: true
+    get_attributes: false
+    get_md5: false
+    get_mime: false
+    path: /tmp/unixbench.log
+  register: logfile
+
+- name: save checksums to files
+  local_action:
+    copy content="{{logfile.stat.checksum}}" dest="../logs/{{inventory_hostname}}/unixbench.log.sha512"
+  become: no
 
 - name: retrieve log
   fetch:
