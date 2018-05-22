@@ -7,8 +7,9 @@
     update_cache: yes
     install_recommends: no
   with_items:
-    - gcc-5
-    - build-essential
+    - gcc
+    - libc-dev
+    - make
 
 - name: download UnixBench
   get_url:
@@ -40,13 +41,14 @@
     dest: ../logs/{{inventory_hostname}}/unixbench.log
     flat: yes
 
-- name: remove installed packages 
+- name: remove installed packages
   apt:
     name: "{{item}}"
     autoremove: yes
     purge: yes
     state: absent
   with_items:
-    - gcc-5
-    - build-essential
+    - gcc
+    - libc-dev
+    - make
 
