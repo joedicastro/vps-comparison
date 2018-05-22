@@ -1,0 +1,3 @@
+*.retry
+hosts
+ansible.cfg
