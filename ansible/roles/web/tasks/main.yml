@@ -98,7 +98,7 @@
   when: wordpress_installed.rc == 0
 
 - name: run ApacheBench app in local Docker against WordPress with 10 connections
-  shell: docker run --rm jordi/ab ab -t180 -c10 \
+  shell: docker run --rm jordi/ab -t180 -c10 \
          http://{{ansible_host}}/wordpress/{{ansible_date_time.year}}/{{ansible_date_time.month}}/{{ansible_date_time.day}}/hello-world/ > web_wp_ab_10.log
   delegate_to: localhost
   become: no
@@ -114,7 +114,7 @@
   when: wordpress_installed.rc == 0
 
 - name: run ApacheBench app in local Docker against WordPress with 25 connections
-  shell: docker run --rm jordi/ab ab -t180 -c25 \
+  shell: docker run --rm jordi/ab -t180 -c25 \
          http://{{ansible_host}}/wordpress/{{ansible_date_time.year}}/{{ansible_date_time.month}}/{{ansible_date_time.day}}/hello-world/ > web_wp_ab_25.log
   delegate_to: localhost
   become: no
@@ -130,7 +130,7 @@
   when: wordpress_installed.rc == 0
 
 - name: run ApacheBench app in local Docker against WordPress with 50 connections
-  shell: docker run --rm jordi/ab ab -t180 -c50 \
+  shell: docker run --rm jordi/ab -t180 -c50 \
          http://{{ansible_host}}/wordpress/{{ansible_date_time.year}}/{{ansible_date_time.month}}/{{ansible_date_time.day}}/hello-world/ > web_wp_ab_50.log
   delegate_to: localhost
   become: no
