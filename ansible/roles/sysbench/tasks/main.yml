@@ -1,5 +1,27 @@
 ---
 
+- name: get signing key for sysbench repository
+  get_url:
+    url: https://packagecloud.io/akopytov/sysbench/gpgkey
+    dest: /tmp/sysbench-gpgkey
+
+- name: install signing key
+  shell: apt-key add /tmp/sysbench-gpgkey &>/dev/null
+
+- name: add apt https support
+  apt:
+    name: apt-transport-https
+    state: latest
+    update_cache: yes
+    install_recommends: no
+
+- name: add sysbench repository
+  apt_repository:
+    repo: "deb https://packagecloud.io/akopytov/sysbench/{{ ansible_distribution | lower }}/ {{ ansible_distribution_release }} main"
+    state: present
+    filename: sysbench
+  when: ansible_distribution_release != "bionic" # bionic already has speedtest 1.x and pc currently does not have a bionic repo
+
 - name: install sysbench
   apt:
     name: sysbench
@@ -8,76 +30,49 @@
     install_recommends: no
 
 - name: run sysbench cpu
-  shell: sysbench --test=cpu --cpu-max-prime=20000 --num-threads=1 run >> /tmp/sysbench_cpu.log
+  shell: sysbench cpu --cpu-max-prime=20000 --num-threads=1 run >> /tmp/sysbench_cpu.log
   args:
     chdir: /tmp
     executable: /bin/bash
   with_sequence: count=5
 
-- name: retrieve cpu log
-  fetch:
-    src: /tmp/sysbench_cpu.log
-    dest: ../logs/{{inventory_hostname}}/sysbench_cpu.log
-    flat: yes
-
 - name: run sysbench memory random read
-  shell: sysbench --test=memory --memory-access-mode=rnd --memory-oper=read --num-threads=1 run >> /tmp/sysbench_ram_randrd.log
+  shell: sysbench memory --memory-access-mode=rnd --memory-oper=read --num-threads=1 run >> /tmp/sysbench_ram_randrd.log
   args:
     chdir: /tmp
     executable: /bin/bash
   with_sequence: count=5
 
 - name: run sysbench memory random write
-  shell: sysbench --test=memory --memory-access-mode=rnd --memory-oper=write --num-threads=1 run >> /tmp/sysbench_ram_randrw.log
+  shell: sysbench memory --memory-access-mode=rnd --memory-oper=write --num-threads=1 run >> /tmp/sysbench_ram_randrw.log
   args:
     chdir: /tmp
     executable: /bin/bash
   with_sequence: count=5
 
-- name: retrieve memory logs
-  fetch:
-    src: /tmp/{{item}}.log
-    dest: ../logs/{{inventory_hostname}}/{{item}}.log
-    flat: yes
-  with_items:
-    - sysbench_ram_randrd
-    - sysbench_ram_randrw
-
 - name: prepare sysbench fileio
-  shell: sysbench --test=fileio --file-total-size=8G prepare 
+  shell: sysbench fileio --file-total-size=8G prepare
   args:
     chdir: /tmp
 
 - name: run sysbench fileio random write
-  shell: sysbench --test=fileio --file-total-size=8G --file-test-mode=rndrw --init-rng=on --max-time=300 --max-requests=0 --file-block-size=4K run >> /tmp/sysbench_randrw.log
+  shell: sysbench fileio --file-total-size=8G --file-test-mode=rndrw --rand-seed=0 --max-time=300 --max-requests=0 --file-block-size=4K run >> /tmp/sysbench_randrw.log
   args:
     chdir: /tmp
     executable: /bin/bash
   with_sequence: count=5
 
 - name: run sysbench fileio random read
-  shell: sysbench --test=fileio --file-total-size=8G --file-test-mode=rndrd --init-rng=on --max-time=300 --max-requests=0 --file-block-size=4K run >> /tmp/sysbench_randrd.log
+  shell: sysbench fileio --file-total-size=8G --file-test-mode=rndrd --rand-seed=0 --max-time=300 --max-requests=0 --file-block-size=4K run >> /tmp/sysbench_randrd.log
   args:
     chdir: /tmp
     executable: /bin/bash
   with_sequence: count=5
 
 - name: cleanup sysbench fileio
-  shell: sysbench --test=fileio --file-total-size=8G cleanup
+  shell: sysbench fileio --file-total-size=8G cleanup
   args:
     chdir: /tmp
-
-- name: retrieve randrw log
-  fetch:
-    src: /tmp/sysbench_randrw.log
-    dest: ../logs/{{inventory_hostname}}/sysbench_randrw.log
-    flat: yes
-
-- name: retrieve randrd log
-  fetch:
-    src: /tmp/sysbench_randrd.log
-    dest: ../logs/{{inventory_hostname}}/sysbench_randrd.log
-    flat: yes
 
 - name: set MySQL root password before installing
   debconf:
@@ -102,27 +97,52 @@
 - name: create sysbench database
   shell: mysql -u root -ppassword -e "CREATE DATABASE sysbench;"
 
-- name: create database user
-  shell: mysql -u root -ppassword -e "CREATE USER 'sysbench'@'localhost' IDENTIFIED BY 'password';"
-
-- name: set database user privileges
-  shell: mysql -u root -ppassword -e "GRANT ALL PRIVILEGES ON *.* TO 'sysbench'@'localhost' IDENTIFIED  BY 'password';"
-
 - name: prepare sysbench database
-  shell: sysbench --test=oltp --db-driver=mysql --oltp-table-size=10000000 --mysql-db=sysbench --mysql-user=sysbench --mysql-password=password prepare
+  shell: sysbench oltp_read_only --db-driver=mysql --table_size=10000000 --mysql-db=sysbench --mysql-user=root --mysql-password=password prepare
 
 - name: run sysbench oltp
-  shell: sysbench --test=oltp --oltp-table-size=10000000 --mysql-db=sysbench --mysql-user=root --mysql-password=password --max-time=60 --max-requests=0 --num-threads=1 --oltp-reconnect-mode=random run >> /tmp/sysbench_mysql.log
+  shell: sysbench oltp_read_only --db-driver=mysql --table_size=10000000 --mysql-db=sysbench --mysql-user=root --mysql-password=password --time=60 --max-requests=0 --num-threads=1 run >> /tmp/sysbench_mysql.log
   args:
     chdir: /tmp
     executable: /bin/bash
   with_sequence: count=5
 
-- name: retrieve oltp log
+- name: calculate sha512 checksums of logfiles
+  stat:
+    checksum_algorithm: sha512
+    get_checksum: true
+    get_attributes: false
+    get_md5: false
+    get_mime: false
+    path: /tmp/{{item}}.log
+  register: logfile
+  with_items:
+    - sysbench_ram_randrd
+    - sysbench_ram_randrw
+    - sysbench_randrw
+    - sysbench_randrd
+    - sysbench_mysql
+    - sysbench_cpu
+
+- name: save checksums to files
+  local_action:
+    copy content="{{item.stat.checksum}}" dest="../logs/{{inventory_hostname}}/{{item.item}}.log.sha512"
+  become: no
+  with_items:
+    - "{{ logfile.results }}"
+
+- name: retrieve logs
   fetch:
-    src: /tmp/sysbench_mysql.log
-    dest: ../logs/{{inventory_hostname}}/sysbench_oltp.log
+    src: /tmp/{{item}}.log
+    dest: ../logs/{{inventory_hostname}}/{{item}}.log
     flat: yes
+  with_items:
+    - sysbench_ram_randrd
+    - sysbench_ram_randrw
+    - sysbench_randrw
+    - sysbench_randrd
+    - sysbench_mysql
+    - sysbench_cpu
 
 - name: remove sysbench
   apt:
@@ -131,9 +151,24 @@
     purge: yes
     state: absent
 
+- name: remove sysbench repository
+  apt_repository:
+    repo: "deb https://packagecloud.io/akopytov/sysbench/{{ ansible_distribution | lower }}/ {{ ansible_distribution_release }} main"
+    state: absent
+
 - name: remove mysql
   apt:
-    name: mysql-server
+    name: 'mysql*'
     autoremove: yes
     purge: yes
     state: absent
+
+- name: remove remaining mysql files
+  file:
+    path: "{{ item }}"
+    state: absent
+  with_items:
+    - /var/lib/mysql
+    - /var/lib/mysql-files
+    - /var/lib/mysql-keyring
+    - /etc/mysql

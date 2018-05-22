@@ -1,0 +1,32 @@
+[ovh]
+ovh-vpsssd1-ubuntu        ansible_host=X.X.X.X
+
+[linode]
+linode-linode1024-ubuntu  ansible_host=X.X.X.X
+
+[digitalocean]
+do-5bucks-ubuntu          ansible_host=X.X.X.X
+
+[scaleway]
+scaleway-vc1s-ubuntu      ansible_host=X.X.X.X
+
+[vultr]
+vultr-20gbssd-ubuntu      ansible_host=X.X.X.X
+vultr-25gbssd-ubuntu      ansible_host=X.X.X.X
+
+
+# vars by provider
+[ovh:vars]
+ansible_user=root
+
+[linode:vars]
+ansible_user=root
+
+[digitalocean:vars]
+ansible_user=root
+
+[scaleway:vars]
+ansible_user=root
+
+[vultr:vars]
+ansible_user=root

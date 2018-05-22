@@ -6,3 +6,20 @@
   become: no
   tags:
     - gather
+
+- name: calculate sha512 checksum of results table
+  stat:
+    checksum_algorithm: sha512
+    get_checksum: true
+    get_attributes: false
+    get_md5: false
+    get_mime: false
+    path: ../logs/tables.org
+  register: logfile
+  delegate_to: localhost
+  become: no
+
+- name: save checksum to file
+  local_action:
+    copy content="{{logfile.stat.checksum}}" dest="../logs/tables.org.sha512"
+  become: no

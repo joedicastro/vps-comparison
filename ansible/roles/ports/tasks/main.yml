@@ -52,6 +52,31 @@
   delegate_to: localhost
   become: no
 
+- name: calculate sha512 checksums of logfiles
+  stat:
+    checksum_algorithm: sha512
+    get_checksum: true
+    get_attributes: false
+    get_md5: false
+    get_mime: false
+    path: ../logs/{{inventory_hostname}}/{{item}}.log
+  register: logfile
+  delegate_to: localhost
+  become: no
+  with_items:
+    - netstat
+    - nmap
+    - nmap_v6
+    - nmap_pro
+    - nmap_pro_v6
+
+- name: save checksum to file
+  local_action:
+    copy content="{{item.stat.checksum}}" dest="../logs/{{inventory_hostname}}/{{item.item}}.log.sha512"
+  become: no
+  with_items:
+    - "{{ logfile.results }}"
+
 - name: remove nmap
   apt:
     name: nmap

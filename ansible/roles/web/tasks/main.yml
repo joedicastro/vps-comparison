@@ -98,7 +98,7 @@
   when: wordpress_installed.rc == 0
 
 - name: run ApacheBench app in local Docker against WordPress with 10 connections
-  shell: docker run --rm jordi/ab ab -t180 -c10 \
+  shell: docker run --rm jordi/ab -t180 -c10 \
          http://{{ansible_host}}/wordpress/{{ansible_date_time.year}}/{{ansible_date_time.month}}/{{ansible_date_time.day}}/hello-world/ > web_wp_ab_10.log
   delegate_to: localhost
   become: no
@@ -114,7 +114,7 @@
   when: wordpress_installed.rc == 0
 
 - name: run ApacheBench app in local Docker against WordPress with 25 connections
-  shell: docker run --rm jordi/ab ab -t180 -c25 \
+  shell: docker run --rm jordi/ab -t180 -c25 \
          http://{{ansible_host}}/wordpress/{{ansible_date_time.year}}/{{ansible_date_time.month}}/{{ansible_date_time.day}}/hello-world/ > web_wp_ab_25.log
   delegate_to: localhost
   become: no
@@ -130,7 +130,7 @@
   when: wordpress_installed.rc == 0
 
 - name: run ApacheBench app in local Docker against WordPress with 50 connections
-  shell: docker run --rm jordi/ab ab -t180 -c50 \
+  shell: docker run --rm jordi/ab -t180 -c50 \
          http://{{ansible_host}}/wordpress/{{ansible_date_time.year}}/{{ansible_date_time.month}}/{{ansible_date_time.day}}/hello-world/ > web_wp_ab_50.log
   delegate_to: localhost
   become: no
@@ -284,3 +284,32 @@
     - web_ghost_wrk_100
     - web_ghost_wrk_150
     - web_ghost_wrk_200
+
+- name: calculate sha512 checksums of logfiles
+  stat:
+    checksum_algorithm: sha512
+    get_checksum: true
+    get_attributes: false
+    get_md5: false
+    get_mime: false
+    path: ../logs/{{inventory_hostname}}/{{item}}.log
+  register: logfile
+  delegate_to: localhost
+  become: no
+  with_items:
+    - web_wp_ab_10
+    - web_wp_ab_25
+    - web_wp_ab_50
+    - web_wp_wrk_100
+    - web_wp_wrk_150
+    - web_wp_wrk_200
+    - web_ghost_wrk_100
+    - web_ghost_wrk_150
+    - web_ghost_wrk_200
+
+- name: save checksum to file
+  local_action:
+    copy content="{{item.stat.checksum}}" dest="../logs/{{inventory_hostname}}/{{item.item}}.log.sha512"
+  become: no
+  with_items:
+    - "{{ logfile.results }}"

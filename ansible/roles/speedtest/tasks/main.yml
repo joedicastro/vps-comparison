@@ -5,8 +5,14 @@
     url: https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
     dest: /tmp/speedtest-cli
 
+- name: set python executable
+  replace:
+    path: /tmp/speedtest-cli
+    regexp: '#!\/usr\/bin\/env python'
+    replace: "#!{{ ansible_python_interpreter }}"
+
 - name: set execution permission
-  file: 
+  file:
     path: /tmp/speedtest-cli
     mode: "u=rwx,g=rwx,o=rx"
 
@@ -21,19 +27,19 @@
   args:
     chdir: /tmp
   with_sequence: count=3
- 
+
 - name: run speedtest-cli for Barcelona
   shell: ./speedtest-cli --server 1695 >> speedtest_bar.log
   args:
     chdir: /tmp
   with_sequence: count=3
- 
+
 - name: run speedtest-cli for Paris
   shell: ./speedtest-cli --server 5559 >> speedtest_par.log
   args:
     chdir: /tmp
   with_sequence: count=3
- 
+
 - name: run speedtest-cli for London
   shell: ./speedtest-cli --server 2789 >> speedtest_lon.log
   args:
@@ -51,7 +57,7 @@
   args:
     chdir: /tmp
   with_sequence: count=3
- 
+
 - name: retrieve logs
   fetch:
     src: /tmp/{{item}}.log
@@ -67,7 +73,7 @@
     - speedtest_rom
 
 - name: remove speedtest-cli
-  file: 
+  file:
     path: "{{item}}"
     state: absent
   with_items:
@@ -88,3 +94,29 @@
     - speedtest_ber
     - speedtest_rom
 
+- name: calculate sha512 checksums of logfiles
+  stat:
+    checksum_algorithm: sha512
+    get_checksum: true
+    get_attributes: false
+    get_md5: false
+    get_mime: false
+    path: ../logs/{{inventory_hostname}}/{{item}}.log
+  register: logfile
+  delegate_to: localhost
+  become: no
+  with_items:
+    - speedtest_near
+    - speedtest_mad
+    - speedtest_bar
+    - speedtest_par
+    - speedtest_lon
+    - speedtest_ber
+    - speedtest_rom
+
+- name: save checksum to file
+  local_action:
+    copy content="{{item.stat.checksum}}" dest="../logs/{{inventory_hostname}}/{{item.item}}.log.sha512"
+  become: no
+  with_items:
+    - "{{ logfile.results }}"

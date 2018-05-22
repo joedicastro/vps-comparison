@@ -2,39 +2,63 @@
 
 - name: download mariadb
   get_url:
-    url:  https://downloads.mariadb.org/f/mariadb-10.1.22/source/mariadb-10.1.22.tar.gz?serve
-    dest: /tmp/mariadb.tar.gz
+    url: https://downloads.mariadb.com/MariaDB/mariadb-{{mariadb_version}}/source/mariadb-{{mariadb_version}}.tar.gz
+    dest: /tmp/mariadb-{{mariadb_version}}.tar.gz
 
 - name: uncompress mariadb
   unarchive:
-    src: /tmp/mariadb.tar.gz
+    src: /tmp/mariadb-{{mariadb_version}}.tar.gz
     dest: /tmp
     copy: no
 
-- name: set source repo
-  apt_repository:
-    repo: "deb-src http://archive.ubuntu.com/ubuntu/ xenial-updates universe"
-    state: present
-
-- name: install packages need to build mariadb
+- name: install packages needed to build mariadb
   apt:
     name: "{{item}}"
-    state: build-dep
+    state: present
     update_cache: yes
     install_recommends: no
   with_items:
-    - mariadb-server
+    - bison
+    - make
+    - cmake
+    - g++
+    - gcc
+    - git
+    - libaio-dev
+    - libcurl4-gnutls-dev
+    - libevent-dev
+    - libgnutls28-dev
+    - libjemalloc-dev
+    - libncurses-dev
+    - libxml2-dev
+    - zlib1g-dev
 
 - name: configure the mariadb build
-  shell: cmake . -DBUILD_CONFIG=mysql_release
+  shell: cmake . -DBUILD_CONFIG=mysql_release -DWITHOUT_MROONGA_STORAGE_ENGINE=YES
   args:
-    chdir: /tmp/mariadb-10.1.22
+    chdir: /tmp/mariadb-{{mariadb_version}}
+  # some versions of gcc segfault when building mroonga, so omit it
 
 - name: compile mariadb
   shell: (time -p make) > /tmp/compiler.log 2>&1
   args:
     executable: /bin/bash
-    chdir: /tmp/mariadb-10.1.22
+    chdir: /tmp/mariadb-{{mariadb_version}}
+
+- name: calculate sha512 checksum of logfile
+  stat:
+    checksum_algorithm: sha512
+    get_checksum: true
+    get_attributes: false
+    get_md5: false
+    get_mime: false
+    path: /tmp/compiler.log
+  register: logfile
+
+- name: save checksum to file
+  local_action:
+    copy content="{{ logfile.stat.checksum }}" dest="../logs/{{inventory_hostname}}/compiler.log.sha512"
+  become: no
 
 - name: retrieve log
   fetch:
@@ -44,11 +68,11 @@
 
 - name: remove mariadb files
   file:
-    path: /tmp/test
+    path: "{{item}}"
     state: absent
   with_items:
-    - /tmp/mariadb-10.1.22
-    - /tmp/mariadb.tar.gz
+    - /tmp/mariadb-{{mariadb_version}}
+    - /tmp/mariadb-{{mariadb_version}}.tar.gz
 
 - name: remove installed packages
   apt:
@@ -57,83 +81,17 @@
     purge: yes
     state: absent
   with_items:
-    - autotools-dev
-    - binutils
     - bison
-    - build-essential
-    - chrpath
-    - cmake
-    - cmake-data
-    - cpp
-    - cpp-5
-    - debhelper
-    - dh-apparmor
-    - dh-strip-nondeterminism
-    - dpkg-dev
-    - g++
-    - g++-5
-    - gcc
-    - gcc-5
-    - gdb
-    - gettext
-    - icu-devtools
-    - intltool-debian
-    - libaio-dev
-    - libaio1
-    - libarchive-zip-perl
-    - libarchive13
-    - libasan2
-    - libatomic1
-    - libbabeltrace-ctf1
-    - libbabeltrace1
-    - libbison-dev
-    - libboost-dev
-    - libboost1.58-dev
-    - libc-dev-bin
-    - libc6-dev
-    - libcc1-0
-    - libcilkrts5
-    - libcroco3
-    - libcurl3
-    - libdpkg-perl
-    - libfile-stripnondeterminism-perl
-    - libgcc-5-dev
-    - libgomp1
-    - libicu-dev
-    - libisl15
-    - libitm1
-    - libjemalloc-dev
-    - libjemalloc1
-    - libjsoncpp1
-    - libjudy-dev
-    - libjudydebian1
-    - liblsan0
-    - libltdl-dev
-    - libltdl7
-    - libmpc3
-    - libmpx0
-    - libncurses5-dev
-    - libodbc1
-    - libpam0g-dev
-    - libpcre16-3
-    - libpcre3-dev
-    - libpcre32-3
-    - libpcrecpp0v5
-    - libquadmath0
-    - libreadline-gplv2-dev
-    - libstdc++-5-dev
-    - libtimedate-perl
-    - libtinfo-dev
-    - libtsan0
-    - libubsan0
-    - libunistring0
-    - libxml2-dev
-    - linux-libc-dev
-    - m4
     - make
-    - odbcinst
-    - odbcinst1debian2
-    - po-debconf
-    - unixodbc
-    - unixodbc-dev
-    - zlib1g-dev 
+    - cmake
+    - g++
+    - gcc
+    - git
+    - libaio-dev
+    - libcurl4-gnutls-dev
+    - libevent-dev
+    - libgnutls28-dev
+    - libjemalloc-dev
+    - libncurses-dev
+    - libxml2-dev
+    - zlib1g-dev
