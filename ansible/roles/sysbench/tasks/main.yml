@@ -133,7 +133,17 @@
 
 - name: remove mysql
   apt:
-    name: mysql-server
+    name: 'mysql*'
     autoremove: yes
     purge: yes
     state: absent
+
+- name: remove remaining mysql files
+  file:
+    path: "{{ item }}"
+    state: absent
+  with_items:
+    - /var/lib/mysql
+    - /var/lib/mysql-files
+    - /var/lib/mysql-keyring
+    - /etc/mysql
