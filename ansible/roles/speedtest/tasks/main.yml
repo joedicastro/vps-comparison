@@ -5,6 +5,12 @@
     url: https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
     dest: /tmp/speedtest-cli
 
+- name: set python executable
+  replace:
+    path: /tmp/speedtest-cli
+    regexp: '#!\/usr\/bin\/env python'
+    replace: "#!{{ ansible_python_interpreter }}"
+
 - name: set execution permission
   file: 
     path: /tmp/speedtest-cli

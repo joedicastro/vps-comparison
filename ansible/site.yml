@@ -1,12 +1,22 @@
 - hosts: all
   become: yes
   become_method: sudo
+  strategy: linear # this is the default. Set to 'free' to let hosts to run independently
+  gather_facts: false # needs to be run after ansible_python_interpreter is set up correctly
 
-  # pre_tasks:
-  #   - name: Install python for Ansible on Ubuntu
-  #     raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
-  #     when: ansible_distribution == "Ubuntu"
-  #     changed_when: False
+  # set /usr/bin/python3 as interpreter on systems that don't ship /usr/bin/python
+  pre_tasks:
+    - name: detect available python interpreter
+      raw: which /usr/bin/python || which /usr/bin/python3
+      register: py_interpreter
+      changed_when: py_interpreter.stdout != ""
+    - name: set python interpreter
+      set_fact:
+        ansible_python_interpreter: "{{ py_interpreter.stdout_lines[0] }}"
+    - debug:
+        msg: "{{ inventory_hostname }} python interpreter: {{ ansible_python_interpreter }}"
+    - name: Gathering Facts
+      setup: # AKA gather_facts
 
   roles:
     - { role: lynis,      tags: ['security', 'lynis', 'info']}
