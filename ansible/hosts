@@ -1,18 +1,18 @@
 [ovh]
-ovh-vpsssd1-ubuntu        ansible_host=X.X.X.X  ansible_python_interpreter=/usr/bin/python3
+ovh-vpsssd1-ubuntu        ansible_host=X.X.X.X
 
 [linode]
-linode-linode1024-ubuntu  ansible_host=X.X.X.X  ansible_python_interpreter=/usr/bin/python3
+linode-linode1024-ubuntu  ansible_host=X.X.X.X
 
 [digitalocean]
-do-5bucks-ubuntu          ansible_host=X.X.X.X  ansible_python_interpreter=/usr/bin/python3
+do-5bucks-ubuntu          ansible_host=X.X.X.X
 
 [scaleway]
-scaleway-vc1s-ubuntu      ansible_host=X.X.X.X  ansible_python_interpreter=/usr/bin/python3
+scaleway-vc1s-ubuntu      ansible_host=X.X.X.X
 
 [vultr]
-vultr-20gbssd-ubuntu      ansible_host=X.X.X.X  ansible_python_interpreter=/usr/bin/python3
-vultr-25gbssd-ubuntu      ansible_host=X.X.X.X  ansible_python_interpreter=/usr/bin/python3
+vultr-20gbssd-ubuntu      ansible_host=X.X.X.X
+vultr-25gbssd-ubuntu      ansible_host=X.X.X.X
 
 
 # vars by provider
