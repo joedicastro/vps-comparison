@@ -8,7 +8,14 @@
   get_url:
     url: http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_2160p_30fps_normal.mp4
     dest: /tmp/video4k.mp4
-  when: video_down.stat.exists == False 
+  when: video_down.stat.exists == False
+
+- name: add backports repository for ffmpeg on debian/jessie
+  apt_repository:
+    repo: "deb http://http.debian.net/debian/ jessie-backports main"
+    state: present
+    filename: jessie-backports
+  when: ansible_distribution_release == "jessie"
 
 - name: install ffmpeg
   apt:
@@ -37,11 +44,15 @@
     state: absent
 
 - name: remove videos
-  file: 
+  file:
     path: "{{item}}"
     state: absent
   with_items:
     - /tmp/video4k.mp4
     - /tmp/video_1080p.mp4
 
-
+- name: remove backports repository on debian/jessie
+  apt_repository:
+    repo: "deb http://http.debian.net/debian/ jessie-backports main"
+    state: absent
+  when: ansible_distribution_release == "jessie"
