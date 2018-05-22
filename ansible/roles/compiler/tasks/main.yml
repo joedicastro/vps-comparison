@@ -34,9 +34,10 @@
     - zlib1g-dev
 
 - name: configure the mariadb build
-  shell: cmake . -DBUILD_CONFIG=mysql_release
+  shell: cmake . -DBUILD_CONFIG=mysql_release -DWITHOUT_MROONGA_STORAGE_ENGINE=YES
   args:
     chdir: /tmp/mariadb-{{mariadb_version}}
+  # some versions of gcc segfault when building mroonga, so omit it
 
 - name: compile mariadb
   shell: (time -p make) > /tmp/compiler.log 2>&1
