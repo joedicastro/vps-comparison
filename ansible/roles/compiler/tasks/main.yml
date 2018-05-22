@@ -2,12 +2,12 @@
 
 - name: download mariadb
   get_url:
-    url:  https://downloads.mariadb.org/f/mariadb-10.1.22/source/mariadb-10.1.22.tar.gz?serve
-    dest: /tmp/mariadb.tar.gz
+    url: https://downloads.mariadb.com/MariaDB/mariadb-{{mariadb_version}}/source/mariadb-{{mariadb_version}}.tar.gz
+    dest: /tmp/mariadb-{{mariadb_version}}.tar.gz
 
 - name: uncompress mariadb
   unarchive:
-    src: /tmp/mariadb.tar.gz
+    src: /tmp/mariadb-{{mariadb_version}}.tar.gz
     dest: /tmp
     copy: no
 
@@ -36,13 +36,13 @@
 - name: configure the mariadb build
   shell: cmake . -DBUILD_CONFIG=mysql_release
   args:
-    chdir: /tmp/mariadb-10.1.22
+    chdir: /tmp/mariadb-{{mariadb_version}}
 
 - name: compile mariadb
   shell: (time -p make) > /tmp/compiler.log 2>&1
   args:
     executable: /bin/bash
-    chdir: /tmp/mariadb-10.1.22
+    chdir: /tmp/mariadb-{{mariadb_version}}
 
 - name: retrieve log
   fetch:
@@ -52,11 +52,11 @@
 
 - name: remove mariadb files
   file:
-    path: /tmp/test
+    path: "{{item}}"
     state: absent
   with_items:
-    - /tmp/mariadb-10.1.22
-    - /tmp/mariadb.tar.gz
+    - /tmp/mariadb-{{mariadb_version}}
+    - /tmp/mariadb-{{mariadb_version}}.tar.gz
 
 - name: remove installed packages
   apt:
